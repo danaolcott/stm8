@@ -1,0 +1,11 @@
+;	STMicroelectronics dependencies file
+
+[Version]
+Keyword=ST7Project
+Number=1.3
+
+[Root.Source Files.main.c.Config.0]
+ExternDep= main.c  "..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\mods0.h"  "..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h"  "..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h"  "..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\iostm8s103.h"
+
+[Root.Source Files.stm8_interrupt_vector.c.Config.0]
+ExternDep= stm8_interrupt_vector.c  "..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\mods0.h"
