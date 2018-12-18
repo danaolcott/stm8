@@ -13,6 +13,7 @@ void LED_Toggle(void);
 
 uint8_t Button_Read(void);
 
+void EXTI1_ISR();			//GPIO ISR
 
 #endif
 

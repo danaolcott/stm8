@@ -13,6 +13,9 @@ GPIO Controller File
 
 //////////////////////////////////////////
 //GPIO_init
+//Configure PB4 button as interrupt, trigger
+//on falling, pullup enabled.
+//
 void GPIO_init(void)
 {
     //configure PB5 as output
@@ -20,10 +23,40 @@ void GPIO_init(void)
     PB_CR1 = BIT_5;
     PB_CR2 = BIT_5;
 
-    //init low
+	//Configure PA1 - PA3 as output
+    PA_DDR = BIT_1 | BIT_2 | BIT_3;
+    PA_CR1 = BIT_1 | BIT_2 | BIT_3;
+    PA_CR2 = BIT_1 | BIT_2 | BIT_3;
+
+	///////////////////////////////////////////////////////
+    //PB4 - input, pullup - PB_CR1 = 1 for pullup, PB_DDR = 0 input
+	//Button with interrupts.  See 66 in the ref. manual.  
+	//Registers EXTI_CR1 and EXTI_CR2.  EXTI1 - PortB - PortB_IRQ
+    PB_DDR &=~ BIT_4;       //input
+    PB_CR1 |= BIT_4;        //pullup
+    PB_CR2 |= BIT_4;        //interrupt enabled
+
+	//Interrupt Config
+	//CCR reg = 0x28 - default, set I1 and I0 to 1.
+	//required to enable external interrupts
+	EXTI_CR1 = 0x08;		//PortB, falling edge
+	//EXTI_CR2 - PortD and PortE - don't care
+
+
+
+	
+    //init all outputs low
     PB_ODR = 0x00;
+	PA_ODR = 0x00;
 }
 
+
+////////////////////////////////////////
+//External Interrupt
+void EXTI1_ISR(void)
+{
+
+}
 
 ////////////////////////////////////////
 //LED_On - PB5 is Low

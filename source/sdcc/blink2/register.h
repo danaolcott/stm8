@@ -46,8 +46,12 @@ Register Definitions
 #define PD_CR1          *((volatile uint8_t*)0x5012)
 #define PD_CR2          *((volatile uint8_t*)0x5013)
 
-//Timer4 - Simplest one
+//External Interrupts - PortA - PortE
+#define EXTI_CR1		*((volatile uint8_t*)0x50A0)
+#define EXTI_CR2		*((volatile uint8_t*)0x50A1)
 
+
+//Timer4 - Simplest one
 #define ARPE_BIT        (1u << 7)
 #define OPM_BIT         (1u << 3)
 #define URS_BIT         (1u << 2)

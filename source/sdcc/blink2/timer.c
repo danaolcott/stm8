@@ -7,9 +7,16 @@ Timer Controller File
 #include "timer.h"
 
 
+static volatile uint32_t TimeTick = 0x00;
 
 
-
+//////////////////////////////////////
+//Delay Function that Uses Timer4
+void delay_ms(uint32_t delay)
+{
+	TimeTick = delay;		//set the timeout
+	while (TimeTick > 0);	//wait - decremented in isr
+}
 
 
 ////////////////////////////////////////
@@ -53,11 +60,10 @@ void Timer4_stop(void)
 
 
 //////////////////////////////////////////
-//Timer4 ISR - 
+//Timer4 ISR - Configured to run at 1khz
 void Timer4_ISR(void)
 {
-    //do something
-    PB_ODR ^= BIT_5;
+	TimeTick--;
 }
 
 
