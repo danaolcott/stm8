@@ -3,17 +3,13 @@ Timer Controller File
 
 */
 
+#include "register.h"
+#include "timer.h"
 
 
-//Interrupt Service Routines
-//
-void Timer4_InterruptHandler(void) __interrupt(TIM4_IRQ)
-{
-    PB_ODR ^= BIT_5;
 
-    //clear the interrupt flag
-    TIM4_SR &=~ UIF_BIT;
-}
+
+
 
 
 ////////////////////////////////////////
@@ -54,5 +50,16 @@ void Timer4_stop(void)
     TIM4_SR &=~ UIF_BIT;		//clear the interrupt flag
     TIM4_CNTR = 0x00;			//reset the counter
 }
+
+
+//////////////////////////////////////////
+//Timer4 ISR - 
+void Timer4_ISR(void)
+{
+    //do something
+    PB_ODR ^= BIT_5;
+}
+
+
 
 
