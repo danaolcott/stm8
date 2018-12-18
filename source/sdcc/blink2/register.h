@@ -50,7 +50,6 @@ Register Definitions
 #define EXTI_CR1		*((volatile uint8_t*)0x50A0)
 #define EXTI_CR2		*((volatile uint8_t*)0x50A1)
 
-
 //Timer4 - Simplest one
 #define ARPE_BIT        (1u << 7)
 #define OPM_BIT         (1u << 3)
@@ -62,9 +61,6 @@ Register Definitions
 #define TIF_BIT         (1u << 6)
 #define UIF_BIT         (1u << 0)
 
-
-
-
 #define TIM4_CR1        *((volatile uint8_t*)0x5340)
 #define TIM4_IER        *((volatile uint8_t*)0x5343)
 #define TIM4_SR         *((volatile uint8_t*)0x5344)
@@ -73,6 +69,15 @@ Register Definitions
 #define TIM4_PSCR       *((volatile uint8_t*)0x5347)
 #define TIM4_ARR        *((volatile uint8_t*)0x5348)
 
+//SPI
+#define SPI_CR1         *((volatile uint8_t*)0x5200)
+#define SPI_CR2         *((volatile uint8_t*)0x5201)
+#define SPI_ICR         *((volatile uint8_t*)0x5202)
+#define SPI_SR          *((volatile uint8_t*)0x5203)
+#define SPI_DR          *((volatile uint8_t*)0x5204)
+#define SPI_CRCPR       *((volatile uint8_t*)0x5205)
+#define SPI_RXCRCR      *((volatile uint8_t*)0x5206)
+#define SPI_TXCRCR      *((volatile uint8_t*)0x5207)
 
 //interrupt IRQ - See Table 10 in the datasheet
 #define TIM1_UPDATE_IRQ     11

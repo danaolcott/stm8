@@ -55,7 +55,7 @@ void GPIO_init(void)
 //External Interrupt
 void EXTI1_ISR(void)
 {
-
+	LED_Toggle();
 }
 
 ////////////////////////////////////////

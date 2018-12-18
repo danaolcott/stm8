@@ -22,7 +22,7 @@ For output PP, fast mode, config ODR = 1, CR1 = 1, CR2 = 1
 
 PB4 - User Button
 PB5 - User LED
-
+PC4 - PC7 - SPI
 */
 
 #include <stdio.h>
@@ -45,7 +45,6 @@ void Timer4_InterruptHandler(void) __interrupt(TIM4_IRQ)
 void EXTI1_InterruptHandler(void) __interrupt(EXTI1_IRQ)
 {
 	EXTI1_ISR();			//GPIO ISR
-	//clear external interrupt flag??
 }
 
 
@@ -58,7 +57,7 @@ int main()
     while (1)
     {
 		LED_Toggle();
-		delay_ms(100);
+		delay_ms(1000);
     }
 
     return 0;

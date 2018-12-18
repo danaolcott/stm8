@@ -5,7 +5,7 @@
 MCU  = stm8s103f3
 ARCH = stm8
 DEVICE = STM8S103
-PORT = /dev/stlinkv2_1
+PORT = /dev/stlinkv2_2
 TARGET  ?= main.ihx
 
 SRCS    := $(wildcard *.c)
