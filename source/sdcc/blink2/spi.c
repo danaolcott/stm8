@@ -15,7 +15,7 @@ PC7 - SPI_MISO
 #include <stddef.h>
 #include <stdint.h>
 #include "spi.h"
-#include "registers.h"
+#include "register.h"
 
 
 //////////////////////////////////
@@ -54,8 +54,19 @@ void SPI_init(void)
 	//SPI_CR1 - 20.4.1, Page 282
 	//MSB, SPI enable, 256 prescale, master mode,
 	//low polarity, leading edge 
+
+    //prescale - 256 - SPI 7.7khz
 	//SPI_CR1 = 0 1 111 1 0 0
-	SPI_CR1 = 0x7C;
+	//SPI_CR1 = 0x7C;
+
+    //prescale - 8 - SPI 250 khz
+	//SPI_CR1 = 0 1 010 1 0 0
+	SPI_CR1 = 0x54;
+
+    //prescale - 4 - SPI 500 khz
+	//SPI_CR1 = 0 1 001 1 0 0
+	SPI_CR1 = 0x4C;
+
 
 	//SPI_CR2 - no need to change anything, default 0x00
 	//2 line, na, no crc, send tx, reserved, full duplex, 
@@ -87,8 +98,9 @@ void SPI_deselect(void)
 //Put byte into the SPI_DR and wait
 void SPI_tx(uint8_t data)
 {
-	SPI_DR = data
-	while (!(SPI_SR & SPI_TXE_FLAG)){};		//wait
+	SPI_DR = data;
+	//while (!(SPI_SR & SPI_TXE_FLAG)){};		//wait
+    while (SPI_SR & SPI_BSY_FLAG){};        //wait
 }
 
 
@@ -145,7 +157,7 @@ void SPI_Send_Receive(uint8_t* txBuffer, uint16_t txLength, uint8_t* rxBuffer, u
 	//read
 	for (i = 0 ; i < rxLength ; i++)
 	{
-		SPI_rx(rxBuffer[i]);
+		rxBuffer[i] = SPI_rx();
 	}
 
 	SPI_deselect();	

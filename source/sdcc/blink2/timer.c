@@ -22,10 +22,8 @@ void delay_ms(uint32_t delay)
 ////////////////////////////////////////
 //Timer_init
 //Configure Timer4 to Timeout at 1khz
-//prev, it was about 30hz toggle, or 60hz
-//make it about 16x faster, or prescale
-//64, 32, 16, 8 - use prescale = 8
-//or 2^3
+//Prescale = 8 (2^3) and reload = 0xF8
+//
 void Timer4_init(void)
 {
     __asm__("rim");				//enable global interrupts
@@ -34,8 +32,7 @@ void Timer4_init(void)
     TIM4_IER = UIE_BIT;			//enable update interrupt
     TIM4_CNTR = 0x00;			//reset the counter
     TIM4_PSCR = 0x03;			//prescale bits 0-2 = 8
-    TIM4_ARR = 0xFF;			//auto reload
-
+    TIM4_ARR = 0xF8;			//auto reload - trim to 1khz
     TIM4_CR1 |= CEN_BIT;		//enable the counter
 }
 

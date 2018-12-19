@@ -8,6 +8,9 @@ Dana Olcott
 #ifndef __SPI__H
 #define __SPI__H
 
+#include <stddef.h>
+#include <stdint.h>
+
 void SPI_init(void);
 void SPI_select(void);
 void SPI_deselect(void);

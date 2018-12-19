@@ -31,11 +31,14 @@ PC4 - PC7 - SPI
 #include "register.h"
 #include "gpio.h"
 #include "timer.h"
+#include "spi.h"
+
 
 //////////////////////////////////////////////////
 //Interrupt Handler Functions - Timer4_ISR
 void Timer4_InterruptHandler(void) __interrupt(TIM4_IRQ)
 {
+    PA_ODR ^= BIT_3;        //toggle PA3 - debug pin
     Timer4_ISR();			//Timer4 ISR
     TIM4_SR &=~ UIF_BIT;	//Clear the interrupt flag	
 }
@@ -53,11 +56,14 @@ int main()
 {
     GPIO_init();
     Timer4_init();
+    SPI_init();
 
     while (1)
     {
 		LED_Toggle();
-		delay_ms(1000);
+        PA_ODR ^= BIT_2;
+        SPI_SendByte(0xAA);
+		delay_ms(100);
     }
 
     return 0;
