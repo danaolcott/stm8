@@ -70,6 +70,10 @@ Register Definitions
 #define TIM4_ARR        *((volatile uint8_t*)0x5348)
 
 //SPI
+#define SPI_BSY_FLAG	(1u << 7)	//busy = high
+#define SPI_TXE_FLAG	(1u << 1)	//tx empty = high
+#define SPI_RXNE_FLAG	(1u << 0)	//rx not empty = high
+
 #define SPI_CR1         *((volatile uint8_t*)0x5200)
 #define SPI_CR2         *((volatile uint8_t*)0x5201)
 #define SPI_ICR         *((volatile uint8_t*)0x5202)
