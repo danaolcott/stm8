@@ -42,8 +42,9 @@ FLASH_WR_PG_DIS_BIT	 	BIT0
 
 #include <stdint.h>
 #include <stddef.h>
+#include "register.h"
 #include "eeprom.h"
-
+#include "gpio.h"           //LED toggle
 
 /////////////////////////////////////
 //Dummy delay
@@ -57,15 +58,20 @@ void EEPROM_delay(uint32_t temp)
 
 ///////////////////////////////////
 //Unlocks the EEPROM data 
+//If not successful, flash something
 void EEPROM_init(void)
 {
+    uint8_t count = 50;
     uint8_t result = EEPROM_unlock();
 
     if (!result)
     {
-        while (1);
+        while ((count--) > 0)
+        {
+            LED_Toggle();
+            EEPROM_delay(10000);
+        }
     }
-
 }
 
 
@@ -96,11 +102,11 @@ uint8_t EEPROM_unlock(void)
         //repeat up to 10 times
         while ((!(FLASH_IAPSR & FLASH_DUL_BIT)) && (counter < 10))
         {
-            EEPROM_Delay(1000);
+            EEPROM_delay(1000);
             FLASH_DUKR = 0xAE;
-            EEPROM_Delay(1000);
+            EEPROM_delay(1000);
             FLASH_DUKR = 0x56;
-            EEPROM_Delay(1000);
+            EEPROM_delay(1000);
 
             if (FLASH_IAPSR & FLASH_DUL_BIT)
             {

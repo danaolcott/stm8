@@ -93,6 +93,22 @@ Register Definitions
 #define FLASH_DUKR              *((volatile uint8_t*)0x5064)
 
 
+//Clock Configuration
+#define CLK_ICKR        *((volatile uint8_t*)0x50C0)
+#define CLK_ECKR        *((volatile uint8_t*)0x50C1)
+#define CLK_CMSR        *((volatile uint8_t*)0x50C3)
+#define CLK_SWR         *((volatile uint8_t*)0x50C4)
+#define CLK_SWCR        *((volatile uint8_t*)0x50C5)
+#define CLK_CKDIVR      *((volatile uint8_t*)0x50C6)
+#define CLK_PCKENR1     *((volatile uint8_t*)0x50C7)
+#define CLK_CSSR        *((volatile uint8_t*)0x50C8)
+#define CLK_CCOR        *((volatile uint8_t*)0x50C9)
+#define CLK_PCKENR2     *((volatile uint8_t*)0x50CA)
+#define CLK_HSITRIMR    *((volatile uint8_t*)0x50CC)
+#define CLK_SWIMCCR     *((volatile uint8_t*)0x50CD)
+
+
+
 
 //interrupt IRQ - See Table 10 in the datasheet
 #define TIM1_UPDATE_IRQ     11
