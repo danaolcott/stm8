@@ -32,7 +32,7 @@ PC4 - PC7 - SPI
 #include "gpio.h"
 #include "timer.h"
 #include "spi.h"
-
+#include "eeprom.h"
 
 //////////////////////////////////////////////////
 //Interrupt Handler Functions - Timer4_ISR
@@ -57,6 +57,7 @@ int main()
     GPIO_init();
     Timer4_init();
     SPI_init();
+    EEPROM_init();
 
     while (1)
     {

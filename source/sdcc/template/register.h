@@ -83,6 +83,17 @@ Register Definitions
 #define SPI_RXCRCR      *((volatile uint8_t*)0x5206)
 #define SPI_TXCRCR      *((volatile uint8_t*)0x5207)
 
+//EEPROM
+#define EEPROM_BASE_ADDRESS     ((uint16_t)0x4000)
+#define FLASH_DUL_BIT           (1u << 3)
+#define FLASH_EOP_BIT           (1u << 2)
+#define FLASH_WR_PG_DIS_BIT     (1u << 0)
+
+#define FLASH_IAPSR             *((volatile uint8_t*)0x505F)
+#define FLASH_DUKR              *((volatile uint8_t*)0x5064)
+
+
+
 //interrupt IRQ - See Table 10 in the datasheet
 #define TIM1_UPDATE_IRQ     11
 #define TIM1_COMPARE_IRQ    12
