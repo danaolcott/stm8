@@ -52,6 +52,13 @@ void EXTI1_InterruptHandler(void) __interrupt(EXTI1_IRQ)
 }
 
 
+//UART
+void UART_InterruptHandler(void) __interrupt(UART1_RXNE_IRQ)
+{
+    UART_ISR();            //GPIO ISR
+}
+
+
 ///////////////////////////////////////////
 //Typedefs
 typedef enum

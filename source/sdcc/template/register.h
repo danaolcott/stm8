@@ -108,16 +108,35 @@ Register Definitions
 #define CLK_SWIMCCR     *((volatile uint8_t*)0x50CD)
 
 
+//UART1 Configuration
+#define UART1_TXE_BIT	(1u >> 7)		//use with the UART1_SR
+#define UART1_TC_BIT	(1u >> 6)
+#define UART1_RXNE_BIT	(1u >> 5)
+
+//UART1_CR2
+#define UART1_RIEN_BIT	(1u >> 5)		//rx interrupt enable
+#define UART1_TEN_BIT	(1u >> 3)		//tx enable
+#define UART1_REN_BIT 	(1u >> 2)		//rx enable
+
+#define UART1_SR 		*((volatile uint8_t*)0x5230)
+#define UART1_DR 		*((volatile uint8_t*)0x5231)
+#define UART1_BRR1 		*((volatile uint8_t*)0x5232)
+#define UART1_BRR2 		*((volatile uint8_t*)0x5233)
+#define UART1_CR1 		*((volatile uint8_t*)0x5234)
+#define UART1_CR2 		*((volatile uint8_t*)0x5235)
+#define UART1_CR3 		*((volatile uint8_t*)0x5236)
+#define UART1_CR4 		*((volatile uint8_t*)0x5237)
+#define UART1_CR5 		*((volatile uint8_t*)0x5238)
+#define UART1_GTR 		*((volatile uint8_t*)0x5239)
+#define UART1_PSCR 		*((volatile uint8_t*)0x523A)
+
+
+
+
+
 
 
 //interrupt IRQ - See Table 10 in the datasheet
-#define TIM1_UPDATE_IRQ     11
-#define TIM1_COMPARE_IRQ    12
-#define TIM2_UPDATE_IRQ     13
-#define TIM2_COMPARE_IRQ    14
-
-#define TIM4_IRQ        23
-
 #define EXTI0_IRQ       3
 #define EXTI1_IRQ       4
 #define EXTI2_IRQ       5
@@ -127,6 +146,17 @@ Register Definitions
 #define PORTB_IRQ       4
 #define PORTC_IRQ       5
 #define PORTD_IRQ       6
+
+#define TIM1_UPDATE_IRQ     11
+#define TIM1_COMPARE_IRQ    12
+#define TIM2_UPDATE_IRQ     13
+#define TIM2_COMPARE_IRQ    14
+
+#define UART1_TXE_IRQ		17
+#define UART1_RXNE_IRQ		18
+
+#define TIM4_IRQ        23
+
 
 
 #endif
