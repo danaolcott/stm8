@@ -48,9 +48,6 @@ void SPI_init(void)
 	PC_CR1 |= BIT_7;		//pullup
 	PC_CR2 &=~ BIT_7;		//no interrupt
 
-
-
-
 	//SPI_CR1 - 20.4.1, Page 282
 	//MSB, SPI enable, 256 prescale, master mode,
 	//low polarity, leading edge 

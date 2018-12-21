@@ -33,7 +33,7 @@ PC4 - PC7 - SPI
 #include "timer.h"
 #include "spi.h"
 #include "eeprom.h"
-
+#include "uart.h"
 
 //////////////////////////////////////////////////
 //Interrupt Handler Functions - Timer4_ISR
@@ -86,30 +86,16 @@ int main()
     Timer4_init();
     SPI_init();
     EEPROM_init();
+    UART_init(BAUD_RATE_115200);
 
     while (1)
     {
 		LED_Toggle();
 //        PA_ODR ^= BIT_2;
 //        SPI_SendByte(0xAA);
+
+        UART_sendString("Hello\r\n");
 		delay_ms(1000);
-
-        //read them back
-        for (i = 0 ; i < 0xFF ; i++)
-        {            
-            result = EEPROM_readByte(i);
-
-            if (result == i)
-            {
-                for (i = 0 ; i < 10 ; i++)
-                {
-                    LED_Toggle();
-                    delay_ms(50);
-                }            
-            } 
-        }
-
-        delay_ms(1000);
 
     }
 

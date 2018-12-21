@@ -8,11 +8,13 @@ PD6 - UART1_RX
 
 */
 
+#include <stdio.h>
 #include <stdint.h>
+#include <string.h>
+
 #include <stddef.h>
 #include "register.h"
-#include "usart.h"
-
+#include "uart.h"
 
 ////////////////////////////////////////////
 //UART1 Private Variables
@@ -22,14 +24,23 @@ static uint8_t rxActiveBuffer = 0x01;
 static uint8_t rxIndex = 0x00;
 
 
-
 //////////////////////////////////////////
 //Configure UART
 //default rate = 115200
 void UART_init(UART_BaudRate_t rate)
 {
-	//configure pins
+	uint8_t brr1 = 0x00;
+	uint8_t brr2 = 0x00;
 
+    //PD5 - UART1_TX - output, PP, fast
+    PD_DDR |= BIT_5;		//output
+    PD_CR1 |= BIT_5;
+    PD_CR2 |= BIT_5;
+
+    //PD6 - UART1_RX - input, floating, no interrupt
+    PD_DDR &=~ BIT_6;
+    PD_CR1 &=~ BIT_6;
+    PD_CR2 &=~ BIT_6;
 
 	//reset vars, buffers, etc
 	memset(rxBuffer1, 0x00, UART_RX_BUFFER_SIZE);
@@ -37,15 +48,8 @@ void UART_init(UART_BaudRate_t rate)
 	rxActiveBuffer = 1;
 	rxIndex = 0x00;
 
-
-	uint8_t brr1 = 0x00;
-	uint8_t brr2 = 0x00;
-
-	//set the baud rate registers, defaults to 115200
-	//these assume fmaster = 16mhz
-	//UART1_BRR1 	- baud rate registers
-	//UART1_BRR2
-
+	//set the baud rate registers, assuming Fmaster = 16mhz
+    //see programming manual for brr1 and brr2
 	switch(rate)
 	{
 		case BAUD_RATE_9600:	brr1 = 0x68;		brr2 = 0x03;		break;
@@ -54,7 +58,7 @@ void UART_init(UART_BaudRate_t rate)
 		case BAUD_RATE_115200:	brr1 = 0x08;		brr2 = 0x0B;		break;
 		case BAUD_RATE_230400:	brr1 = 0x04;		brr2 = 0x05;		break;
 		case BAUD_RATE_921600:	brr1 = 0x01;		brr2 = 0x01;		break;
-		case default:			brr1 = 0x08;		brr2 = 0x0B;		break;		
+		default:			    brr1 = 0x08;		brr2 = 0x0B;		break;		
 	}
 
 	//UART1_SR 		- status register
@@ -80,9 +84,11 @@ void UART_init(UART_BaudRate_t rate)
 void UART_sendByte(uint8_t data)
 {
 	UART1_DR = data;
-	while (!(UART1_SR & UART1_TC_BIT)){};
-	while (!(UART1_SR & UART1_TXE_BIT)){};
+	while (!(UART1_SR & UART1_TC_BIT));
+	while (!(UART1_SR & UART1_TXE_BIT));
 }
+
+
 
 void UART_sendString(uint8_t* msg)
 {
@@ -93,6 +99,7 @@ void UART_sendString(uint8_t* msg)
 		UART_sendByte(msg[i]);
 }
 
+
 void UART_sendStringLength(uint8_t* buffer, uint16_t length)
 {
 	uint16_t i = 0x00;
@@ -100,6 +107,18 @@ void UART_sendStringLength(uint8_t* buffer, uint16_t length)
 	for (i = 0 ; i < length ; i++)
 		UART_sendByte(buffer[i]);
 }
+
+
+
+///////////////////////////////////////////////
+//Process the command
+void UART1_processCommand(uint8_t* buffer, uint8_t length)
+{
+    //for now, echo the string back
+    UART_sendString("RX: ");
+    UART_sendStringLength(buffer, length);
+}
+
 
 
 //////////////////////////////////////////
@@ -154,24 +173,20 @@ void UART_ISR(void)
 					rxIndex = 0x00;
 				}
 			}
-
-		//bad data or buffer overrun, reset everything
-		rxActiveBuffer = 1;
-		memset(rxBuffer1, 0x00, UART_RX_BUFFER_SIZE);
-		memset(rxBuffer2, 0x00, UART_RX_BUFFER_SIZE);
-		rxIndex = 0x00;
-
 		}
+
+        //null chars received and/or buffer overrun
+        else
+        {
+		    //bad data or buffer overrun, reset everything
+		    rxActiveBuffer = 1;
+		    memset(rxBuffer1, 0x00, UART_RX_BUFFER_SIZE);
+		    memset(rxBuffer2, 0x00, UART_RX_BUFFER_SIZE);
+		    rxIndex = 0x00;
+        }
 	}
 }
 
 
-
-///////////////////////////////////////////////
-//Process the command
-void UART1_processCommand(uint8_t* buffer, uint8_t length)
-{
-
-}
 
 
