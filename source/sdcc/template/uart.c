@@ -15,14 +15,22 @@ PD6 - UART1_RX
 #include <stddef.h>
 #include "register.h"
 #include "uart.h"
+#include "cliTable.h"
 
 ////////////////////////////////////////////
 //UART1 Private Variables
-static uint8_t rxBuffer1[UART_RX_BUFFER_SIZE];
-static uint8_t rxBuffer2[UART_RX_BUFFER_SIZE];
-static uint8_t rxActiveBuffer = 0x01;
-static uint8_t rxIndex = 0x00;
+static volatile uint8_t rxBuffer1[UART_RX_BUFFER_SIZE];
+static volatile uint8_t rxBuffer2[UART_RX_BUFFER_SIZE];
+static volatile uint8_t rxActiveBuffer = 0x01;
+static volatile uint8_t rxIndex = 0x00;
 
+
+static void UART_dummyDelay(uint32_t time)
+{
+    volatile uint32_t temp = time;
+    while (temp > 0)
+        temp--;
+}
 
 //////////////////////////////////////////
 //Configure UART
@@ -55,25 +63,28 @@ void UART_init(UART_BaudRate_t rate)
 		case BAUD_RATE_9600:	brr1 = 0x68;		brr2 = 0x03;		break;
 		case BAUD_RATE_19200:	brr1 = 0x34;		brr2 = 0x01;		break;
 		case BAUD_RATE_57600:	brr1 = 0x11;		brr2 = 0x06;		break;
+
 		case BAUD_RATE_115200:	brr1 = 0x08;		brr2 = 0x0B;		break;
+//		case BAUD_RATE_115200:	brr1 = 0x08;		brr2 = 0x0A;		break;
+
 		case BAUD_RATE_230400:	brr1 = 0x04;		brr2 = 0x05;		break;
 		case BAUD_RATE_921600:	brr1 = 0x01;		brr2 = 0x01;		break;
 		default:			    brr1 = 0x08;		brr2 = 0x0B;		break;		
 	}
 
-	//UART1_SR 		- status register
-	//UART1_DR 		- data register
+    UART1_BRR1 = brr1;      //set the baud rate
+    UART1_BRR2 = brr2;      //set the baud rate
+
 	//UART1_CR1 	- control reg1 - do nothing
 	//UART1_CR2 	- control reg2 - interrupts / enable
-	//enable rx interrupt, rx and tx turned on
-	UART1_CR2 = (UART1_RIEN_BIT | UART1_TEN_BIT | UART1_REN_BIT);
+	UART1_CR2 = (UART1_TEN_BIT | UART1_REN_BIT);        //turn on tx and rx
+    UART1_CR2 |= UART1_RIEN_BIT;                        //enable receive interrupts
 
-	//UART1_CR3 	- control reg3 - do nothing - SCLK pin optional
+	//UART1_CR3 	- control reg3 - do nothing
 	//UART1_CR4 	- control reg4 - do nothing
 	//UART1_CR5 	- control reg5 - do nothing
 	//UART1_GTR 	- guard time register - do nothing
-	//UART1_PSCR 	- prescale register - do nothing
-	
+	//UART1_PSCR 	- prescale register - do nothing	
 }
 
 
@@ -83,9 +94,9 @@ void UART_init(UART_BaudRate_t rate)
 //in the SR
 void UART_sendByte(uint8_t data)
 {
+	while (!(UART1_SR & UART1_TXE_BIT)){};
 	UART1_DR = data;
-	while (!(UART1_SR & UART1_TC_BIT));
-	while (!(UART1_SR & UART1_TXE_BIT));
+    while (!(UART1_SR & UART1_TXE_BIT)){};
 }
 
 
@@ -112,12 +123,98 @@ void UART_sendStringLength(uint8_t* buffer, uint16_t length)
 
 ///////////////////////////////////////////////
 //Process the command
-void UART1_processCommand(uint8_t* buffer, uint8_t length)
+void UART_processCommand(uint8_t* buffer, uint8_t length)
 {
-    //for now, echo the string back
-    UART_sendString("RX: ");
-    UART_sendStringLength(buffer, length);
+
+	int numArgs = 0x00;						        //destination numArgs
+    int i = 0x00;
+	char* argv[UART_RX_BUFFER_SIZE];		        //array of char*
+	uint8_t input[UART_RX_BUFFER_SIZE] = {0x00};	//modified original buffer
+
+    //remove line endings
+	for (i = 0x00 ; i < length ; i++)
+	{
+        input[i] = buffer[i];
+		if ((input[i] == '\r') || (input[i] == '\n'))
+			input[i] = 0x00;
+	}
+
+	//populate numargs and load argv with char*
+	UART_parseArgs(input, &numArgs, argv);
+
+	//run the command
+	UART_executeCommand(numArgs, argv);
 }
+
+
+
+///////////////////////////////////////////////////////
+//Split original buffer into array of char* using
+//strtok and get number of arguments.
+//Original buffer is modified
+void UART_parseArgs(uint8_t *orig, int* argc, char** argv)
+{
+	int numArgs = 0x00;
+	const char* tokString = " ,:;";
+
+	char* token = strtok((char*)orig, tokString);
+
+	while (token != NULL)
+	{
+		argv[numArgs++] = token;
+		token = strtok(NULL, tokString);
+	}
+
+	*argc = numArgs;
+}
+
+
+/////////////////////////////////////////////////
+void UART_executeCommand(int argc, char** argv)
+{
+
+	//get the command table entry from argv[0]
+	//cmd is the index of the command table array
+	int cmd = UART_parseCommand(argv[0]);
+
+	if (cmd >= 0)
+	{
+		//execute the function associated with cmd##
+		CommandTable[cmd].functionPtr(argc, argv);
+	}
+	else
+	{
+        UART_sendString("CMD NOT FOUND (? - CMD List): ");
+        UART_sendString((char*)argv[0]);
+        UART_sendString("\n");
+	}
+}
+
+
+//////////////////////////////////////////////////////
+//Look up command based on arg0 string compare.
+//Return -1 if command is wrong
+int UART_parseCommand(char* cmd)
+{
+	int counter = 0x00;
+
+	while (CommandTable[counter].cmdNumber != 0xFF)
+	{
+		//compare cmd with .cmdString
+		if (!strcmp(CommandTable[counter].cmdString, cmd))
+		{
+			return CommandTable[counter].cmdNumber;
+		}
+
+		counter++;
+	}
+
+	return -1;
+}
+
+
+
+
 
 
 
@@ -128,65 +225,54 @@ void UART1_processCommand(uint8_t* buffer, uint8_t length)
 //to processing function
 void UART_ISR(void)
 {
-	uint8_t data = 0x00;
+    uint8_t data;
 
 	//receiver is not empty - data in the UART1_DR
 	if (UART1_SR & UART1_RXNE_BIT)
 	{
 		data = UART1_DR;
-
-		if ((data != 0x00) && (rxIndex < (UART_RX_BUFFER_SIZE - 1)))
-		{
-			if (rxActiveBuffer == 1)
-				rxBuffer1[rxIndex] = data;
-			else
-				rxBuffer2[rxIndex] = data;
-
-			rxIndex++;
-
-			//test the char
-			if (data == '\n')
-			{
-				if (rxActiveBuffer == 1)
-				{
-					rxBuffer1[rxIndex] = 0x00;
-
-					//process command
-					UART1_processCommand(rxBuffer1, rxIndex);
-
-					//flip the buffers
-					rxActiveBuffer = 2;
-					memset(rxBuffer2, 0x00, UART_RX_BUFFER_SIZE);
-					rxIndex = 0x00;
-				}
-
-				else
-				{
-					rxBuffer2[rxIndex] = 0x00;
-
-					//process command
-					UART1_processCommand(rxBuffer2, rxIndex);
-
-					//flip the buffers
-					rxActiveBuffer = 1;
-					memset(rxBuffer1, 0x00, UART_RX_BUFFER_SIZE);
-					rxIndex = 0x00;
-				}
-			}
-		}
-
-        //null chars received and/or buffer overrun
-        else
+        if (rxIndex < (UART_RX_BUFFER_SIZE - 1))
         {
-		    //bad data or buffer overrun, reset everything
-		    rxActiveBuffer = 1;
-		    memset(rxBuffer1, 0x00, UART_RX_BUFFER_SIZE);
-		    memset(rxBuffer2, 0x00, UART_RX_BUFFER_SIZE);
-		    rxIndex = 0x00;
-        }
-	}
-}
+            if (rxActiveBuffer == 1)
+                rxBuffer1[rxIndex++] = data;
+            else
+                rxBuffer2[rxIndex++] = data;
 
+            if (data == '\n')
+            {
+                if (rxActiveBuffer == 1)
+                {
+                    //end the string and process
+                    rxBuffer1[rxIndex] = 0x00;
+					UART_processCommand(rxBuffer1, rxIndex);
+
+                    rxIndex = 0x00;
+                    rxActiveBuffer = 2;
+                    memset(rxBuffer2, 0x00, UART_RX_BUFFER_SIZE);
+                }
+
+                else
+                {
+                    //end the string and process
+                    rxBuffer2[rxIndex] = 0x00;
+					UART_processCommand(rxBuffer2, rxIndex);
+
+                    rxIndex = 0x00;
+                    rxActiveBuffer = 1;
+                    memset(rxBuffer1, 0x00, UART_RX_BUFFER_SIZE);
+                }
+            }
+        }
+
+        else
+        {           
+            rxIndex = 0x00;
+            memset(rxBuffer1, 0x00, UART_RX_BUFFER_SIZE);
+            memset(rxBuffer2, 0x00, UART_RX_BUFFER_SIZE);
+            rxActiveBuffer = 1;
+        }
+    }
+}
 
 
 

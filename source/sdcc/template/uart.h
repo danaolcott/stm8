@@ -29,7 +29,12 @@ void UART_init(UART_BaudRate_t rate);
 void UART_sendByte(uint8_t data);
 void UART_sendString(uint8_t* msg);
 void UART_sendStringLength(uint8_t* buffer, uint16_t length);
-void UART1_processCommand(uint8_t* buffer, uint8_t length);
+void UART_processCommand(uint8_t* buffer, uint8_t length);
+void UART_parseArgs(uint8_t *orig, int* argc, char** argv);
+void UART_executeCommand(int argc, char** argv);
+int UART_parseCommand(char* cmd);
+
+
 void UART_ISR(void);
 
 

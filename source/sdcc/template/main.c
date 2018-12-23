@@ -20,9 +20,15 @@ PB_CR2 - control reg 2
 See Table 21 - Page 107 in the ref manual
 For output PP, fast mode, config ODR = 1, CR1 = 1, CR2 = 1
 
-PB4 - User Button
+PB4 - User Button - Interrupt / Falling
 PB5 - User LED
 PC4 - PC7 - SPI
+PD5 - PD6 - UART1 (TX/RX)
+PA1 - PA3 - General Output
+
+Timer - TIM4 - Timebase at 1khz
+
+
 */
 
 #include <stdio.h>
@@ -86,16 +92,16 @@ int main()
     Timer4_init();
     SPI_init();
     EEPROM_init();
-    UART_init(BAUD_RATE_115200);
+    UART_init(BAUD_RATE_57600);
 
     while (1)
     {
-		LED_Toggle();
-//        PA_ODR ^= BIT_2;
-//        SPI_SendByte(0xAA);
+        LED_Toggle();
+        //        PA_ODR ^= BIT_2;
+        //        SPI_SendByte(0xAA);
 
         UART_sendString("Hello\r\n");
-		delay_ms(1000);
+        delay_ms(1000);
 
     }
 

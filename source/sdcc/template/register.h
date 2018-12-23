@@ -109,14 +109,27 @@ Register Definitions
 
 
 //UART1 Configuration
-#define UART1_TXE_BIT	(1u >> 7)		//use with the UART1_SR
-#define UART1_TC_BIT	(1u >> 6)
-#define UART1_RXNE_BIT	(1u >> 5)
+#define UART1_TXE_BIT	(1u << 7)		//use with the UART1_SR
+#define UART1_TC_BIT	(1u << 6)
+#define UART1_RXNE_BIT	(1u << 5)
+
+#define UART1_CLKEN_BIT (1u << 3)
+#define UART1_CPOL_BIT  (1u << 2)
+#define UART1_CPHA_BIT  (1u << 1)
+#define UART1_LBCL_BIT  (1u << 0)
 
 //UART1_CR2
-#define UART1_RIEN_BIT	(1u >> 5)		//rx interrupt enable
-#define UART1_TEN_BIT	(1u >> 3)		//tx enable
-#define UART1_REN_BIT 	(1u >> 2)		//rx enable
+#define UART1_RIEN_BIT	(1u << 5)		//rx interrupt enable
+#define UART1_TEN_BIT	(1u << 3)		//tx enable
+#define UART1_REN_BIT 	(1u << 2)		//rx enable
+
+
+#define USART_CR2_TEN       (1 << 3)
+#define USART_CR3_STOP2     (1 << 5)
+#define USART_CR3_STOP1     (1 << 4)
+#define USART_SR_TXE        (1 << 7)
+
+
 
 #define UART1_SR 		*((volatile uint8_t*)0x5230)
 #define UART1_DR 		*((volatile uint8_t*)0x5231)
