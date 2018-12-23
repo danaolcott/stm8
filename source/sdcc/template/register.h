@@ -123,13 +123,10 @@ Register Definitions
 #define UART1_TEN_BIT	(1u << 3)		//tx enable
 #define UART1_REN_BIT 	(1u << 2)		//rx enable
 
-
 #define USART_CR2_TEN       (1 << 3)
 #define USART_CR3_STOP2     (1 << 5)
 #define USART_CR3_STOP1     (1 << 4)
 #define USART_SR_TXE        (1 << 7)
-
-
 
 #define UART1_SR 		*((volatile uint8_t*)0x5230)
 #define UART1_DR 		*((volatile uint8_t*)0x5231)
@@ -142,6 +139,20 @@ Register Definitions
 #define UART1_CR5 		*((volatile uint8_t*)0x5238)
 #define UART1_GTR 		*((volatile uint8_t*)0x5239)
 #define UART1_PSCR 		*((volatile uint8_t*)0x523A)
+
+
+//ADC Registers
+#define ADC_EOC_BIT     (1u << 7)
+#define ADC_ADON_BIT    (1u << 0)
+
+
+#define ADC_CSR 		*((volatile uint8_t*)0x5400)
+#define ADC_CR1 		*((volatile uint8_t*)0x5401)
+#define ADC_CR2 		*((volatile uint8_t*)0x5402)
+#define ADC_CR3 		*((volatile uint8_t*)0x5403)
+#define ADC_DRH 		*((volatile uint8_t*)0x5404)
+#define ADC_DRL 		*((volatile uint8_t*)0x5405)
+
 
 
 

@@ -28,6 +28,8 @@ PA1 - PA3 - General Output
 
 Timer - TIM4 - Timebase at 1khz
 
+ADC Channels PD2, PD3 - AN3, AN4
+
 
 */
 
@@ -40,6 +42,7 @@ Timer - TIM4 - Timebase at 1khz
 #include "spi.h"
 #include "eeprom.h"
 #include "uart.h"
+#include "adc.h"
 
 //////////////////////////////////////////////////
 //Interrupt Handler Functions - Timer4_ISR
@@ -82,8 +85,9 @@ void Clock_init(ClockSpeed_t speed);
 
 
 ////////////////////////////////////
-uint8_t i, result = 0x00;
-
+uint16_t i, result = 0x00;
+int n = 0x00;
+uint8_t buffer[50] = {0x00};
 
 int main()
 {
@@ -93,6 +97,8 @@ int main()
     SPI_init();
     EEPROM_init();
     UART_init(BAUD_RATE_57600);
+    ADC_init();
+
 
     while (1)
     {
@@ -101,6 +107,11 @@ int main()
         //        SPI_SendByte(0xAA);
 
         UART_sendString("Hello\r\n");
+
+        n = sprintf(buffer, "ADC3: %d\n", ADC_readMilliVolts(ADC_CHANNEL_3));
+        UART_sendStringLength(buffer, n);
+        n = sprintf(buffer, "ADC4: %d\n\n", ADC_readMilliVolts(ADC_CHANNEL_4));
+        UART_sendStringLength(buffer, n);
         delay_ms(1000);
 
     }
