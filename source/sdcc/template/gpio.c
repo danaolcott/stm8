@@ -23,10 +23,10 @@ void GPIO_init(void)
     PB_CR1 = BIT_5;
     PB_CR2 = BIT_5;
 
-	//Configure PA1 - PA3 as output
-    PA_DDR = BIT_1 | BIT_2 | BIT_3;
-    PA_CR1 = BIT_1 | BIT_2 | BIT_3;
-    PA_CR2 = BIT_1 | BIT_2 | BIT_3;
+	//Configure PA1 - PA2 as output
+    PA_DDR = BIT_1 | BIT_2;
+    PA_CR1 = BIT_1 | BIT_2;
+    PA_CR2 = BIT_1 | BIT_2;
 
 	///////////////////////////////////////////////////////
     //PB4 - input, pullup - PB_CR1 = 1 for pullup, PB_DDR = 0 input
@@ -41,9 +41,6 @@ void GPIO_init(void)
 	//required to enable external interrupts
 	EXTI_CR1 = 0x08;		//PortB, falling edge
 	//EXTI_CR2 - PortD and PortE - don't care
-
-
-
 	
     //init all outputs low
     PB_ODR = 0x00;

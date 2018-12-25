@@ -34,7 +34,6 @@ void UART_parseArgs(uint8_t *orig, int* argc, char** argv);
 void UART_executeCommand(int argc, char** argv);
 int UART_parseCommand(char* cmd);
 
-
 void UART_ISR(void);
 
 

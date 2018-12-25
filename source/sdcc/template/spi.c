@@ -19,18 +19,20 @@ PC7 - SPI_MISO
 
 
 //////////////////////////////////
-//Configure PC4 - PC7 as SPI
+//Configure PC5 - PC7 as SPI
+//PA3 as CS pin.
 //Configure the SPI interface
 //idle clock low, data on a leading edge
 //MSB first
 void SPI_init(void)
 {
 	//Configure PC5 - PC7 as SPI
-	//Configure PC4 - as output
-	PC_DDR |= BIT_4;		//output
-	PC_CR1 |= BIT_4;
-	PC_CR2 |= BIT_4;
-	PC_ODR |= BIT_4;		//CS high
+
+	//Configure PA3 as output - CS PIN
+	PA_DDR |= BIT_3;		//output
+	PA_CR1 |= BIT_3;
+	PA_CR2 |= BIT_3;
+	PA_ODR |= BIT_3;		//CS high
 
 	//SPI output pins MOSI, SCK - output, push pull, fast
 	PC_DDR |= BIT_5;		//output
@@ -80,14 +82,14 @@ void SPI_init(void)
 //CS Low
 void SPI_select(void)
 {
-	PC_ODR &=~ BIT_4;
+	PA_ODR &=~ BIT_3;
 }
 
 //////////////////////////////////////
 //CS High
 void SPI_deselect(void)
 {
-	PC_ODR |= BIT_4;
+	PA_ODR |= BIT_3;
 }
 
 

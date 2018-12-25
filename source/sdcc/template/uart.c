@@ -25,13 +25,6 @@ static volatile uint8_t rxActiveBuffer = 0x01;
 static volatile uint8_t rxIndex = 0x00;
 
 
-static void UART_dummyDelay(uint32_t time)
-{
-    volatile uint32_t temp = time;
-    while (temp > 0)
-        temp--;
-}
-
 //////////////////////////////////////////
 //Configure UART
 //default rate = 115200
@@ -75,16 +68,9 @@ void UART_init(UART_BaudRate_t rate)
     UART1_BRR1 = brr1;      //set the baud rate
     UART1_BRR2 = brr2;      //set the baud rate
 
-	//UART1_CR1 	- control reg1 - do nothing
 	//UART1_CR2 	- control reg2 - interrupts / enable
 	UART1_CR2 = (UART1_TEN_BIT | UART1_REN_BIT);        //turn on tx and rx
     UART1_CR2 |= UART1_RIEN_BIT;                        //enable receive interrupts
-
-	//UART1_CR3 	- control reg3 - do nothing
-	//UART1_CR4 	- control reg4 - do nothing
-	//UART1_CR5 	- control reg5 - do nothing
-	//UART1_GTR 	- guard time register - do nothing
-	//UART1_PSCR 	- prescale register - do nothing	
 }
 
 
@@ -103,11 +89,9 @@ void UART_sendByte(uint8_t data)
 
 void UART_sendString(uint8_t* msg)
 {
-	uint16_t i = 0x00;
-	uint16_t len = strlen(msg);
-
-	for (i = 0 ; i < len ; i++)
-		UART_sendByte(msg[i]);
+    uint8_t counter = 0;
+    while ((msg[counter] != 0x00) && (counter < 128))
+        UART_sendByte(msg[counter++]);
 }
 
 
@@ -125,10 +109,9 @@ void UART_sendStringLength(uint8_t* buffer, uint16_t length)
 //Process the command
 void UART_processCommand(uint8_t* buffer, uint8_t length)
 {
-
 	int numArgs = 0x00;						        //destination numArgs
     int i = 0x00;
-	char* argv[UART_RX_BUFFER_SIZE];		        //array of char*
+	char* argv[UART_RX_BUFFER_SIZE];                //array of char*
 	uint8_t input[UART_RX_BUFFER_SIZE] = {0x00};	//modified original buffer
 
     //remove line endings
@@ -169,12 +152,14 @@ void UART_parseArgs(uint8_t *orig, int* argc, char** argv)
 }
 
 
+
 /////////////////////////////////////////////////
+//Execute the command
+//Get the command entry from CommandTable, 
+//run the cooresponding function pointer.
 void UART_executeCommand(int argc, char** argv)
 {
-
 	//get the command table entry from argv[0]
-	//cmd is the index of the command table array
 	int cmd = UART_parseCommand(argv[0]);
 
 	if (cmd >= 0)
@@ -213,16 +198,12 @@ int UART_parseCommand(char* cmd)
 }
 
 
-
-
-
-
-
-//////////////////////////////////////////
+/////////////////////////////////////////////
 //UART1_ISR - Called when incoming byte
 //is received.  Process: put byte into buffer
-//if line ending, swap buffers, post buffer
-//to processing function
+//if line ending, pass buffer to processing
+//function, swap buffers
+//
 void UART_ISR(void)
 {
     uint8_t data;

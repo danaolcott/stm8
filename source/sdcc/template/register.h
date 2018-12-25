@@ -69,6 +69,21 @@ Register Definitions
 #define TIM4_PSCR       *((volatile uint8_t*)0x5347)
 #define TIM4_ARR        *((volatile uint8_t*)0x5348)
 
+
+//Timer2 - General 16 bit timer
+#define TIM2_CR1        *((volatile uint8_t*)0x5300)
+#define TIM2_IER        *((volatile uint8_t*)0x5303)
+#define TIM2_SR1        *((volatile uint8_t*)0x5304)
+#define TIM2_SR2        *((volatile uint8_t*)0x5305)
+#define TIM2_EGR        *((volatile uint8_t*)0x5306)
+
+#define TIM2_CNTRH      *((volatile uint8_t*)0x530C)
+#define TIM2_CNTRL      *((volatile uint8_t*)0x530D)
+#define TIM2_PSCR       *((volatile uint8_t*)0x530E)
+#define TIM2_ARRH       *((volatile uint8_t*)0x530F)
+#define TIM2_ARRL       *((volatile uint8_t*)0x5310)
+
+
 //SPI
 #define SPI_BSY_FLAG	(1u << 7)	//busy = high
 #define SPI_TXE_FLAG	(1u << 1)	//tx empty = high
@@ -94,6 +109,10 @@ Register Definitions
 
 
 //Clock Configuration
+#define CLK_CCOEN_BIT       (1u << 0)
+#define CLK_CCORDY_BIT      (1u << 5)
+#define CLK_CCOBSY_BIT      (1u << 6)
+
 #define CLK_ICKR        *((volatile uint8_t*)0x50C0)
 #define CLK_ECKR        *((volatile uint8_t*)0x50C1)
 #define CLK_CMSR        *((volatile uint8_t*)0x50C3)

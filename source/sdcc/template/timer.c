@@ -69,3 +69,59 @@ void Timer4_ISR(void)
 
 
 
+///////////////////////////////////////////
+///////////////////////////////////////////
+//Timer2
+//Setup Timer2 same as TIM4, overflow on some
+//given frequency.
+void Timer2_init(void)
+{
+    TIM2_CR1 = URS_BIT;			//interrupt overflow / disable counter
+    TIM2_IER = UIE_BIT;			//enable update interrupt
+
+    TIM2_CNTRH = 0x00;			//reset the counter
+    TIM2_CNTRL = 0x00;			//reset the counter
+
+    TIM2_PSCR = 0x06;			//prescale bits 0-2 = 64
+
+    TIM2_ARRH = 0x00;			//auto reload - trim to 1khz
+    TIM2_ARRL = 0xF8;			//auto reload - trim to 1khz
+
+    TIM2_CR1 |= CEN_BIT;		//enable the counter
+
+}
+
+void Timer2_start(void)
+{
+    TIM2_IER = UIE_BIT;			//enable interrupt - overflow
+    TIM2_SR1 &=~ UIF_BIT;		//clear the interrupt flag
+
+    TIM2_CNTRH = 0x00;			//reset the counter
+    TIM2_CNTRL = 0x00;			//reset the counter
+
+    TIM2_CR1 |= CEN_BIT;		//enable the counter
+}
+
+
+void Timer2_stop(void)
+{
+    TIM2_CR1 &=~ CEN_BIT;		//disable the counter
+    TIM2_IER &=~ UIE_BIT;		//disable interrupts - overflow
+    TIM2_SR1 &=~ UIF_BIT;		//clear the interrupt flag
+    TIM2_CNTRH = 0x00;			//reset the counter
+    TIM2_CNTRL = 0x00;			//reset the counter
+}
+
+void Timer2_ISR(void)
+{
+//	TimeTick--;
+}
+
+
+
+
+
+
+
+
+
