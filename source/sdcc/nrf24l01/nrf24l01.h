@@ -17,18 +17,7 @@ Dana Olcott
 //data out of tx payload
 #define NRF24_CE_PULSE_LENGTH           ((uint16_t)10000)
 
-//Configure the TX address to match one of the
-//data pipe rx addresses.  When configured as Rx
-//enable the appropriate data pipe for listening
-//to the tx addresses
-#define NRF24_TX_ADDRESS                ((uint32_t)0x101010)
-
-#define NRF24_RX_ADDRESS_P0             ((uint32_t)0x101010)
-#define NRF24_RX_ADDRESS_P1             ((uint32_t)0x181818)
-#define NRF24_RX_ADDRESS_P2             ((uint32_t)0x202020)
-#define NRF24_RX_ADDRESS_P3             ((uint32_t)0x282828)
-#define NRF24_RX_ADDRESS_P4             ((uint32_t)0x303030)
-#define NRF24_RX_ADDRESS_P5             ((uint32_t)0x383838)
+#define NRF24_PIPE_WIDTH                ((uint8_t)8)
 
 
 
@@ -71,6 +60,8 @@ Dana Olcott
 #define NRF24_BIT_MAX_RT                (1u << 4)      //hit max # re-transmissions, write 1 to reenable tx
 #define NRF24_BIT_TX_FULL               (1u << 0)      //1 = tx full, 0 = tx empty
 
+//reg: FIFO_STATUS
+#define NRF24_BIT_RX_EMPTY              (1u << 0)       //1 = empty
 
 
 
@@ -144,6 +135,8 @@ typedef enum
 
 ////////////////////////////////////////////////
 //Prototypes
+void nrf24_dummyDelay(uint32_t delay);
+
 void nrf24_writeReg(uint8_t reg, uint8_t data);
 void nrf24_writeRegArray(uint8_t reg, uint8_t* data, uint8_t length);
 void nrf24_writeCmd(uint8_t command, uint8_t* data, uint8_t length);
@@ -161,12 +154,16 @@ void nrf24_ce_pulse(void);
 void nrf24_prime_rx_bit(uint8_t value);
 void nrf24_power_up_bit(uint8_t value);
 
-void nrf24_init(void);
+void nrf24_init(NRF24_Mode_t initialMode);
+
 void nrf24_setMode(NRF24_Mode_t mode);
 NRF24_Mode_t nrf24_getMode(void);
 
 uint8_t nrf24_getStatus(void);
 uint8_t nrf24_getFifoStatus(void);
+uint8_t nrf24_RxFifoHasData(void);
+
+
 
 void nrf24_flushRx(void);
 void nrf24_flushTx(void);

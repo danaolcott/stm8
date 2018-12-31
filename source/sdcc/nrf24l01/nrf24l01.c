@@ -25,11 +25,22 @@ Assume all data pipe addresses are 3 byte - use LSB only
 #include "nrf24l01.h"
 #include "register.h"
 #include "spi.h"
+#include "uart.h"           //retransmitting out serial port
 
 
 ///////////////////////////////////////////////
 //NRF24 Global Variables
 static NRF24_Mode_t mNRF24_Mode = NRF24_MODE_POWER_DOWN;
+
+
+//////////////////////////////////////////////
+//Dummy delay
+void nrf24_dummyDelay(uint32_t delay)
+{
+    volatile uint32_t temp = delay;
+    while (temp > 0)
+        temp--;
+}
 
 
 ////////////////////////////////////////////////
@@ -202,8 +213,8 @@ void nrf24_power_up_bit(uint8_t value)
 //PA1 - output - CE pin
 //PA2 - input / interrupt / falling edge trigger
 //
-//
-void nrf24_init(void)
+//Pass the final mode
+void nrf24_init(NRF24_Mode_t initialMode)
 {
 	//Configure PA1 - CE Pin as output
     PA_DDR = BIT_1;
@@ -229,11 +240,71 @@ void nrf24_init(void)
 
     /////////////////////////////////////////////////
     //Configure the mode, registers, etc
-    //
+    //Going through the registers.....
+    //CONFIG - 0011 1000
+    //enable rx fifo interrupt only, power down, 
+    //tx mode
+    nrf24_writeReg(NRF24_REG_CONFIG, 0x38);
+
+    //EN_AA - auto ack - default is all pipes enabled
+    //EN_RXADDR - default is all rx pipes off...
+    //SETUP_AW - default is 5 byte address widths
+    //SETUP_RETR - delay between packet retry - default = 250us
+    //disable retry - 0000 0000
+    nrf24_writeReg(NRF24_REG_SETUP_RETR, 0x00);
+
+    //RF_CH - Channel the radio opperates on - default
+
+    //RF_SETUP - 1Mbps, default power output, 
+    //0000 0 11 0
+    nrf24_writeReg(NRF24_REG_RF_SETUP, 0x06);
+
+    //STATUS - no change - clear all pending??
+
+    //pipe addresses - leave these alone
+    //RX_ADDR_P0 - Default 0xE7E7E7E7E7
+    //RX_ADDR_P1 - Default 0xC2C2C2C2C2
+    //RX_ADDR_P2 - Default 0xC3 (tx: C2C2C2C2 C3)
+    //RX_ADDR_P3 - Default 0xC4 (tx: C2C2C2C2 C4)
+    //RX_ADDR_P4 - Default 0xC5 (tx: C2C2C2C2 C5)
+    //RX_ADDR_P5 - Default 0xC6 (tx: C2C2C2C2 C6)
+
+    //pipe widths - set later    
+    //RX_PW_P0 - payload width pipe0 - default 0
+    //RX_PW_P1 - payload width pipe1 - default 0
+    //RX_PW_P2 - payload width pipe2 - default 0
+    //RX_PW_P3 - payload width pipe3 - default 0
+    //RX_PW_P4 - payload width pipe4 - default 0
+    //RX_PW_P5 - payload width pipe5 - default 0
+
+    //dynamic payload lengths - leave this alone for now
+    //FEATURE - leave this alone for now.
+
     nrf24_setMode(NRF24_MODE_POWER_DOWN);
 
+    //config P0 - disable auto ack, enable the pipe, set width to 8 bytes
+    nrf24_setPipeAutoAck(NRF24_DATA_PIPE_0, NRF24_PIPE_STATE_DISABLE);
+    nrf24_setPipeRxEnable(NRF24_DATA_PIPE_0, NRF24_PIPE_STATE_ENABLE);
 
+    //payload with rx = 8 bytes to trigger interrupt
+    nrf24_setRxPayLoadSize(NRF24_DATA_PIPE_0, 8);
 
+    //set mode to transmitter / receiver
+    nrf24_dummyDelay(50000);
+    nrf24_setMode(NRF24_MODE_STANDBY);
+    nrf24_dummyDelay(50000);
+
+    //which mode to go to from here...
+    switch(initialMode)
+    {
+        case NRF24_MODE_POWER_DOWN:     nrf24_setMode(NRF24_MODE_POWER_DOWN);   break;
+        case NRF24_MODE_STANDBY:        nrf24_setMode(NRF24_MODE_STANDBY);      break;
+        case NRF24_MODE_RX:             nrf24_setMode(NRF24_MODE_RX);           break;
+        case NRF24_MODE_TX:             nrf24_setMode(NRF24_MODE_TX);           break;
+        default:                        nrf24_setMode(NRF24_MODE_STANDBY);      break;
+    }
+
+    nrf24_dummyDelay(50000);
 }
 
 
@@ -326,6 +397,29 @@ uint8_t nrf24_getFifoStatus(void)
     return status;
 
 }
+
+
+
+//////////////////////////////////////////////
+//Check if the rx fifo has more data to read.
+//Read the fifo status reg - bit 0 - RX_EMPTY bit
+//if high, no more data to read.
+//
+uint8_t nrf24_RxFifoHasData(void)
+{
+    uint8_t bit, status = 0x00;
+    status = nrf24_readReg(NRF24_REG_FIFO_STATUS);
+    bit = status & NRF24_BIT_RX_EMPTY;
+
+    //bit value = 0 - Not Empty
+    if (!bit)
+        return 1;
+    else
+        return 0;
+}
+
+
+
 //////////////////////////////////////
 //Send command only - flush rx buffers
 void nrf24_flushRx(void)
@@ -405,6 +499,10 @@ void nrf24_writeTXPayLoad(uint8_t* buffer, uint8_t length)
 //
 //NOTE: for now, assume the buffer length = 32 bytes
 //
+//Length has to be the same length as the receiver pipe
+//if length is > NRF24_PIPE_WIDTH, 
+//set the length to pipe width
+//
 void nrf24_transmitData(uint8_t* buffer, uint8_t length)
 {
     uint8_t i = 0x00;
@@ -412,9 +510,9 @@ void nrf24_transmitData(uint8_t* buffer, uint8_t length)
     uint8_t txPacket[32] = {0x00};
     NRF24_Mode_t currentMode = NRF24_MODE_STANDBY;
 
-    //just send the first 32 bytes
-    if (len > 32)
-        len = 32;
+    //just send the first PIPE_WIDTH bytes
+    if (len != NRF24_PIPE_WIDTH)
+        len = NRF24_PIPE_WIDTH;
 
     for (i = 0 ; i < len ; i++)
         txPacket[i] = buffer[i];
@@ -425,13 +523,15 @@ void nrf24_transmitData(uint8_t* buffer, uint8_t length)
     nrf24_writeTXPayLoad(txPacket, 32);                 //write the data to the payload reg
     nrf24_ce_pulse();                                   //pulse the ce pin
 
+
+    /////////////////////////////////////
+    //while (!nrf_txPayLoadSendComplete())
     ///////////////////////////////////////
     //wait until the tx payload is empty??? 
     //////////////////////////////////////
 
     //return to the previous mode
-    nrf24_setMode(currentMode);
-    
+    nrf24_setMode(currentMode);    
 }
 
 
@@ -490,7 +590,6 @@ uint8_t nrf24_getRxPayLoadSize(NRF24_DataPipe_t pipe)
 
     //read the reg, capture bits 0:5, value & 0x3F
     numBytes = (nrf24_readReg(reg) & 0x3F);
-
     return numBytes;
 }
 
@@ -581,33 +680,44 @@ uint8_t nrf24_readRxData(uint8_t* data)
         return length;
     }
 
-
     return 0xFF;        //error
 }
 
 
 
-
-
-
-
-
-/////////////////////////////////////////////
-//called from the interrupt IRQ pin handler.
+////////////////////////////////////////////////////////
+//Called from the interrupt IRQ pin handler.
 //Mapped to pin PA2 - input, falling edge
-//Let's assume the interrupt pin is configured
-//for RX mode, ie, as data arrives, it pulls the 
-//pin low.
-//Read the rx payload
+//Three interrupt sources: data transmitted successfully,
+//max retransmissions reached, and data arrived in RX fifo.
+//each it's own bit.  Write one to clear the bit.  
+//
+//For now, only enable the RX_DR interrupt
+//Process - Read the status register
 void nrf24_ISR(void)
 {
+    uint8_t len = 0x00;
     uint8_t rxBuffer[32] = {0x00};
+    uint8_t status = nrf24_getStatus();
 
-    //test the interrupt bit and confirm it's from rx data available
+    //test for rx_dr packet available in the rx fifo
+    if (status & NRF24_BIT_RX_DR)
+    {
+        //read the rx fifo until there is no more
+        //data packets to read
+        while (nrf24_RxFifoHasData())
+        {
+            //read the packet
+            len = nrf24_readRxData(rxBuffer);
 
-
-
-    //Read the rx payload
+            //forward the packet out the uart
+            //void UART_sendStringLength(uint8_t* buffer, uint16_t length);
+            UART_sendStringLength(rxBuffer, len);
+        
+            //write 1 to the RX_DR 
+            nrf24_writeReg(NRF24_REG_STATUS, (status |= NRF24_BIT_RX_DR));
+        }
+    }
 }
 
 
