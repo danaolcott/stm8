@@ -31,6 +31,7 @@ Assume all data pipe addresses are 3 byte - use LSB only
 ///////////////////////////////////////////////
 //NRF24 Global Variables
 static NRF24_Mode_t mNRF24_Mode = NRF24_MODE_POWER_DOWN;
+static volatile uint8_t mTransmitCompleteFlag = 0;
 
 
 //////////////////////////////////////////////
@@ -241,10 +242,10 @@ void nrf24_init(NRF24_Mode_t initialMode)
     /////////////////////////////////////////////////
     //Configure the mode, registers, etc
     //Going through the registers.....
-    //CONFIG - 0011 1000
-    //enable rx fifo interrupt only, power down, 
+    //CONFIG - 0001 1000
+    //enable rx and tx fifo interrupts only, power down, 
     //tx mode
-    nrf24_writeReg(NRF24_REG_CONFIG, 0x38);
+    nrf24_writeReg(NRF24_REG_CONFIG, 0x18);
 
     //EN_AA - auto ack - default is all pipes enabled
     //EN_RXADDR - default is all rx pipes off...
@@ -420,6 +421,25 @@ uint8_t nrf24_RxFifoHasData(void)
 
 
 
+/////////////////////////////////////////
+//TxFifo Has Space
+//returns 1 if there is an empty space
+//in the fifo
+//read the status reg, bit NRF24_BIT_TX_FULL
+//reg returns 1 if full
+uint8_t nrf24_TxFifoHasSpace(void)
+{
+    uint8_t status = nrf24_getStatus();
+
+    //full = high bit
+    if (status & NRF24_BIT_TX_FULL)
+        return 0;
+    else
+        return 1;
+}
+
+
+
 //////////////////////////////////////
 //Send command only - flush rx buffers
 void nrf24_flushRx(void)
@@ -523,12 +543,12 @@ void nrf24_transmitData(uint8_t* buffer, uint8_t length)
     nrf24_writeTXPayLoad(txPacket, 32);                 //write the data to the payload reg
     nrf24_ce_pulse();                                   //pulse the ce pin
 
+    //clear the transmit complete flag - this gets set
+    //in the ISR when transmission is complete
+    mTransmitCompleteFlag = 0;
 
-    /////////////////////////////////////
-    //while (!nrf_txPayLoadSendComplete())
-    ///////////////////////////////////////
-    //wait until the tx payload is empty??? 
-    //////////////////////////////////////
+    //wait until the transmission is complete
+    while (!mTransmitCompleteFlag){};
 
     //return to the previous mode
     nrf24_setMode(currentMode);    
@@ -692,8 +712,8 @@ uint8_t nrf24_readRxData(uint8_t* data)
 //max retransmissions reached, and data arrived in RX fifo.
 //each it's own bit.  Write one to clear the bit.  
 //
-//For now, only enable the RX_DR interrupt
-//Process - Read the status register
+//For now, only enable the RX_DR interrupt and TX_DS interrupt
+//
 void nrf24_ISR(void)
 {
     uint8_t len = 0x00;
@@ -717,6 +737,18 @@ void nrf24_ISR(void)
             //write 1 to the RX_DR 
             nrf24_writeReg(NRF24_REG_STATUS, (status |= NRF24_BIT_RX_DR));
         }
+    }
+
+    //test if the transmit - data sent interrupt triggered
+    else if (status & NRF24_BIT_TX_DS)
+    {
+        //set the transmit complete flag - read in the transmit function
+        mTransmitCompleteFlag = 1;
+        //post a message over the usart about transmit complete
+        UART_sendString("Transmission Complete...\n");
+        //write 1 to clear the transmit complete flag
+        nrf24_writeReg(NRF24_REG_STATUS, (status |= NRF24_BIT_TX_DS));
+
     }
 }
 

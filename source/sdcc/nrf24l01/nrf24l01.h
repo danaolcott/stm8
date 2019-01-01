@@ -163,6 +163,7 @@ uint8_t nrf24_getStatus(void);
 uint8_t nrf24_getFifoStatus(void);
 uint8_t nrf24_RxFifoHasData(void);
 
+uint8_t nrf24_TxFifoHasSpace(void);             //1 = empty spaces in the tx fifo
 
 
 void nrf24_flushRx(void);
