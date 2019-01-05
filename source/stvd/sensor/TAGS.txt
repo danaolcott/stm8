@@ -46,12 +46,12 @@ CLK_PCKENR2	register.h	150;"	macro
 CLK_SWCR	register.h	145;"	macro
 CLK_SWIMCCR	register.h	152;"	macro
 CLK_SWR	register.h	144;"	macro
-CLOCK_SOURCE_FCPU	main.c	57;"	enumerator	enum:__anon7	file:
-CLOCK_SOURCE_FMASTER	main.c	56;"	enumerator	enum:__anon7	file:
-CLOCK_SPEED_16MHZ	main.c	50;"	enumerator	enum:__anon6	file:
-CLOCK_SPEED_2MHZ	main.c	47;"	enumerator	enum:__anon6	file:
-CLOCK_SPEED_4MHZ	main.c	48;"	enumerator	enum:__anon6	file:
-CLOCK_SPEED_8MHZ	main.c	49;"	enumerator	enum:__anon6	file:
+CLOCK_SOURCE_FCPU	main.c	59;"	enumerator	enum:__anon7	file:
+CLOCK_SOURCE_FMASTER	main.c	58;"	enumerator	enum:__anon7	file:
+CLOCK_SPEED_16MHZ	main.c	52;"	enumerator	enum:__anon6	file:
+CLOCK_SPEED_2MHZ	main.c	49;"	enumerator	enum:__anon6	file:
+CLOCK_SPEED_4MHZ	main.c	50;"	enumerator	enum:__anon6	file:
+CLOCK_SPEED_8MHZ	main.c	51;"	enumerator	enum:__anon6	file:
 CPU_A	register.h	27;"	macro
 CPU_CCR	register.h	40;"	macro
 CPU_CCR_BIT_I0	register.h	45;"	macro
@@ -66,12 +66,12 @@ CPU_XH	register.h	31;"	macro
 CPU_XL	register.h	32;"	macro
 CPU_YH	register.h	34;"	macro
 CPU_YL	register.h	35;"	macro
-ClockSource_t	main.c	58;"	typedef	typeref:enum:__anon7	file:
-ClockSpeed_t	main.c	51;"	typedef	typeref:enum:__anon6	file:
-Clock_init	main.c	121;"	function	signature:(ClockSpeed_t speed)
-Clock_init	main.c	62;"	prototype	file:	signature:(ClockSpeed_t speed)
-Clock_outputConfig	main.c	150;"	function	signature:(ClockSource_t source)
-Clock_outputConfig	main.c	63;"	prototype	file:	signature:(ClockSource_t source)
+ClockSource_t	main.c	60;"	typedef	typeref:enum:__anon7	file:
+ClockSpeed_t	main.c	53;"	typedef	typeref:enum:__anon6	file:
+Clock_init	main.c	125;"	function	signature:(ClockSpeed_t speed)
+Clock_init	main.c	64;"	prototype	file:	signature:(ClockSpeed_t speed)
+Clock_outputConfig	main.c	154;"	function	signature:(ClockSource_t source)
+Clock_outputConfig	main.c	65;"	prototype	file:	signature:(ClockSource_t source)
 CommandItem	clitable.h	22;"	typedef	typeref:struct:__anon5
 CommandTable	clitable.c	28;"	variable
 EEPROM_BASE_ADDRESS	register.h	127;"	macro
@@ -88,8 +88,8 @@ EXTI2_IRQ	register.h	210;"	macro
 EXTI3_IRQ	register.h	211;"	macro
 EXTI_CR1	register.h	75;"	macro
 EXTI_CR2	register.h	76;"	macro
-EnableInterrupts	main.c	106;"	function	signature:(void)
-EnableInterrupts	main.c	65;"	prototype	file:	signature:(void)
+EnableInterrupts	main.c	110;"	function	signature:(void)
+EnableInterrupts	main.c	67;"	prototype	file:	signature:(void)
 FLASH_DUKR	register.h	133;"	macro
 FLASH_DUL_BIT	register.h	128;"	macro
 FLASH_EOP_BIT	register.h	129;"	macro
@@ -236,23 +236,23 @@ SPI_ICR	register.h	119;"	macro
 SPI_RXCRCR	register.h	123;"	macro
 SPI_RXNE_FLAG	register.h	115;"	macro
 SPI_SR	register.h	120;"	macro
-SPI_SendByte	spi.c	121;"	function	signature:(uint8_t data)
+SPI_SendByte	spi.c	131;"	function	signature:(uint8_t data)
 SPI_SendByte	spi.h	19;"	prototype	signature:(uint8_t data)
-SPI_SendMultiByte	spi.c	131;"	function	signature:(uint8_t* buffer, uint16_t length)
+SPI_SendMultiByte	spi.c	141;"	function	signature:(uint8_t* buffer, uint16_t length)
 SPI_SendMultiByte	spi.h	20;"	prototype	signature:(uint8_t* buffer, uint16_t length)
-SPI_Send_Receive	spi.c	146;"	function	signature:(uint8_t* txBuffer, uint16_t txLength, uint8_t* rxBuffer, uint16_t rxLength)
+SPI_Send_Receive	spi.c	156;"	function	signature:(uint8_t* txBuffer, uint16_t txLength, uint8_t* rxBuffer, uint16_t rxLength)
 SPI_Send_Receive	spi.h	21;"	prototype	signature:(uint8_t* txBuffer, uint16_t txLength, uint8_t* rxBuffer, uint16_t rxLength)
 SPI_TXCRCR	register.h	124;"	macro
 SPI_TXE_FLAG	register.h	114;"	macro
-SPI_deselect	spi.c	90;"	function	signature:(void)
+SPI_deselect	spi.c	98;"	function	signature:(void)
 SPI_deselect	spi.h	16;"	prototype	signature:(void)
 SPI_init	spi.c	27;"	function	signature:(void)
 SPI_init	spi.h	14;"	prototype	signature:(void)
-SPI_rx	spi.c	110;"	function	signature:(void)
+SPI_rx	spi.c	119;"	function	signature:(void)
 SPI_rx	spi.h	18;"	prototype	signature:(void)
-SPI_select	spi.c	83;"	function	signature:(void)
+SPI_select	spi.c	91;"	function	signature:(void)
 SPI_select	spi.h	15;"	prototype	signature:(void)
-SPI_tx	spi.c	98;"	function	signature:(uint8_t data)
+SPI_tx	spi.c	106;"	function	signature:(uint8_t data)
 SPI_tx	spi.h	17;"	prototype	signature:(uint8_t data)
 TIE_BIT	register.h	84;"	macro
 TIF_BIT	register.h	86;"	macro
@@ -413,74 +413,74 @@ interrupt_instruction	stm8_interrupt_vector.c	25;"	member	struct:interrupt_vecto
 interrupt_vector	stm8_interrupt_vector.c	24;"	struct	file:
 intmax_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	41;"	typedef
 intptr_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	36;"	typedef
-mNRF24_Mode	nrf24l01.c	33;"	variable	file:
-mTransmitCompleteFlag	nrf24l01.c	34;"	variable	file:
-main	main.c	67;"	function
+mNRF24_Mode	nrf24l01.c	43;"	variable	file:
+mTransmitCompleteFlag	nrf24l01.c	44;"	variable	file:
+main	main.c	69;"	function
 memchr	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	34;"	prototype	signature:(void *s, char c, unsigned int n)
 memcmp	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	28;"	prototype	signature:(void *s1, void *s2, unsigned int n)
 memcpy	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	35;"	prototype	signature:(void *s1, void *s2, unsigned int n)
 memmove	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	36;"	prototype	signature:(void *s1, void *s2, unsigned int n)
 memset	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	37;"	prototype	signature:(void *s, char c, unsigned int n)
-nrf24_ISR	nrf24l01.c	717;"	function	signature:(void)
-nrf24_ISR	nrf24l01.h	193;"	prototype	signature:(void)
-nrf24_RxFifoHasData	nrf24l01.c	409;"	function	signature:(void)
-nrf24_RxFifoHasData	nrf24l01.h	164;"	prototype	signature:(void)
-nrf24_TxFifoHasSpace	nrf24l01.c	430;"	function	signature:(void)
-nrf24_TxFifoHasSpace	nrf24l01.h	166;"	prototype	signature:(void)
-nrf24_ce_high	nrf24l01.c	154;"	function	signature:(void)
+nrf24_ISR	nrf24l01.c	692;"	function	signature:(void)
+nrf24_ISR	nrf24l01.h	196;"	prototype	signature:(void)
+nrf24_RxFifoHasData	nrf24l01.c	359;"	function	signature:(void)
+nrf24_RxFifoHasData	nrf24l01.h	167;"	prototype	signature:(void)
+nrf24_TxFifoHasSpace	nrf24l01.c	380;"	function	signature:(void)
+nrf24_TxFifoHasSpace	nrf24l01.h	169;"	prototype	signature:(void)
+nrf24_ce_high	nrf24l01.c	164;"	function	signature:(void)
 nrf24_ce_high	nrf24l01.h	150;"	prototype	signature:(void)
-nrf24_ce_low	nrf24l01.c	159;"	function	signature:(void)
+nrf24_ce_low	nrf24l01.c	169;"	function	signature:(void)
 nrf24_ce_low	nrf24l01.h	151;"	prototype	signature:(void)
-nrf24_ce_pulse	nrf24l01.c	169;"	function	signature:(void)
+nrf24_ce_pulse	nrf24l01.c	179;"	function	signature:(void)
 nrf24_ce_pulse	nrf24l01.h	152;"	prototype	signature:(void)
-nrf24_dummyDelay	nrf24l01.c	39;"	function	signature:(uint32_t delay)
+nrf24_dummyDelay	nrf24l01.c	49;"	function	signature:(uint32_t delay)
 nrf24_dummyDelay	nrf24l01.h	138;"	prototype	signature:(uint32_t delay)
-nrf24_flushRx	nrf24l01.c	445;"	function	signature:(void)
-nrf24_flushRx	nrf24l01.h	169;"	prototype	signature:(void)
-nrf24_flushTx	nrf24l01.c	454;"	function	signature:(void)
-nrf24_flushTx	nrf24l01.h	170;"	prototype	signature:(void)
-nrf24_getFifoStatus	nrf24l01.c	395;"	function	signature:(void)
-nrf24_getFifoStatus	nrf24l01.h	163;"	prototype	signature:(void)
-nrf24_getMode	nrf24l01.c	377;"	function	signature:(void)
-nrf24_getMode	nrf24l01.h	160;"	prototype	signature:(void)
-nrf24_getRxPayLoadSize	nrf24l01.c	594;"	function	signature:(NRF24_DataPipe_t pipe)
-nrf24_getRxPayLoadSize	nrf24l01.h	182;"	prototype	signature:(NRF24_DataPipe_t pipe)
-nrf24_getRxPipeToRead	nrf24l01.c	625;"	function	signature:(void)
-nrf24_getRxPipeToRead	nrf24l01.h	184;"	prototype	signature:(void)
-nrf24_getStatus	nrf24l01.c	387;"	function	signature:(void)
-nrf24_getStatus	nrf24l01.h	162;"	prototype	signature:(void)
-nrf24_init	nrf24l01.c	218;"	function	signature:(NRF24_Mode_t initialMode)
-nrf24_init	nrf24l01.h	157;"	prototype	signature:(NRF24_Mode_t initialMode)
-nrf24_power_up_bit	nrf24l01.c	197;"	function	signature:(uint8_t value)
-nrf24_power_up_bit	nrf24l01.h	155;"	prototype	signature:(uint8_t value)
-nrf24_prime_rx_bit	nrf24l01.c	185;"	function	signature:(uint8_t value)
+nrf24_flushRx	nrf24l01.c	395;"	function	signature:(void)
+nrf24_flushRx	nrf24l01.h	172;"	prototype	signature:(void)
+nrf24_flushTx	nrf24l01.c	404;"	function	signature:(void)
+nrf24_flushTx	nrf24l01.h	173;"	prototype	signature:(void)
+nrf24_getFifoStatus	nrf24l01.c	345;"	function	signature:(void)
+nrf24_getFifoStatus	nrf24l01.h	166;"	prototype	signature:(void)
+nrf24_getMode	nrf24l01.h	163;"	prototype	signature:(void)
+nrf24_getRxPayLoadSize	nrf24l01.c	568;"	function	signature:(NRF24_DataPipe_t pipe)
+nrf24_getRxPayLoadSize	nrf24l01.h	185;"	prototype	signature:(NRF24_DataPipe_t pipe)
+nrf24_getRxPipeToRead	nrf24l01.c	599;"	function	signature:(void)
+nrf24_getRxPipeToRead	nrf24l01.h	187;"	prototype	signature:(void)
+nrf24_getStatus	nrf24l01.c	335;"	function	signature:(void)
+nrf24_getStatus	nrf24l01.h	165;"	prototype	signature:(void)
+nrf24_init	nrf24l01.c	237;"	function	signature:(NRF24_Mode_t initialMode)
+nrf24_init	nrf24l01.h	160;"	prototype	signature:(NRF24_Mode_t initialMode)
+nrf24_power_down	nrf24l01.c	216;"	function	signature:(void)
+nrf24_power_down	nrf24l01.h	157;"	prototype	signature:(void)
+nrf24_power_up	nrf24l01.c	208;"	function	signature:(void)
+nrf24_power_up	nrf24l01.h	156;"	prototype	signature:(void)
+nrf24_prime_rx_bit	nrf24l01.c	195;"	function	signature:(uint8_t value)
 nrf24_prime_rx_bit	nrf24l01.h	154;"	prototype	signature:(uint8_t value)
-nrf24_readReg	nrf24l01.c	111;"	function	signature:(uint8_t reg)
+nrf24_readReg	nrf24l01.c	121;"	function	signature:(uint8_t reg)
 nrf24_readReg	nrf24l01.h	144;"	prototype	signature:(uint8_t reg)
-nrf24_readRegArray	nrf24l01.c	132;"	function	signature:(uint8_t reg, uint8_t* data, uint8_t length)
+nrf24_readRegArray	nrf24l01.c	142;"	function	signature:(uint8_t reg, uint8_t* data, uint8_t length)
 nrf24_readRegArray	nrf24l01.h	145;"	prototype	signature:(uint8_t reg, uint8_t* data, uint8_t length)
-nrf24_readRxData	nrf24l01.c	670;"	function	signature:(uint8_t* data)
-nrf24_readRxData	nrf24l01.h	187;"	prototype	signature:(uint8_t* data)
-nrf24_readRxPayLoad	nrf24l01.c	645;"	function	signature:(uint8_t* data, uint8_t length)
-nrf24_readRxPayLoad	nrf24l01.h	186;"	prototype	signature:(uint8_t* data, uint8_t length)
-nrf24_setMode	nrf24l01.c	316;"	function	signature:(NRF24_Mode_t mode)
-nrf24_setMode	nrf24l01.h	159;"	prototype	signature:(NRF24_Mode_t mode)
-nrf24_setPipeAutoAck	nrf24l01.c	466;"	function	signature:(NRF24_DataPipe_t pipe, NRF24_PipeState_t state)
-nrf24_setPipeAutoAck	nrf24l01.h	172;"	prototype	signature:(NRF24_DataPipe_t pipe, NRF24_PipeState_t state)
-nrf24_setPipeRxEnable	nrf24l01.c	482;"	function	signature:(NRF24_DataPipe_t pipe, NRF24_PipeState_t state)
-nrf24_setPipeRxEnable	nrf24l01.h	173;"	prototype	signature:(NRF24_DataPipe_t pipe, NRF24_PipeState_t state)
-nrf24_setRxPayLoadSize	nrf24l01.c	567;"	function	signature:(NRF24_DataPipe_t pipe, uint8_t numBytes)
-nrf24_setRxPayLoadSize	nrf24l01.h	183;"	prototype	signature:(NRF24_DataPipe_t pipe, uint8_t numBytes)
-nrf24_transmitData	nrf24l01.c	526;"	function	signature:(uint8_t* buffer, uint8_t length)
-nrf24_transmitData	nrf24l01.h	177;"	prototype	signature:(uint8_t* buffer, uint8_t length)
-nrf24_writeCmd	nrf24l01.c	91;"	function	signature:(uint8_t command, uint8_t* data, uint8_t length)
+nrf24_readRxData	nrf24l01.c	644;"	function	signature:(uint8_t* data)
+nrf24_readRxData	nrf24l01.h	190;"	prototype	signature:(uint8_t* data)
+nrf24_readRxPayLoad	nrf24l01.c	619;"	function	signature:(uint8_t* data, uint8_t length)
+nrf24_readRxPayLoad	nrf24l01.h	189;"	prototype	signature:(uint8_t* data, uint8_t length)
+nrf24_setMode	nrf24l01.h	162;"	prototype	signature:(NRF24_Mode_t mode)
+nrf24_setPipeAutoAck	nrf24l01.c	416;"	function	signature:(NRF24_DataPipe_t pipe, NRF24_PipeState_t state)
+nrf24_setPipeAutoAck	nrf24l01.h	175;"	prototype	signature:(NRF24_DataPipe_t pipe, NRF24_PipeState_t state)
+nrf24_setPipeRxEnable	nrf24l01.c	432;"	function	signature:(NRF24_DataPipe_t pipe, NRF24_PipeState_t state)
+nrf24_setPipeRxEnable	nrf24l01.h	176;"	prototype	signature:(NRF24_DataPipe_t pipe, NRF24_PipeState_t state)
+nrf24_setRxPayLoadSize	nrf24l01.c	541;"	function	signature:(NRF24_DataPipe_t pipe, uint8_t numBytes)
+nrf24_setRxPayLoadSize	nrf24l01.h	186;"	prototype	signature:(NRF24_DataPipe_t pipe, uint8_t numBytes)
+nrf24_transmitData	nrf24l01.c	483;"	function	signature:(uint8_t* buffer, uint8_t length)
+nrf24_transmitData	nrf24l01.h	180;"	prototype	signature:(uint8_t* buffer, uint8_t length)
+nrf24_writeCmd	nrf24l01.c	101;"	function	signature:(uint8_t command, uint8_t* data, uint8_t length)
 nrf24_writeCmd	nrf24l01.h	142;"	prototype	signature:(uint8_t command, uint8_t* data, uint8_t length)
-nrf24_writeReg	nrf24l01.c	52;"	function	signature:(uint8_t reg, uint8_t data)
+nrf24_writeReg	nrf24l01.c	62;"	function	signature:(uint8_t reg, uint8_t data)
 nrf24_writeReg	nrf24l01.h	140;"	prototype	signature:(uint8_t reg, uint8_t data)
-nrf24_writeRegArray	nrf24l01.c	70;"	function	signature:(uint8_t reg, uint8_t* data, uint8_t length)
+nrf24_writeRegArray	nrf24l01.c	80;"	function	signature:(uint8_t reg, uint8_t* data, uint8_t length)
 nrf24_writeRegArray	nrf24l01.h	141;"	prototype	signature:(uint8_t reg, uint8_t* data, uint8_t length)
-nrf24_writeTXPayLoad	nrf24l01.c	502;"	function	signature:(uint8_t* buffer, uint8_t length)
-nrf24_writeTXPayLoad	nrf24l01.h	176;"	prototype	signature:(uint8_t* buffer, uint8_t length)
+nrf24_writeTXPayLoad	nrf24l01.c	452;"	function	signature:(uint8_t* buffer, uint8_t length)
+nrf24_writeTXPayLoad	nrf24l01.h	179;"	prototype	signature:(uint8_t* buffer, uint8_t length)
 offsetof	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	23;"	macro
 printf	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	17;"	prototype	signature:(char *format, ...)
 ptrdiff_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	17;"	typedef

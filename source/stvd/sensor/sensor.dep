@@ -1,0 +1,32 @@
+;	STMicroelectronics dependencies file
+
+[Version]
+Keyword=ST7Project
+Number=1.3
+
+[Root.Source Files.nrf24l01.c.Config.0]
+ExternDep= nrf24l01.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\string.h"  nrf24l01.h register.h spi.h uart.h
+
+[Root.Source Files.uart.c.Config.0]
+ExternDep= uart.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\string.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  register.h uart.h cliTable.h
+
+[Root.Source Files.spi.c.Config.0]
+ExternDep= spi.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h" spi.h  register.h
+
+[Root.Source Files.clitable.c.Config.0]
+ExternDep= clitable.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h" cliTable.h  cliFunctions.h
+
+[Root.Source Files.clifunctions.c.Config.0]
+ExternDep= clifunctions.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\string.h"  cliFunctions.h cliTable.h uart.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.Source Files.timer.c.Config.0]
+ExternDep= timer.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h" register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h" timer.h
+
+[Root.Source Files.gpio.c.Config.0]
+ExternDep= gpio.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  register.h gpio.h
+
+[Root.Source Files.main.c.Config.0]
+ExternDep= main.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  register.h gpio.h timer.h spi.h uart.h nrf24l01.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"
+
+[Root.Source Files.stm8_interrupt_vector.c.Config.0]
+ExternDep= stm8_interrupt_vector.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h" gpio.h  register.h "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h" timer.h  uart.h nrf24l01.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"

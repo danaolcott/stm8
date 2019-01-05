@@ -14,8 +14,8 @@ Dana Olcott
 #include <stdint.h>
 
 //pulse length of the CE pin, for use with transmitting
-//data out of tx payload
-#define NRF24_CE_PULSE_LENGTH           ((uint16_t)10000)
+//data out of tx payload.  at cpu = 16mhz, this is about 10ms
+#define NRF24_CE_PULSE_LENGTH           ((uint16_t)5000)
 
 #define NRF24_PIPE_WIDTH                ((uint8_t)8)
 
@@ -152,7 +152,10 @@ void nrf24_ce_low(void);
 void nrf24_ce_pulse(void);
 
 void nrf24_prime_rx_bit(uint8_t value);
-void nrf24_power_up_bit(uint8_t value);
+
+void nrf24_power_up(void);
+void nrf24_power_down(void);
+
 
 void nrf24_init(NRF24_Mode_t initialMode);
 

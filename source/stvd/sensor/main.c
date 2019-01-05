@@ -19,7 +19,9 @@ Pinout:
 
 PB4 - User Button - Interrupt / Falling
 PB5 - User LED
-PC5 - PC7, PA3 - SPI - idle clock low, leading edge for data
+PC5 - PC7, PC3 - SPI - idle clock low, leading edge for data
+PC3 - CS pin for SPI
+
 PD5 - PD6 - UART1 (TX/RX)
 
 PA1 - PA2 - Control lines for NRF24L01
@@ -65,7 +67,16 @@ void Clock_outputConfig(ClockSource_t source);
 void EnableInterrupts(void);
 
 main()
-{
+{ 
+    //vars
+//    uint8_t status, pipe2, pipe3, pipe4, pipe5, status_alt = 0x00;
+    uint8_t pw0, pw1, pw2, pw3, pw4, pw5 = 0x00;
+    volatile uint8_t fifo, status, config = 0x00;
+    uint8_t txData[8] = "Hello123";
+    uint8_t buffer[50] = {0x00};
+    int n;
+//    uint8_t result = 0x00;
+    
     //enable global interrupts
     EnableInterrupts();
     
@@ -84,19 +95,16 @@ main()
     
     nrf24_init(NRF24_MODE_RX);
     
-    
     while (1)
     {
         LED_Toggle();
-//        void UART_sendString(uint8_t* msg);
-        UART_sendString("Hello from UART at 57600\r\n");
+//        nrf24_transmitData(txData, 8);
+//        status = nrf24_getStatus();
+//        fifo = nrf24_getFifoStatus();
+//        config = nrf24_readReg(NRF24_REG_CONFIG);
         
         delay_ms(2000);
-        
-        
-        
     }
-
 }
 
 
