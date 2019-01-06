@@ -27,7 +27,7 @@ static volatile uint8_t rxIndex = 0x00;
 
 //////////////////////////////////////////
 //Configure UART
-//default rate = 115200
+//default rate = 57600
 void UART_init(UART_BaudRate_t rate)
 {
 	uint8_t brr1 = 0x00;
@@ -54,15 +54,8 @@ void UART_init(UART_BaudRate_t rate)
 	switch(rate)
 	{
 		case BAUD_RATE_9600:	brr1 = 0x68;		brr2 = 0x03;		break;
-		case BAUD_RATE_19200:	brr1 = 0x34;		brr2 = 0x01;		break;
 		case BAUD_RATE_57600:	brr1 = 0x11;		brr2 = 0x06;		break;
-
-		case BAUD_RATE_115200:	brr1 = 0x08;		brr2 = 0x0B;		break;
-//		case BAUD_RATE_115200:	brr1 = 0x08;		brr2 = 0x0A;		break;
-
-		case BAUD_RATE_230400:	brr1 = 0x04;		brr2 = 0x05;		break;
-		case BAUD_RATE_921600:	brr1 = 0x01;		brr2 = 0x01;		break;
-		default:			    brr1 = 0x08;		brr2 = 0x0B;		break;		
+		default:			    brr1 = 0x11;		brr2 = 0x06;		break;		
 	}
 
     UART1_BRR1 = brr1;      //set the baud rate
@@ -131,23 +124,43 @@ void UART_processCommand(uint8_t* buffer, uint8_t length)
 
 
 
-///////////////////////////////////////////////////////
-//Split original buffer into array of char* using
-//strtok and get number of arguments.
-//Original buffer is modified
+/////////////////////////////////////////////////////////
+//UART_parseArgs
+//orig - initial buffer that is modified.
+//argc is the number of args
+//argv - array of pointers. - point to the first 
+//char after a null char
+//orig is assumed to be null terminated
 void UART_parseArgs(uint8_t *orig, int* argc, char** argv)
 {
 	int numArgs = 0x00;
-	const char* tokString = " ,:;";
+    int i = 0x00;
+    int counter = 0x00;
+        uint8_t c = 0x00;
+        
+    while (orig[counter] != 0x00)
+    {
+        c = orig[counter];
+        if ((c == ' ') || (c == ','))
+            orig[counter] = 0x00;
+            
+        counter++;
+    }
 
-	char* token = strtok((char*)orig, tokString);
+    //populate the array of char* by placing a 
+    //pointer at the first char of each token
 
-	while (token != NULL)
-	{
-		argv[numArgs++] = token;
-		token = strtok(NULL, tokString);
-	}
-
+    //first arg
+    argv[numArgs++] = &orig[0];
+    
+    //compare current and one byte ahead
+    for (i = 0 ; i < (counter - 1) ; i++)
+    {
+        //if the current == null and the next one is not null
+        if ((orig[i] == 0x00) && (orig[i + 1] > 0x00))
+            argv[numArgs++] = &orig[i + 1];
+    }
+    
 	*argc = numArgs;
 }
 
@@ -225,6 +238,8 @@ void UART_ISR(void)
                 {
                     //end the string and process
                     rxBuffer1[rxIndex] = 0x00;
+                    
+                    //set data ready flat - rxBuffer1
 					UART_processCommand(rxBuffer1, rxIndex);
 
                     rxIndex = 0x00;

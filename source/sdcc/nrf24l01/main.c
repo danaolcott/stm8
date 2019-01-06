@@ -34,8 +34,12 @@ with interrupt on update
 #include "timer.h"
 #include "spi.h"
 #include "uart.h"
-
+#include "adc.h"
 #include "nrf24l01.h"
+#include "utility.h"
+
+
+#define CONFIG_TRANSMITTER      1
 
 
 //////////////////////////////////////////////////
@@ -94,6 +98,13 @@ typedef enum
 void Clock_init(ClockSpeed_t speed);
 void Clock_outputConfig(ClockSource_t source);
 
+
+//////////////////////////////////////
+//Globals
+uint8_t txBuffer[NRF24_PIPE_WIDTH] = {0x00};
+uint16_t adcMv = 0x00;
+uint8_t lsb, msb = 0x00;
+
 ////////////////////////////////////
 //
 int main()
@@ -105,16 +116,42 @@ int main()
     Timer4_init();          //timebase
     Timer2_init();          //extra timer
     Timer2_stop();
-
     SPI_init();
     UART_init(BAUD_RATE_57600);
-
     nrf24_init(NRF24_MODE_RX);
+    ADC_init();
+
+#ifdef CONFIG_TRANSMITTER
+    nrf24_init(NRF24_MODE_TX);
+#else
+    nrf24_init(NRF24_MODE_RX);
+#endif
+
 
     while (1)
     {
         LED_Toggle();
-        delay_ms(1000);
+
+#ifdef CONFIG_TRANSMITTER
+
+        //Transmitter - ADC Channel 3
+        //uint8_t txBuffer[NRF24_PIPE_WIDTH] = {0x00};
+        //uint16_t ADC_readMilliVolts(ADC_Channel_t ch);
+        adcMv = ADC_readMilliVolts(ADC_CHANNEL_3);
+        
+        lsb = adcMv & 0xFF;
+        msb = (adcMv >> 8) & 0xFF;
+
+        txBuffer[0] = 0xFE;
+        txBuffer[1] = MID_ADC_TEMP1;
+        txBuffer[2] = lsb;
+        txBuffer[3] = msb;
+
+        //void nrf24_transmitData(uint8_t pipe, uint8_t* buffer, uint8_t length)
+        nrf24_transmitData(0, txBuffer, 8);
+#endif
+
+        delay_ms(5000);
     }
 
     return 0;

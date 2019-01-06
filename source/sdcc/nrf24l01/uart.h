@@ -18,11 +18,7 @@ UART Controller File for the STM8SF103 Processor.
 typedef enum
 {
 	BAUD_RATE_9600,
-	BAUD_RATE_19200,
 	BAUD_RATE_57600,
-	BAUD_RATE_115200,
-	BAUD_RATE_230400,
-	BAUD_RATE_921600
 }UART_BaudRate_t;
 
 void UART_init(UART_BaudRate_t rate);
