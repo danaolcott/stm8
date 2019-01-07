@@ -20,7 +20,7 @@ PC7 - SPI_MISO
 
 //////////////////////////////////
 //Configure PC5 - PC7 as SPI
-//PA3 as CS pin.
+//PC3 as CS pin.
 //Configure the SPI interface
 //idle clock low, data on a leading edge
 //MSB first
@@ -28,11 +28,11 @@ void SPI_init(void)
 {
 	//Configure PC5 - PC7 as SPI
 
-	//Configure PA3 as output - CS PIN
-	PA_DDR |= BIT_3;		//output
-	PA_CR1 |= BIT_3;
-	PA_CR2 |= BIT_3;
-	PA_ODR |= BIT_3;		//CS high
+	//Configure PC3 as output - CS PIN
+	PC_DDR |= BIT_3;		//output
+	PC_CR1 |= BIT_3;
+	PC_CR2 |= BIT_3;
+	PC_ODR |= BIT_3;		//CS high
 
 	//SPI output pins MOSI, SCK - output, push pull, fast
 	PC_DDR |= BIT_5;		//output
@@ -57,14 +57,22 @@ void SPI_init(void)
     //prescale - 256 - SPI 7.7khz
 	//SPI_CR1 = 0 1 111 1 0 0
 	//SPI_CR1 = 0x7C;
-
-    //prescale - 8 - SPI 250 khz
+    
+    //prescale - 32
+    //SPI_CR1 = 0 1 100 1 0 0
+    //SPI_CR1 = 0x64;
+    
+    //prescale - 16
+    //SPI_CR1 = 0 1 011 1 0 0
+    SPI_CR1 = 0x5C;
+    
+    //prescale - 8
 	//SPI_CR1 = 0 1 010 1 0 0
-	SPI_CR1 = 0x54;
+//	SPI_CR1 = 0x54;
 
-    //prescale - 4 - SPI 500 khz
+    //prescale - 4
 	//SPI_CR1 = 0 1 001 1 0 0
-	SPI_CR1 = 0x4C;
+	//SPI_CR1 = 0x4C;
 
 
 	//SPI_CR2 - no need to change anything, default 0x00
@@ -82,14 +90,14 @@ void SPI_init(void)
 //CS Low
 void SPI_select(void)
 {
-	PA_ODR &=~ BIT_3;
+	PC_ODR &=~ BIT_3;
 }
 
 //////////////////////////////////////
 //CS High
 void SPI_deselect(void)
 {
-	PA_ODR |= BIT_3;
+	PC_ODR |= BIT_3;
 }
 
 
@@ -98,8 +106,9 @@ void SPI_deselect(void)
 uint8_t SPI_tx(uint8_t data)
 {
 	SPI_DR = data;
-	//while (!(SPI_SR & SPI_TXE_FLAG)){};   //wait
     while (SPI_SR & SPI_BSY_FLAG){};        //wait
+    while (!(SPI_SR & SPI_RXNE_FLAG)){};	//wait
+    
     return SPI_DR;
 }
 
@@ -111,6 +120,7 @@ uint8_t SPI_rx(void)
 {
 	//send 0xFF
 	SPI_DR = 0xFF;
+    while (SPI_SR & SPI_BSY_FLAG){};        //wait
 	while (!(SPI_SR & SPI_TXE_FLAG)){};		//wait
 	while (!(SPI_SR & SPI_RXNE_FLAG)){};	//wait
 	return SPI_DR;

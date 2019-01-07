@@ -101,7 +101,7 @@ void Clock_outputConfig(ClockSource_t source);
 
 //////////////////////////////////////
 //Globals
-uint8_t txBuffer[NRF24_PIPE_WIDTH] = {0x00};
+uint8_t txBuffer[NRF24_PIPE_WIDTH] = "Message1";
 uint16_t adcMv = 0x00;
 uint8_t lsb, msb = 0x00;
 
@@ -118,7 +118,7 @@ int main()
     Timer2_stop();
     SPI_init();
     UART_init(BAUD_RATE_57600);
-    nrf24_init(NRF24_MODE_RX);
+//    nrf24_init(NRF24_MODE_RX);
     ADC_init();
 
 #ifdef CONFIG_TRANSMITTER
@@ -142,10 +142,10 @@ int main()
         lsb = adcMv & 0xFF;
         msb = (adcMv >> 8) & 0xFF;
 
-        txBuffer[0] = 0xFE;
-        txBuffer[1] = MID_ADC_TEMP1;
-        txBuffer[2] = lsb;
-        txBuffer[3] = msb;
+///        txBuffer[0] = 0xFE;
+//        txBuffer[1] = MID_ADC_TEMP1;
+//        txBuffer[2] = lsb;
+//        txBuffer[3] = msb;
 
         //void nrf24_transmitData(uint8_t pipe, uint8_t* buffer, uint8_t length)
         nrf24_transmitData(0, txBuffer, 8);
