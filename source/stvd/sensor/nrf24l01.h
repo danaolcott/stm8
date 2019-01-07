@@ -16,9 +16,12 @@ Dana Olcott
 //pulse length of the CE pin, for use with transmitting
 //data out of tx payload.  at cpu = 16mhz, this is about 10ms
 #define NRF24_CE_PULSE_LENGTH           ((uint16_t)5000)
+#define NRF24_TX_TIMEOUT                ((uint16_t)50000)
 
 #define NRF24_PIPE_WIDTH                ((uint8_t)8)
+#define NRF24_PIPE_WIDTH_MAX            ((uint8_t)32)
 
+#define NRF24_CHANNEL                   ((uint8_t)2)
 
 
 ///////////////////////////////////////////////
@@ -109,29 +112,31 @@ Dana Olcott
 //enums
 typedef enum
 {
-    NRF24_MODE_POWER_DOWN,
-    NRF24_MODE_STANDBY,
     NRF24_MODE_TX,
     NRF24_MODE_RX
 }NRF24_Mode_t;
 
-typedef enum
-{
-    NRF24_DATA_PIPE_0 = (1u << 0),
-    NRF24_DATA_PIPE_1 = (1u << 1),
-    NRF24_DATA_PIPE_2 = (1u << 2),
-    NRF24_DATA_PIPE_3 = (1u << 3),
-    NRF24_DATA_PIPE_4 = (1u << 4),
-    NRF24_DATA_PIPE_5 = (1u << 5),
-    NRF24_DATA_PIPE_ALL = 0x3F
-}NRF24_DataPipe_t;
 
 
+
+/////////////////////////////////////////////////
+//Message ID's - 
+//Shared list of message ids that define various
+//sensor inputs, locations, etc.
 typedef enum
 {
-    NRF24_PIPE_STATE_DISABLE = 0,
-    NRF24_PIPE_STATE_ENABLE = 1
-}NRF24_PipeState_t;
+    MID_ADC_TEMP1 = 0x00      //Millivolts read by temp sensor
+}NRF24_MID_t;
+
+
+////////////////////////////////////////////////
+//NRF24 Packet Definition
+//8 bytes
+//Byte 0        0xFE
+//Byte 1        NRF24_MID_t
+//Bytes 2 - 7   Data Bytes
+//      ADC - Bytes 2 and 3 - remaining 0x00
+
 
 ////////////////////////////////////////////////
 //Prototypes
@@ -140,12 +145,7 @@ void nrf24_dummyDelay(uint32_t delay);
 void nrf24_writeReg(uint8_t reg, uint8_t data);
 void nrf24_writeRegArray(uint8_t reg, uint8_t* data, uint8_t length);
 void nrf24_writeCmd(uint8_t command, uint8_t* data, uint8_t length);
-
 uint8_t nrf24_readReg(uint8_t reg);
-void nrf24_readRegArray(uint8_t reg, uint8_t* data, uint8_t length);
-
-
-
 
 void nrf24_ce_high(void);
 void nrf24_ce_low(void);
@@ -159,35 +159,30 @@ void nrf24_power_down(void);
 
 void nrf24_init(NRF24_Mode_t initialMode);
 
-void nrf24_setMode(NRF24_Mode_t mode);
-NRF24_Mode_t nrf24_getMode(void);
 
 uint8_t nrf24_getStatus(void);
 uint8_t nrf24_getFifoStatus(void);
 uint8_t nrf24_RxFifoHasData(void);
 
-uint8_t nrf24_TxFifoHasSpace(void);             //1 = empty spaces in the tx fifo
-
+uint8_t nrf24_TxFifoHasSpace(void);
 
 void nrf24_flushRx(void);
 void nrf24_flushTx(void);
 
-void nrf24_setPipeAutoAck(NRF24_DataPipe_t pipe, NRF24_PipeState_t state);
-void nrf24_setPipeRxEnable(NRF24_DataPipe_t pipe, NRF24_PipeState_t state);
 
-//transmit - set / get a tx payload size??
+
+//transmit
+void nrf24_setTxPipe(uint8_t pipe);
 void nrf24_writeTXPayLoad(uint8_t* buffer, uint8_t length);
-void nrf24_transmitData(uint8_t* buffer, uint8_t length);
+void nrf24_transmitData(uint8_t pipe, uint8_t* buffer, uint8_t length);
 
-//receive - payload widths seems to be fixed based on datasheet 
-//with comment about dynamic payload widths - ie, it's a special setting
-//default is fixed.
-uint8_t nrf24_getRxPayLoadSize(NRF24_DataPipe_t pipe);                  //get rx payload size
-void nrf24_setRxPayLoadSize(NRF24_DataPipe_t pipe, uint8_t numBytes);   //set rx payload size
-uint8_t nrf24_getRxPipeToRead(void);                            //which pipe to read next
+//receive
+uint8_t nrf24_getRxPayLoadSize(uint8_t pipe);                           //width of the pipe
+void nrf24_setRxPayLoadSize(uint8_t pipe, uint8_t numBytes);            //set width of pipe
+uint8_t nrf24_getRxPipeToRead(void);                                    //which pipe to read next
 
 void nrf24_readRxPayLoad(uint8_t* data, uint8_t length);        //read the top payload in the rx fifo
-uint8_t nrf24_readRxData(uint8_t* data);                        //read data in rx pipe, returns len bytes
+uint8_t nrf24_readRxData(uint8_t* data, uint8_t* pipe);         //read data in rx pipe, returns len bytes
 
 
 

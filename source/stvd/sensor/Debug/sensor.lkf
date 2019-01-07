@@ -50,6 +50,7 @@ crtsi0.sm8
 
 # Object files list - section reserved for STVD
 #<BEGIN OBJECT_FILES>
+Debug\utility.o
 Debug\nrf24l01.o
 Debug\uart.o
 Debug\spi.o

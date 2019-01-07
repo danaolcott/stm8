@@ -93,11 +93,13 @@ main()
     SPI_init();
     UART_init(BAUD_RATE_57600);
     
-    nrf24_init(NRF24_MODE_RX);
+    nrf24_init(NRF24_MODE_TX);
     
     while (1)
     {
         LED_Toggle();
+        
+        nrf24_transmitData(0, txData, 8);
 //        nrf24_transmitData(txData, 8);
 //        status = nrf24_getStatus();
 //        fifo = nrf24_getFifoStatus();

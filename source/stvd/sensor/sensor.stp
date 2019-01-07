@@ -215,7 +215,7 @@ String.6.0=2019,1,1,9,9,54
 [Root.Source Files]
 ElemType=Folder
 PathName=Source Files
-Child=Root.Source Files.nrf24l01.h
+Child=Root.Source Files.utility.h
 Next=Root.Include Files
 Config.0=Root.Source Files.Config.0
 Config.1=Root.Source Files.Config.1
@@ -285,6 +285,16 @@ String.3.0=
 String.4.0=
 String.5.0=
 String.6.0=2019,1,1,9,9,54
+
+[Root.Source Files.utility.h]
+ElemType=File
+PathName=utility.h
+Next=Root.Source Files.utility.c
+
+[Root.Source Files.utility.c]
+ElemType=File
+PathName=utility.c
+Next=Root.Source Files.nrf24l01.h
 
 [Root.Source Files.nrf24l01.h]
 ElemType=File

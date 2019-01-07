@@ -50,6 +50,7 @@ crtsi0.sm8
 
 # Object files list - section reserved for STVD
 #<BEGIN OBJECT_FILES>
+Release\utility.o
 Release\nrf24l01.o
 Release\uart.o
 Release\spi.o
