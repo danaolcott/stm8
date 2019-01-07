@@ -146,13 +146,19 @@ int main()
         lsb = adcMv & 0xFF;
         msb = (adcMv >> 8) & 0xFF;
 
-///        txBuffer[0] = 0xFE;
-//        txBuffer[1] = MID_ADC_TEMP1;
-//        txBuffer[2] = lsb;
-//        txBuffer[3] = msb;
+        txBuffer[0] = 0xFE;
+        txBuffer[1] = MID_ADC_TEMP1;
+        txBuffer[2] = lsb;
+        txBuffer[3] = msb;
 
         //void nrf24_transmitData(uint8_t pipe, uint8_t* buffer, uint8_t length)
-        n = sprintf(txBuffer, "CNT:%4d     ", counter++);
+        n = sprintf(txBuffer, "%x%x%x%x  %2d      ", 
+            txBuffer[0], 
+            txBuffer[1], 
+            txBuffer[2], 
+            txBuffer[3],
+            counter++);
+
         nrf24_transmitData(pipe, txBuffer, 8);
 #endif
 
