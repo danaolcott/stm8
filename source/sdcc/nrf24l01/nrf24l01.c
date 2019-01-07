@@ -592,13 +592,15 @@ uint8_t nrf24_readRxData(uint8_t* data, uint8_t* pipe)
 //
 void nrf24_ISR(void)
 {
+    int n = 0x00;
     uint8_t len = 0x00;
     uint8_t pipe = 0x00;
     uint8_t rxBuffer[32] = {0x00};
     uint8_t status = nrf24_getStatus();
     uint16_t adcValue, adcLSB, adcMSB = 0x00;
-    uint8_t decimalBuffer[16] = {0x00};
+    uint8_t decimalBuffer[32] = {0x00};
     uint8_t numChars = 0x00;
+
 
     //RX_DR Interrupt - Data Received
     if (status & NRF24_BIT_RX_DR)
@@ -608,8 +610,9 @@ void nrf24_ISR(void)
         {
             len = nrf24_readRxData(rxBuffer, &pipe);            //read the packet and pipe
 
-            //output the result....
-            UART_sendString("RX(RAW): ");                   //forward it to the uart
+            //output result
+            n = sprintf(decimalBuffer, "RX(%d): ", pipe);
+            UART_sendStringLength(decimalBuffer, n);                   //forward it to the uart
             UART_sendStringLength(rxBuffer, len);           //forward it to the uart
             UART_sendString("\r\n");
             

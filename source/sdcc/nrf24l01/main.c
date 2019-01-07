@@ -101,9 +101,13 @@ void Clock_outputConfig(ClockSource_t source);
 
 //////////////////////////////////////
 //Globals
-uint8_t txBuffer[NRF24_PIPE_WIDTH] = "Message1";
+//uint8_t txBuffer[NRF24_PIPE_WIDTH] = {0x00};
+uint8_t txBuffer[30] = {0x00};
 uint16_t adcMv = 0x00;
 uint8_t lsb, msb = 0x00;
+int n = 0x00;
+int counter = 0x00;
+uint8_t pipe = 0x00;
 
 ////////////////////////////////////
 //
@@ -148,8 +152,14 @@ int main()
 //        txBuffer[3] = msb;
 
         //void nrf24_transmitData(uint8_t pipe, uint8_t* buffer, uint8_t length)
-        nrf24_transmitData(0, txBuffer, 8);
+        n = sprintf(txBuffer, "CNT:%4d     ", counter++);
+        nrf24_transmitData(pipe, txBuffer, 8);
 #endif
+
+        if (pipe < 5)
+            pipe++;
+        else
+            pipe = 0;
 
         delay_ms(5000);
     }
