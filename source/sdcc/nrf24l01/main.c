@@ -151,14 +151,12 @@ int main()
         txBuffer[2] = lsb;
         txBuffer[3] = msb;
 
-        //void nrf24_transmitData(uint8_t pipe, uint8_t* buffer, uint8_t length)
-        n = sprintf(txBuffer, "%x%x%x%x  %2d      ", 
-            txBuffer[0], 
-            txBuffer[1], 
-            txBuffer[2], 
-            txBuffer[3],
-            counter++);
-
+        //fill remaining with spaces - 0x20
+        txBuffer[4] = 0x20;
+        txBuffer[5] = 0x20;
+        txBuffer[6] = 0x20;
+        txBuffer[7] = 0x00;
+        
         nrf24_transmitData(pipe, txBuffer, 8);
 #endif
 
