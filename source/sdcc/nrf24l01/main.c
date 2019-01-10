@@ -122,7 +122,6 @@ int main()
     Timer2_stop();
     SPI_init();
     UART_init(BAUD_RATE_57600);
-//    nrf24_init(NRF24_MODE_RX);
     ADC_init();
 
 #ifdef CONFIG_TRANSMITTER
