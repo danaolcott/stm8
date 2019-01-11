@@ -150,11 +150,11 @@ int main()
         temperature = (adcMv - 500) * 100;
         temperature *= 9;
         temperature = temperature / 5;
-        temperature += 3200;
+        temperature += 32000;
 
         //temp is deg * 100
-        tempInt = temperature / 100;
-        tempFrac = temperature % 100;
+        tempInt = temperature / 1000;
+        tempFrac = (temperature / 100) % 10;
 
         txBuffer[0] = 0xFE;
         txBuffer[1] = STATION_1;
