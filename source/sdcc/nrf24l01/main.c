@@ -136,8 +136,7 @@ int main()
 
     while (1)
     {
-        LED_Toggle();
-
+ 
 #ifdef CONFIG_TRANSMITTER
 
         //Transmitter - ADC Channel 3
@@ -170,14 +169,18 @@ int main()
         txBuffer[7] = 0xFE;
         
         nrf24_transmitData(pipe, txBuffer, 8);
-#endif
 
         if (pipe < 5)
             pipe++;
         else
             pipe = 0;
+#endif
 
-        delay_ms(5000);
+        LED_On();
+        delay_ms(500);
+        LED_Off();
+        delay_ms(4500);
+
     }
 
     return 0;

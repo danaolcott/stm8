@@ -30,14 +30,14 @@ void GPIO_init(void)
 	//Registers EXTI_CR1 and EXTI_CR2.  EXTI1 - PortB - PortB_IRQ
     PB_DDR &=~ BIT_4;       //input
     PB_CR1 |= BIT_4;        //pullup
-    PB_CR2 |= BIT_4;        //interrupt enabled
+//    PB_CR2 |= BIT_4;        //interrupt enabled
 
 	//Interrupt Config
 	//CCR reg = 0x28 - default, set I1 and I0 to 1.
 	//required to enable external interrupts
     //PortB, falling edge - bit 3 high, bit 2 low
-    EXTI_CR1 |= BIT_3;
-    EXTI_CR1 &=~ BIT_2;
+//    EXTI_CR1 |= BIT_3;
+//    EXTI_CR1 &=~ BIT_2;
 
 	//EXTI_CR2 - PortD and PortE - don't care
 	
@@ -50,7 +50,7 @@ void GPIO_init(void)
 //External Interrupt
 void EXTI1_ISR(void)
 {
-	LED_Toggle();
+    //do something
 }
 
 ////////////////////////////////////////

@@ -27,6 +27,15 @@ All pipes are configured to be on
 All pipes are configured with ack off
 
 
+Packets are assumed to be 8 bytes long, start and stop with 0xFE
+Byte Pattern:
+
+Byte 0      0xFE
+Byte 1      Station ID - where / who am I
+Byte 2      Message ID - what am I
+Byte 3 - 6  data 0 - 3
+Byte 7      0xFE
+
 
 */
 
@@ -37,9 +46,9 @@ All pipes are configured with ack off
 
 #include "nrf24l01.h"
 #include "register.h"
+#include "gpio.h"           //user led messages
 #include "spi.h"
-#include "uart.h"           //retransmitting out serial port
-
+#include "uart.h"           //output to serial port
 #include "utility.h"        //print functions
 
 
@@ -433,30 +442,24 @@ void nrf24_transmitData(uint8_t pipe, uint8_t* buffer, uint8_t length)
     //if timeout == 0 or transmit complete flag
     if ((!timeout) || (!mTransmitCompleteFlag))
     {
-        UART_sendString("Timeout - Counter Expired - Transmit Aborted\r\n");
+        //set the LED on
+        LED_On();
         mTransmitCompleteFlag = 0x00;
         nrf24_flushTx();
         nrf24_writeReg(NRF24_REG_STATUS, NRF24_BIT_TX_DS | NRF24_BIT_MAX_RT);
     }
-    
-    else if(mTransmitCompleteFlag == 1)
-    {
-        UART_sendString("Polling - Transmit Complete: ");
-        UART_sendStringLength(buffer, length);
-        UART_sendString("\r\n");        
-    }
-    
+        
     else
     {
-        UART_sendString("Polling - Transmit Flag Never Set - Timeout\r\n");    
+//        LED_Off();
     }
     
     /////////////////////////////////////////
     //Test the tx_ds and max_rt bits
     if (nrf24_getStatus() & (NRF24_BIT_TX_DS | NRF24_BIT_TX_DS ))
     {
+        LED_On();
         //tx ds bit high - clearing it
-        UART_sendString("TX_DS and or MAX_RT Bit(s) High - Clearing It...\r\n");
         nrf24_writeReg(NRF24_REG_STATUS, NRF24_BIT_TX_DS | NRF24_BIT_MAX_RT);
     }   
 }
