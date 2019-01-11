@@ -104,6 +104,9 @@ void Clock_outputConfig(ClockSource_t source);
 //uint8_t txBuffer[NRF24_PIPE_WIDTH] = {0x00};
 uint8_t txBuffer[30] = {0x00};
 uint16_t adcMv = 0x00;
+uint32_t temperature = 0x00;
+uint8_t tempInt = 0x00;
+uint8_t tempFrac = 0x00;
 uint8_t lsb, msb = 0x00;
 int n = 0x00;
 int counter = 0x00;
@@ -145,16 +148,26 @@ int main()
         lsb = adcMv & 0xFF;
         msb = (adcMv >> 8) & 0xFF;
 
-        txBuffer[0] = 0xFE;
-        txBuffer[1] = MID_ADC_TEMP1;
-        txBuffer[2] = lsb;
-        txBuffer[3] = msb;
+        temperature = (adcMv - 500) * 100;
+        temperature *= 9;
+        temperature = temperature / 5;
+        temperature += 3200;
 
-        //fill remaining with spaces - 0x20
-        txBuffer[4] = 0x20;
-        txBuffer[5] = 0x20;
-        txBuffer[6] = 0x20;
-        txBuffer[7] = 0x00;
+        //temp is deg * 100
+        tempInt = temperature / 100;
+        tempFrac = temperature % 100;
+
+        txBuffer[0] = 0xFE;
+        txBuffer[1] = STATION_1;
+        txBuffer[1] = MID_TEMP_MCP9700A;
+
+        txBuffer[3] = lsb;
+        txBuffer[4] = msb;
+
+        txBuffer[5] = tempInt;
+        txBuffer[6] = tempFrac;
+
+        txBuffer[7] = 0xFE;
         
         nrf24_transmitData(pipe, txBuffer, 8);
 #endif

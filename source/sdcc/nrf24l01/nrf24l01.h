@@ -118,6 +118,14 @@ typedef enum
 
 
 
+/////////////////////////////////////////////////
+//Station - Locations
+typedef enum
+{
+    STATION_1 = 0x00
+}NRF24_Station_t;
+
+
 
 /////////////////////////////////////////////////
 //Message ID's - 
@@ -125,18 +133,19 @@ typedef enum
 //sensor inputs, locations, etc.
 typedef enum
 {
-    MID_ADC_TEMP1 = 0x00      //Millivolts read by temp sensor
+    MID_TEMP_MCP9700A = 0x00      //Millivolts read by temp sensor
 }NRF24_MID_t;
+
 
 
 ////////////////////////////////////////////////
 //NRF24 Packet Definition
 //8 bytes
 //Byte 0        0xFE
-//Byte 1        NRF24_MID_t
-//Bytes 2 - 7   Data Bytes
-//      ADC - Bytes 2 and 3 - remaining 0x00
-
+//Byte 1        NRF24_Station_t     where is it
+//Byte 2        NRF24_MID_t         what is it
+//Bytes 3 - 7   Data Bytes
+//
 
 ////////////////////////////////////////////////
 //Prototypes
