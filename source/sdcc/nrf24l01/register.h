@@ -172,6 +172,10 @@ Register Definitions
 #define ADC_DRH 		*((volatile uint8_t*)0x5404)
 #define ADC_DRL 		*((volatile uint8_t*)0x5405)
 
+//schmitt trigger disable register - default 0x00 - means all enabled.
+#define ADC_TDRH 		*((volatile uint8_t*)0x5406)
+#define ADC_TDRL 		*((volatile uint8_t*)0x5407)
+
 
 
 

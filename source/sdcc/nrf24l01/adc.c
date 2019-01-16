@@ -41,6 +41,11 @@ void ADC_init(void)
 
     //ADC_DRH - MSB, ADC_DRL - LSB
 
+    //disable the schmidt trigger - all channels - datasheet
+    ADC_TDRH = 0xFF;
+    ADC_TDRL = 0xFF;
+
+
     //finally, wakeup the adc
     ADC_wakeup();
 
@@ -75,6 +80,8 @@ uint16_t ADC_readRawData(ADC_Channel_t ch)
     initial |= ch;
     ADC_CSR = initial;
 
+    ADC_CR1 |= ADC_ADON_BIT;       //wakeup
+
     ADC_CSR &=~ ADC_EOC_BIT;       //Clear the EOC flag - ADC_CSR
     ADC_CR1 |= ADC_ADON_BIT;       //Set the ADON bit in ADC_CR1
 
@@ -83,6 +90,8 @@ uint16_t ADC_readRawData(ADC_Channel_t ch)
 
     resultLow = ADC_DRL & 0xFF;
     resultHigh = ((ADC_DRH & 0x03) << 8);
+
+    ADC_CR1 &=~ ADC_ADON_BIT;       //Clear the ADON bit in ADC_CR1
 
     return (resultLow | resultHigh);
 }
