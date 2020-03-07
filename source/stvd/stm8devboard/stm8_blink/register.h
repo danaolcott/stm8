@@ -45,7 +45,14 @@ Register Definitions for the STM8L151K6
 */
 
 
+//System Config Registers
+#define SYSCFG_RMPCR1		*((volatile uint8_t*)0x509E)
+#define SYSCFG_RMPCR2		*((volatile uint8_t*)0x509F)
 
+
+
+
+//GPIO Registers - PortA - PortF
 #define PA_ODR          *((volatile uint8_t*)0x5000)
 #define PA_IDR          *((volatile uint8_t*)0x5001)
 #define PA_DDR          *((volatile uint8_t*)0x5002)
@@ -100,6 +107,7 @@ Register Definitions for the STM8L151K6
 #define EXTI5_IRQ       13
 #define EXTI6_IRQ       14
 #define EXTI7_IRQ       15
+
 
 
 
