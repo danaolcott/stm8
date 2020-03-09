@@ -42,8 +42,11 @@ main()
     GPIO_init();
     system_init();
     system_clock_config();
-    
-    
+    system_peripheral_clock_config();
+
+    system_disableInterrupts();
+    system_enableInterrupts();
+        
 	while (1)
     {
         GPIO_led_green_toggle();
@@ -58,7 +61,7 @@ main()
 //dummy_delay(uint16_t delay)
 void dummy_delay(uint16_t delay)
 {
-    uint16_t temp = delay;
+    volatile uint16_t temp = delay;
     while (temp > 0)
     {
         temp--;

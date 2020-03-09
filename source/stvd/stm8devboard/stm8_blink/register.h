@@ -49,6 +49,24 @@ Register Definitions for the STM8L151K6
 #define SYSCFG_RMPCR1		*((volatile uint8_t*)0x509E)
 #define SYSCFG_RMPCR2		*((volatile uint8_t*)0x509F)
 
+//Clock control registers
+#define CLK_DIVR		    *((volatile uint8_t*)0x50C0)    //master divide register
+#define CLK_CRTCR		    *((volatile uint8_t*)0x50C1)    //RTC register
+#define CLK_ICKR		    *((volatile uint8_t*)0x50C2)    //internal clock control
+#define CLK_PCKENR1		    *((volatile uint8_t*)0x50C3)    //peripheral gating
+#define CLK_PCKENR2		    *((volatile uint8_t*)0x50C4)    //peripheral gating
+#define CLK_CCOR		    *((volatile uint8_t*)0x50C5)    //configurable clock control
+#define CLK_ECKR		    *((volatile uint8_t*)0x50C6)    //external clock control
+#define CLK_SCSR		    *((volatile uint8_t*)0x50C7)    //system clock status
+#define CLK_SWR		        *((volatile uint8_t*)0x50C8)    //system clock switch
+#define CLK_SWCR		    *((volatile uint8_t*)0x50C9)    //clock switch control
+#define CLK_CSSR		    *((volatile uint8_t*)0x50CA)    //clock security system
+#define CLK_CBEEPR		    *((volatile uint8_t*)0x50CB)    //clock beep reg
+#define CLK_HSICALR		    *((volatile uint8_t*)0x50CC)    //HSI cal
+#define CLK_HSITRIMR		*((volatile uint8_t*)0x50CD)    //HSI cal
+#define CLK_HSIUNLCKR		*((volatile uint8_t*)0x50CE)    //HSI unlock
+#define CLK_REGCSR		    *((volatile uint8_t*)0x50CF)    //main regulator control
+
 
 
 
@@ -97,6 +115,40 @@ Register Definitions for the STM8L151K6
 #define EXTI_SR2		*((volatile uint8_t*)0x50A4)
 #define EXTI_CONF1		*((volatile uint8_t*)0x50A5)
 
+//SPI
+#define SPI1_BSY_FLAG	(1u << 7)	//busy = high
+#define SPI1_TXE_FLAG	(1u << 1)	//tx empty = high
+#define SPI1_RXNE_FLAG	(1u << 0)	//rx not empty = high
+
+#define SPI1_CR1         *((volatile uint8_t*)0x5200)
+#define SPI1_CR2         *((volatile uint8_t*)0x5201)
+#define SPI1_ICR         *((volatile uint8_t*)0x5202)
+#define SPI1_SR          *((volatile uint8_t*)0x5203)
+#define SPI1_DR          *((volatile uint8_t*)0x5204)
+#define SPI1_CRCPR       *((volatile uint8_t*)0x5205)
+#define SPI1_RXCRCR      *((volatile uint8_t*)0x5206)
+#define SPI1_TXCRCR      *((volatile uint8_t*)0x5207)
+
+
+
+//Comparator Control and Status - use for VREF
+#define COMP_CSR1       *((volatile uint8_t*)0x5440)
+#define COMP_CSR2       *((volatile uint8_t*)0x5441)
+#define COMP_CSR3       *((volatile uint8_t*)0x5442)
+#define COMP_CSR4       *((volatile uint8_t*)0x5443)
+#define COMP_CSR5       *((volatile uint8_t*)0x5444)
+
+//IO Switch and Analog Switch Registers
+#define RI_IOSR1        *((volatile uint8_t*)0x5439)    //io switch control
+#define RI_IOSR2        *((volatile uint8_t*)0x543A)
+#define RI_IOSR3        *((volatile uint8_t*)0x543B)
+#define RI_IOGCR        *((volatile uint8_t*)0x543C)    //io group control
+#define RI_ASCR1        *((volatile uint8_t*)0x543D)    //analog switch control
+#define RI_ASCR2        *((volatile uint8_t*)0x543E)
+
+//DAC
+#define DAC_CR1         *((volatile uint8_t*)0x5380)
+#define DAC_CR2         *((volatile uint8_t*)0x5381)
 
 //interrupt IRQ - See Table 10 in the datasheet
 #define EXTI0_IRQ       8

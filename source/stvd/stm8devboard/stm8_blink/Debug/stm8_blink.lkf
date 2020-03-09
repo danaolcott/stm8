@@ -52,6 +52,7 @@ crtsi0.sm8
 #<BEGIN OBJECT_FILES>
 Debug\gpio.o
 Debug\main.o
+Debug\system.o
 #<END OBJECT_FILES>
 
 

@@ -52,6 +52,7 @@ crtsi0.sm8
 #<BEGIN OBJECT_FILES>
 Release\gpio.o
 Release\main.o
+Release\system.o
 #<END OBJECT_FILES>
 
 

@@ -11,6 +11,9 @@ mapping, etc
 
 void system_init(void);
 void system_clock_config(void);
+void system_peripheral_clock_config(void);
+void system_enableInterrupts(void);
+void system_disableInterrupts(void);
 
 #endif
 
