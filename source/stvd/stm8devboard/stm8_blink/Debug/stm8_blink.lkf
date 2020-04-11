@@ -51,8 +51,11 @@ crtsi0.sm8
 # Object files list - section reserved for STVD
 #<BEGIN OBJECT_FILES>
 Debug\gpio.o
+Debug\lcd.o
 Debug\main.o
+Debug\spi.o
 Debug\system.o
+Debug\timer.o
 #<END OBJECT_FILES>
 
 

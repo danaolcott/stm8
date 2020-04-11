@@ -6,19 +6,24 @@
 ////////////////////////////////////////////////////
 //Headers that contain the isr functions
 #include "gpio.h"       //isr functions
-
+#include "timer.h"      //timer isr
 
 
 typedef void @far (*interrupt_handler_t)(void);
 
 ////////////////////////////////////////////////////////
 //Interrupt Prototypes
+//GPIO
 @far @interrupt void EXTI0_InterruptHandler (void);     //IRQ8
 @far @interrupt void EXTI1_InterruptHandler (void);     //IRQ9
 @far @interrupt void EXTI2_InterruptHandler (void);     //IRQ10
 @far @interrupt void EXTI3_InterruptHandler (void);     //IRQ11
 @far @interrupt void EXTI4_InterruptHandler (void);     //IRQ12
 @far @interrupt void EXTI5_InterruptHandler (void);     //IRQ13
+
+//Timer
+@far @interrupt void TIM2_InterruptHandler (void);     //IRQ19
+@far @interrupt void TIM4_InterruptHandler (void);     //IRQ13
 
 
 
@@ -96,6 +101,25 @@ struct interrupt_vector {
 }
 
 
+/////////////////////////////////////////////////////
+//Timer 2 TIM2 - update interrupt handler
+@far @interrupt void TIM2_InterruptHandler (void)
+{
+    TIM2_ISR();
+    return;
+}
+
+
+/////////////////////////////////////////////////////
+//Timer 4 TIM4 - update interrupt handler
+@far @interrupt void TIM4_InterruptHandler (void)
+{
+    TIM4_ISR();
+    return;
+}
+
+
+
 
 
 
@@ -123,13 +147,13 @@ struct interrupt_vector const _vectab[] = {
 	{0x82, NonHandledInterrupt}, /* irq16 */
 	{0x82, NonHandledInterrupt}, /* irq17 */
 	{0x82, NonHandledInterrupt}, /* irq18 */
-	{0x82, NonHandledInterrupt}, /* irq19 */
+	{0x82, (interrupt_handler_t)TIM2_InterruptHandler}, /* irq19 */
 	{0x82, NonHandledInterrupt}, /* irq20 */
 	{0x82, NonHandledInterrupt}, /* irq21 */
 	{0x82, NonHandledInterrupt}, /* irq22 */
 	{0x82, NonHandledInterrupt}, /* irq23 */
 	{0x82, NonHandledInterrupt}, /* irq24 */
-	{0x82, NonHandledInterrupt}, /* irq25 */
+	{0x82, (interrupt_handler_t)TIM4_InterruptHandler}, /* irq25 */
 	{0x82, NonHandledInterrupt}, /* irq26 */
 	{0x82, NonHandledInterrupt}, /* irq27 */
 	{0x82, NonHandledInterrupt}, /* irq28 */

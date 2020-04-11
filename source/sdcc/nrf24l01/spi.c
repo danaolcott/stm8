@@ -102,13 +102,13 @@ void SPI_deselect(void)
 
 
 /////////////////////////////////////
-//Put byte into the SPI_DR and wait
+//Transmit one byte.  Wait until not busy,
+//put data into register, wait
 uint8_t SPI_tx(uint8_t data)
 {
 	SPI_DR = data;
     while (SPI_SR & SPI_BSY_FLAG){};        //wait
-    while (!(SPI_SR & SPI_RXNE_FLAG)){};	//wait
-    
+    while (!(SPI_SR & SPI_RXNE_FLAG)){};	//wait    
     return SPI_DR;
 }
 

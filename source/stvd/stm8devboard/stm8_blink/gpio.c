@@ -17,9 +17,13 @@ PB6 - green
 
 
 ///////////////////////////////////
-//Configure LED GPIOs as output
+//Configure LED GPIOs as output - PB5 and PB6
 //Table 21 in the ref manual:
 //pushpull output, DDR = 1, CR1 = 1, CR2 = 0
+//user joystick - PD0-PD4
+//user button - PD5
+//input, pullup, interrupted:
+//DDR = 0, CR1 = 1, CR2 = 1
 void GPIO_init(void)
 {
     PB_ODR &=~ BIT_5;       //output low
@@ -32,6 +36,15 @@ void GPIO_init(void)
     PB_DDR |= BIT_6;
     PB_CR1 |= BIT_6;
     PB_CR2 &=~ BIT_6;
+    
+    //configure the input pins PD0-PD5
+    //interrupt, pullups enabled, falling
+    //edge trigger
+    PD_DDR &=~ 0x3F;
+    PD_CR1 |= 0x3F;
+    PD_CR2 |= 0x3F;
+
+    GPIO_interrupt_config();
 }
 
 
@@ -117,6 +130,8 @@ void GPIO_led_green_toggle(void)
 void GPIO_EXTI0_ISR(void)
 {
     //do something
+    GPIO_led_green_toggle();
+    EXTI_SR1 |= BIT_0;          //write 1 to clear the interrupt
 }
 
 
@@ -125,6 +140,9 @@ void GPIO_EXTI0_ISR(void)
 void GPIO_EXTI1_ISR(void)
 {
     //do something
+    GPIO_led_green_toggle();    
+    EXTI_SR1 |= BIT_1;          //write 1 to clear the interrupt
+
 }
 
 
@@ -133,6 +151,9 @@ void GPIO_EXTI1_ISR(void)
 void GPIO_EXTI2_ISR(void)
 {
     //do something
+    GPIO_led_green_toggle();    
+    EXTI_SR1 |= BIT_2;          //write 1 to clear the interrupt
+
 }
 
 ////////////////////////////////////////////////
@@ -140,6 +161,9 @@ void GPIO_EXTI2_ISR(void)
 void GPIO_EXTI3_ISR(void)
 {
     //do something
+    GPIO_led_green_toggle();    
+    EXTI_SR1 |= BIT_3;          //write 1 to clear the interrupt
+
 }
 
 ////////////////////////////////////////////////
@@ -147,6 +171,9 @@ void GPIO_EXTI3_ISR(void)
 void GPIO_EXTI4_ISR(void)
 {
     //do something
+    GPIO_led_green_toggle();    
+    EXTI_SR1 |= BIT_4;          //write 1 to clear the interrupt
+
 }
 
 
@@ -155,5 +182,7 @@ void GPIO_EXTI4_ISR(void)
 void GPIO_EXTI5_ISR(void)
 {
     //do something
+    GPIO_led_green_toggle();    
+    EXTI_SR1 |= BIT_5;          //write 1 to clear the interrupt
 }
 

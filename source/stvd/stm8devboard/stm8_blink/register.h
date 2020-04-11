@@ -150,6 +150,49 @@ Register Definitions for the STM8L151K6
 #define DAC_CR1         *((volatile uint8_t*)0x5380)
 #define DAC_CR2         *((volatile uint8_t*)0x5381)
 
+
+//timers - TIM2 - not all registers included
+#define TIM2_CR1        *((volatile uint8_t*)0x5250)
+#define TIM2_CR2        *((volatile uint8_t*)0x5251)
+#define TIM2_SMCR       *((volatile uint8_t*)0x5252)
+#define TIM2_ETR        *((volatile uint8_t*)0x5253)
+#define TIM2_DER        *((volatile uint8_t*)0x5254)
+#define TIM2_IER        *((volatile uint8_t*)0x5255)
+#define TIM2_SR1        *((volatile uint8_t*)0x5256)
+#define TIM2_SR2        *((volatile uint8_t*)0x5257)
+#define TIM2_EGR        *((volatile uint8_t*)0x5258)
+#define TIM2_CCMR1      *((volatile uint8_t*)0x5259)
+#define TIM2_CCMR2      *((volatile uint8_t*)0x525A)
+#define TIM2_CCER1      *((volatile uint8_t*)0x525B)
+#define TIM2_CNTRH      *((volatile uint8_t*)0x525C)
+#define TIM2_CNTRL      *((volatile uint8_t*)0x525D)
+#define TIM2_PSCR       *((volatile uint8_t*)0x525E)
+#define TIM2_ARRH       *((volatile uint8_t*)0x525F)
+#define TIM2_ARRL       *((volatile uint8_t*)0x5260)
+#define TIM2_CCR1H      *((volatile uint8_t*)0x5261)
+#define TIM2_CCR1L      *((volatile uint8_t*)0x5262)
+#define TIM2_CCR2H      *((volatile uint8_t*)0x5263)
+#define TIM2_CCR2L      *((volatile uint8_t*)0x5264)
+#define TIM2_BKR        *((volatile uint8_t*)0x5265)
+#define TIM2_OISR       *((volatile uint8_t*)0x5266)
+
+//timers - TIM4
+#define TIM4_CR1        *((volatile uint8_t*)0x52E0)
+#define TIM4_CR2        *((volatile uint8_t*)0x52E1)
+#define TIM4_SMCR       *((volatile uint8_t*)0x52E2)
+#define TIM4_DER        *((volatile uint8_t*)0x52E3)
+#define TIM4_IER        *((volatile uint8_t*)0x52E4)
+#define TIM4_SR1        *((volatile uint8_t*)0x52E5)
+#define TIM4_EGR        *((volatile uint8_t*)0x52E6)
+#define TIM4_CNTR       *((volatile uint8_t*)0x52E7)
+#define TIM4_PSCR       *((volatile uint8_t*)0x52E8)
+#define TIM4_ARR        *((volatile uint8_t*)0x52E9)
+
+
+
+
+
+
 //interrupt IRQ - See Table 10 in the datasheet
 #define EXTI0_IRQ       8
 #define EXTI1_IRQ       9

@@ -45,9 +45,11 @@ void system_init(void)
 //Configure the internal clock to run at 16mhz
 //HSI clock source - Section 9.1
 //Defaulit is the HSI RC clock at 16mhz
-//divide by 8.
+//divide by 8.  Update to run at full speed
+//
 void system_clock_config(void)
 {
+    CLK_DIVR = 0x00;        //set the divider to 1
 
 }
 
@@ -62,13 +64,15 @@ void system_clock_config(void)
 void system_peripheral_clock_config(void)
 {
     //PCKENR2 - clock enable
-    CLK_PCKENR2 |= BIT_7;           //enable the perphieral clocks as a whole
-    CLK_PCKENR2 |= BIT_0;           //ADC1
+    //CLK_PCKENR2 |= BIT_7;           //enable the perphieral clocks as a whole
+    //CLK_PCKENR2 |= BIT_0;           //ADC1
         
     //PCKENR1 - Bits 17-10
     CLK_PCKENR1 |= BIT_7;           //DAC
     CLK_PCKENR1 |= BIT_4;           //SPI
-    
+    CLK_PCKENR1 |= BIT_2;           //TIM4
+    CLK_PCKENR1 |= BIT_0;           //TIM2
+
 }
 
 

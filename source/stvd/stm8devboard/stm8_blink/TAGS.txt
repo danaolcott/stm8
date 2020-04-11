@@ -13,33 +13,84 @@ BIT_5	register.h	19;"	macro
 BIT_6	register.h	20;"	macro
 BIT_7	register.h	21;"	macro
 BUFSIZ	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	26;"	macro
+CLK_CBEEPR	register.h	64;"	macro
+CLK_CCOR	register.h	58;"	macro
+CLK_CRTCR	register.h	54;"	macro
+CLK_CSSR	register.h	63;"	macro
+CLK_DIVR	register.h	53;"	macro
+CLK_ECKR	register.h	59;"	macro
+CLK_HSICALR	register.h	65;"	macro
+CLK_HSITRIMR	register.h	66;"	macro
+CLK_HSIUNLCKR	register.h	67;"	macro
+CLK_ICKR	register.h	55;"	macro
+CLK_PCKENR1	register.h	56;"	macro
+CLK_PCKENR2	register.h	57;"	macro
+CLK_REGCSR	register.h	68;"	macro
+CLK_SCSR	register.h	60;"	macro
+CLK_SWCR	register.h	62;"	macro
+CLK_SWR	register.h	61;"	macro
+COMP_CSR1	register.h	135;"	macro
+COMP_CSR2	register.h	136;"	macro
+COMP_CSR3	register.h	137;"	macro
+COMP_CSR4	register.h	138;"	macro
+COMP_CSR5	register.h	139;"	macro
+DAC_CR1	register.h	150;"	macro
+DAC_CR2	register.h	151;"	macro
 EOF	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	27;"	macro
-EXTI0_IRQ	register.h	96;"	macro
-EXTI1_IRQ	register.h	97;"	macro
-EXTI2_IRQ	register.h	98;"	macro
-EXTI3_IRQ	register.h	99;"	macro
-EXTI4_IRQ	register.h	100;"	macro
-EXTI5_IRQ	register.h	101;"	macro
-EXTI6_IRQ	register.h	102;"	macro
-EXTI7_IRQ	register.h	103;"	macro
-EXTI_CONF1	register.h	92;"	macro
-EXTI_CR1	register.h	86;"	macro
-EXTI_CR2	register.h	87;"	macro
-EXTI_CR3	register.h	88;"	macro
-EXTI_SR1	register.h	90;"	macro
-EXTI_SR2	register.h	91;"	macro
-GPIO_init	gpio.c	23;"	function	signature:(void)
+EXTI0_IRQ	register.h	197;"	macro
+EXTI0_InterruptHandler	stm8_interrupt_vector.c	17;"	prototype	file:	signature:(void)
+EXTI0_InterruptHandler	stm8_interrupt_vector.c	51;"	function	signature:(void)
+EXTI1_IRQ	register.h	198;"	macro
+EXTI1_InterruptHandler	stm8_interrupt_vector.c	18;"	prototype	file:	signature:(void)
+EXTI1_InterruptHandler	stm8_interrupt_vector.c	60;"	function	signature:(void)
+EXTI2_IRQ	register.h	199;"	macro
+EXTI2_InterruptHandler	stm8_interrupt_vector.c	19;"	prototype	file:	signature:(void)
+EXTI2_InterruptHandler	stm8_interrupt_vector.c	69;"	function	signature:(void)
+EXTI3_IRQ	register.h	200;"	macro
+EXTI3_InterruptHandler	stm8_interrupt_vector.c	20;"	prototype	file:	signature:(void)
+EXTI3_InterruptHandler	stm8_interrupt_vector.c	78;"	function	signature:(void)
+EXTI4_IRQ	register.h	201;"	macro
+EXTI4_InterruptHandler	stm8_interrupt_vector.c	21;"	prototype	file:	signature:(void)
+EXTI4_InterruptHandler	stm8_interrupt_vector.c	87;"	function	signature:(void)
+EXTI5_IRQ	register.h	202;"	macro
+EXTI5_InterruptHandler	stm8_interrupt_vector.c	22;"	prototype	file:	signature:(void)
+EXTI5_InterruptHandler	stm8_interrupt_vector.c	96;"	function	signature:(void)
+EXTI6_IRQ	register.h	203;"	macro
+EXTI7_IRQ	register.h	204;"	macro
+EXTI_CONF1	register.h	116;"	macro
+EXTI_CR1	register.h	111;"	macro
+EXTI_CR2	register.h	112;"	macro
+EXTI_CR3	register.h	113;"	macro
+EXTI_SR1	register.h	114;"	macro
+EXTI_SR2	register.h	115;"	macro
+GPIO_EXTI0_ISR	gpio.c	130;"	function	signature:(void)
+GPIO_EXTI0_ISR	gpio.h	21;"	prototype	signature:(void)
+GPIO_EXTI1_ISR	gpio.c	140;"	function	signature:(void)
+GPIO_EXTI1_ISR	gpio.h	22;"	prototype	signature:(void)
+GPIO_EXTI2_ISR	gpio.c	151;"	function	signature:(void)
+GPIO_EXTI2_ISR	gpio.h	23;"	prototype	signature:(void)
+GPIO_EXTI3_ISR	gpio.c	161;"	function	signature:(void)
+GPIO_EXTI3_ISR	gpio.h	24;"	prototype	signature:(void)
+GPIO_EXTI4_ISR	gpio.c	171;"	function	signature:(void)
+GPIO_EXTI4_ISR	gpio.h	25;"	prototype	signature:(void)
+GPIO_EXTI5_ISR	gpio.c	182;"	function	signature:(void)
+GPIO_EXTI5_ISR	gpio.h	26;"	prototype	signature:(void)
+GPIO_init	gpio.c	27;"	function	signature:(void)
 GPIO_init	gpio.h	11;"	prototype	signature:(void)
-GPIO_led_green_off	gpio.c	52;"	function	signature:(void)
-GPIO_led_green_off	gpio.h	15;"	prototype	signature:(void)
-GPIO_led_green_on	gpio.c	42;"	function	signature:(void)
-GPIO_led_green_on	gpio.h	13;"	prototype	signature:(void)
-GPIO_led_green_toggle	gpio.c	62;"	function	signature:(void)
-GPIO_led_red_off	gpio.c	47;"	function	signature:(void)
-GPIO_led_red_off	gpio.h	14;"	prototype	signature:(void)
-GPIO_led_red_on	gpio.c	37;"	function	signature:(void)
-GPIO_led_red_on	gpio.h	12;"	prototype	signature:(void)
-GPIO_led_red_toggle	gpio.c	57;"	function	signature:(void)
+GPIO_interrupt_config	gpio.c	60;"	function	signature:(void)
+GPIO_interrupt_config	gpio.h	12;"	prototype	signature:(void)
+GPIO_led_green_off	gpio.c	112;"	function	signature:(void)
+GPIO_led_green_off	gpio.h	17;"	prototype	signature:(void)
+GPIO_led_green_on	gpio.c	102;"	function	signature:(void)
+GPIO_led_green_on	gpio.h	15;"	prototype	signature:(void)
+GPIO_led_green_toggle	gpio.c	122;"	function	signature:(void)
+GPIO_led_green_toggle	gpio.h	19;"	prototype	signature:(void)
+GPIO_led_red_off	gpio.c	107;"	function	signature:(void)
+GPIO_led_red_off	gpio.h	16;"	prototype	signature:(void)
+GPIO_led_red_on	gpio.c	97;"	function	signature:(void)
+GPIO_led_red_on	gpio.h	14;"	prototype	signature:(void)
+GPIO_led_red_toggle	gpio.c	117;"	function	signature:(void)
+GPIO_led_red_toggle	gpio.h	18;"	prototype	signature:(void)
 INT16_C	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	97;"	macro
 INT16_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	50;"	macro
 INT16_MIN	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	47;"	macro
@@ -66,41 +117,126 @@ INT_LEAST32_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers
 INT_LEAST32_MIN	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	60;"	macro
 INT_LEAST8_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	61;"	macro
 INT_LEAST8_MIN	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	58;"	macro
+LCD_CMD_PIN	lcd.h	11;"	macro
+LCD_HEIGHT	lcd.h	14;"	macro
+LCD_NUM_PAGES	lcd.h	16;"	macro
+LCD_RST_PIN	lcd.h	12;"	macro
+LCD_WIDTH	lcd.h	15;"	macro
 NULL	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	20;"	macro
 NULL	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	30;"	macro
-NonHandledInterrupt	stm8_interrupt_vector.c	12;"	function	signature:(void)
-PA_CR1	register.h	52;"	macro
-PA_CR2	register.h	53;"	macro
-PA_DDR	register.h	51;"	macro
-PA_IDR	register.h	50;"	macro
-PA_ODR	register.h	49;"	macro
-PB_CR1	register.h	58;"	macro
-PB_CR2	register.h	59;"	macro
-PB_DDR	register.h	57;"	macro
-PB_IDR	register.h	56;"	macro
-PB_ODR	register.h	55;"	macro
-PC_CR1	register.h	64;"	macro
-PC_CR2	register.h	65;"	macro
-PC_DDR	register.h	63;"	macro
-PC_IDR	register.h	62;"	macro
-PC_ODR	register.h	61;"	macro
-PD_CR1	register.h	70;"	macro
-PD_CR2	register.h	71;"	macro
-PD_DDR	register.h	69;"	macro
-PD_IDR	register.h	68;"	macro
-PD_ODR	register.h	67;"	macro
-PE_CR1	register.h	76;"	macro
-PE_CR2	register.h	77;"	macro
-PE_DDR	register.h	75;"	macro
-PE_IDR	register.h	74;"	macro
-PE_ODR	register.h	73;"	macro
-PF_CR1	register.h	82;"	macro
-PF_CR2	register.h	83;"	macro
-PF_DDR	register.h	81;"	macro
-PF_IDR	register.h	80;"	macro
-PF_ODR	register.h	79;"	macro
+NonHandledInterrupt	stm8_interrupt_vector.c	35;"	function	signature:(void)
+PA_CR1	register.h	77;"	macro
+PA_CR2	register.h	78;"	macro
+PA_DDR	register.h	76;"	macro
+PA_IDR	register.h	75;"	macro
+PA_ODR	register.h	74;"	macro
+PB_CR1	register.h	83;"	macro
+PB_CR2	register.h	84;"	macro
+PB_DDR	register.h	82;"	macro
+PB_IDR	register.h	81;"	macro
+PB_ODR	register.h	80;"	macro
+PC_CR1	register.h	89;"	macro
+PC_CR2	register.h	90;"	macro
+PC_DDR	register.h	88;"	macro
+PC_IDR	register.h	87;"	macro
+PC_ODR	register.h	86;"	macro
+PD_CR1	register.h	95;"	macro
+PD_CR2	register.h	96;"	macro
+PD_DDR	register.h	94;"	macro
+PD_IDR	register.h	93;"	macro
+PD_ODR	register.h	92;"	macro
+PE_CR1	register.h	101;"	macro
+PE_CR2	register.h	102;"	macro
+PE_DDR	register.h	100;"	macro
+PE_IDR	register.h	99;"	macro
+PE_ODR	register.h	98;"	macro
+PF_CR1	register.h	107;"	macro
+PF_CR2	register.h	108;"	macro
+PF_DDR	register.h	106;"	macro
+PF_IDR	register.h	105;"	macro
+PF_ODR	register.h	104;"	macro
 PTRDIFF_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	86;"	macro
 PTRDIFF_MIN	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	85;"	macro
+RI_ASCR1	register.h	146;"	macro
+RI_ASCR2	register.h	147;"	macro
+RI_IOGCR	register.h	145;"	macro
+RI_IOSR1	register.h	142;"	macro
+RI_IOSR2	register.h	143;"	macro
+RI_IOSR3	register.h	144;"	macro
+SPI1_BSY_FLAG	register.h	119;"	macro
+SPI1_CR1	register.h	123;"	macro
+SPI1_CR2	register.h	124;"	macro
+SPI1_CRCPR	register.h	128;"	macro
+SPI1_DR	register.h	127;"	macro
+SPI1_ICR	register.h	125;"	macro
+SPI1_RXCRCR	register.h	129;"	macro
+SPI1_RXNE_FLAG	register.h	121;"	macro
+SPI1_SR	register.h	126;"	macro
+SPI1_TXCRCR	register.h	130;"	macro
+SPI1_TXE_FLAG	register.h	120;"	macro
+SPI_deselect	spi.c	86;"	function	signature:(void)
+SPI_deselect	spi.h	17;"	prototype	signature:(void)
+SPI_init	spi.c	27;"	function	signature:(void)
+SPI_init	spi.h	15;"	prototype	signature:(void)
+SPI_select	spi.c	81;"	function	signature:(void)
+SPI_select	spi.h	16;"	prototype	signature:(void)
+SPI_tx	spi.c	94;"	function	signature:(uint8_t data)
+SPI_tx	spi.h	18;"	prototype	signature:(uint8_t data)
+SPI_writeArray	spi.c	111;"	function	signature:(uint8_t *data, uint16_t length)
+SPI_writeArray	spi.h	20;"	prototype	signature:(uint8_t *data, uint16_t length)
+SPI_writeByte	spi.c	102;"	function	signature:(uint8_t data)
+SPI_writeByte	spi.h	19;"	prototype	signature:(uint8_t data)
+SYSCFG_RMPCR1	register.h	49;"	macro
+SYSCFG_RMPCR2	register.h	50;"	macro
+TIM2_ARRH	register.h	170;"	macro
+TIM2_ARRL	register.h	171;"	macro
+TIM2_BKR	register.h	176;"	macro
+TIM2_CCER1	register.h	166;"	macro
+TIM2_CCMR1	register.h	164;"	macro
+TIM2_CCMR2	register.h	165;"	macro
+TIM2_CCR1H	register.h	172;"	macro
+TIM2_CCR1L	register.h	173;"	macro
+TIM2_CCR2H	register.h	174;"	macro
+TIM2_CCR2L	register.h	175;"	macro
+TIM2_CNTRH	register.h	167;"	macro
+TIM2_CNTRL	register.h	168;"	macro
+TIM2_CR1	register.h	155;"	macro
+TIM2_CR2	register.h	156;"	macro
+TIM2_DER	register.h	159;"	macro
+TIM2_EGR	register.h	163;"	macro
+TIM2_ETR	register.h	158;"	macro
+TIM2_IER	register.h	160;"	macro
+TIM2_ISR	timer.c	93;"	function	signature:(void)
+TIM2_ISR	timer.h	19;"	prototype	signature:(void)
+TIM2_InterruptHandler	stm8_interrupt_vector.c	106;"	function	signature:(void)
+TIM2_InterruptHandler	stm8_interrupt_vector.c	25;"	prototype	file:	signature:(void)
+TIM2_OISR	register.h	177;"	macro
+TIM2_PSCR	register.h	169;"	macro
+TIM2_SMCR	register.h	157;"	macro
+TIM2_SR1	register.h	161;"	macro
+TIM2_SR2	register.h	162;"	macro
+TIM2_init	timer.c	41;"	function	signature:(void)
+TIM2_init	timer.h	13;"	prototype	signature:(void)
+TIM2_start	timer.c	81;"	function	signature:(void)
+TIM2_start	timer.h	16;"	prototype	signature:(void)
+TIM2_stop	timer.c	86;"	function	signature:(void)
+TIM2_stop	timer.h	17;"	prototype	signature:(void)
+TIM4_ARR	register.h	189;"	macro
+TIM4_CNTR	register.h	187;"	macro
+TIM4_CR1	register.h	180;"	macro
+TIM4_CR2	register.h	181;"	macro
+TIM4_DER	register.h	183;"	macro
+TIM4_EGR	register.h	186;"	macro
+TIM4_IER	register.h	184;"	macro
+TIM4_ISR	timer.c	101;"	function	signature:(void)
+TIM4_ISR	timer.h	20;"	prototype	signature:(void)
+TIM4_InterruptHandler	stm8_interrupt_vector.c	115;"	function	signature:(void)
+TIM4_InterruptHandler	stm8_interrupt_vector.c	26;"	prototype	file:	signature:(void)
+TIM4_PSCR	register.h	188;"	macro
+TIM4_SMCR	register.h	182;"	macro
+TIM4_SR1	register.h	185;"	macro
+TIM4_init	timer.c	66;"	function	signature:(void)
+TIM4_init	timer.h	14;"	prototype	signature:(void)
 UINT16_C	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	101;"	macro
 UINT16_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	53;"	macro
 UINT32_C	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	102;"	macro
@@ -117,18 +253,21 @@ UINT_LEAST16_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compiler
 UINT_LEAST32_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	66;"	macro
 UINT_LEAST8_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	64;"	macro
 __GPIO_H	gpio.h	8;"	macro
+__LCD_H	lcd.h	8;"	macro
 __MODS0__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\mods0.h	11;"	macro
 __REGISTER_H	register.h	8;"	macro
 __SIZE_T__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	8;"	macro
 __SIZE_T__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	9;"	macro
+__SPI_H	spi.h	8;"	macro
 __STDDEF__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	5;"	macro
 __STDINT__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	5;"	macro
 __STDIO__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	6;"	macro
+__SYSTEM_H	system.h	9;"	macro
+__TIMER_H	timer.h	8;"	macro
 __WCHAR_T__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	13;"	macro
-_stext	stm8_interrupt_vector.c	20;"	prototype	file:
-_vectab	stm8_interrupt_vector.c	22;"	variable
-dummy_delay	main.c	34;"	prototype	file:	signature:(uint16_t delay)
-dummy_delay	main.c	53;"	function	signature:(uint16_t delay)
+_stext	stm8_interrupt_vector.c	126;"	prototype	file:
+_vectab	stm8_interrupt_vector.c	128;"	variable
+abs	lcd.c	16;"	macro	file:
 getchar	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	15;"	prototype	signature:(void)
 gets	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	16;"	prototype	signature:(char *s)
 int16_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	10;"	typedef
@@ -140,13 +279,31 @@ int_fast8_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxs
 int_least16_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	19;"	typedef
 int_least32_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	20;"	typedef
 int_least8_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	18;"	typedef
-interrupt_handler	stm8_interrupt_vector.c	9;"	member	struct:interrupt_vector	file:
-interrupt_handler_t	stm8_interrupt_vector.c	5;"	typedef	file:
-interrupt_instruction	stm8_interrupt_vector.c	8;"	member	struct:interrupt_vector	file:
-interrupt_vector	stm8_interrupt_vector.c	7;"	struct	file:
+interrupt_handler	stm8_interrupt_vector.c	32;"	member	struct:interrupt_vector	file:
+interrupt_handler_t	stm8_interrupt_vector.c	12;"	typedef	file:
+interrupt_instruction	stm8_interrupt_vector.c	31;"	member	struct:interrupt_vector	file:
+interrupt_vector	stm8_interrupt_vector.c	30;"	struct	file:
 intmax_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	41;"	typedef
 intptr_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	36;"	typedef
-main	main.c	38;"	function
+lcd_clear	lcd.c	108;"	function	signature:(uint8_t value)
+lcd_clear	lcd.h	28;"	prototype	signature:(uint8_t value)
+lcd_dummyDelay	lcd.c	45;"	function	signature:(unsigned long delay)
+lcd_dummyDelay	lcd.h	20;"	prototype	signature:(unsigned long delay)
+lcd_init	lcd.c	24;"	function	signature:(void)
+lcd_init	lcd.h	19;"	prototype	signature:(void)
+lcd_reset	lcd.c	56;"	function	signature:(void)
+lcd_reset	lcd.h	21;"	prototype	signature:(void)
+lcd_setColumn	lcd.c	97;"	function	signature:(uint8_t column)
+lcd_setColumn	lcd.h	27;"	prototype	signature:(uint8_t column)
+lcd_setPage	lcd.c	88;"	function	signature:(uint8_t page)
+lcd_setPage	lcd.h	26;"	prototype	signature:(uint8_t page)
+lcd_writeCommand	lcd.c	64;"	function	signature:(uint8_t cmd)
+lcd_writeCommand	lcd.h	22;"	prototype	signature:(uint8_t cmd)
+lcd_writeData	lcd.c	70;"	function	signature:(uint8_t data)
+lcd_writeData	lcd.h	23;"	prototype	signature:(uint8_t data)
+lcd_writeDataBurst	lcd.c	76;"	function	signature:(uint8_t *data, uint16_t length)
+lcd_writeDataBurst	lcd.h	24;"	prototype	signature:(uint8_t *data, uint16_t length)
+main	main.c	43;"	function
 offsetof	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	23;"	macro
 printf	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	17;"	prototype	signature:(char *format, ...)
 ptrdiff_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	17;"	typedef
@@ -157,6 +314,20 @@ size_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\h
 size_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	10;"	typedef
 sprintf	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	22;"	prototype	signature:(char *s, char *format, ...)
 sscanf	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	21;"	prototype	signature:(char *s, char *format, ...)
+system_clock_config	system.c	50;"	function	signature:(void)
+system_clock_config	system.h	13;"	prototype	signature:(void)
+system_disableInterrupts	system.c	95;"	function	signature:(void)
+system_disableInterrupts	system.h	16;"	prototype	signature:(void)
+system_enableInterrupts	system.c	85;"	function	signature:(void)
+system_enableInterrupts	system.h	15;"	prototype	signature:(void)
+system_init	system.c	15;"	function	signature:(void)
+system_init	system.h	12;"	prototype	signature:(void)
+system_peripheral_clock_config	system.c	64;"	function	signature:(void)
+system_peripheral_clock_config	system.h	14;"	prototype	signature:(void)
+timerTick	timer.c	22;"	variable
+timer_delay_ms	timer.c	27;"	function	signature:(unsigned long delay)
+timer_delay_ms	timer.h	11;"	prototype	signature:(unsigned long delay)
+txData	main.c	39;"	variable
 uint16_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	13;"	typedef
 uint32_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	14;"	typedef
 uint8_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	12;"	typedef

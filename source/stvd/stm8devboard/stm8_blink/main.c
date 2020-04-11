@@ -29,43 +29,45 @@ I2C output for use with BME280 breakout board
 #include "register.h"
 #include "system.h"
 #include "gpio.h"
- 
+#include "spi.h"
+#include "lcd.h"
+#include "timer.h"
 
 //prototypes
-void dummy_delay(uint16_t delay);
+
+
+uint8_t txData[3] = {0xAA, 0xCC, 0x81};
 
 /////////////////////////////////////////
 //Main
 main()
 {
-    //configure peripherals
-    GPIO_init();
-    system_init();
-    system_clock_config();
-    system_peripheral_clock_config();
-
     system_disableInterrupts();
+    
+    
+    system_init();
+    system_clock_config();              //16mhz, internal
+    system_peripheral_clock_config();   //spi, timer, etc
+    
+    GPIO_init();
+    SPI_init();
+    lcd_init();
+    TIM2_init();
+    TIM4_init();
+    
     system_enableInterrupts();
-        
+
 	while (1)
     {
-        GPIO_led_green_toggle();
         GPIO_led_red_toggle();
-        dummy_delay(50000);
+        TIM2_start();        
+        timer_delay_ms(100);
+    
+        GPIO_led_red_toggle();
+        TIM2_stop();        
+        timer_delay_ms(100);
     }
 }
 
-
-
-//////////////////////////////////////////////
-//dummy_delay(uint16_t delay)
-void dummy_delay(uint16_t delay)
-{
-    volatile uint16_t temp = delay;
-    while (temp > 0)
-    {
-        temp--;
-    }
-}
 
 

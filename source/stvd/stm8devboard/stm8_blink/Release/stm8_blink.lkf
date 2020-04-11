@@ -51,8 +51,11 @@ crtsi0.sm8
 # Object files list - section reserved for STVD
 #<BEGIN OBJECT_FILES>
 Release\gpio.o
+Release\lcd.o
 Release\main.o
+Release\spi.o
 Release\system.o
+Release\timer.o
 #<END OBJECT_FILES>
 
 
