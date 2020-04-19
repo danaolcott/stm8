@@ -3,7 +3,7 @@
 Timer Controller File
 Configure 2 timers, one for the system clock
 and delays and the other for audio, 11khz
-Using TIM4, and.....
+Using TIM2 and TIM4
 These are just software timers with interrupt
 These likely will run similar to those on the
 other stm8 103..? board
@@ -99,8 +99,8 @@ void TIM2_stop(void)
 void TIM2_ISR(void)
 {
     TIM2_SR1 &=~ BIT_0;     //clear update interrupt flag
-    PA_ODR ^= BIT_6;        //do something...
-    
+
+    //do something
 }
 
 

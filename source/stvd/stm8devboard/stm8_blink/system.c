@@ -14,6 +14,8 @@ mapping, etc
 //see page 126 
 void system_init(void)
 {    
+    /////////////////////////////////////////
+    //System remap for SPI, UART, etc
     //SYSCFG_RMPCR1 - remap
     //SPI on PC5, PC6, PA2, PA3
     SYSCFG_RMPCR1 |= BIT_7;
@@ -22,22 +24,19 @@ void system_init(void)
     SYSCFG_RMPCR1 &=~ BIT_5;
     SYSCFG_RMPCR1 &=~ BIT_4;
 
-    //VREFINT - Section 11.2.7
+    ///////////////////////////////////////////////
+    //Switch control - Routing Interface
+    //section 11.3 - RI registers accessed after setting 
+    //comparator clock enabled, PCKEN25 bit in CLK_PCKENR2
+    
+    //Route VREFINT - Section 11.2.7 - output to .....
     COMP_CSR3 |= BIT_0;     //set VREFOUTEN bit 0 in COMP_CSR3
-    
-    //Close the IO switch group3 - PD6 - Section 11.4.11
-    //CH9E bit in RI_IOSR3, ADC1_IN8  - bit 2
-    RI_IOSR3 |= BIT_2;
-    
-    //analog switch control bit AD2 bit, 
-    //register RI_ASCR1 - not sure about this one
 
-    //DAC output - PB4 route dac to output to pin....
-    //Table 24 - Group 5
-    //CH15E bit, ADC1_IN14.  AS4 bit
-    RI_IOSR3 |= BIT_4;      //Section 11.4.11
+    //Route DAC output to PB4 - See Section 11.4.11
+    RI_IOSR3 |= BIT_4;      //close CH15E bit
+    RI_ASCR1 |= BIT_4;      //close analog AS4 bit
 
-
+    //Route ADC........
 
 }
 
@@ -64,15 +63,18 @@ void system_clock_config(void)
 void system_peripheral_clock_config(void)
 {
     //PCKENR2 - clock enable
-    //CLK_PCKENR2 |= BIT_7;           //enable the perphieral clocks as a whole
-    //CLK_PCKENR2 |= BIT_0;           //ADC1
+    CLK_PCKENR2 |= BIT_7;           //enable the perphieral clocks as a whole
+    CLK_PCKENR2 |= BIT_0;           //ADC1
         
     //PCKENR1 - Bits 17-10
     CLK_PCKENR1 |= BIT_7;           //DAC
     CLK_PCKENR1 |= BIT_4;           //SPI
     CLK_PCKENR1 |= BIT_2;           //TIM4
     CLK_PCKENR1 |= BIT_0;           //TIM2
-
+    
+    //PCKENR2 - PCKEN25 bit - enable routing interface
+    CLK_PCKENR2 |= BIT_5;           //RI
+    
 }
 
 

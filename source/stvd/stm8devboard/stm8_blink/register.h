@@ -139,6 +139,26 @@ Register Definitions for the STM8L151K6
 #define COMP_CSR5       *((volatile uint8_t*)0x5444)
 
 //IO Switch and Analog Switch Registers
+#define RI_ICR1        *((volatile uint8_t*)0x5431)    //timer input capture routing 1
+#define RI_ICR2        *((volatile uint8_t*)0x5432)    //timer input capture routing 2
+#define RI_IOIR1       *((volatile uint8_t*)0x5433)    //IO input register 1
+#define RI_IOIR2       *((volatile uint8_t*)0x5434)    //IO input register 2
+#define RI_IOIR3       *((volatile uint8_t*)0x5435)    //IO input register 3
+#define RI_IOCMR1      *((volatile uint8_t*)0x5436)    //IO control mode register 1
+#define RI_IOCMR2      *((volatile uint8_t*)0x5437)    //IO control mode register 2
+#define RI_IOCMR3      *((volatile uint8_t*)0x5438)    //IO control mode register 3
+#define RI_IOSR1       *((volatile uint8_t*)0x5439)    //IO switch registser 1
+#define RI_IOSR2       *((volatile uint8_t*)0x543A)    //IO switch registser 2
+#define RI_IOSR3       *((volatile uint8_t*)0x543B)    //IO switch registser 3
+#define RI_IOGCR       *((volatile uint8_t*)0x543C)    //IO group control register
+#define RI_ASCR1       *((volatile uint8_t*)0x543D)    //analog switch register 1
+#define RI_ASCR2       *((volatile uint8_t*)0x543E)    //analog switch register 2
+#define RI_RCR         *((volatile uint8_t*)0x543F)    //resistor control register 1
+
+
+
+
+
 #define RI_IOSR1        *((volatile uint8_t*)0x5439)    //io switch control
 #define RI_IOSR2        *((volatile uint8_t*)0x543A)
 #define RI_IOSR3        *((volatile uint8_t*)0x543B)
@@ -149,6 +169,34 @@ Register Definitions for the STM8L151K6
 //DAC
 #define DAC_CR1         *((volatile uint8_t*)0x5380)
 #define DAC_CR2         *((volatile uint8_t*)0x5381)
+#define DAC_SWTRIGR     *((volatile uint8_t*)0x5384)
+#define DAC_SR          *((volatile uint8_t*)0x5385)
+
+#define DAC_RDHRH       *((volatile uint8_t*)0x5388)
+#define DAC_RDHRL       *((volatile uint8_t*)0x5389)
+
+#define DAC_LDHRH       *((volatile uint8_t*)0x538C)
+#define DAC_LDHRL       *((volatile uint8_t*)0x538D)
+
+#define DAC_DHR8        *((volatile uint8_t*)0x5390)
+
+#define DAC_DORH        *((volatile uint8_t*)0x53AC)
+#define DAC_DORL        *((volatile uint8_t*)0x53AD)
+
+#define DAC_BIT_CR1_TSEL0       BIT_3
+#define DAC_BIT_CR1_TSEL1       BIT_4
+#define DAC_BIT_CR1_TSEL2       BIT_5
+
+#define DAC_BIT_CR1_TEN         BIT_2
+#define DAC_BIT_CR1_BOFF        BIT_1
+#define DAC_BIT_CR1_EN          BIT_0
+
+#define DAC_BIT_SWTRIGR_SWTRIG1     BIT_0
+
+
+
+
+
 
 
 //timers - TIM2 - not all registers included
@@ -187,10 +235,6 @@ Register Definitions for the STM8L151K6
 #define TIM4_CNTR       *((volatile uint8_t*)0x52E7)
 #define TIM4_PSCR       *((volatile uint8_t*)0x52E8)
 #define TIM4_ARR        *((volatile uint8_t*)0x52E9)
-
-
-
-
 
 
 //interrupt IRQ - See Table 10 in the datasheet
