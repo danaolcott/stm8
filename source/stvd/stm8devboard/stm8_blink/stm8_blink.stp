@@ -73,7 +73,7 @@ Int.108=0
 String.6.0=2020,3,4,8,34,2
 String.100.0=$(TargetFName)
 String.101.0=
-String.103.0=.\;
+String.103.0=.\;sound;
 
 [Root.Config.0.Settings.2]
 String.2.0=
@@ -82,7 +82,7 @@ String.100.0=STM8L151K6
 
 [Root.Config.0.Settings.3]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -isound  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
 String.6.0=2020,3,4,8,34,2
@@ -153,7 +153,7 @@ Int.108=0
 String.6.0=2020,3,4,8,34,2
 String.100.0=$(TargetFName)
 String.101.0=
-String.103.0=.\;
+String.103.0=.\;sound;
 
 [Root.Config.1.Settings.2]
 String.2.0=
@@ -162,7 +162,7 @@ String.100.0=STM8L151K6
 
 [Root.Config.1.Settings.3]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -isound  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
 String.6.0=2020,3,4,8,34,2
@@ -215,7 +215,7 @@ String.6.0=2020,3,4,8,34,2
 [Root.Source Files]
 ElemType=Folder
 PathName=Source Files
-Child=Root.Source Files.gpio.c
+Child=Root.Source Files.Source Files\sound
 Next=Root.Include Files
 Config.0=Root.Source Files.Config.0
 Config.1=Root.Source Files.Config.1
@@ -240,7 +240,7 @@ Int.1=0
 
 [Root.Source Files.Config.0.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -isound  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
 String.6.0=2020,3,4,8,34,2
@@ -267,7 +267,7 @@ Int.1=0
 
 [Root.Source Files.Config.1.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -isound  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
 String.6.0=2020,3,4,8,34,2
@@ -285,6 +285,61 @@ String.3.0=
 String.4.0=
 String.5.0=
 String.6.0=2020,3,4,8,34,2
+
+[Root.Source Files.Source Files\sound]
+ElemType=Folder
+PathName=Source Files\sound
+Child=Root.Source Files.Source Files\sound.sound\sound.c
+Next=Root.Source Files.button.c
+
+[Root.Source Files.Source Files\sound.sound\sound.c]
+ElemType=File
+PathName=sound\sound.c
+Next=Root.Source Files.Source Files\sound.sound\sound.h
+
+[Root.Source Files.Source Files\sound.sound\sound.h]
+ElemType=File
+PathName=sound\sound.h
+Next=Root.Source Files.Source Files\sound.sound\wavenemyexplode.c
+
+[Root.Source Files.Source Files\sound.sound\wavenemyexplode.c]
+ElemType=File
+PathName=sound\wavenemyexplode.c
+Next=Root.Source Files.Source Files\sound.sound\wavenemyfire.c
+
+[Root.Source Files.Source Files\sound.sound\wavenemyfire.c]
+ElemType=File
+PathName=sound\wavenemyfire.c
+Next=Root.Source Files.Source Files\sound.sound\wavplayerfire.c
+
+[Root.Source Files.Source Files\sound.sound\wavplayerfire.c]
+ElemType=File
+PathName=sound\wavplayerfire.c
+Next=Root.Source Files.Source Files\sound.sound\wavtest.c
+
+[Root.Source Files.Source Files\sound.sound\wavtest.c]
+ElemType=File
+PathName=sound\wavtest.c
+
+[Root.Source Files.button.c]
+ElemType=File
+PathName=button.c
+Next=Root.Source Files.button.h
+
+[Root.Source Files.button.h]
+ElemType=File
+PathName=button.h
+Next=Root.Source Files.dac.c
+
+[Root.Source Files.dac.c]
+ElemType=File
+PathName=dac.c
+Next=Root.Source Files.dac.h
+
+[Root.Source Files.dac.h]
+ElemType=File
+PathName=dac.h
+Next=Root.Source Files.gpio.c
 
 [Root.Source Files.gpio.c]
 ElemType=File
@@ -376,7 +431,7 @@ Int.1=0
 
 [Root.Include Files.Config.0.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -isound  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
 String.6.0=2020,3,4,8,34,2
@@ -403,7 +458,7 @@ Int.1=0
 
 [Root.Include Files.Config.1.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -isound  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
 String.6.0=2020,3,4,8,34,2

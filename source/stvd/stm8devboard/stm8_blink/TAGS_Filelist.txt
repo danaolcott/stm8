@@ -1,3 +1,13 @@
+sound\sound.c
+sound\sound.h
+sound\wavenemyexplode.c
+sound\wavenemyfire.c
+sound\wavplayerfire.c
+sound\wavtest.c
+button.c
+button.h
+dac.c
+dac.h
 gpio.c
 gpio.h
 lcd.c

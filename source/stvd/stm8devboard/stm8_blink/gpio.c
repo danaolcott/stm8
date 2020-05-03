@@ -5,6 +5,9 @@ Configure pins for leds red and green
 PB5 - red
 PB6 - green
 
+//Joystick: EXTI0-EXTI5
+//order: left, center, up, right, down, user button - bits 0-5
+
 */
 
 #include <stdio.h>
@@ -13,6 +16,7 @@ PB6 - green
 
 #include "register.h"
 #include "gpio.h"
+#include "button.h"
 
 
 
@@ -124,65 +128,65 @@ void GPIO_led_green_toggle(void)
     PB_ODR ^= BIT_6;
 }
 
-
+//order: left, center, up, right, down, user button - bits 0-5
 ////////////////////////////////////////////////
-//EXTI0_ISR
+//EXTI0_ISR - joystick left
 void GPIO_EXTI0_ISR(void)
 {
     //do something
-    GPIO_led_green_toggle();
+    Button_setFlag(BUTTON_LEFT);
     EXTI_SR1 |= BIT_0;          //write 1 to clear the interrupt
 }
 
 
 ////////////////////////////////////////////////
-//EXTI1_ISR
+//EXTI1_ISR - joystick center
 void GPIO_EXTI1_ISR(void)
 {
     //do something
-    GPIO_led_green_toggle();    
+    Button_setFlag(BUTTON_CENTER);
     EXTI_SR1 |= BIT_1;          //write 1 to clear the interrupt
 
 }
 
 
 ////////////////////////////////////////////////
-//EXTI2_ISR
+//EXTI2_ISR - joystick up
 void GPIO_EXTI2_ISR(void)
 {
     //do something
-    GPIO_led_green_toggle();    
+    Button_setFlag(BUTTON_UP);
     EXTI_SR1 |= BIT_2;          //write 1 to clear the interrupt
 
 }
 
 ////////////////////////////////////////////////
-//EXTI3_ISR
+//EXTI3_ISR - joystick right
 void GPIO_EXTI3_ISR(void)
 {
     //do something
-    GPIO_led_green_toggle();    
+    Button_setFlag(BUTTON_RIGHT);    
     EXTI_SR1 |= BIT_3;          //write 1 to clear the interrupt
 
 }
 
 ////////////////////////////////////////////////
-//EXTI4_ISR
+//EXTI4_ISR - joystick down
 void GPIO_EXTI4_ISR(void)
 {
     //do something
-    GPIO_led_green_toggle();    
+    Button_setFlag(BUTTON_DOWN);
     EXTI_SR1 |= BIT_4;          //write 1 to clear the interrupt
 
 }
 
 
 ////////////////////////////////////////////////
-//EXTI5_ISR
+//EXTI5_ISR - user button
 void GPIO_EXTI5_ISR(void)
 {
     //do something
-    GPIO_led_green_toggle();    
+    Button_setFlag(BUTTON_USER);
     EXTI_SR1 |= BIT_5;          //write 1 to clear the interrupt
 }
 

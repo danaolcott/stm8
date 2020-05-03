@@ -32,14 +32,12 @@ I2C output for use with BME280 breakout board
 #include "spi.h"
 #include "lcd.h"
 #include "timer.h"
+#include "dac.h"
+#include "sound.h"
+#include "button.h"
 
-//prototypes
-void dac_init(void);
-void dac_set(unsigned int value);
 
-
-uint8_t txData[3] = {0xAA, 0xCC, 0x81};
-unsigned int counter = 0x00;
+static ButtonType_t lButton = 0x00;
 
 /////////////////////////////////////////
 //Main
@@ -55,74 +53,47 @@ main()
     lcd_init();
     TIM2_init();
     TIM4_init();
-    dac_init();
-
+    DAC_init();
+    Sound_init();
     
     system_enableInterrupts();
     
 	while (1)
     {
-        //toggle the counter from 0 to 4000
-        dac_set(counter);
-                
-        if (counter < 4095)
-            counter = 4095;
-        else
-            counter = 0x00;
+        //check for any button flags
+        lButton = Button_getFlag();
+        
+        if (lButton > 0)
+        {
+            switch(lButton)
+            {
+                case BUTTON_UP:
+                    Sound_play(&wavSoundEnemyExplode, 1);
+                    break;
+                case BUTTON_DOWN:
+                    Sound_play(&wavSoundEnemyExplode, 2);
+                    break;
+                case BUTTON_LEFT:
+                    Sound_play(&wavSoundPlayerFire, 1);
+                    break;
+                case BUTTON_RIGHT:
+                    Sound_play(&wavSoundPlayerFire, 2);
+                    break;
+                case BUTTON_CENTER:
+                    Sound_play(&soundTest2, 5000);
+                    break;
+                case BUTTON_USER:
+                    Sound_play(&soundTest1, 5000);
+                    break;
+            }
             
-        GPIO_led_red_toggle();
-        timer_delay_ms(10);
+            Button_clearFlag();
+        }
+        
+        GPIO_led_green_toggle();
+        timer_delay_ms(100);
     }
 }
 
-
-
-/////////////////////////////////////////
-//Configure the dac to output, assumes the 
-//peripheral clock enabled and the switch
-//routes to the appropriate pin.  system.h
-//Leave GPIO pin config alone.  If you set to 
-//output, it wont' work.
-//Also, have to enable the COMP1 and COMP2
-//clock before calling this function to allow RI to work.
-void dac_init(void)
-{    
-    //DAC_CR1 Configure
-    DAC_CR1 |= DAC_BIT_CR1_TSEL0;       //software trigger
-    DAC_CR1 |= DAC_BIT_CR1_TSEL1;
-    DAC_CR1 |= DAC_BIT_CR1_TSEL2;
-    
-    DAC_CR1 |= DAC_BIT_CR1_TEN;         //enable trigger
-    DAC_CR1 &=~ DAC_BIT_CR1_BOFF;       //disable output buffer
-    DAC_CR1 |= DAC_BIT_CR1_EN;          //enable the dac output
-}
-
-/////////////////////////////////////////
-//Dac Output - 12 bit value outptu to PB4
-void dac_set(unsigned int value)
-{
-    unsigned int low = 0x00;
-    unsigned int high = 0x00;
-    
-    low = value & 0xFF;
-    high = (value >> 8) & 0x0F;
-    
-    //write the data - assuming right aligned
-    DAC_RDHRH = high;
-    DAC_RDHRL = low;
-    
-    //write data assuming left aligned
-//    DAC_LDHRH = ((value >> 4) & 0xFF);
-//    DAC_LDHRL = ((value << 4) & 0xF0);
-
-    //odd - this bit does not go high....
-    //set the software trigger bit, cleared by
-    //hardware once the data is written
-    DAC_SWTRIGR |= BIT_0;
-
-    //wait, BIT_0 is cleared by hardware
-    while (DAC_SWTRIGR & BIT_0){};
-    
-}
 
 

@@ -17,7 +17,7 @@ other stm8 103..? board
 #include "timer.h"
 #include "gpio.h"
 #include "system.h"
-
+#include "sound.h"
 
 volatile unsigned long timerTick = 0x00;
 
@@ -47,8 +47,15 @@ void TIM2_init(void)
     TIM2_CNTRL = 0x00;       //clear the timer counter
     //2^3, set to 1mhz
     TIM2_PSCR |= 0x03;      //prescaller, check this, trial and error    
-    TIM2_ARRH = 0x00;       //auto reload, trial and error
-    TIM2_ARRL = 0xBA;       //auto reload, trial and error
+//    TIM2_ARRH = 0x00;       //auto reload, trial and error    
+//    TIM2_ARRL = 0xBA;       //auto reload, trial and error
+
+
+    TIM2_ARRH = 0x00;       //auto reload, trial and error    
+    TIM2_ARRL = 0x1A;       //auto reload, trial and error
+
+
+
     TIM2_CR1 |= BIT_0;      //enable counter    
 }
 
@@ -101,6 +108,7 @@ void TIM2_ISR(void)
     TIM2_SR1 &=~ BIT_0;     //clear update interrupt flag
 
     //do something
+    Sound_interruptHandler();
 }
 
 

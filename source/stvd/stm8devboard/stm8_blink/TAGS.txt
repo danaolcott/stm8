@@ -13,6 +13,21 @@ BIT_5	register.h	19;"	macro
 BIT_6	register.h	20;"	macro
 BIT_7	register.h	21;"	macro
 BUFSIZ	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	26;"	macro
+BUTTON_CENTER	button.h	16;"	enumerator	enum:__anon2
+BUTTON_DOWN	button.h	19;"	enumerator	enum:__anon2
+BUTTON_LEFT	button.h	15;"	enumerator	enum:__anon2
+BUTTON_RIGHT	button.h	18;"	enumerator	enum:__anon2
+BUTTON_UP	button.h	17;"	enumerator	enum:__anon2
+BUTTON_USER	button.h	20;"	enumerator	enum:__anon2
+ButtonType_t	button.h	21;"	typedef	typeref:enum:__anon2
+Button_clearFlag	button.c	29;"	function	signature:(void)
+Button_clearFlag	button.h	25;"	prototype	signature:(void)
+Button_getFlag	button.c	24;"	function	signature:(void)
+Button_getFlag	button.h	24;"	prototype	signature:(void)
+Button_init	button.c	19;"	function	signature:(void)
+Button_init	button.h	23;"	prototype	signature:(void)
+Button_setFlag	button.c	34;"	function	signature:(ButtonType_t button)
+Button_setFlag	button.h	26;"	prototype	signature:(ButtonType_t button)
 CLK_CBEEPR	register.h	64;"	macro
 CLK_CCOR	register.h	58;"	macro
 CLK_CRTCR	register.h	54;"	macro
@@ -34,6 +49,13 @@ COMP_CSR2	register.h	136;"	macro
 COMP_CSR3	register.h	137;"	macro
 COMP_CSR4	register.h	138;"	macro
 COMP_CSR5	register.h	139;"	macro
+DAC_BIT_CR1_BOFF	register.h	191;"	macro
+DAC_BIT_CR1_EN	register.h	192;"	macro
+DAC_BIT_CR1_TEN	register.h	190;"	macro
+DAC_BIT_CR1_TSEL0	register.h	186;"	macro
+DAC_BIT_CR1_TSEL1	register.h	187;"	macro
+DAC_BIT_CR1_TSEL2	register.h	188;"	macro
+DAC_BIT_SWTRIGR_SWTRIG1	register.h	194;"	macro
 DAC_CR1	register.h	170;"	macro
 DAC_CR2	register.h	171;"	macro
 DAC_DHR8	register.h	181;"	macro
@@ -45,60 +67,66 @@ DAC_RDHRH	register.h	175;"	macro
 DAC_RDHRL	register.h	176;"	macro
 DAC_SR	register.h	173;"	macro
 DAC_SWTRIGR	register.h	172;"	macro
+DAC_init	dac.c	25;"	function	signature:(void)
+DAC_init	dac.h	11;"	prototype	signature:(void)
+DAC_set	dac.c	40;"	function	signature:(unsigned int value)
+DAC_set	dac.h	12;"	prototype	signature:(unsigned int value)
+DAC_set8Bit	dac.c	59;"	function	signature:(unsigned char value)
+DAC_set8Bit	dac.h	13;"	prototype	signature:(unsigned char value)
 EOF	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	27;"	macro
-EXTI0_IRQ	register.h	227;"	macro
+EXTI0_IRQ	register.h	241;"	macro
 EXTI0_InterruptHandler	stm8_interrupt_vector.c	17;"	prototype	file:	signature:(void)
 EXTI0_InterruptHandler	stm8_interrupt_vector.c	51;"	function	signature:(void)
-EXTI1_IRQ	register.h	228;"	macro
+EXTI1_IRQ	register.h	242;"	macro
 EXTI1_InterruptHandler	stm8_interrupt_vector.c	18;"	prototype	file:	signature:(void)
 EXTI1_InterruptHandler	stm8_interrupt_vector.c	60;"	function	signature:(void)
-EXTI2_IRQ	register.h	229;"	macro
+EXTI2_IRQ	register.h	243;"	macro
 EXTI2_InterruptHandler	stm8_interrupt_vector.c	19;"	prototype	file:	signature:(void)
 EXTI2_InterruptHandler	stm8_interrupt_vector.c	69;"	function	signature:(void)
-EXTI3_IRQ	register.h	230;"	macro
+EXTI3_IRQ	register.h	244;"	macro
 EXTI3_InterruptHandler	stm8_interrupt_vector.c	20;"	prototype	file:	signature:(void)
 EXTI3_InterruptHandler	stm8_interrupt_vector.c	78;"	function	signature:(void)
-EXTI4_IRQ	register.h	231;"	macro
+EXTI4_IRQ	register.h	245;"	macro
 EXTI4_InterruptHandler	stm8_interrupt_vector.c	21;"	prototype	file:	signature:(void)
 EXTI4_InterruptHandler	stm8_interrupt_vector.c	87;"	function	signature:(void)
-EXTI5_IRQ	register.h	232;"	macro
+EXTI5_IRQ	register.h	246;"	macro
 EXTI5_InterruptHandler	stm8_interrupt_vector.c	22;"	prototype	file:	signature:(void)
 EXTI5_InterruptHandler	stm8_interrupt_vector.c	96;"	function	signature:(void)
-EXTI6_IRQ	register.h	233;"	macro
-EXTI7_IRQ	register.h	234;"	macro
+EXTI6_IRQ	register.h	247;"	macro
+EXTI7_IRQ	register.h	248;"	macro
 EXTI_CONF1	register.h	116;"	macro
 EXTI_CR1	register.h	111;"	macro
 EXTI_CR2	register.h	112;"	macro
 EXTI_CR3	register.h	113;"	macro
 EXTI_SR1	register.h	114;"	macro
 EXTI_SR2	register.h	115;"	macro
-GPIO_EXTI0_ISR	gpio.c	130;"	function	signature:(void)
+GPIO_EXTI0_ISR	gpio.c	134;"	function	signature:(void)
 GPIO_EXTI0_ISR	gpio.h	21;"	prototype	signature:(void)
-GPIO_EXTI1_ISR	gpio.c	140;"	function	signature:(void)
+GPIO_EXTI1_ISR	gpio.c	144;"	function	signature:(void)
 GPIO_EXTI1_ISR	gpio.h	22;"	prototype	signature:(void)
-GPIO_EXTI2_ISR	gpio.c	151;"	function	signature:(void)
+GPIO_EXTI2_ISR	gpio.c	155;"	function	signature:(void)
 GPIO_EXTI2_ISR	gpio.h	23;"	prototype	signature:(void)
-GPIO_EXTI3_ISR	gpio.c	161;"	function	signature:(void)
+GPIO_EXTI3_ISR	gpio.c	165;"	function	signature:(void)
 GPIO_EXTI3_ISR	gpio.h	24;"	prototype	signature:(void)
-GPIO_EXTI4_ISR	gpio.c	171;"	function	signature:(void)
+GPIO_EXTI4_ISR	gpio.c	175;"	function	signature:(void)
 GPIO_EXTI4_ISR	gpio.h	25;"	prototype	signature:(void)
-GPIO_EXTI5_ISR	gpio.c	182;"	function	signature:(void)
+GPIO_EXTI5_ISR	gpio.c	186;"	function	signature:(void)
 GPIO_EXTI5_ISR	gpio.h	26;"	prototype	signature:(void)
-GPIO_init	gpio.c	27;"	function	signature:(void)
+GPIO_init	gpio.c	31;"	function	signature:(void)
 GPIO_init	gpio.h	11;"	prototype	signature:(void)
-GPIO_interrupt_config	gpio.c	60;"	function	signature:(void)
+GPIO_interrupt_config	gpio.c	64;"	function	signature:(void)
 GPIO_interrupt_config	gpio.h	12;"	prototype	signature:(void)
-GPIO_led_green_off	gpio.c	112;"	function	signature:(void)
+GPIO_led_green_off	gpio.c	116;"	function	signature:(void)
 GPIO_led_green_off	gpio.h	17;"	prototype	signature:(void)
-GPIO_led_green_on	gpio.c	102;"	function	signature:(void)
+GPIO_led_green_on	gpio.c	106;"	function	signature:(void)
 GPIO_led_green_on	gpio.h	15;"	prototype	signature:(void)
-GPIO_led_green_toggle	gpio.c	122;"	function	signature:(void)
+GPIO_led_green_toggle	gpio.c	126;"	function	signature:(void)
 GPIO_led_green_toggle	gpio.h	19;"	prototype	signature:(void)
-GPIO_led_red_off	gpio.c	107;"	function	signature:(void)
+GPIO_led_red_off	gpio.c	111;"	function	signature:(void)
 GPIO_led_red_off	gpio.h	16;"	prototype	signature:(void)
-GPIO_led_red_on	gpio.c	97;"	function	signature:(void)
+GPIO_led_red_on	gpio.c	101;"	function	signature:(void)
 GPIO_led_red_on	gpio.h	14;"	prototype	signature:(void)
-GPIO_led_red_toggle	gpio.c	117;"	function	signature:(void)
+GPIO_led_red_toggle	gpio.c	121;"	function	signature:(void)
 GPIO_led_red_toggle	gpio.h	18;"	prototype	signature:(void)
 INT16_C	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	97;"	macro
 INT16_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	50;"	macro
@@ -212,54 +240,61 @@ SPI_writeByte	spi.c	102;"	function	signature:(uint8_t data)
 SPI_writeByte	spi.h	19;"	prototype	signature:(uint8_t data)
 SYSCFG_RMPCR1	register.h	49;"	macro
 SYSCFG_RMPCR2	register.h	50;"	macro
-TIM2_ARRH	register.h	204;"	macro
-TIM2_ARRL	register.h	205;"	macro
-TIM2_BKR	register.h	210;"	macro
-TIM2_CCER1	register.h	200;"	macro
-TIM2_CCMR1	register.h	198;"	macro
-TIM2_CCMR2	register.h	199;"	macro
-TIM2_CCR1H	register.h	206;"	macro
-TIM2_CCR1L	register.h	207;"	macro
-TIM2_CCR2H	register.h	208;"	macro
-TIM2_CCR2L	register.h	209;"	macro
-TIM2_CNTRH	register.h	201;"	macro
-TIM2_CNTRL	register.h	202;"	macro
-TIM2_CR1	register.h	189;"	macro
-TIM2_CR2	register.h	190;"	macro
-TIM2_DER	register.h	193;"	macro
-TIM2_EGR	register.h	197;"	macro
-TIM2_ETR	register.h	192;"	macro
-TIM2_IER	register.h	194;"	macro
-TIM2_ISR	timer.c	99;"	function	signature:(void)
+SoundData	sound\sound.h	16;"	typedef	typeref:struct:__anon1
+Sound_init	sound\sound.c	27;"	function	signature:(void)
+Sound_init	sound\sound.h	29;"	prototype	signature:(void)
+Sound_interruptHandler	sound\sound.c	62;"	function	signature:(void)
+Sound_interruptHandler	sound\sound.h	31;"	prototype	signature:(void)
+Sound_play	sound\sound.c	48;"	function	signature:(const SoundData *sound, unsigned char loop)
+Sound_play	sound\sound.h	30;"	prototype	signature:(const SoundData *sound, unsigned char loop)
+TIM2_ARRH	register.h	218;"	macro
+TIM2_ARRL	register.h	219;"	macro
+TIM2_BKR	register.h	224;"	macro
+TIM2_CCER1	register.h	214;"	macro
+TIM2_CCMR1	register.h	212;"	macro
+TIM2_CCMR2	register.h	213;"	macro
+TIM2_CCR1H	register.h	220;"	macro
+TIM2_CCR1L	register.h	221;"	macro
+TIM2_CCR2H	register.h	222;"	macro
+TIM2_CCR2L	register.h	223;"	macro
+TIM2_CNTRH	register.h	215;"	macro
+TIM2_CNTRL	register.h	216;"	macro
+TIM2_CR1	register.h	203;"	macro
+TIM2_CR2	register.h	204;"	macro
+TIM2_DER	register.h	207;"	macro
+TIM2_EGR	register.h	211;"	macro
+TIM2_ETR	register.h	206;"	macro
+TIM2_IER	register.h	208;"	macro
+TIM2_ISR	timer.c	106;"	function	signature:(void)
 TIM2_ISR	timer.h	19;"	prototype	signature:(void)
 TIM2_InterruptHandler	stm8_interrupt_vector.c	106;"	function	signature:(void)
 TIM2_InterruptHandler	stm8_interrupt_vector.c	25;"	prototype	file:	signature:(void)
-TIM2_OISR	register.h	211;"	macro
-TIM2_PSCR	register.h	203;"	macro
-TIM2_SMCR	register.h	191;"	macro
-TIM2_SR1	register.h	195;"	macro
-TIM2_SR2	register.h	196;"	macro
+TIM2_OISR	register.h	225;"	macro
+TIM2_PSCR	register.h	217;"	macro
+TIM2_SMCR	register.h	205;"	macro
+TIM2_SR1	register.h	209;"	macro
+TIM2_SR2	register.h	210;"	macro
 TIM2_init	timer.c	41;"	function	signature:(void)
 TIM2_init	timer.h	13;"	prototype	signature:(void)
-TIM2_start	timer.c	77;"	function	signature:(void)
+TIM2_start	timer.c	84;"	function	signature:(void)
 TIM2_start	timer.h	16;"	prototype	signature:(void)
-TIM2_stop	timer.c	87;"	function	signature:(void)
+TIM2_stop	timer.c	94;"	function	signature:(void)
 TIM2_stop	timer.h	17;"	prototype	signature:(void)
-TIM4_ARR	register.h	223;"	macro
-TIM4_CNTR	register.h	221;"	macro
-TIM4_CR1	register.h	214;"	macro
-TIM4_CR2	register.h	215;"	macro
-TIM4_DER	register.h	217;"	macro
-TIM4_EGR	register.h	220;"	macro
-TIM4_IER	register.h	218;"	macro
-TIM4_ISR	timer.c	107;"	function	signature:(void)
+TIM4_ARR	register.h	237;"	macro
+TIM4_CNTR	register.h	235;"	macro
+TIM4_CR1	register.h	228;"	macro
+TIM4_CR2	register.h	229;"	macro
+TIM4_DER	register.h	231;"	macro
+TIM4_EGR	register.h	234;"	macro
+TIM4_IER	register.h	232;"	macro
+TIM4_ISR	timer.c	115;"	function	signature:(void)
 TIM4_ISR	timer.h	20;"	prototype	signature:(void)
 TIM4_InterruptHandler	stm8_interrupt_vector.c	115;"	function	signature:(void)
 TIM4_InterruptHandler	stm8_interrupt_vector.c	26;"	prototype	file:	signature:(void)
-TIM4_PSCR	register.h	222;"	macro
-TIM4_SMCR	register.h	216;"	macro
-TIM4_SR1	register.h	219;"	macro
-TIM4_init	timer.c	62;"	function	signature:(void)
+TIM4_PSCR	register.h	236;"	macro
+TIM4_SMCR	register.h	230;"	macro
+TIM4_SR1	register.h	233;"	macro
+TIM4_init	timer.c	69;"	function	signature:(void)
 TIM4_init	timer.h	14;"	prototype	signature:(void)
 UINT16_C	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	101;"	macro
 UINT16_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	53;"	macro
@@ -276,12 +311,15 @@ UINT_FAST8_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\
 UINT_LEAST16_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	65;"	macro
 UINT_LEAST32_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	66;"	macro
 UINT_LEAST8_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	64;"	macro
+__BUTTON_H	button.h	10;"	macro
+__DAC_H	dac.h	8;"	macro
 __GPIO_H	gpio.h	8;"	macro
 __LCD_H	lcd.h	8;"	macro
 __MODS0__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\mods0.h	11;"	macro
 __REGISTER_H	register.h	8;"	macro
 __SIZE_T__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	8;"	macro
 __SIZE_T__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	9;"	macro
+__SOUND_H	sound\sound.h	9;"	macro
 __SPI_H	spi.h	8;"	macro
 __STDDEF__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	5;"	macro
 __STDINT__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	5;"	macro
@@ -291,12 +329,10 @@ __TIMER_H	timer.h	8;"	macro
 __WCHAR_T__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	13;"	macro
 _stext	stm8_interrupt_vector.c	126;"	prototype	file:
 _vectab	stm8_interrupt_vector.c	128;"	variable
+_wavEnemyExplode	sound\wavenemyexplode.c	5;"	variable
+_wavEnemyFire	sound\wavenemyfire.c	5;"	variable
+_wavPlayerFire	sound\wavplayerfire.c	4;"	variable
 abs	lcd.c	16;"	macro	file:
-counter	main.c	42;"	variable
-dac_init	main.c	37;"	prototype	file:	signature:(void)
-dac_init	main.c	82;"	function	signature:(void)
-dac_set	main.c	105;"	function	signature:(unsigned int value)
-dac_set	main.c	38;"	prototype	file:	signature:(unsigned int value)
 getchar	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	15;"	prototype	signature:(void)
 gets	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	16;"	prototype	signature:(char *s)
 int16_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	10;"	typedef
@@ -314,6 +350,7 @@ interrupt_instruction	stm8_interrupt_vector.c	31;"	member	struct:interrupt_vecto
 interrupt_vector	stm8_interrupt_vector.c	30;"	struct	file:
 intmax_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	41;"	typedef
 intptr_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	36;"	typedef
+lButton	main.c	40;"	variable	file:
 lcd_clear	lcd.c	108;"	function	signature:(uint8_t value)
 lcd_clear	lcd.h	28;"	prototype	signature:(uint8_t value)
 lcd_dummyDelay	lcd.c	45;"	function	signature:(unsigned long delay)
@@ -332,8 +369,18 @@ lcd_writeData	lcd.c	70;"	function	signature:(uint8_t data)
 lcd_writeData	lcd.h	23;"	prototype	signature:(uint8_t data)
 lcd_writeDataBurst	lcd.c	76;"	function	signature:(uint8_t *data, uint16_t length)
 lcd_writeDataBurst	lcd.h	24;"	prototype	signature:(uint8_t *data, uint16_t length)
-main	main.c	46;"	function
+length	sound\sound.h	14;"	member	struct:__anon1
+mButtonFlag	button.c	15;"	variable
+mSoundCounter	sound\sound.c	20;"	variable	file:
+mSoundCurrent	sound\sound.c	24;"	variable
+mSoundEnable	sound\sound.c	23;"	variable
+mSoundLoopCounter	sound\sound.c	21;"	variable	file:
+main	main.c	44;"	function
 offsetof	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	23;"	macro
+pSoundData	sound\sound.h	15;"	member	struct:__anon1
+pSoundTest1	sound\wavtest.c	15;"	variable
+pSoundTest2	sound\wavtest.c	32;"	variable
+pSoundValue	sound\sound.c	22;"	variable
 printf	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	17;"	prototype	signature:(char *format, ...)
 ptrdiff_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	17;"	typedef
 putchar	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	18;"	prototype	signature:(char c)
@@ -341,22 +388,23 @@ puts	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hst
 scanf	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	20;"	prototype	signature:(char *format, ...)
 size_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	9;"	typedef
 size_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	10;"	typedef
+soundTest1	sound\wavtest.c	23;"	variable
+soundTest2	sound\wavtest.c	41;"	variable
 sprintf	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	22;"	prototype	signature:(char *s, char *format, ...)
 sscanf	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	21;"	prototype	signature:(char *s, char *format, ...)
-system_clock_config	system.c	104;"	function	signature:(void)
+system_clock_config	system.c	49;"	function	signature:(void)
 system_clock_config	system.h	13;"	prototype	signature:(void)
-system_disableInterrupts	system.c	154;"	function	signature:(void)
+system_disableInterrupts	system.c	98;"	function	signature:(void)
 system_disableInterrupts	system.h	16;"	prototype	signature:(void)
-system_enableInterrupts	system.c	144;"	function	signature:(void)
+system_enableInterrupts	system.c	88;"	function	signature:(void)
 system_enableInterrupts	system.h	15;"	prototype	signature:(void)
 system_init	system.c	15;"	function	signature:(void)
 system_init	system.h	12;"	prototype	signature:(void)
-system_peripheral_clock_config	system.c	118;"	function	signature:(void)
+system_peripheral_clock_config	system.c	63;"	function	signature:(void)
 system_peripheral_clock_config	system.h	14;"	prototype	signature:(void)
 timerTick	timer.c	22;"	variable
 timer_delay_ms	timer.c	27;"	function	signature:(unsigned long delay)
 timer_delay_ms	timer.h	11;"	prototype	signature:(unsigned long delay)
-txData	main.c	41;"	variable
 uint16_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	13;"	typedef
 uint32_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	14;"	typedef
 uint8_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	12;"	typedef
@@ -368,3 +416,6 @@ uint_least32_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\
 uint_least8_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	21;"	typedef
 uintmax_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	42;"	typedef
 uintptr_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	37;"	typedef
+wavSoundEnemyExplode	sound\wavenemyexplode.c	575;"	variable
+wavSoundEnemyFire	sound\wavenemyfire.c	467;"	variable
+wavSoundPlayerFire	sound\wavplayerfire.c	133;"	variable

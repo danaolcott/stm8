@@ -50,6 +50,13 @@ crtsi0.sm8
 
 # Object files list - section reserved for STVD
 #<BEGIN OBJECT_FILES>
+Debug\sound.o
+Debug\wavenemyexplode.o
+Debug\wavenemyfire.o
+Debug\wavplayerfire.o
+Debug\wavtest.o
+Debug\button.o
+Debug\dac.o
 Debug\gpio.o
 Debug\lcd.o
 Debug\main.o
