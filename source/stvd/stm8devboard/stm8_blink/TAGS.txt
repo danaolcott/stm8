@@ -4,22 +4,32 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-BIT_0	register.h	14;"	macro
-BIT_1	register.h	15;"	macro
-BIT_2	register.h	16;"	macro
-BIT_3	register.h	17;"	macro
-BIT_4	register.h	18;"	macro
-BIT_5	register.h	19;"	macro
-BIT_6	register.h	20;"	macro
-BIT_7	register.h	21;"	macro
+BITMAP_ENEMY	display\bitmap.h	22;"	enumerator	enum:Image
+BITMAP_H_	display\bitmap.h	11;"	macro
+BITMAP_PLAYER	display\bitmap.h	17;"	enumerator	enum:Image
+BITMAP_PLAYER_EXP1	display\bitmap.h	18;"	enumerator	enum:Image
+BITMAP_PLAYER_EXP2	display\bitmap.h	19;"	enumerator	enum:Image
+BITMAP_PLAYER_EXP3	display\bitmap.h	20;"	enumerator	enum:Image
+BITMAP_PLAYER_EXP4	display\bitmap.h	21;"	enumerator	enum:Image
+BITMAP_PLAYER_ICON1	display\bitmap.h	25;"	enumerator	enum:Image
+BITMAP_PLAYER_ICON2	display\bitmap.h	24;"	enumerator	enum:Image
+BITMAP_PLAYER_ICON3	display\bitmap.h	23;"	enumerator	enum:Image
+BIT_0	register.h	17;"	macro
+BIT_1	register.h	18;"	macro
+BIT_2	register.h	19;"	macro
+BIT_3	register.h	20;"	macro
+BIT_4	register.h	21;"	macro
+BIT_5	register.h	22;"	macro
+BIT_6	register.h	23;"	macro
+BIT_7	register.h	24;"	macro
 BUFSIZ	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	26;"	macro
-BUTTON_CENTER	button.h	16;"	enumerator	enum:__anon2
-BUTTON_DOWN	button.h	19;"	enumerator	enum:__anon2
-BUTTON_LEFT	button.h	15;"	enumerator	enum:__anon2
-BUTTON_RIGHT	button.h	18;"	enumerator	enum:__anon2
-BUTTON_UP	button.h	17;"	enumerator	enum:__anon2
-BUTTON_USER	button.h	20;"	enumerator	enum:__anon2
-ButtonType_t	button.h	21;"	typedef	typeref:enum:__anon2
+BUTTON_CENTER	button.h	16;"	enumerator	enum:__anon5
+BUTTON_DOWN	button.h	19;"	enumerator	enum:__anon5
+BUTTON_LEFT	button.h	15;"	enumerator	enum:__anon5
+BUTTON_RIGHT	button.h	18;"	enumerator	enum:__anon5
+BUTTON_UP	button.h	17;"	enumerator	enum:__anon5
+BUTTON_USER	button.h	20;"	enumerator	enum:__anon5
+ButtonType_t	button.h	21;"	typedef	typeref:enum:__anon5
 Button_clearFlag	button.c	29;"	function	signature:(void)
 Button_clearFlag	button.h	25;"	prototype	signature:(void)
 Button_getFlag	button.c	24;"	function	signature:(void)
@@ -28,78 +38,142 @@ Button_init	button.c	19;"	function	signature:(void)
 Button_init	button.h	23;"	prototype	signature:(void)
 Button_setFlag	button.c	34;"	function	signature:(ButtonType_t button)
 Button_setFlag	button.h	26;"	prototype	signature:(ButtonType_t button)
-CLK_CBEEPR	register.h	64;"	macro
-CLK_CCOR	register.h	58;"	macro
-CLK_CRTCR	register.h	54;"	macro
-CLK_CSSR	register.h	63;"	macro
-CLK_DIVR	register.h	53;"	macro
-CLK_ECKR	register.h	59;"	macro
-CLK_HSICALR	register.h	65;"	macro
-CLK_HSITRIMR	register.h	66;"	macro
-CLK_HSIUNLCKR	register.h	67;"	macro
-CLK_ICKR	register.h	55;"	macro
-CLK_PCKENR1	register.h	56;"	macro
-CLK_PCKENR2	register.h	57;"	macro
-CLK_REGCSR	register.h	68;"	macro
-CLK_SCSR	register.h	60;"	macro
-CLK_SWCR	register.h	62;"	macro
-CLK_SWR	register.h	61;"	macro
-COMP_CSR1	register.h	135;"	macro
-COMP_CSR2	register.h	136;"	macro
-COMP_CSR3	register.h	137;"	macro
-COMP_CSR4	register.h	138;"	macro
-COMP_CSR5	register.h	139;"	macro
-DAC_BIT_CR1_BOFF	register.h	191;"	macro
-DAC_BIT_CR1_EN	register.h	192;"	macro
-DAC_BIT_CR1_TEN	register.h	190;"	macro
-DAC_BIT_CR1_TSEL0	register.h	186;"	macro
-DAC_BIT_CR1_TSEL1	register.h	187;"	macro
-DAC_BIT_CR1_TSEL2	register.h	188;"	macro
-DAC_BIT_SWTRIGR_SWTRIG1	register.h	194;"	macro
-DAC_CR1	register.h	170;"	macro
-DAC_CR2	register.h	171;"	macro
-DAC_DHR8	register.h	181;"	macro
-DAC_DORH	register.h	183;"	macro
-DAC_DORL	register.h	184;"	macro
-DAC_LDHRH	register.h	178;"	macro
-DAC_LDHRL	register.h	179;"	macro
-DAC_RDHRH	register.h	175;"	macro
-DAC_RDHRL	register.h	176;"	macro
-DAC_SR	register.h	173;"	macro
-DAC_SWTRIGR	register.h	172;"	macro
+CLK_CBEEPR	register.h	79;"	macro
+CLK_CCOR	register.h	73;"	macro
+CLK_CRTCR	register.h	69;"	macro
+CLK_CSSR	register.h	78;"	macro
+CLK_DIVR	register.h	68;"	macro
+CLK_ECKR	register.h	74;"	macro
+CLK_HSICALR	register.h	80;"	macro
+CLK_HSITRIMR	register.h	81;"	macro
+CLK_HSIUNLCKR	register.h	82;"	macro
+CLK_ICKR	register.h	70;"	macro
+CLK_PCKENR1	register.h	71;"	macro
+CLK_PCKENR2	register.h	72;"	macro
+CLK_REGCSR	register.h	83;"	macro
+CLK_SCSR	register.h	75;"	macro
+CLK_SWCR	register.h	77;"	macro
+CLK_SWR	register.h	76;"	macro
+COMP_CSR1	register.h	150;"	macro
+COMP_CSR2	register.h	151;"	macro
+COMP_CSR3	register.h	152;"	macro
+COMP_CSR4	register.h	153;"	macro
+COMP_CSR5	register.h	154;"	macro
+DAC_BIT_CR1_BOFF	register.h	206;"	macro
+DAC_BIT_CR1_EN	register.h	207;"	macro
+DAC_BIT_CR1_TEN	register.h	205;"	macro
+DAC_BIT_CR1_TSEL0	register.h	201;"	macro
+DAC_BIT_CR1_TSEL1	register.h	202;"	macro
+DAC_BIT_CR1_TSEL2	register.h	203;"	macro
+DAC_BIT_SWTRIGR_SWTRIG1	register.h	209;"	macro
+DAC_CR1	register.h	185;"	macro
+DAC_CR2	register.h	186;"	macro
+DAC_DHR8	register.h	196;"	macro
+DAC_DORH	register.h	198;"	macro
+DAC_DORL	register.h	199;"	macro
+DAC_LDHRH	register.h	193;"	macro
+DAC_LDHRL	register.h	194;"	macro
+DAC_RDHRH	register.h	190;"	macro
+DAC_RDHRL	register.h	191;"	macro
+DAC_SR	register.h	188;"	macro
+DAC_SWTRIGR	register.h	187;"	macro
 DAC_init	dac.c	25;"	function	signature:(void)
 DAC_init	dac.h	11;"	prototype	signature:(void)
 DAC_set	dac.c	40;"	function	signature:(unsigned int value)
 DAC_set	dac.h	12;"	prototype	signature:(unsigned int value)
 DAC_set8Bit	dac.c	59;"	function	signature:(unsigned char value)
 DAC_set8Bit	dac.h	13;"	prototype	signature:(unsigned char value)
+EEPROM_HW_KEY1	eeprom.h	14;"	macro
+EEPROM_HW_KEY2	eeprom.h	15;"	macro
+EEPROM_START_ADDR	eeprom.h	12;"	macro
+EEPROM_STOP_ADDR	eeprom.h	13;"	macro
+EEPROM_delay	eeprom.c	17;"	function	signature:(uint16_t delay)
+EEPROM_delay	eeprom.h	19;"	prototype	signature:(uint16_t delay)
+EEPROM_init	eeprom.c	29;"	function	signature:(void)
+EEPROM_init	eeprom.h	20;"	prototype	signature:(void)
+EEPROM_lock	eeprom.c	96;"	function	signature:(void)
+EEPROM_lock	eeprom.h	22;"	prototype	signature:(void)
+EEPROM_read	eeprom.c	140;"	function	signature:(uint16_t address)
+EEPROM_read	eeprom.h	24;"	prototype	signature:(uint16_t address)
+EEPROM_unlock	eeprom.c	52;"	function	signature:(void)
+EEPROM_unlock	eeprom.h	21;"	prototype	signature:(void)
+EEPROM_write	eeprom.c	110;"	function	signature:(uint16_t address, uint8_t data)
+EEPROM_write	eeprom.h	23;"	prototype	signature:(uint16_t address, uint8_t data)
 EOF	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	27;"	macro
-EXTI0_IRQ	register.h	241;"	macro
+EXIT_FAILURE	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	7;"	macro
+EXIT_SUCCESS	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	8;"	macro
+EXTI0_IRQ	register.h	256;"	macro
 EXTI0_InterruptHandler	stm8_interrupt_vector.c	17;"	prototype	file:	signature:(void)
 EXTI0_InterruptHandler	stm8_interrupt_vector.c	51;"	function	signature:(void)
-EXTI1_IRQ	register.h	242;"	macro
+EXTI1_IRQ	register.h	257;"	macro
 EXTI1_InterruptHandler	stm8_interrupt_vector.c	18;"	prototype	file:	signature:(void)
 EXTI1_InterruptHandler	stm8_interrupt_vector.c	60;"	function	signature:(void)
-EXTI2_IRQ	register.h	243;"	macro
+EXTI2_IRQ	register.h	258;"	macro
 EXTI2_InterruptHandler	stm8_interrupt_vector.c	19;"	prototype	file:	signature:(void)
 EXTI2_InterruptHandler	stm8_interrupt_vector.c	69;"	function	signature:(void)
-EXTI3_IRQ	register.h	244;"	macro
+EXTI3_IRQ	register.h	259;"	macro
 EXTI3_InterruptHandler	stm8_interrupt_vector.c	20;"	prototype	file:	signature:(void)
 EXTI3_InterruptHandler	stm8_interrupt_vector.c	78;"	function	signature:(void)
-EXTI4_IRQ	register.h	245;"	macro
+EXTI4_IRQ	register.h	260;"	macro
 EXTI4_InterruptHandler	stm8_interrupt_vector.c	21;"	prototype	file:	signature:(void)
 EXTI4_InterruptHandler	stm8_interrupt_vector.c	87;"	function	signature:(void)
-EXTI5_IRQ	register.h	246;"	macro
+EXTI5_IRQ	register.h	261;"	macro
 EXTI5_InterruptHandler	stm8_interrupt_vector.c	22;"	prototype	file:	signature:(void)
 EXTI5_InterruptHandler	stm8_interrupt_vector.c	96;"	function	signature:(void)
-EXTI6_IRQ	register.h	247;"	macro
-EXTI7_IRQ	register.h	248;"	macro
-EXTI_CONF1	register.h	116;"	macro
-EXTI_CR1	register.h	111;"	macro
-EXTI_CR2	register.h	112;"	macro
-EXTI_CR3	register.h	113;"	macro
-EXTI_SR1	register.h	114;"	macro
-EXTI_SR2	register.h	115;"	macro
+EXTI6_IRQ	register.h	262;"	macro
+EXTI7_IRQ	register.h	263;"	macro
+EXTI_CONF1	register.h	131;"	macro
+EXTI_CR1	register.h	126;"	macro
+EXTI_CR2	register.h	127;"	macro
+EXTI_CR3	register.h	128;"	macro
+EXTI_SR1	register.h	129;"	macro
+EXTI_SR2	register.h	130;"	macro
+EnemyStruct	game\game.h	78;"	typedef	typeref:struct:__anon2
+FLASH_CR1	register.h	56;"	macro
+FLASH_CR2	register.h	57;"	macro
+FLASH_DUKR	register.h	59;"	macro
+FLASH_DUL_BIT	register.h	62;"	macro
+FLASH_EOP_BIT	register.h	63;"	macro
+FLASH_IAPSR	register.h	60;"	macro
+FLASH_PUKR	register.h	58;"	macro
+FRAME_BUFFER_HEIGHT	lcd.h	28;"	macro
+FRAME_BUFFER_NUM_PAGES	lcd.h	33;"	macro
+FRAME_BUFFER_OFFSET_X	lcd.h	29;"	macro
+FRAME_BUFFER_OFFSET_Y	lcd.h	30;"	macro
+FRAME_BUFFER_SIZE	lcd.h	24;"	macro
+FRAME_BUFFER_START_PAGE	lcd.h	31;"	macro
+FRAME_BUFFER_STOP_PAGE	lcd.h	32;"	macro
+FRAME_BUFFER_WIDTH	lcd.h	27;"	macro
+GAME_ENEMY_HEIGHT	game\game.h	41;"	macro
+GAME_ENEMY_MAX_X	game\game.h	37;"	macro
+GAME_ENEMY_MAX_Y	game\game.h	39;"	macro
+GAME_ENEMY_MIN_X	game\game.h	36;"	macro
+GAME_ENEMY_MIN_Y	game\game.h	38;"	macro
+GAME_ENEMY_NUM_COLS	game\game.h	32;"	macro
+GAME_ENEMY_NUM_ENEMY	game\game.h	30;"	macro
+GAME_ENEMY_NUM_ROWS	game\game.h	31;"	macro
+GAME_ENEMY_OFFSET_X	game\game.h	40;"	macro
+GAME_ENEMY_POINTS	game\game.h	43;"	macro
+GAME_ENEMY_WIDTH	game\game.h	42;"	macro
+GAME_ENEMY_X_SPACING	game\game.h	33;"	macro
+GAME_ENEMY_Y_SPACING	game\game.h	34;"	macro
+GAME_FLAG_GAME_OVER	game\game.h	55;"	macro
+GAME_FLAG_PLAYER_HIT	game\game.h	54;"	macro
+GAME_H_	game\game.h	16;"	macro
+GAME_IMAGE_MARGIN	game\game.h	52;"	macro
+GAME_MISSILE_MAX_Y	game\game.h	47;"	macro
+GAME_MISSILE_MIN_Y	game\game.h	46;"	macro
+GAME_MISSILE_NUM_MISSILE	game\game.h	45;"	macro
+GAME_MISSILE_OFFSET_X	game\game.h	50;"	macro
+GAME_MISSILE_SIZE_X	game\game.h	48;"	macro
+GAME_MISSILE_SIZE_Y	game\game.h	49;"	macro
+GAME_PLAYER_DEFAULT_X	game\game.h	27;"	macro
+GAME_PLAYER_MAX_X	game\game.h	26;"	macro
+GAME_PLAYER_MIN_X	game\game.h	25;"	macro
+GAME_PLAYER_NUM_LIVES	game\game.h	28;"	macro
+GAME_PLAYER_PAGE	game\game.h	23;"	macro
+GAME_PLAYER_WIDTH	game\game.h	24;"	macro
+GAME_PRINT_BUFFER_SIZE	game\game.h	22;"	macro
 GPIO_EXTI0_ISR	gpio.c	134;"	function	signature:(void)
 GPIO_EXTI0_ISR	gpio.h	21;"	prototype	signature:(void)
 GPIO_EXTI1_ISR	gpio.c	144;"	function	signature:(void)
@@ -128,6 +202,76 @@ GPIO_led_red_on	gpio.c	101;"	function	signature:(void)
 GPIO_led_red_on	gpio.h	14;"	prototype	signature:(void)
 GPIO_led_red_toggle	gpio.c	121;"	function	signature:(void)
 GPIO_led_red_toggle	gpio.h	18;"	prototype	signature:(void)
+Game_enemyDraw	game\game.c	418;"	function	signature:(void)
+Game_enemyDraw	game\game.h	105;"	prototype	signature:(void)
+Game_enemyGetNumEnemy	game\game.c	549;"	function	signature:(void)
+Game_enemyGetNumEnemy	game\game.h	111;"	prototype	signature:(void)
+Game_enemyGetRandomEnemy	game\game.c	565;"	function	signature:(void)
+Game_enemyGetRandomEnemy	game\game.h	112;"	prototype	signature:(void)
+Game_enemyInit	game\game.c	92;"	function	signature:(void)
+Game_enemyInit	game\game.h	96;"	prototype	signature:(void)
+Game_enemyMove	game\game.c	147;"	function	signature:(void)
+Game_enemyMove	game\game.h	101;"	prototype	signature:(void)
+Game_flagClearButtonPress	game\game.c	748;"	function	signature:(void)
+Game_flagClearButtonPress	game\game.h	138;"	prototype	signature:(void)
+Game_flagClearEnemyHitFlag	game\game.c	726;"	function	signature:(void)
+Game_flagClearEnemyHitFlag	game\game.h	134;"	prototype	signature:(void)
+Game_flagClearGameOverFlag	game\game.c	702;"	function	signature:(void)
+Game_flagClearGameOverFlag	game\game.h	128;"	prototype	signature:(void)
+Game_flagClearLevelUpFlag	game\game.c	714;"	function	signature:(void)
+Game_flagClearLevelUpFlag	game\game.h	131;"	prototype	signature:(void)
+Game_flagClearPlayerHitFlag	game\game.c	690;"	function	signature:(void)
+Game_flagClearPlayerHitFlag	game\game.h	125;"	prototype	signature:(void)
+Game_flagGetButtonPress	game\game.c	741;"	function	signature:(void)
+Game_flagGetButtonPress	game\game.h	137;"	prototype	signature:(void)
+Game_flagGetEnemyHitFlag	game\game.c	720;"	function	signature:(void)
+Game_flagGetEnemyHitFlag	game\game.h	133;"	prototype	signature:(void)
+Game_flagGetGameOverFlag	game\game.c	696;"	function	signature:(void)
+Game_flagGetGameOverFlag	game\game.h	127;"	prototype	signature:(void)
+Game_flagGetLevelUpFlag	game\game.c	708;"	function	signature:(void)
+Game_flagGetLevelUpFlag	game\game.h	130;"	prototype	signature:(void)
+Game_flagGetPlayerHitFlag	game\game.c	684;"	function	signature:(void)
+Game_flagGetPlayerHitFlag	game\game.h	124;"	prototype	signature:(void)
+Game_flagSetButtonPress	game\game.c	735;"	function	signature:(void)
+Game_flagSetButtonPress	game\game.h	136;"	prototype	signature:(void)
+Game_getGameLevel	game\game.c	669;"	function	signature:(void)
+Game_getGameLevel	game\game.h	120;"	prototype	signature:(void)
+Game_getGameScore	game\game.c	663;"	function	signature:(void)
+Game_getGameScore	game\game.h	119;"	prototype	signature:(void)
+Game_getNumPlayers	game\game.c	675;"	function	signature:(void)
+Game_getNumPlayers	game\game.h	121;"	prototype	signature:(void)
+Game_init	game\game.c	55;"	function	signature:(void)
+Game_init	game\game.h	94;"	prototype	signature:(void)
+Game_levelUp	game\game.c	653;"	function	signature:(void)
+Game_levelUp	game\game.h	116;"	prototype	signature:(void)
+Game_missileDraw	game\game.c	437;"	function	signature:(void)
+Game_missileDraw	game\game.h	106;"	prototype	signature:(void)
+Game_missileEnemyLaunch	game\game.c	505;"	function	signature:(void)
+Game_missileEnemyLaunch	game\game.h	109;"	prototype	signature:(void)
+Game_missileInit	game\game.c	113;"	function	signature:(void)
+Game_missileInit	game\game.h	97;"	prototype	signature:(void)
+Game_missileMove	game\game.c	293;"	function	signature:(void)
+Game_missileMove	game\game.h	102;"	prototype	signature:(void)
+Game_missilePlayerLaunch	game\game.c	469;"	function	signature:(void)
+Game_missilePlayerLaunch	game\game.h	108;"	prototype	signature:(void)
+Game_playExplosionPlayer	game\game.c	759;"	function	signature:(void)
+Game_playExplosionPlayer	game\game.h	141;"	prototype	signature:(void)
+Game_playExplosionPlayer_withSound	game\game.c	786;"	function	signature:(void)
+Game_playExplosionPlayer_withSound	game\game.h	142;"	prototype	signature:(void)
+Game_playGameOver	game\game.c	820;"	function	signature:(void)
+Game_playGameOver	game\game.h	143;"	prototype	signature:(void)
+Game_playerDraw	game\game.c	408;"	function	signature:(void)
+Game_playerDraw	game\game.h	104;"	prototype	signature:(void)
+Game_playerInit	game\game.c	83;"	function	signature:(void)
+Game_playerInit	game\game.h	95;"	prototype	signature:(void)
+Game_playerMoveLeft	game\game.c	130;"	function	signature:(void)
+Game_playerMoveLeft	game\game.h	99;"	prototype	signature:(void)
+Game_playerMoveRight	game\game.c	136;"	function	signature:(void)
+Game_playerMoveRight	game\game.h	100;"	prototype	signature:(void)
+Game_scoreEnemyHit	game\game.c	606;"	function	signature:(uint8_t enemyIndex, uint8_t missileIndex)
+Game_scoreEnemyHit	game\game.h	114;"	prototype	signature:(uint8_t enemyIndex, uint8_t missileIndex)
+Game_scorePlayerHit	game\game.c	633;"	function	signature:(uint8_t missileIndex)
+Game_scorePlayerHit	game\game.h	115;"	prototype	signature:(uint8_t missileIndex)
 INT16_C	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	97;"	macro
 INT16_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	50;"	macro
 INT16_MIN	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	47;"	macro
@@ -154,147 +298,172 @@ INT_LEAST32_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers
 INT_LEAST32_MIN	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	60;"	macro
 INT_LEAST8_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	61;"	macro
 INT_LEAST8_MIN	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	58;"	macro
-LCD_CMD_PIN	lcd.h	11;"	macro
-LCD_HEIGHT	lcd.h	14;"	macro
-LCD_NUM_PAGES	lcd.h	16;"	macro
-LCD_RST_PIN	lcd.h	12;"	macro
-LCD_WIDTH	lcd.h	15;"	macro
+Image	display\bitmap.h	15;"	enum
+ImageData	display\bitmap.h	28;"	struct
+ImageData	display\bitmap.h	35;"	typedef	typeref:struct:ImageData
+Image_t	display\bitmap.h	26;"	typedef	typeref:enum:Image
+LCD_CMD_PIN	lcd.h	14;"	macro
+LCD_HEIGHT	lcd.h	17;"	macro
+LCD_NUM_PAGES	lcd.h	19;"	macro
+LCD_PLAYER_PAGE	lcd.h	35;"	macro
+LCD_RST_PIN	lcd.h	15;"	macro
+LCD_SCORE_PAGE	lcd.h	36;"	macro
+LCD_WIDTH	lcd.h	18;"	macro
+MB_CUR_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	9;"	macro
+MissileStruct	game\game.h	88;"	typedef	typeref:struct:__anon3
 NULL	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	20;"	macro
 NULL	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	30;"	macro
+NULL	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	13;"	macro
 NonHandledInterrupt	stm8_interrupt_vector.c	35;"	function	signature:(void)
-PA_CR1	register.h	77;"	macro
-PA_CR2	register.h	78;"	macro
-PA_DDR	register.h	76;"	macro
-PA_IDR	register.h	75;"	macro
-PA_ODR	register.h	74;"	macro
-PB_CR1	register.h	83;"	macro
-PB_CR2	register.h	84;"	macro
-PB_DDR	register.h	82;"	macro
-PB_IDR	register.h	81;"	macro
-PB_ODR	register.h	80;"	macro
-PC_CR1	register.h	89;"	macro
-PC_CR2	register.h	90;"	macro
-PC_DDR	register.h	88;"	macro
-PC_IDR	register.h	87;"	macro
-PC_ODR	register.h	86;"	macro
-PD_CR1	register.h	95;"	macro
-PD_CR2	register.h	96;"	macro
-PD_DDR	register.h	94;"	macro
-PD_IDR	register.h	93;"	macro
-PD_ODR	register.h	92;"	macro
-PE_CR1	register.h	101;"	macro
-PE_CR2	register.h	102;"	macro
-PE_DDR	register.h	100;"	macro
-PE_IDR	register.h	99;"	macro
-PE_ODR	register.h	98;"	macro
-PF_CR1	register.h	107;"	macro
-PF_CR2	register.h	108;"	macro
-PF_DDR	register.h	106;"	macro
-PF_IDR	register.h	105;"	macro
-PF_ODR	register.h	104;"	macro
+PA_CR1	register.h	92;"	macro
+PA_CR2	register.h	93;"	macro
+PA_DDR	register.h	91;"	macro
+PA_IDR	register.h	90;"	macro
+PA_ODR	register.h	89;"	macro
+PB_CR1	register.h	98;"	macro
+PB_CR2	register.h	99;"	macro
+PB_DDR	register.h	97;"	macro
+PB_IDR	register.h	96;"	macro
+PB_ODR	register.h	95;"	macro
+PC_CR1	register.h	104;"	macro
+PC_CR2	register.h	105;"	macro
+PC_DDR	register.h	103;"	macro
+PC_IDR	register.h	102;"	macro
+PC_ODR	register.h	101;"	macro
+PD_CR1	register.h	110;"	macro
+PD_CR2	register.h	111;"	macro
+PD_DDR	register.h	109;"	macro
+PD_IDR	register.h	108;"	macro
+PD_ODR	register.h	107;"	macro
+PE_CR1	register.h	116;"	macro
+PE_CR2	register.h	117;"	macro
+PE_DDR	register.h	115;"	macro
+PE_IDR	register.h	114;"	macro
+PE_ODR	register.h	113;"	macro
+PF_CR1	register.h	122;"	macro
+PF_CR2	register.h	123;"	macro
+PF_DDR	register.h	121;"	macro
+PF_IDR	register.h	120;"	macro
+PF_ODR	register.h	119;"	macro
 PTRDIFF_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	86;"	macro
 PTRDIFF_MIN	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	85;"	macro
-RI_ASCR1	register.h	154;"	macro
-RI_ASCR1	register.h	166;"	macro
-RI_ASCR2	register.h	155;"	macro
-RI_ASCR2	register.h	167;"	macro
-RI_ICR1	register.h	142;"	macro
-RI_ICR2	register.h	143;"	macro
-RI_IOCMR1	register.h	147;"	macro
-RI_IOCMR2	register.h	148;"	macro
-RI_IOCMR3	register.h	149;"	macro
-RI_IOGCR	register.h	153;"	macro
-RI_IOGCR	register.h	165;"	macro
-RI_IOIR1	register.h	144;"	macro
-RI_IOIR2	register.h	145;"	macro
-RI_IOIR3	register.h	146;"	macro
-RI_IOSR1	register.h	150;"	macro
-RI_IOSR1	register.h	162;"	macro
-RI_IOSR2	register.h	151;"	macro
-RI_IOSR2	register.h	163;"	macro
-RI_IOSR3	register.h	152;"	macro
-RI_IOSR3	register.h	164;"	macro
-RI_RCR	register.h	156;"	macro
-SPI1_BSY_FLAG	register.h	119;"	macro
-SPI1_CR1	register.h	123;"	macro
-SPI1_CR2	register.h	124;"	macro
-SPI1_CRCPR	register.h	128;"	macro
-SPI1_DR	register.h	127;"	macro
-SPI1_ICR	register.h	125;"	macro
-SPI1_RXCRCR	register.h	129;"	macro
-SPI1_RXNE_FLAG	register.h	121;"	macro
-SPI1_SR	register.h	126;"	macro
-SPI1_TXCRCR	register.h	130;"	macro
-SPI1_TXE_FLAG	register.h	120;"	macro
-SPI_deselect	spi.c	86;"	function	signature:(void)
+PlayerStruct	game\game.h	64;"	typedef	typeref:struct:__anon1
+RAND_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	10;"	macro
+RI_ASCR1	register.h	169;"	macro
+RI_ASCR1	register.h	181;"	macro
+RI_ASCR2	register.h	170;"	macro
+RI_ASCR2	register.h	182;"	macro
+RI_ICR1	register.h	157;"	macro
+RI_ICR2	register.h	158;"	macro
+RI_IOCMR1	register.h	162;"	macro
+RI_IOCMR2	register.h	163;"	macro
+RI_IOCMR3	register.h	164;"	macro
+RI_IOGCR	register.h	168;"	macro
+RI_IOGCR	register.h	180;"	macro
+RI_IOIR1	register.h	159;"	macro
+RI_IOIR2	register.h	160;"	macro
+RI_IOIR3	register.h	161;"	macro
+RI_IOSR1	register.h	165;"	macro
+RI_IOSR1	register.h	177;"	macro
+RI_IOSR2	register.h	166;"	macro
+RI_IOSR2	register.h	178;"	macro
+RI_IOSR3	register.h	167;"	macro
+RI_IOSR3	register.h	179;"	macro
+RI_RCR	register.h	171;"	macro
+SPI1_BSY_FLAG	register.h	134;"	macro
+SPI1_CR1	register.h	138;"	macro
+SPI1_CR2	register.h	139;"	macro
+SPI1_CRCPR	register.h	143;"	macro
+SPI1_DR	register.h	142;"	macro
+SPI1_ICR	register.h	140;"	macro
+SPI1_RXCRCR	register.h	144;"	macro
+SPI1_RXNE_FLAG	register.h	136;"	macro
+SPI1_SR	register.h	141;"	macro
+SPI1_TXCRCR	register.h	145;"	macro
+SPI1_TXE_FLAG	register.h	135;"	macro
+SPI_deselect	spi.c	90;"	function	signature:(void)
 SPI_deselect	spi.h	17;"	prototype	signature:(void)
 SPI_init	spi.c	27;"	function	signature:(void)
 SPI_init	spi.h	15;"	prototype	signature:(void)
-SPI_select	spi.c	81;"	function	signature:(void)
+SPI_select	spi.c	85;"	function	signature:(void)
 SPI_select	spi.h	16;"	prototype	signature:(void)
-SPI_tx	spi.c	94;"	function	signature:(uint8_t data)
+SPI_tx	spi.c	98;"	function	signature:(uint8_t data)
 SPI_tx	spi.h	18;"	prototype	signature:(uint8_t data)
-SPI_writeArray	spi.c	111;"	function	signature:(uint8_t *data, uint16_t length)
+SPI_writeArray	spi.c	115;"	function	signature:(uint8_t *data, uint16_t length)
 SPI_writeArray	spi.h	20;"	prototype	signature:(uint8_t *data, uint16_t length)
-SPI_writeByte	spi.c	102;"	function	signature:(uint8_t data)
+SPI_writeByte	spi.c	106;"	function	signature:(uint8_t data)
 SPI_writeByte	spi.h	19;"	prototype	signature:(uint8_t data)
-SYSCFG_RMPCR1	register.h	49;"	macro
-SYSCFG_RMPCR2	register.h	50;"	macro
-SoundData	sound\sound.h	16;"	typedef	typeref:struct:__anon1
+SYSCFG_RMPCR1	register.h	52;"	macro
+SYSCFG_RMPCR2	register.h	53;"	macro
+SoundData	sound\sound.h	16;"	typedef	typeref:struct:__anon4
 Sound_init	sound\sound.c	27;"	function	signature:(void)
-Sound_init	sound\sound.h	29;"	prototype	signature:(void)
-Sound_interruptHandler	sound\sound.c	62;"	function	signature:(void)
-Sound_interruptHandler	sound\sound.h	31;"	prototype	signature:(void)
-Sound_play	sound\sound.c	48;"	function	signature:(const SoundData *sound, unsigned char loop)
-Sound_play	sound\sound.h	30;"	prototype	signature:(const SoundData *sound, unsigned char loop)
-TIM2_ARRH	register.h	218;"	macro
-TIM2_ARRL	register.h	219;"	macro
-TIM2_BKR	register.h	224;"	macro
-TIM2_CCER1	register.h	214;"	macro
-TIM2_CCMR1	register.h	212;"	macro
-TIM2_CCMR2	register.h	213;"	macro
-TIM2_CCR1H	register.h	220;"	macro
-TIM2_CCR1L	register.h	221;"	macro
-TIM2_CCR2H	register.h	222;"	macro
-TIM2_CCR2L	register.h	223;"	macro
-TIM2_CNTRH	register.h	215;"	macro
-TIM2_CNTRL	register.h	216;"	macro
-TIM2_CR1	register.h	203;"	macro
-TIM2_CR2	register.h	204;"	macro
-TIM2_DER	register.h	207;"	macro
-TIM2_EGR	register.h	211;"	macro
-TIM2_ETR	register.h	206;"	macro
-TIM2_IER	register.h	208;"	macro
-TIM2_ISR	timer.c	106;"	function	signature:(void)
+Sound_init	sound\sound.h	32;"	prototype	signature:(void)
+Sound_interruptHandler	sound\sound.c	72;"	function	signature:(void)
+Sound_interruptHandler	sound\sound.h	35;"	prototype	signature:(void)
+Sound_isPlaying	sound\sound.c	64;"	function	signature:(void)
+Sound_isPlaying	sound\sound.h	34;"	prototype	signature:(void)
+Sound_play	sound\sound.c	48;"	function	signature:(const SoundData *sound, unsigned int loop)
+Sound_play	sound\sound.h	33;"	prototype	signature:(const SoundData *sound, unsigned int loop)
+Sound_playEnemyExplode	sound\sound.c	133;"	function	signature:(void)
+Sound_playEnemyExplode	sound\sound.h	42;"	prototype	signature:(void)
+Sound_playEnemyFire	sound\sound.c	123;"	function	signature:(void)
+Sound_playEnemyFire	sound\sound.h	40;"	prototype	signature:(void)
+Sound_playGameOver	sound\sound.c	145;"	function	signature:(void)
+Sound_playGameOver	sound\sound.h	44;"	prototype	signature:(void)
+Sound_playLevelUp	sound\sound.c	138;"	function	signature:(void)
+Sound_playLevelUp	sound\sound.h	43;"	prototype	signature:(void)
+Sound_playPlayerExplode	sound\sound.c	128;"	function	signature:(void)
+Sound_playPlayerExplode	sound\sound.h	41;"	prototype	signature:(void)
+Sound_playPlayerFire	sound\sound.c	118;"	function	signature:(void)
+Sound_playPlayerFire	sound\sound.h	39;"	prototype	signature:(void)
+TIM2_ARRH	register.h	233;"	macro
+TIM2_ARRL	register.h	234;"	macro
+TIM2_BKR	register.h	239;"	macro
+TIM2_CCER1	register.h	229;"	macro
+TIM2_CCMR1	register.h	227;"	macro
+TIM2_CCMR2	register.h	228;"	macro
+TIM2_CCR1H	register.h	235;"	macro
+TIM2_CCR1L	register.h	236;"	macro
+TIM2_CCR2H	register.h	237;"	macro
+TIM2_CCR2L	register.h	238;"	macro
+TIM2_CNTRH	register.h	230;"	macro
+TIM2_CNTRL	register.h	231;"	macro
+TIM2_CR1	register.h	218;"	macro
+TIM2_CR2	register.h	219;"	macro
+TIM2_DER	register.h	222;"	macro
+TIM2_EGR	register.h	226;"	macro
+TIM2_ETR	register.h	221;"	macro
+TIM2_IER	register.h	223;"	macro
+TIM2_ISR	timer.c	100;"	function	signature:(void)
 TIM2_ISR	timer.h	19;"	prototype	signature:(void)
 TIM2_InterruptHandler	stm8_interrupt_vector.c	106;"	function	signature:(void)
 TIM2_InterruptHandler	stm8_interrupt_vector.c	25;"	prototype	file:	signature:(void)
-TIM2_OISR	register.h	225;"	macro
-TIM2_PSCR	register.h	217;"	macro
-TIM2_SMCR	register.h	205;"	macro
-TIM2_SR1	register.h	209;"	macro
-TIM2_SR2	register.h	210;"	macro
+TIM2_OISR	register.h	240;"	macro
+TIM2_PSCR	register.h	232;"	macro
+TIM2_SMCR	register.h	220;"	macro
+TIM2_SR1	register.h	224;"	macro
+TIM2_SR2	register.h	225;"	macro
 TIM2_init	timer.c	41;"	function	signature:(void)
 TIM2_init	timer.h	13;"	prototype	signature:(void)
-TIM2_start	timer.c	84;"	function	signature:(void)
+TIM2_start	timer.c	78;"	function	signature:(void)
 TIM2_start	timer.h	16;"	prototype	signature:(void)
-TIM2_stop	timer.c	94;"	function	signature:(void)
+TIM2_stop	timer.c	88;"	function	signature:(void)
 TIM2_stop	timer.h	17;"	prototype	signature:(void)
-TIM4_ARR	register.h	237;"	macro
-TIM4_CNTR	register.h	235;"	macro
-TIM4_CR1	register.h	228;"	macro
-TIM4_CR2	register.h	229;"	macro
-TIM4_DER	register.h	231;"	macro
-TIM4_EGR	register.h	234;"	macro
-TIM4_IER	register.h	232;"	macro
-TIM4_ISR	timer.c	115;"	function	signature:(void)
+TIM4_ARR	register.h	252;"	macro
+TIM4_CNTR	register.h	250;"	macro
+TIM4_CR1	register.h	243;"	macro
+TIM4_CR2	register.h	244;"	macro
+TIM4_DER	register.h	246;"	macro
+TIM4_EGR	register.h	249;"	macro
+TIM4_IER	register.h	247;"	macro
+TIM4_ISR	timer.c	109;"	function	signature:(void)
 TIM4_ISR	timer.h	20;"	prototype	signature:(void)
 TIM4_InterruptHandler	stm8_interrupt_vector.c	115;"	function	signature:(void)
 TIM4_InterruptHandler	stm8_interrupt_vector.c	26;"	prototype	file:	signature:(void)
-TIM4_PSCR	register.h	236;"	macro
-TIM4_SMCR	register.h	230;"	macro
-TIM4_SR1	register.h	233;"	macro
-TIM4_init	timer.c	69;"	function	signature:(void)
+TIM4_PSCR	register.h	251;"	macro
+TIM4_SMCR	register.h	245;"	macro
+TIM4_SR1	register.h	248;"	macro
+TIM4_init	timer.c	63;"	function	signature:(void)
 TIM4_init	timer.h	14;"	prototype	signature:(void)
 UINT16_C	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	101;"	macro
 UINT16_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	53;"	macro
@@ -313,28 +482,70 @@ UINT_LEAST32_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compiler
 UINT_LEAST8_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	64;"	macro
 __BUTTON_H	button.h	10;"	macro
 __DAC_H	dac.h	8;"	macro
+__EEPROM_H	eeprom.h	8;"	macro
+__FONT_TABLE_H	display\font_table.h	9;"	macro
 __GPIO_H	gpio.h	8;"	macro
 __LCD_H	lcd.h	8;"	macro
-__MODS0__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\mods0.h	11;"	macro
+__MODS__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\mods.h	11;"	macro
 __REGISTER_H	register.h	8;"	macro
 __SIZE_T__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	8;"	macro
 __SIZE_T__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	9;"	macro
+__SIZE_T__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	17;"	macro
 __SOUND_H	sound\sound.h	9;"	macro
 __SPI_H	spi.h	8;"	macro
 __STDDEF__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	5;"	macro
 __STDINT__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	5;"	macro
 __STDIO__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	6;"	macro
+__STDLIB__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	5;"	macro
 __SYSTEM_H	system.h	9;"	macro
 __TIMER_H	timer.h	8;"	macro
 __WCHAR_T__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	13;"	macro
+__WCHAR_T__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	22;"	macro
+_acenemy1Bmp	display\enemy1.c	9;"	variable
+_acimgPlayerIcon_1	display\player1.c	130;"	variable
+_acimgPlayerIcon_2	display\player1.c	115;"	variable
+_acimgPlayerIcon_3	display\player1.c	100;"	variable
+_acimgPlayerInvBmp	display\player1.c	22;"	variable
+_acimgPlayerInvExp1Bmp	display\player1.c	38;"	variable
+_acimgPlayerInvExp2Bmp	display\player1.c	53;"	variable
+_acimgPlayerInvExp3Bmp	display\player1.c	68;"	variable
+_acimgPlayerInvExp4Bmp	display\player1.c	83;"	variable
+_checkcrc16	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	59;"	prototype	signature:(void)
+_checkcrc16x	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	60;"	prototype	signature:(void)
+_checksum	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	55;"	prototype	signature:(void)
+_checksum16	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	57;"	prototype	signature:(void)
+_checksum16x	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	58;"	prototype	signature:(void)
+_checksumx	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	56;"	prototype	signature:(void)
+_fctcpy	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	61;"	prototype	signature:(char)
 _stext	stm8_interrupt_vector.c	126;"	prototype	file:
 _vectab	stm8_interrupt_vector.c	128;"	variable
-_wavEnemyExplode	sound\wavenemyexplode.c	5;"	variable
-_wavEnemyFire	sound\wavenemyfire.c	5;"	variable
-_wavPlayerFire	sound\wavplayerfire.c	4;"	variable
-abs	lcd.c	16;"	macro	file:
+abort	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	63;"	macro
+abs	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	36;"	prototype	signature:(int i)
+abs	lcd.c	19;"	macro	file:
+alive	game\game.h	75;"	member	struct:__anon2
+alive	game\game.h	85;"	member	struct:__anon3
+atof	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	37;"	prototype	signature:(char *nptr)
+atoi	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	38;"	prototype	signature:(char *nptr)
+atol	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	39;"	prototype	signature:(char *nptr)
+bmenemy1Bmp	display\enemy1.c	20;"	variable
+bmimgPlayerIcon_1	display\player1.c	135;"	variable
+bmimgPlayerIcon_2	display\player1.c	120;"	variable
+bmimgPlayerIcon_3	display\player1.c	105;"	variable
+bmimgPlayerInvBmp	display\player1.c	28;"	variable
+bmimgPlayerInvExp1Bmp	display\player1.c	44;"	variable
+bmimgPlayerInvExp2Bmp	display\player1.c	59;"	variable
+bmimgPlayerInvExp3Bmp	display\player1.c	74;"	variable
+bmimgPlayerInvExp4Bmp	display\player1.c	89;"	variable
+calloc	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	40;"	prototype	signature:(unsigned int nelem, unsigned int elsize)
+div	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	41;"	prototype	signature:(int numer, int denom)
+div_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	29;"	typedef	typeref:struct:__anon6
+exit	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	42;"	prototype	signature:(int status)
+flag_VH	game\game.h	74;"	member	struct:__anon2
+font_table	display\font_table.c	11;"	variable
+free	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	43;"	prototype	signature:(void *ptr)
 getchar	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	15;"	prototype	signature:(void)
 gets	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	16;"	prototype	signature:(char *s)
+i	main.c	48;"	variable
 int16_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	10;"	typedef
 int32_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	11;"	typedef
 int8_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	9;"	typedef
@@ -350,34 +561,80 @@ interrupt_instruction	stm8_interrupt_vector.c	31;"	member	struct:interrupt_vecto
 interrupt_vector	stm8_interrupt_vector.c	30;"	struct	file:
 intmax_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	41;"	typedef
 intptr_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	36;"	typedef
-lButton	main.c	40;"	variable	file:
-lcd_clear	lcd.c	108;"	function	signature:(uint8_t value)
-lcd_clear	lcd.h	28;"	prototype	signature:(uint8_t value)
-lcd_dummyDelay	lcd.c	45;"	function	signature:(unsigned long delay)
-lcd_dummyDelay	lcd.h	20;"	prototype	signature:(unsigned long delay)
-lcd_init	lcd.c	24;"	function	signature:(void)
-lcd_init	lcd.h	19;"	prototype	signature:(void)
-lcd_reset	lcd.c	56;"	function	signature:(void)
-lcd_reset	lcd.h	21;"	prototype	signature:(void)
-lcd_setColumn	lcd.c	97;"	function	signature:(uint8_t column)
-lcd_setColumn	lcd.h	27;"	prototype	signature:(uint8_t column)
-lcd_setPage	lcd.c	88;"	function	signature:(uint8_t page)
-lcd_setPage	lcd.h	26;"	prototype	signature:(uint8_t page)
-lcd_writeCommand	lcd.c	64;"	function	signature:(uint8_t cmd)
-lcd_writeCommand	lcd.h	22;"	prototype	signature:(uint8_t cmd)
-lcd_writeData	lcd.c	70;"	function	signature:(uint8_t data)
-lcd_writeData	lcd.h	23;"	prototype	signature:(uint8_t data)
-lcd_writeDataBurst	lcd.c	76;"	function	signature:(uint8_t *data, uint16_t length)
-lcd_writeDataBurst	lcd.h	24;"	prototype	signature:(uint8_t *data, uint16_t length)
-length	sound\sound.h	14;"	member	struct:__anon1
+isqrt	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	53;"	prototype	signature:(unsigned int)
+lButton	main.c	47;"	variable	file:
+labs	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	44;"	prototype	signature:(long l)
+lcd_clear	lcd.c	141;"	function	signature:(uint8_t value)
+lcd_clear	lcd.h	48;"	prototype	signature:(uint8_t value)
+lcd_clearBackground	lcd.c	206;"	function	signature:(uint8_t value)
+lcd_clearBackground	lcd.h	52;"	prototype	signature:(uint8_t value)
+lcd_clearFrameBuffer	lcd.c	172;"	function	signature:(uint8_t value, uint8_t update)
+lcd_clearFrameBuffer	lcd.h	51;"	prototype	signature:(uint8_t value, uint8_t update)
+lcd_clearPage	lcd.c	156;"	function	signature:(uint8_t page, uint8_t value)
+lcd_clearPage	lcd.h	50;"	prototype	signature:(uint8_t page, uint8_t value)
+lcd_decimalToBuffer	lcd.c	338;"	function	signature:(unsigned int val, char *buffer, uint8_t size)
+lcd_decimalToBuffer	lcd.h	58;"	prototype	signature:(unsigned int val, char *buffer, uint8_t size)
+lcd_drawEnemyBitmap	lcd.c	585;"	function	signature:(uint16_t xPosition, uint16_t yPosition)
+lcd_drawEnemyBitmap	lcd.h	65;"	prototype	signature:(uint16_t xPosition, uint16_t yPosition)
+lcd_drawImagePage	lcd.c	384;"	function	signature:(uint8_t page, uint8_t offset, Image_t image)
+lcd_drawImagePage	lcd.h	60;"	prototype	signature:(uint8_t page, uint8_t offset, Image_t image)
+lcd_drawImageRam	lcd.c	504;"	function	signature:(uint16_t xPosition, uint16_t yPosition, Image_t image, uint8_t trans, uint8_t update)
+lcd_drawImageRam	lcd.h	64;"	prototype	signature:(uint16_t xPosition, uint16_t yPosition, Image_t image, uint8_t trans, uint8_t update)
+lcd_drawString	lcd.c	263;"	function	signature:(uint8_t row, uint8_t col, char *myString)
+lcd_drawString	lcd.h	55;"	prototype	signature:(uint8_t row, uint8_t col, char *myString)
+lcd_drawStringLength	lcd.c	301;"	function	signature:(uint8_t row, uint8_t col, char *mystring, uint8_t length)
+lcd_drawStringLength	lcd.h	56;"	prototype	signature:(uint8_t row, uint8_t col, char *mystring, uint8_t length)
+lcd_dummyDelay	lcd.c	78;"	function	signature:(unsigned long delay)
+lcd_dummyDelay	lcd.h	40;"	prototype	signature:(unsigned long delay)
+lcd_init	lcd.c	34;"	function	signature:(void)
+lcd_init	lcd.h	39;"	prototype	signature:(void)
+lcd_putPixelRam	lcd.c	438;"	function	signature:(uint16_t x, uint16_t y, uint8_t color, uint8_t update)
+lcd_putPixelRam	lcd.h	63;"	prototype	signature:(uint16_t x, uint16_t y, uint8_t color, uint8_t update)
+lcd_reset	lcd.c	89;"	function	signature:(void)
+lcd_reset	lcd.h	41;"	prototype	signature:(void)
+lcd_setColumn	lcd.c	130;"	function	signature:(uint8_t column)
+lcd_setColumn	lcd.h	47;"	prototype	signature:(uint8_t column)
+lcd_setPage	lcd.c	121;"	function	signature:(uint8_t page)
+lcd_setPage	lcd.h	46;"	prototype	signature:(uint8_t page)
+lcd_updateFrameBuffer	lcd.c	233;"	function	signature:(void)
+lcd_updateFrameBuffer	lcd.h	53;"	prototype	signature:(void)
+lcd_writeCommand	lcd.c	97;"	function	signature:(uint8_t cmd)
+lcd_writeCommand	lcd.h	42;"	prototype	signature:(uint8_t cmd)
+lcd_writeData	lcd.c	103;"	function	signature:(uint8_t data)
+lcd_writeData	lcd.h	43;"	prototype	signature:(uint8_t data)
+lcd_writeDataBurst	lcd.c	109;"	function	signature:(uint8_t *data, uint16_t length)
+lcd_writeDataBurst	lcd.h	44;"	prototype	signature:(uint8_t *data, uint16_t length)
+ldiv	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	45;"	prototype	signature:(long numer, long denom)
+ldiv_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	34;"	typedef	typeref:struct:__anon7
+length	sound\sound.h	14;"	member	struct:__anon4
+lsqrt	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	54;"	prototype	signature:(unsigned long)
 mButtonFlag	button.c	15;"	variable
+mButtonFlag	game\game.c	41;"	variable
+mEnemy	game\game.c	34;"	variable	file:
+mEnemyHitFlag	game\game.c	45;"	variable
+mEnemyMissile	game\game.c	38;"	variable	file:
+mGameLevel	game\game.c	49;"	variable	file:
+mGameLevelUpFlag	game\game.c	44;"	variable
+mGameOverFlag	game\game.c	43;"	variable
+mGameScore	game\game.c	48;"	variable	file:
+mPlayer	game\game.c	33;"	variable	file:
+mPlayerHitFlag	game\game.c	42;"	variable
+mPlayerMissile	game\game.c	37;"	variable	file:
 mSoundCounter	sound\sound.c	20;"	variable	file:
 mSoundCurrent	sound\sound.c	24;"	variable
 mSoundEnable	sound\sound.c	23;"	variable
 mSoundLoopCounter	sound\sound.c	21;"	variable	file:
-main	main.c	44;"	function
+main	main.c	53;"	function
+malloc	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	46;"	prototype	signature:(unsigned int size)
+numLives	game\game.h	62;"	member	struct:__anon1
 offsetof	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	23;"	macro
-pSoundData	sound\sound.h	15;"	member	struct:__anon1
+pImageData	display\bitmap.h	32;"	member	struct:ImageData
+pSoundData	sound\sound.h	15;"	member	struct:__anon4
+pSoundSquare_4ms_1000hz	sound\wavsquare.c	50;"	variable
+pSoundSquare_4ms_1800hz	sound\wavsquare.c	66;"	variable
+pSoundSquare_4ms_250hz	sound\wavsquare.c	17;"	variable
+pSoundSquare_4ms_2600hz	sound\wavsquare.c	83;"	variable
+pSoundSquare_4ms_500hz	sound\wavsquare.c	33;"	variable
 pSoundTest1	sound\wavtest.c	15;"	variable
 pSoundTest2	sound\wavtest.c	32;"	variable
 pSoundValue	sound\sound.c	22;"	variable
@@ -385,13 +642,31 @@ printf	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\h
 ptrdiff_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	17;"	typedef
 putchar	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	18;"	prototype	signature:(char c)
 puts	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	19;"	prototype	signature:(char *s)
+quot	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	27;"	member	struct:__anon6
+quot	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	32;"	member	struct:__anon7
+rand	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	47;"	prototype	signature:(void)
+realloc	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	48;"	prototype	signature:(void *ptr, unsigned int size)
+rem	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	28;"	member	struct:__anon6
+rem	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	33;"	member	struct:__anon7
 scanf	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	20;"	prototype	signature:(char *format, ...)
 size_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	9;"	typedef
 size_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	10;"	typedef
+size_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	18;"	typedef
+soundData	sound\wavplayershoot.c	45;"	variable	file:
+soundSquare_4ms_1000hz	sound\wavsquare.c	57;"	variable
+soundSquare_4ms_1800hz	sound\wavsquare.c	74;"	variable
+soundSquare_4ms_250hz	sound\wavsquare.c	24;"	variable
+soundSquare_4ms_2600hz	sound\wavsquare.c	92;"	variable
+soundSquare_4ms_500hz	sound\wavsquare.c	40;"	variable
 soundTest1	sound\wavtest.c	23;"	variable
 soundTest2	sound\wavtest.c	41;"	variable
+sound_playerShoot	sound\wavplayershoot.c	507;"	variable
 sprintf	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	22;"	prototype	signature:(char *s, char *format, ...)
+srand	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	49;"	prototype	signature:(unsigned int seed)
 sscanf	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	21;"	prototype	signature:(char *s, char *format, ...)
+strtod	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	50;"	prototype	signature:(char *s, char **endptr)
+strtol	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	51;"	prototype	signature:(char *s, char **endptr, int base)
+strtoul	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	64;"	macro
 system_clock_config	system.c	49;"	function	signature:(void)
 system_clock_config	system.h	13;"	prototype	signature:(void)
 system_disableInterrupts	system.c	98;"	function	signature:(void)
@@ -405,9 +680,12 @@ system_peripheral_clock_config	system.h	14;"	prototype	signature:(void)
 timerTick	timer.c	22;"	variable
 timer_delay_ms	timer.c	27;"	function	signature:(unsigned long delay)
 timer_delay_ms	timer.h	11;"	prototype	signature:(unsigned long delay)
+toggle	main.c	50;"	variable
 uint16_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	13;"	typedef
+uint16_t	register.h	14;"	macro
 uint32_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	14;"	typedef
 uint8_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	12;"	typedef
+uint8_t	register.h	13;"	macro
 uint_fast16_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	31;"	typedef
 uint_fast32_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	32;"	typedef
 uint_fast8_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	30;"	typedef
@@ -416,6 +694,12 @@ uint_least32_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\
 uint_least8_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	21;"	typedef
 uintmax_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	42;"	typedef
 uintptr_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	37;"	typedef
-wavSoundEnemyExplode	sound\wavenemyexplode.c	575;"	variable
-wavSoundEnemyFire	sound\wavenemyfire.c	467;"	variable
-wavSoundPlayerFire	sound\wavplayerfire.c	133;"	variable
+value	main.c	49;"	variable
+x	game\game.h	86;"	member	struct:__anon3
+x100u	lcd.c	25;"	variable
+xPosition	game\game.h	63;"	member	struct:__anon1
+xPosition	game\game.h	76;"	member	struct:__anon2
+xSize	display\bitmap.h	30;"	member	struct:ImageData
+y	game\game.h	87;"	member	struct:__anon3
+yPosition	game\game.h	77;"	member	struct:__anon2
+ySize	display\bitmap.h	31;"	member	struct:ImageData

@@ -27,36 +27,40 @@
 # Segment configuration - section reserved for STVD
 #<BEGIN SEGMENT_CONF>
 # Segment Code,Constants:
-+seg .const -b 0x8080 -m 0x7f80  -n .const -it 
-+seg .text -a .const  -n .text 
++seg .const -b 0x8080 -m 0x7f80 -n .const -it
++seg .text -a .const -n .text
 # Segment Eeprom:
-+seg .eeprom -b 0x1000 -m 0x400  -n .eeprom 
++seg .eeprom -b 0x1000 -m 0x400 -n .eeprom
 # Segment Zero Page:
-+seg .bsct -b 0x0 -m 0x100  -n .bsct 
-+seg .ubsct -a .bsct  -n .ubsct 
-+seg .bit -a .ubsct  -n .bit -id 
-+seg .share -a .bit  -n .share -is 
++seg .bsct -b 0x0 -m 0x100 -n .bsct
++seg .ubsct -a .bsct -n .ubsct
++seg .bit -a .ubsct -n .bit -id
++seg .share -a .bit -n .share -is
 # Segment Ram:
-+seg .data -b 0x100 -m 0x4ff  -n .data 
-+seg .bss -a .data  -n .bss 
++seg .data -b 0x100 -m 0x4ff -n .data
++seg .bss -a .data -n .bss
 #<END SEGMENT_CONF>
 
 
 # Startup file - section reserved for STVD
 #<BEGIN STARTUP_FILE>
-crtsi0.sm8
+crtsi.sm8
 #<END STARTUP_FILE>
 
 
 # Object files list - section reserved for STVD
 #<BEGIN OBJECT_FILES>
+Debug\enemy1.o
+Debug\font_table.o
+Debug\player1.o
+Debug\game.o
 Debug\sound.o
-Debug\wavenemyexplode.o
-Debug\wavenemyfire.o
-Debug\wavplayerfire.o
+Debug\wavplayershoot.o
+Debug\wavsquare.o
 Debug\wavtest.o
 Debug\button.o
 Debug\dac.o
+Debug\eeprom.o
 Debug\gpio.o
 Debug\lcd.o
 Debug\main.o
@@ -68,8 +72,8 @@ Debug\timer.o
 
 # Library list - section reserved for STVD
 #<BEGIN LIBRARY_FILES>
-libis0.sm8
-libm0.sm8
+libis.sm8
+libm.sm8
 #<END LIBRARY_FILES>
 
 

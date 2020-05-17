@@ -67,8 +67,12 @@ void SPI_init(void)
     //bit 0 - edge, leading edge = 0
     //0101 0100
     
+    //update - idle high - trailing edge
+    //bits 1 and 0 = 11
     //For master clock speed = 16mhz, set bits 5-3
     //010 for spi output to 2mhz.
+    SPI1_CR1 |= 0x03;           //idle high, trailing edge
+    
     SPI1_CR1 |= 0x10;        //bits 5-3 010 - 250hz
 //    SPI1_CR1 |= 0x08;        //bits 5-3 001 - 500hz
 //    SPI1_CR1 |= 0x00;        //bits 5-3 000 - 1mhz clock speed
@@ -95,7 +99,7 @@ uint8_t SPI_tx(uint8_t data)
 {
     SPI1_DR = data;
     while (!(SPI1_SR & SPI1_TXE_FLAG)){};    //wait
-//    while (!(SPI1_SR & SPI1_RXNE_FLAG)){};    //wait        
+    while (!(SPI1_SR & SPI1_RXNE_FLAG)){};    //wait        
     return SPI1_DR;
 }
 

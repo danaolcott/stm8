@@ -58,6 +58,16 @@ void Sound_play(const SoundData *sound, unsigned int loop)
 }
 
 
+///////////////////////////////////////////////
+//Sound_isPlaying - returns the status
+//of the sound, is it playing or not...
+unsigned char Sound_isPlaying(void)
+{
+    return mSoundEnable;
+}
+
+
+
 //////////////////////////////////////////////
 void Sound_interruptHandler(void)
 {    
@@ -101,6 +111,51 @@ void Sound_interruptHandler(void)
         }
     }
 }
+
+
+
+////////////////////////////////////////////
+void Sound_playPlayerFire(void)
+{
+    Sound_play(&soundSquare_4ms_250hz, 50);
+}
+
+void Sound_playEnemyFire(void)
+{
+    Sound_play(&soundSquare_4ms_500hz, 50);
+}
+
+void Sound_playPlayerExplode(void)
+{
+    Sound_play(&soundSquare_4ms_1000hz, 50);
+}
+
+void Sound_playEnemyExplode(void)
+{
+    Sound_play(&soundSquare_4ms_1800hz, 50);
+}
+
+void Sound_playLevelUp(void)
+{
+    Sound_play(&soundSquare_4ms_2600hz, 50);
+}
+
+///////////////////////////////////////////////
+//
+void Sound_playGameOver(void)
+{
+    Sound_play(&soundSquare_4ms_250hz, 20);
+    while(Sound_isPlaying()){};
+    Sound_play(&soundSquare_4ms_500hz, 20);
+    while(Sound_isPlaying()){};
+    Sound_play(&soundSquare_4ms_1000hz, 20);
+    while(Sound_isPlaying()){};
+    Sound_play(&soundSquare_4ms_1800hz, 20);
+    while(Sound_isPlaying()){};
+    Sound_play(&soundSquare_4ms_2600hz, 20);
+    while(Sound_isPlaying()){};
+}
+
 
 
 

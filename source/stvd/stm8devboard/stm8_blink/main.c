@@ -21,10 +21,15 @@ DAC output
 Timer output
 I2C output for use with BME280 breakout board
 
+problems:
+blue board - left no trigger interrupt
+blue board - PA5 - lcd reset - no output, pin 5 not soldered?
+blue board - sck ok, no output on MOSI pin, pin 3 on mcu
+
 */
 
  
-#include <stddef.h>
+//#include <stddef.h>
 #include <stdint.h>
 #include "register.h"
 #include "system.h"
@@ -35,9 +40,19 @@ I2C output for use with BME280 breakout board
 #include "dac.h"
 #include "sound.h"
 #include "button.h"
-
+#include "eeprom.h"
+#include "bitmap.h"
+#include "game.h"
 
 static ButtonType_t lButton = 0x00;
+
+//variables in main.
+static unsigned int gameLoopCounter = 0x00;
+uint8_t length = 0x00;
+static char printBuffer[GAME_PRINT_BUFFER_SIZE] = {0x00};
+uint16_t cycleCounter = 0x00;
+uint8_t launchResult = 0x00;
+uint8_t missileFlag = 0x00;
 
 /////////////////////////////////////////
 //Main
@@ -55,45 +70,144 @@ main()
     TIM4_init();
     DAC_init();
     Sound_init();
+    EEPROM_init();
+    Game_init();
     
     system_enableInterrupts();
+    
     
 	while (1)
     {
         //check for any button flags
         lButton = Button_getFlag();
-        
+                
         if (lButton > 0)
         {
             switch(lButton)
             {
                 case BUTTON_UP:
-                    Sound_play(&wavSoundEnemyExplode, 1);
-                    break;
                 case BUTTON_DOWN:
-                    Sound_play(&wavSoundEnemyExplode, 2);
                     break;
+                    
                 case BUTTON_LEFT:
-                    Sound_play(&wavSoundPlayerFire, 1);
+                    Game_playerMoveLeft();
                     break;
                 case BUTTON_RIGHT:
-                    Sound_play(&wavSoundPlayerFire, 2);
+                    Game_playerMoveRight();
                     break;
                 case BUTTON_CENTER:
-                    Sound_play(&soundTest2, 5000);
                     break;
                 case BUTTON_USER:
-                    Sound_play(&soundTest1, 5000);
+                {
+                    launchResult = Game_missilePlayerLaunch();
+                    if (launchResult == 1)
+                    Sound_playPlayerFire();
                     break;
+                }
             }
             
             Button_clearFlag();
         }
         
+        
+        //check flag enemy missile launch
+		if (!(gameLoopCounter % 10))
+		{
+			launchResult = Game_missileEnemyLaunch();
+			if (launchResult == 1)
+				Sound_playEnemyFire();
+		}
+		
+		//check flag player hit
+		if (Game_flagGetPlayerHitFlag() == 1)
+		{
+			Game_flagClearPlayerHitFlag();
+			Game_playExplosionPlayer_withSound();
+		}
+		
+		//check flag - enemy hit flag
+		if (Game_flagGetEnemyHitFlag() == 1)
+		{
+			Game_flagClearEnemyHitFlag();
+			Sound_playEnemyExplode();
+		}
+		
+		//check level up flag
+		if (Game_flagGetLevelUpFlag() == 1)
+		{
+			Game_flagClearLevelUpFlag();	//clear the flag
+			Game_levelUp();					//level up			
+			Sound_playLevelUp();	//play sound
+		}
+
+		//check flag - game over
+		if (Game_flagGetGameOverFlag() == 1)
+		{
+			Sound_playGameOver();
+            
+            //update the cycle counter - eeprom
+            
+            
+            //loop until button press
+            while (Game_flagGetGameOverFlag() == 1)
+            {
+                Game_playGameOver();
+                
+                //draw the new cycle counter
+                lcd_drawString(1, 0, "Game#:");
+                length = LCD_decimalToBuffer(cycleCounter, printBuffer, GAME_PRINT_BUFFER_SIZE);
+                lcd_drawStringLength(1, 50, printBuffer, length);
+                
+                //check to see if anything pressed....
+                //check for any button flags
+                lButton = Button_getFlag();
+                if (lButton > 0)
+                {
+                    Game_flagClearGameOverFlag();
+                    system_disableInterrupts();
+                    Game_init();
+                    system_enableInterrupts();
+                }
+
+                GPIO_led_red_toggle();
+                timer_delay_ms(500);
+            }
+        }
+
+		//move enemy and missile				
+		Game_enemyMove();					//move enemy
+		missileFlag = Game_missileMove();	//move all missiles
+
+		//update display with interrupts disabled
+		system_disableInterrupts();      	//stop the timer
+		lcd_clearFrameBuffer(0, 0);			//clear the ram buffer
+		Game_playerDraw();					//update player image
+		Game_enemyDraw();					//draw enemy
+		Game_missileDraw();					//draw missiles
+		lcd_updateFrameBuffer();			//update the display
+		
+		//display the header info - score, level, num players
+		lcd_drawString(0, 0, "S:");
+		length = lcd_decimalToBuffer(Game_getGameScore(), printBuffer, GAME_PRINT_BUFFER_SIZE);
+		lcd_drawStringLength(0, 18, printBuffer, length);
+
+		lcd_drawString(0, 60, "L:");
+		length = lcd_decimalToBuffer(Game_getGameLevel(), printBuffer, GAME_PRINT_BUFFER_SIZE);
+		lcd_drawStringLength(0, 74, printBuffer, length);
+		
+		switch(Game_getNumPlayers())
+		{
+			case 3:	lcd_drawImagePage(0, 90, BITMAP_PLAYER_ICON3);	break;
+			case 2:	lcd_drawImagePage(0, 90, BITMAP_PLAYER_ICON2);	break;
+			case 1:	lcd_drawImagePage(0, 90, BITMAP_PLAYER_ICON1);	break;
+		}
+
+		//reenable interrupts
+		system_enableInterrupts();
+
+        //loop cound and short delay
+		gameLoopCounter++;
         GPIO_led_green_toggle();
         timer_delay_ms(100);
     }
 }
-
-
-

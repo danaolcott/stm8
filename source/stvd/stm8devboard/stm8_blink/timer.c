@@ -47,14 +47,8 @@ void TIM2_init(void)
     TIM2_CNTRL = 0x00;       //clear the timer counter
     //2^3, set to 1mhz
     TIM2_PSCR |= 0x03;      //prescaller, check this, trial and error    
-//    TIM2_ARRH = 0x00;       //auto reload, trial and error    
-//    TIM2_ARRL = 0xBA;       //auto reload, trial and error
-
-
     TIM2_ARRH = 0x00;       //auto reload, trial and error    
-    TIM2_ARRL = 0x1A;       //auto reload, trial and error
-
-
+    TIM2_ARRL = 0xBA;       //auto reload, trial and error
 
     TIM2_CR1 |= BIT_0;      //enable counter    
 }

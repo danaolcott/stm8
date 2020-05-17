@@ -9,7 +9,10 @@ Register Definitions for the STM8L151K6
 
 #include <stdint.h>
 #include <stddef.h>
-#include "register.h"       //irq definitions
+
+#define uint8_t         unsigned char
+#define uint16_t        unsigned int
+
 
 #define BIT_0           (1u << 0)
 #define BIT_1           (1u << 1)
@@ -48,6 +51,18 @@ Register Definitions for the STM8L151K6
 //System Config Registers
 #define SYSCFG_RMPCR1		*((volatile uint8_t*)0x509E)
 #define SYSCFG_RMPCR2		*((volatile uint8_t*)0x509F)
+
+//flash
+#define FLASH_CR1           *((volatile uint8_t*)0x5050)
+#define FLASH_CR2           *((volatile uint8_t*)0x5051)
+#define FLASH_PUKR          *((volatile uint8_t*)0x5052)
+#define FLASH_DUKR          *((volatile uint8_t*)0x5053)
+#define FLASH_IAPSR         *((volatile uint8_t*)0x5054)
+
+#define FLASH_DUL_BIT       BIT_3
+#define FLASH_EOP_BIT       BIT_2
+
+
 
 //Clock control registers
 #define CLK_DIVR		    *((volatile uint8_t*)0x50C0)    //master divide register

@@ -1,13 +1,21 @@
+display\bitmap.h
+display\enemy1.c
+display\font_table.c
+display\font_table.h
+display\player1.c
+game\game.c
+game\game.h
 sound\sound.c
 sound\sound.h
-sound\wavenemyexplode.c
-sound\wavenemyfire.c
-sound\wavplayerfire.c
+sound\wavplayershoot.c
+sound\wavsquare.c
 sound\wavtest.c
 button.c
 button.h
 dac.c
 dac.h
+eeprom.c
+eeprom.h
 gpio.c
 gpio.h
 lcd.c
@@ -21,7 +29,8 @@ system.c
 system.h
 timer.c
 timer.h
-..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\mods0.h
+..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\mods.h
 ..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h
 ..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h
 ..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h
+..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h

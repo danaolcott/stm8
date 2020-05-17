@@ -12,8 +12,18 @@ LCD Controller File for the EA Display DOGS102N-6 LCD
 #include "register.h"
 #include "lcd.h"
 #include "spi.h"
+#include "font_table.h"
+#include "bitmap.h"
+
 
 #define abs(a)  ((a)<0?-(a):a)
+
+/////////////////////////////////////////////////////
+//Framebuffer allocated to memory location 0x100
+//strange, works here too, just like the nxp 8 bit processor
+//0x100u is the start of .bss
+volatile uint8_t frameBuffer[FRAME_BUFFER_SIZE] @ 0x100u;
+//volatile uint8_t frameBuffer[FRAME_BUFFER_SIZE];
 
 
 
@@ -37,6 +47,29 @@ void lcd_init(void)
     lcd_reset();
 
     //Configure the registers
+    	//Write initial register settings.
+	//See datasheet
+	lcd_writeCommand(0x40);		//Display start line 0
+	lcd_writeCommand(0xA1);		//SEG reverse
+	lcd_writeCommand(0xC0);		//Normal COM0-COM63
+	lcd_writeCommand(0xA4);		//Set all pixels to ON
+	lcd_writeCommand(0xA6);		//Display inverse off
+	lcd_writeCommand(0xA2);		//Set bias 1/9 (Duty 1/65)
+	lcd_writeCommand(0x2F);		//Booster, Regulator and Follower on
+	lcd_writeCommand(0x27);		//Set Contrast - internal resistor ratio- max, base = 0x20
+	lcd_writeCommand(0x81);		//Set Contrast - contrast, cmd 1
+//	lcd_writeCommand(0x10);		//Set Contrast - value, 6 bits
+ //   lcd_writeCommand(0x3F);		//Set Contrast - value, 6 bits
+	lcd_writeCommand(0x0E);		//Set Contrast - value, 6 bits
+
+	
+	lcd_writeCommand(0xFA);		//Set temperature compensation
+	lcd_writeCommand(0x90);		//Set temperature compensation
+	
+	lcd_writeCommand(0xAF);		//Display on
+
+	lcd_setPage(0);
+	lcd_setColumn(0);
 
 }
 
@@ -118,6 +151,488 @@ void lcd_clear(uint8_t value)
             lcd_writeData(value);
     }
 }
+
+
+void lcd_clearPage(uint8_t page, uint8_t value)
+{
+	uint8_t i = 0x00;
+	lcd_setColumn(0);
+	lcd_setPage(page);
+	
+	for (i = 0 ; i < LCD_WIDTH ; i++)
+			lcd_writeData(value);	
+}
+
+//////////////////////////////////////////////
+//Clears the framebuffer memory and updates
+//the contents of the display within the 
+//framebuffer region only
+//if update == 1, update the frame buffer with
+//contents of the display
+void lcd_clearFrameBuffer(uint8_t value, uint8_t update)
+{
+	uint8_t i, j;
+	uint16_t index = 0x00;
+	
+	for (index = 0 ; index < FRAME_BUFFER_SIZE ; index++)
+		frameBuffer[index] = value;
+	
+	//update the contents of the display
+	if (update == 1)
+	{
+		index = 0x00;
+		
+		lcd_setColumn(FRAME_BUFFER_OFFSET_X);
+		lcd_setPage(FRAME_BUFFER_START_PAGE);
+		
+		for (i = FRAME_BUFFER_START_PAGE ; i < FRAME_BUFFER_STOP_PAGE + 1 ; i++)
+		{
+			lcd_setColumn(FRAME_BUFFER_OFFSET_X);	//reset the x
+			lcd_setPage(i);							//increment the page
+			
+			for (j = 0 ; j < FRAME_BUFFER_WIDTH ; j++)
+				lcd_writeData(frameBuffer[index++]);
+		}
+	}
+}
+
+
+
+//////////////////////////////////////////////
+//Clears everything except the framebuffer 
+//area, the score page (full width) and player
+//page (full width).  Basically, the left and right
+//margins over the height of the frame buffer
+void lcd_clearBackground(uint8_t value)
+{
+	uint8_t i, j;			
+
+	for (i = FRAME_BUFFER_START_PAGE ; i < FRAME_BUFFER_STOP_PAGE + 1 ; i++)
+	{
+		lcd_setPage(i);
+		
+		//left margin
+		lcd_setColumn(0);		
+		for (j = 0 ; j < FRAME_BUFFER_OFFSET_X ; j++)
+			lcd_writeData(value);
+		
+		//right margin
+		lcd_setColumn(LCD_WIDTH - FRAME_BUFFER_OFFSET_X);
+		for (j = 0 ; j < FRAME_BUFFER_OFFSET_X ; j++)
+			lcd_writeData(value);
+	}
+}
+
+
+//////////////////////////////////////////////
+//Update the display with the contents of the
+//framebuffer.  The buffer is displayed at 
+//FRAME_BUFFER_OFFSET_X and FRAME_BUFFER_START_PAGE
+//over a height of FRAME_BUFFER_NUM_PAGES
+//
+void lcd_updateFrameBuffer(void)
+{
+	uint8_t i, j;
+	uint16_t element = 0;
+	
+	volatile uint8_t *ptr = frameBuffer;
+		
+	for (i = FRAME_BUFFER_START_PAGE ; i < FRAME_BUFFER_STOP_PAGE + 1 ; i++)
+	{
+		lcd_setColumn(FRAME_BUFFER_OFFSET_X);
+		lcd_setPage(i);
+		lcd_writeDataBurst(ptr, FRAME_BUFFER_WIDTH);		
+		ptr += FRAME_BUFFER_WIDTH;
+	}	
+}
+
+
+
+
+////////////////////////////////////////////////////
+//LCD_drawString.
+//Print string of characters to the LCD.
+//Note: the far keyword is required for this to 
+//work since the project is using the tiny memory model.
+//If we were using the other memory model, I think you dont 
+//need it because the variable would be placed into far region
+//of memory by default.  Leaving the keyword out crashes the program
+//and using near keyword crashes the program.
+//When calling this function, there is no need to cast the input
+//parameter as char *far.
+void lcd_drawString(uint8_t row, uint8_t col, char *myString)
+{
+	uint8_t count = 0;
+	uint8_t position = col;
+
+	unsigned int line;
+	unsigned int value0;
+	uint8_t width = 8;
+	unsigned int i = 0;
+	
+	//set the x and y start positions
+	lcd_setPage(row);
+	
+	while ((myString[count] != 0x00) && (position < LCD_WIDTH))
+	{
+		lcd_setColumn(position);
+
+		if ((position + width) < LCD_WIDTH)
+		{
+			line = myString[count] - 27;		//ie, for char 32 " ", it's on line 5
+			value0 = (line-1) << 3;
+
+			for (i = 0 ; i < width ; i++)
+			{
+				lcd_writeData(font_table[value0 + i]);
+			}
+		}
+
+		position += width;
+		count++;
+	}
+}
+
+
+
+//////////////////////////////////////////////////
+//Draws a string of characters at starting
+//row and col.
+void lcd_drawStringLength(uint8_t row, uint8_t col, char *mystring, uint8_t length)
+{
+	unsigned int i, j = 0;
+	unsigned char position = col;
+	uint8_t width = 8;
+	unsigned int value0 = 0;
+	unsigned int line = 0;
+
+	//set the x and y start positions
+	lcd_setPage(row);
+
+	for (i = 0 ; i < length ; i++)
+	{
+		lcd_setColumn(position);
+
+		if ((position + width) < LCD_WIDTH)
+		{
+			line = mystring[i] - 27;		//ie, for char 32 " ", it's on line 5
+			value0 = (line-1) << 3;
+
+			for (j = 0 ; j < width ; j++)
+			{
+				lcd_writeData(font_table[value0 + j]);
+			}
+		}
+
+		position += width;
+	}
+}
+
+
+
+//////////////////////////////////////////
+//Print val into buffer of max size size.
+//returns the number of characters in the
+//the buffer.  Assumes the buffer
+//is clear prior to writing to it.
+uint8_t lcd_decimalToBuffer(unsigned int val, char *buffer, uint8_t size)
+{
+    uint8_t i = 0;
+    char digit;
+    uint8_t num = 0;
+    char t;
+    
+    //test for a zero value
+    if (val == 0)
+    {
+    	buffer[0] = '0';
+    	buffer[1] = 0x00;
+    	return 1;
+    }
+
+    while (val > 0)
+    {
+        digit = (char)(val % 10);
+        buffer[num] = (0x30 + digit) & 0x7F;
+        num++;
+        val = val / 10;
+    }
+
+    //reverse in place
+    for (i = 0 ; i < num / 2 ; i++)
+    {
+        t = buffer[i];
+        buffer[i] = buffer[num - i - 1];
+        buffer[num - i - 1] = t;
+    }
+
+    buffer[num] = 0x00;     //null terminated
+
+    return num;
+}
+
+
+
+///////////////////////////////////////////////////////////////
+//Draws image onto LCD directly.  Images are assumed to be page
+//aligned (height of a multiple of a page) and 1 bit per pixel 
+//stored vertically with LSB on top.
+//
+//Note: The function that draws image into framebuffer assumes
+//that the image is stored horizontally, 1 bit per pixel, MSB
+//to LSB
+void lcd_drawImagePage(uint8_t page, uint8_t offset, Image_t image)
+{
+	uint8_t element = 0;
+	uint8_t i = 0;
+	uint8_t j = 0;
+	uint8_t width, numPages = 0;
+	
+	//set the image pointer
+	const ImageData *ptr = &bmimgPlayerInvBmp;
+	
+	switch(image)
+	{
+		case BITMAP_PLAYER: 		ptr = &bmimgPlayerInvBmp;		break;
+		case BITMAP_PLAYER_EXP1: 	ptr = &bmimgPlayerInvExp1Bmp;	break;
+		case BITMAP_PLAYER_EXP2: 	ptr = &bmimgPlayerInvExp2Bmp;	break;
+		case BITMAP_PLAYER_EXP3: 	ptr = &bmimgPlayerInvExp3Bmp;	break;
+		case BITMAP_PLAYER_EXP4: 	ptr = &bmimgPlayerInvExp4Bmp;	break;
+		case BITMAP_ENEMY:			ptr = &bmenemy1Bmp;				break;
+		case BITMAP_PLAYER_ICON3:	ptr = &bmimgPlayerIcon_3;		break;
+		case BITMAP_PLAYER_ICON2:	ptr = &bmimgPlayerIcon_2;		break;
+		case BITMAP_PLAYER_ICON1:	ptr = &bmimgPlayerIcon_1;		break;
+		default:					ptr = &bmimgPlayerInvBmp;		break;
+		
+	}
+	
+	width = ptr->xSize;
+	numPages = (ptr->ySize) / 8;
+	
+	//set the initial position
+	lcd_setPage(page);
+	lcd_setColumn(offset);
+	
+	for (i = 0 ; i < numPages ; i++)
+	{
+		lcd_setColumn(offset);				//reset
+		lcd_setPage(page + i);				//increment
+		
+		for (j = 0 ; j < width ; j++)
+		{
+			//write the data
+			lcd_writeData(ptr->pImageData[element]);
+			element++;
+		}
+	}	
+}
+
+/////////////////////////////////////////////////////////
+//LCD_putPixelRam
+//Modifies a single bit in the framebuffer and updates
+//the display when update = 1
+//Note:
+//Framebuffer width is not the same as LCD_WIDTH
+//all x and y aligned to the edge of the frame buffer
+//
+void lcd_putPixelRam(uint16_t x, uint16_t y, uint8_t color, uint8_t update)
+{
+	uint16_t element = 0x00;    //frame buffer element
+	uint8_t elementValue = 0x00;    
+	uint8_t bitShift = 0x00;
+
+    //test for valid input
+	if ((x > (FRAME_BUFFER_WIDTH - 1)) || (y > (FRAME_BUFFER_HEIGHT - 1)))
+		return;
+	
+	//element the frame buffer to read / write
+	element = ((y >> 3) * FRAME_BUFFER_WIDTH) + x;
+	
+	//offset - MSB on bottom
+	if (y < 8)
+		bitShift = (uint8_t)y;
+	else if ((y % 8) == 0)
+		bitShift = 0;
+	else
+		bitShift = y % 8;
+	
+	//read
+	elementValue = frameBuffer[element];
+	
+	//modify
+	if (color == 1)
+		elementValue |= (1 << bitShift);        //add 1
+	else    
+		elementValue &=~ (1 << bitShift);       //clear 1
+	
+    //write
+    frameBuffer[element] = elementValue;
+	
+	//update
+	if (update > 0)
+	{
+		//update the display - offset by position
+		//of the framebuffer
+		lcd_setColumn(x + FRAME_BUFFER_OFFSET_X);
+		lcd_setPage((y >> 3) + FRAME_BUFFER_START_PAGE);
+		lcd_writeData(elementValue);
+	}	
+}
+
+
+
+
+////////////////////////////////////////////////////////////////
+//Draw Image into x and y coordinates into the frambuffer
+//Since the framebuffer is offset on the LCD, reference the 
+//x and y to the edge of the buffer, not the LCD.
+//Input images are assumed to be stored as arrays that
+//are horizontally aligned, 1 bit per pixel, 8 pixels per
+//byte, MSB to LSB.
+//
+//trans - bit value to ignore.  ie, if trans = 0, ignore and
+//skip over 0 pixels (ie, does not clear the pixel), if trans = 1,
+//ignore and skip over 1 pixels (ie, don't draw on pixels).
+
+//if update = 1, the LCD is updated with the contents of the
+//framebuffer.
+//
+//Note:  This is opposite to drawing images directly into
+//the LCD.  The framebuffer stores the data vertically
+//to allow for faster writes.  The conversion is done
+//in the put pixel function
+void lcd_drawImageRam(uint16_t xPosition, uint16_t yPosition, Image_t image, uint8_t trans, uint8_t update)
+{
+	uint8_t bitValue = 0;
+	uint8_t p = 0;
+	uint16_t i = 0;
+	uint16_t j = 0;
+	uint16_t counter = 0x00;
+	uint8_t data = 0x00;
+	uint8_t sizeX = 0x00;
+	uint8_t sizeY = 0x00;    
+	uint16_t x = xPosition;
+	uint16_t y = yPosition;
+	 
+	//set the pointer
+	uint8_t *ptr = bmenemy1Bmp.pImageData;
+	sizeX = bmenemy1Bmp.xSize;
+	sizeY = bmenemy1Bmp.ySize;
+	
+	//set the image data pointer
+    switch(image)
+    {
+		case BITMAP_ENEMY:
+		{
+			ptr = bmenemy1Bmp.pImageData;
+			sizeX = bmenemy1Bmp.xSize;
+			sizeY = bmenemy1Bmp.ySize;
+			break;
+		}
+		
+		default:
+		{
+			ptr = bmenemy1Bmp.pImageData;
+			sizeX = bmenemy1Bmp.xSize;
+			sizeY = bmenemy1Bmp.ySize;
+		}
+    }
+         
+    for (i = 0 ; i < sizeY ; i++)
+    {
+		x = xPosition;        //reset the x position
+		
+		//1bpp - 8 pixels per element
+		for (j = 0 ; j < (sizeX / 8) ; j++)
+		{   
+			data = ptr[counter];
+			
+			//work counter 8 times
+			p = 8;                  //reset p
+			while (p > 0)
+			{                
+				bitValue = (data >> (p-1)) & 0x01;
+				
+				if (bitValue != trans)
+				{
+					if (!bitValue)
+						lcd_putPixelRam(x, y, 0, update);
+					else
+						lcd_putPixelRam(x, y, 1, update);
+				}
+				
+				x++;            //increment the x
+				p--;
+			}
+			
+			counter++;
+		}
+		
+		y++;        //increment the row
+	}
+}
+
+
+
+
+
+
+//////////////////////////////////////////////////////////
+//Draw enemy bitmap in RAM
+//Transparency assumed 0 (ie, don't draw 0 pixels)
+//and update assumed to be 0 (ie, no update to the LCD)
+//Attempt to reduce code size
+void lcd_drawEnemyBitmap(uint16_t xPosition, uint16_t yPosition)
+{
+	uint8_t bitValue = 0;
+	uint8_t p = 0;
+	uint16_t i = 0;
+	uint16_t j = 0;
+	uint16_t counter = 0x00;
+	uint8_t data = 0x00;
+	uint8_t sizeX = 0x00;
+	uint8_t sizeY = 0x00;    
+	uint16_t x = xPosition;
+	uint16_t y = yPosition;
+	 
+	//set the pointer
+	uint8_t *ptr = bmenemy1Bmp.pImageData;
+	sizeX = bmenemy1Bmp.xSize;
+	sizeY = bmenemy1Bmp.ySize;
+	         
+    for (i = 0 ; i < sizeY ; i++)
+    {
+		x = xPosition;        //reset the x position
+		
+		//1bpp - 8 pixels per element
+		for (j = 0 ; j < (sizeX / 8) ; j++)
+		{   
+			data = ptr[counter];
+			
+			//work counter 8 times
+			p = 8;                  //reset p
+			while (p > 0)
+			{                
+				bitValue = (data >> (p-1)) & 0x01;
+				
+				if (bitValue == 1)
+				{
+					lcd_putPixelRam(x, y, 1, 0);
+				}
+				
+				x++;            //increment the x
+				p--;
+			}
+			
+			counter++;
+		}
+		
+		y++;        //increment the row
+	}
+}
+
+
+
 
 
 

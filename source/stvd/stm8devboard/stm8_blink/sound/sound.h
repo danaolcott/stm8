@@ -19,16 +19,30 @@ typedef struct
 //sound arrays
 extern const SoundData soundTest1;
 extern const SoundData soundTest2;
+extern const SoundData soundSquare_4ms_250hz;
+extern const SoundData soundSquare_4ms_500hz;
+extern const SoundData soundSquare_4ms_1000hz;
+extern const SoundData soundSquare_4ms_1800hz;
+extern const SoundData soundSquare_4ms_2600hz;
 
-extern const SoundData wavSoundPlayerFire;
-extern const SoundData wavSoundEnemyFire;
-extern const SoundData wavSoundEnemyExplode;
 
+extern const SoundData sound_playerShoot;
 
 //prototypes
 void Sound_init(void);
 void Sound_play(const SoundData *sound, unsigned int loop);
+unsigned char Sound_isPlaying(void);
 void Sound_interruptHandler(void);
+
+
+//play sounds
+void Sound_playPlayerFire(void);
+void Sound_playEnemyFire(void);
+void Sound_playPlayerExplode(void);
+void Sound_playEnemyExplode(void);
+void Sound_playLevelUp(void);
+void Sound_playGameOver(void);
+
 
 #endif
 
