@@ -117,7 +117,7 @@ void Sound_interruptHandler(void)
 ////////////////////////////////////////////
 void Sound_playPlayerFire(void)
 {
-    Sound_play(&soundSquare_4ms_250hz, 50);
+    Sound_play(&sound_playerShoot, 1);
 }
 
 void Sound_playEnemyFire(void)

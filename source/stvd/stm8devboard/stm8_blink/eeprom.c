@@ -146,3 +146,86 @@ uint8_t EEPROM_read(uint16_t address)
 }
 
 
+///////////////////////////////////////////////////
+//Clear the entire eeprom memory space from
+//EEPROM start addr to stop addr
+//clears the first 256 address bytes
+void EEPROM_clearEEPROM(uint8_t value)
+{
+    uint16_t i = 0;
+    
+    for (i = 0 ; i < 0xFF ; i++)
+    {
+        EEPROM_write(i, value);
+    }
+}
+
+///////////////////////////////////////////////
+//Update / increment current game cycle count
+uint16_t EEPROM_updateCycleCount(void)
+{
+	uint16_t result = 0x00;
+	uint8_t high = 0x00;
+	uint8_t low = 0x00;
+
+	result = EEPROM_readCycleCount();
+	result += 1;
+	
+	//else, do nothing, and result = 0	
+	high = (uint8_t)((result >> 8) & 0xFF);
+	low = (uint8_t)(result & 0xFF);
+	
+	EEPROM_write(EEPROM_ADDRESS_CYCLE_COUNT_MSB, high);
+	EEPROM_write(EEPROM_ADDRESS_CYCLE_COUNT_LSB, low);
+	
+	return result;
+}
+
+uint16_t EEPROM_readCycleCount(void)
+{
+	uint16_t low = 0x00;
+	uint16_t high = 0x00;
+	uint16_t result = 0x00;
+	
+	low = EEPROM_read(EEPROM_ADDRESS_CYCLE_COUNT_LSB);
+	high = EEPROM_read(EEPROM_ADDRESS_CYCLE_COUNT_MSB);
+
+	result = ((high & 0xFF) << 8);
+	result |= (low & 0xFF);
+	
+	return result;
+}
+
+
+uint16_t EEPROM_getHighScore(void)
+{
+	uint16_t low = 0x00;
+	uint16_t high = 0x00;
+	uint16_t result = 0x00;
+	
+	low = EEPROM_read(EEPROM_ADDRESS_HIGH_SCORE_LSB);
+	high = EEPROM_read(EEPROM_ADDRESS_HIGH_SCORE_MSB);
+
+	result = ((high & 0xFF) << 8);
+	result |= (low & 0xFF);
+	
+	return result;
+}
+
+void EEPROM_updateHighScore(uint16_t score)
+{
+	uint8_t high = 0x00;
+	uint8_t low = 0x00;
+	
+	high = (uint8_t)((score >> 8) & 0xFF);
+	low = (uint8_t)(score & 0xFF);
+	
+	EEPROM_write(EEPROM_ADDRESS_HIGH_SCORE_MSB, high);
+	EEPROM_write(EEPROM_ADDRESS_HIGH_SCORE_LSB, low);
+}
+
+
+
+
+
+

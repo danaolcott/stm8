@@ -53,6 +53,10 @@ static char printBuffer[GAME_PRINT_BUFFER_SIZE] = {0x00};
 uint16_t cycleCounter = 0x00;
 uint8_t launchResult = 0x00;
 uint8_t missileFlag = 0x00;
+uint16_t gameHighScore = 0x00;
+uint16_t gameCurrentScore = 0x00;
+
+
 
 /////////////////////////////////////////
 //Main
@@ -75,28 +79,32 @@ main()
     
     system_enableInterrupts();
     
+    //clear the eeprom
+    //EEPROM_clearEEPROM(0x00);
     
 	while (1)
     {
-        //check for any button flags
+        //check for button presses - ISR
+        //user button and center button
         lButton = Button_getFlag();
                 
         if (lButton > 0)
         {
             switch(lButton)
             {
+                //do nothing
                 case BUTTON_UP:
                 case BUTTON_DOWN:
-                    break;
-                    
                 case BUTTON_LEFT:
-                    Game_playerMoveLeft();
+                case BUTTON_RIGHT:                
                     break;
-                case BUTTON_RIGHT:
-                    Game_playerMoveRight();
-                    break;
+                
+                //do something
                 case BUTTON_CENTER:
+                {
                     break;
+                }
+                
                 case BUTTON_USER:
                 {
                     launchResult = Game_missilePlayerLaunch();
@@ -107,6 +115,32 @@ main()
             }
             
             Button_clearFlag();
+        }
+        
+        //check button presses - polling - up, down, left right
+        //left - PD0
+        if (!(PD_IDR & BIT_0))
+        {
+            //do something
+            Game_playerMoveLeft();
+        }
+        //up - PD2
+        else if (!(PD_IDR & BIT_2))
+        {
+            //do something
+        }
+
+        //right - PD3
+        else if (!(PD_IDR & BIT_3))
+        {
+            //do something
+            Game_playerMoveRight();
+        }
+        
+        //down - PD4
+        else if (!(PD_IDR & BIT_4))
+        {
+            //do something
         }
         
         
@@ -146,8 +180,23 @@ main()
 			Sound_playGameOver();
             
             //update the cycle counter - eeprom
+            cycleCounter = EEPROM_updateCycleCount();
+            
+            //check to see if the game score is more than the high score
+            gameCurrentScore = Game_getGameScore();
+            gameHighScore = EEPROM_getHighScore();
+            
+            if (gameCurrentScore > gameHighScore)
+            {
+                gameHighScore = gameCurrentScore;
+                EEPROM_updateHighScore(gameHighScore);
+                
+                //set the highscore in game - displayed below
+                Game_setHighScore(gameHighScore);
+            }
             
             
+                        
             //loop until button press
             while (Game_flagGetGameOverFlag() == 1)
             {
@@ -155,7 +204,7 @@ main()
                 
                 //draw the new cycle counter
                 lcd_drawString(1, 0, "Game#:");
-                length = LCD_decimalToBuffer(cycleCounter, printBuffer, GAME_PRINT_BUFFER_SIZE);
+                length = lcd_decimalToBuffer(cycleCounter, printBuffer, GAME_PRINT_BUFFER_SIZE);
                 lcd_drawStringLength(1, 50, printBuffer, length);
                 
                 //check to see if anything pressed....

@@ -83,22 +83,36 @@ DAC_set	dac.c	40;"	function	signature:(unsigned int value)
 DAC_set	dac.h	12;"	prototype	signature:(unsigned int value)
 DAC_set8Bit	dac.c	59;"	function	signature:(unsigned char value)
 DAC_set8Bit	dac.h	13;"	prototype	signature:(unsigned char value)
+EEPROM_ADDRESS_CYCLE_COUNT_LSB	eeprom.h	19;"	macro
+EEPROM_ADDRESS_CYCLE_COUNT_MSB	eeprom.h	18;"	macro
+EEPROM_ADDRESS_HIGH_SCORE_LSB	eeprom.h	22;"	macro
+EEPROM_ADDRESS_HIGH_SCORE_MSB	eeprom.h	21;"	macro
 EEPROM_HW_KEY1	eeprom.h	14;"	macro
 EEPROM_HW_KEY2	eeprom.h	15;"	macro
 EEPROM_START_ADDR	eeprom.h	12;"	macro
 EEPROM_STOP_ADDR	eeprom.h	13;"	macro
+EEPROM_clearEEPROM	eeprom.c	153;"	function	signature:(uint8_t value)
+EEPROM_clearEEPROM	eeprom.h	32;"	prototype	signature:(uint8_t value)
 EEPROM_delay	eeprom.c	17;"	function	signature:(uint16_t delay)
-EEPROM_delay	eeprom.h	19;"	prototype	signature:(uint16_t delay)
+EEPROM_delay	eeprom.h	25;"	prototype	signature:(uint16_t delay)
+EEPROM_getHighScore	eeprom.c	200;"	function	signature:(void)
+EEPROM_getHighScore	eeprom.h	36;"	prototype	signature:(void)
 EEPROM_init	eeprom.c	29;"	function	signature:(void)
-EEPROM_init	eeprom.h	20;"	prototype	signature:(void)
+EEPROM_init	eeprom.h	26;"	prototype	signature:(void)
 EEPROM_lock	eeprom.c	96;"	function	signature:(void)
-EEPROM_lock	eeprom.h	22;"	prototype	signature:(void)
+EEPROM_lock	eeprom.h	28;"	prototype	signature:(void)
 EEPROM_read	eeprom.c	140;"	function	signature:(uint16_t address)
-EEPROM_read	eeprom.h	24;"	prototype	signature:(uint16_t address)
+EEPROM_read	eeprom.h	30;"	prototype	signature:(uint16_t address)
+EEPROM_readCycleCount	eeprom.c	184;"	function	signature:(void)
+EEPROM_readCycleCount	eeprom.h	34;"	prototype	signature:(void)
 EEPROM_unlock	eeprom.c	52;"	function	signature:(void)
-EEPROM_unlock	eeprom.h	21;"	prototype	signature:(void)
+EEPROM_unlock	eeprom.h	27;"	prototype	signature:(void)
+EEPROM_updateCycleCount	eeprom.c	165;"	function	signature:(void)
+EEPROM_updateCycleCount	eeprom.h	33;"	prototype	signature:(void)
+EEPROM_updateHighScore	eeprom.c	215;"	function	signature:(uint16_t score)
+EEPROM_updateHighScore	eeprom.h	37;"	prototype	signature:(uint16_t score)
 EEPROM_write	eeprom.c	110;"	function	signature:(uint16_t address, uint8_t data)
-EEPROM_write	eeprom.h	23;"	prototype	signature:(uint16_t address, uint8_t data)
+EEPROM_write	eeprom.h	29;"	prototype	signature:(uint16_t address, uint8_t data)
 EOF	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	27;"	macro
 EXIT_FAILURE	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	7;"	macro
 EXIT_SUCCESS	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	8;"	macro
@@ -174,104 +188,100 @@ GAME_PLAYER_NUM_LIVES	game\game.h	28;"	macro
 GAME_PLAYER_PAGE	game\game.h	23;"	macro
 GAME_PLAYER_WIDTH	game\game.h	24;"	macro
 GAME_PRINT_BUFFER_SIZE	game\game.h	22;"	macro
-GPIO_EXTI0_ISR	gpio.c	134;"	function	signature:(void)
+GPIO_EXTI0_ISR	gpio.c	156;"	function	signature:(void)
 GPIO_EXTI0_ISR	gpio.h	21;"	prototype	signature:(void)
-GPIO_EXTI1_ISR	gpio.c	144;"	function	signature:(void)
+GPIO_EXTI1_ISR	gpio.c	161;"	function	signature:(void)
 GPIO_EXTI1_ISR	gpio.h	22;"	prototype	signature:(void)
-GPIO_EXTI2_ISR	gpio.c	155;"	function	signature:(void)
+GPIO_EXTI2_ISR	gpio.c	171;"	function	signature:(void)
 GPIO_EXTI2_ISR	gpio.h	23;"	prototype	signature:(void)
-GPIO_EXTI3_ISR	gpio.c	165;"	function	signature:(void)
+GPIO_EXTI3_ISR	gpio.c	175;"	function	signature:(void)
 GPIO_EXTI3_ISR	gpio.h	24;"	prototype	signature:(void)
-GPIO_EXTI4_ISR	gpio.c	175;"	function	signature:(void)
+GPIO_EXTI4_ISR	gpio.c	179;"	function	signature:(void)
 GPIO_EXTI4_ISR	gpio.h	25;"	prototype	signature:(void)
-GPIO_EXTI5_ISR	gpio.c	186;"	function	signature:(void)
+GPIO_EXTI5_ISR	gpio.c	183;"	function	signature:(void)
 GPIO_EXTI5_ISR	gpio.h	26;"	prototype	signature:(void)
-GPIO_init	gpio.c	31;"	function	signature:(void)
+GPIO_init	gpio.c	35;"	function	signature:(void)
 GPIO_init	gpio.h	11;"	prototype	signature:(void)
-GPIO_interrupt_config	gpio.c	64;"	function	signature:(void)
+GPIO_interrupt_config	gpio.c	74;"	function	signature:(void)
 GPIO_interrupt_config	gpio.h	12;"	prototype	signature:(void)
-GPIO_led_green_off	gpio.c	116;"	function	signature:(void)
+GPIO_led_green_off	gpio.c	138;"	function	signature:(void)
 GPIO_led_green_off	gpio.h	17;"	prototype	signature:(void)
-GPIO_led_green_on	gpio.c	106;"	function	signature:(void)
+GPIO_led_green_on	gpio.c	128;"	function	signature:(void)
 GPIO_led_green_on	gpio.h	15;"	prototype	signature:(void)
-GPIO_led_green_toggle	gpio.c	126;"	function	signature:(void)
+GPIO_led_green_toggle	gpio.c	148;"	function	signature:(void)
 GPIO_led_green_toggle	gpio.h	19;"	prototype	signature:(void)
-GPIO_led_red_off	gpio.c	111;"	function	signature:(void)
+GPIO_led_red_off	gpio.c	133;"	function	signature:(void)
 GPIO_led_red_off	gpio.h	16;"	prototype	signature:(void)
-GPIO_led_red_on	gpio.c	101;"	function	signature:(void)
+GPIO_led_red_on	gpio.c	123;"	function	signature:(void)
 GPIO_led_red_on	gpio.h	14;"	prototype	signature:(void)
-GPIO_led_red_toggle	gpio.c	121;"	function	signature:(void)
+GPIO_led_red_toggle	gpio.c	143;"	function	signature:(void)
 GPIO_led_red_toggle	gpio.h	18;"	prototype	signature:(void)
-Game_enemyDraw	game\game.c	418;"	function	signature:(void)
+Game_enemyDraw	game\game.c	422;"	function	signature:(void)
 Game_enemyDraw	game\game.h	105;"	prototype	signature:(void)
-Game_enemyGetNumEnemy	game\game.c	549;"	function	signature:(void)
+Game_enemyGetNumEnemy	game\game.c	553;"	function	signature:(void)
 Game_enemyGetNumEnemy	game\game.h	111;"	prototype	signature:(void)
-Game_enemyGetRandomEnemy	game\game.c	565;"	function	signature:(void)
+Game_enemyGetRandomEnemy	game\game.c	569;"	function	signature:(void)
 Game_enemyGetRandomEnemy	game\game.h	112;"	prototype	signature:(void)
-Game_enemyInit	game\game.c	92;"	function	signature:(void)
+Game_enemyInit	game\game.c	96;"	function	signature:(void)
 Game_enemyInit	game\game.h	96;"	prototype	signature:(void)
-Game_enemyMove	game\game.c	147;"	function	signature:(void)
+Game_enemyMove	game\game.c	151;"	function	signature:(void)
 Game_enemyMove	game\game.h	101;"	prototype	signature:(void)
-Game_flagClearButtonPress	game\game.c	748;"	function	signature:(void)
-Game_flagClearButtonPress	game\game.h	138;"	prototype	signature:(void)
-Game_flagClearEnemyHitFlag	game\game.c	726;"	function	signature:(void)
-Game_flagClearEnemyHitFlag	game\game.h	134;"	prototype	signature:(void)
-Game_flagClearGameOverFlag	game\game.c	702;"	function	signature:(void)
-Game_flagClearGameOverFlag	game\game.h	128;"	prototype	signature:(void)
-Game_flagClearLevelUpFlag	game\game.c	714;"	function	signature:(void)
-Game_flagClearLevelUpFlag	game\game.h	131;"	prototype	signature:(void)
-Game_flagClearPlayerHitFlag	game\game.c	690;"	function	signature:(void)
-Game_flagClearPlayerHitFlag	game\game.h	125;"	prototype	signature:(void)
-Game_flagGetButtonPress	game\game.c	741;"	function	signature:(void)
-Game_flagGetButtonPress	game\game.h	137;"	prototype	signature:(void)
-Game_flagGetEnemyHitFlag	game\game.c	720;"	function	signature:(void)
-Game_flagGetEnemyHitFlag	game\game.h	133;"	prototype	signature:(void)
-Game_flagGetGameOverFlag	game\game.c	696;"	function	signature:(void)
-Game_flagGetGameOverFlag	game\game.h	127;"	prototype	signature:(void)
-Game_flagGetLevelUpFlag	game\game.c	708;"	function	signature:(void)
-Game_flagGetLevelUpFlag	game\game.h	130;"	prototype	signature:(void)
-Game_flagGetPlayerHitFlag	game\game.c	684;"	function	signature:(void)
-Game_flagGetPlayerHitFlag	game\game.h	124;"	prototype	signature:(void)
-Game_flagSetButtonPress	game\game.c	735;"	function	signature:(void)
-Game_flagSetButtonPress	game\game.h	136;"	prototype	signature:(void)
-Game_getGameLevel	game\game.c	669;"	function	signature:(void)
+Game_flagClearEnemyHitFlag	game\game.c	738;"	function	signature:(void)
+Game_flagClearEnemyHitFlag	game\game.h	135;"	prototype	signature:(void)
+Game_flagClearGameOverFlag	game\game.c	714;"	function	signature:(void)
+Game_flagClearGameOverFlag	game\game.h	129;"	prototype	signature:(void)
+Game_flagClearLevelUpFlag	game\game.c	726;"	function	signature:(void)
+Game_flagClearLevelUpFlag	game\game.h	132;"	prototype	signature:(void)
+Game_flagClearPlayerHitFlag	game\game.c	702;"	function	signature:(void)
+Game_flagClearPlayerHitFlag	game\game.h	126;"	prototype	signature:(void)
+Game_flagGetEnemyHitFlag	game\game.c	732;"	function	signature:(void)
+Game_flagGetEnemyHitFlag	game\game.h	134;"	prototype	signature:(void)
+Game_flagGetGameOverFlag	game\game.c	708;"	function	signature:(void)
+Game_flagGetGameOverFlag	game\game.h	128;"	prototype	signature:(void)
+Game_flagGetLevelUpFlag	game\game.c	720;"	function	signature:(void)
+Game_flagGetLevelUpFlag	game\game.h	131;"	prototype	signature:(void)
+Game_flagGetPlayerHitFlag	game\game.c	696;"	function	signature:(void)
+Game_flagGetPlayerHitFlag	game\game.h	125;"	prototype	signature:(void)
+Game_getGameLevel	game\game.c	673;"	function	signature:(void)
 Game_getGameLevel	game\game.h	120;"	prototype	signature:(void)
-Game_getGameScore	game\game.c	663;"	function	signature:(void)
+Game_getGameScore	game\game.c	667;"	function	signature:(void)
 Game_getGameScore	game\game.h	119;"	prototype	signature:(void)
-Game_getNumPlayers	game\game.c	675;"	function	signature:(void)
+Game_getNumPlayers	game\game.c	679;"	function	signature:(void)
 Game_getNumPlayers	game\game.h	121;"	prototype	signature:(void)
-Game_init	game\game.c	55;"	function	signature:(void)
+Game_init	game\game.c	56;"	function	signature:(void)
 Game_init	game\game.h	94;"	prototype	signature:(void)
-Game_levelUp	game\game.c	653;"	function	signature:(void)
+Game_levelUp	game\game.c	657;"	function	signature:(void)
 Game_levelUp	game\game.h	116;"	prototype	signature:(void)
-Game_missileDraw	game\game.c	437;"	function	signature:(void)
+Game_missileDraw	game\game.c	441;"	function	signature:(void)
 Game_missileDraw	game\game.h	106;"	prototype	signature:(void)
-Game_missileEnemyLaunch	game\game.c	505;"	function	signature:(void)
+Game_missileEnemyLaunch	game\game.c	509;"	function	signature:(void)
 Game_missileEnemyLaunch	game\game.h	109;"	prototype	signature:(void)
-Game_missileInit	game\game.c	113;"	function	signature:(void)
+Game_missileInit	game\game.c	117;"	function	signature:(void)
 Game_missileInit	game\game.h	97;"	prototype	signature:(void)
-Game_missileMove	game\game.c	293;"	function	signature:(void)
+Game_missileMove	game\game.c	297;"	function	signature:(void)
 Game_missileMove	game\game.h	102;"	prototype	signature:(void)
-Game_missilePlayerLaunch	game\game.c	469;"	function	signature:(void)
+Game_missilePlayerLaunch	game\game.c	473;"	function	signature:(void)
 Game_missilePlayerLaunch	game\game.h	108;"	prototype	signature:(void)
-Game_playExplosionPlayer	game\game.c	759;"	function	signature:(void)
-Game_playExplosionPlayer	game\game.h	141;"	prototype	signature:(void)
-Game_playExplosionPlayer_withSound	game\game.c	786;"	function	signature:(void)
-Game_playExplosionPlayer_withSound	game\game.h	142;"	prototype	signature:(void)
-Game_playGameOver	game\game.c	820;"	function	signature:(void)
-Game_playGameOver	game\game.h	143;"	prototype	signature:(void)
-Game_playerDraw	game\game.c	408;"	function	signature:(void)
+Game_playExplosionPlayer	game\game.c	750;"	function	signature:(void)
+Game_playExplosionPlayer	game\game.h	138;"	prototype	signature:(void)
+Game_playExplosionPlayer_withSound	game\game.c	777;"	function	signature:(void)
+Game_playExplosionPlayer_withSound	game\game.h	139;"	prototype	signature:(void)
+Game_playGameOver	game\game.c	811;"	function	signature:(void)
+Game_playGameOver	game\game.h	140;"	prototype	signature:(void)
+Game_playerDraw	game\game.c	412;"	function	signature:(void)
 Game_playerDraw	game\game.h	104;"	prototype	signature:(void)
-Game_playerInit	game\game.c	83;"	function	signature:(void)
+Game_playerInit	game\game.c	87;"	function	signature:(void)
 Game_playerInit	game\game.h	95;"	prototype	signature:(void)
-Game_playerMoveLeft	game\game.c	130;"	function	signature:(void)
+Game_playerMoveLeft	game\game.c	134;"	function	signature:(void)
 Game_playerMoveLeft	game\game.h	99;"	prototype	signature:(void)
-Game_playerMoveRight	game\game.c	136;"	function	signature:(void)
+Game_playerMoveRight	game\game.c	140;"	function	signature:(void)
 Game_playerMoveRight	game\game.h	100;"	prototype	signature:(void)
-Game_scoreEnemyHit	game\game.c	606;"	function	signature:(uint8_t enemyIndex, uint8_t missileIndex)
+Game_scoreEnemyHit	game\game.c	610;"	function	signature:(uint8_t enemyIndex, uint8_t missileIndex)
 Game_scoreEnemyHit	game\game.h	114;"	prototype	signature:(uint8_t enemyIndex, uint8_t missileIndex)
-Game_scorePlayerHit	game\game.c	633;"	function	signature:(uint8_t missileIndex)
+Game_scorePlayerHit	game\game.c	637;"	function	signature:(uint8_t missileIndex)
 Game_scorePlayerHit	game\game.h	115;"	prototype	signature:(uint8_t missileIndex)
+Game_setHighScore	game\game.c	686;"	function	signature:(uint16_t score)
+Game_setHighScore	game\game.h	122;"	prototype	signature:(uint16_t score)
 INT16_C	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	97;"	macro
 INT16_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	50;"	macro
 INT16_MIN	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	47;"	macro
@@ -537,15 +547,18 @@ bmimgPlayerInvExp2Bmp	display\player1.c	59;"	variable
 bmimgPlayerInvExp3Bmp	display\player1.c	74;"	variable
 bmimgPlayerInvExp4Bmp	display\player1.c	89;"	variable
 calloc	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	40;"	prototype	signature:(unsigned int nelem, unsigned int elsize)
+cycleCounter	main.c	53;"	variable
 div	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	41;"	prototype	signature:(int numer, int denom)
 div_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	29;"	typedef	typeref:struct:__anon6
 exit	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	42;"	prototype	signature:(int status)
 flag_VH	game\game.h	74;"	member	struct:__anon2
 font_table	display\font_table.c	11;"	variable
 free	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	43;"	prototype	signature:(void *ptr)
+gameCurrentScore	main.c	57;"	variable
+gameHighScore	main.c	56;"	variable
+gameLoopCounter	main.c	50;"	variable	file:
 getchar	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	15;"	prototype	signature:(void)
 gets	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	16;"	prototype	signature:(char *s)
-i	main.c	48;"	variable
 int16_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	10;"	typedef
 int32_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	11;"	typedef
 int8_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	9;"	typedef
@@ -564,6 +577,7 @@ intptr_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8
 isqrt	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	53;"	prototype	signature:(unsigned int)
 lButton	main.c	47;"	variable	file:
 labs	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	44;"	prototype	signature:(long l)
+launchResult	main.c	54;"	variable
 lcd_clear	lcd.c	141;"	function	signature:(uint8_t value)
 lcd_clear	lcd.h	48;"	prototype	signature:(uint8_t value)
 lcd_clearBackground	lcd.c	206;"	function	signature:(uint8_t value)
@@ -606,26 +620,28 @@ lcd_writeDataBurst	lcd.c	109;"	function	signature:(uint8_t *data, uint16_t lengt
 lcd_writeDataBurst	lcd.h	44;"	prototype	signature:(uint8_t *data, uint16_t length)
 ldiv	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	45;"	prototype	signature:(long numer, long denom)
 ldiv_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	34;"	typedef	typeref:struct:__anon7
+length	main.c	51;"	variable
 length	sound\sound.h	14;"	member	struct:__anon4
 lsqrt	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	54;"	prototype	signature:(unsigned long)
 mButtonFlag	button.c	15;"	variable
-mButtonFlag	game\game.c	41;"	variable
-mEnemy	game\game.c	34;"	variable	file:
+mEnemy	game\game.c	35;"	variable	file:
 mEnemyHitFlag	game\game.c	45;"	variable
-mEnemyMissile	game\game.c	38;"	variable	file:
+mEnemyMissile	game\game.c	39;"	variable	file:
+mGameHighScore	game\game.c	50;"	variable	file:
 mGameLevel	game\game.c	49;"	variable	file:
 mGameLevelUpFlag	game\game.c	44;"	variable
 mGameOverFlag	game\game.c	43;"	variable
 mGameScore	game\game.c	48;"	variable	file:
-mPlayer	game\game.c	33;"	variable	file:
+mPlayer	game\game.c	34;"	variable	file:
 mPlayerHitFlag	game\game.c	42;"	variable
-mPlayerMissile	game\game.c	37;"	variable	file:
+mPlayerMissile	game\game.c	38;"	variable	file:
 mSoundCounter	sound\sound.c	20;"	variable	file:
 mSoundCurrent	sound\sound.c	24;"	variable
 mSoundEnable	sound\sound.c	23;"	variable
 mSoundLoopCounter	sound\sound.c	21;"	variable	file:
-main	main.c	53;"	function
+main	main.c	63;"	function
 malloc	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	46;"	prototype	signature:(unsigned int size)
+missileFlag	main.c	55;"	variable
 numLives	game\game.h	62;"	member	struct:__anon1
 offsetof	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	23;"	macro
 pImageData	display\bitmap.h	32;"	member	struct:ImageData
@@ -638,6 +654,7 @@ pSoundSquare_4ms_500hz	sound\wavsquare.c	33;"	variable
 pSoundTest1	sound\wavtest.c	15;"	variable
 pSoundTest2	sound\wavtest.c	32;"	variable
 pSoundValue	sound\sound.c	22;"	variable
+printBuffer	main.c	52;"	variable	file:
 printf	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	17;"	prototype	signature:(char *format, ...)
 ptrdiff_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	17;"	typedef
 putchar	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	18;"	prototype	signature:(char c)
@@ -680,7 +697,6 @@ system_peripheral_clock_config	system.h	14;"	prototype	signature:(void)
 timerTick	timer.c	22;"	variable
 timer_delay_ms	timer.c	27;"	function	signature:(unsigned long delay)
 timer_delay_ms	timer.h	11;"	prototype	signature:(unsigned long delay)
-toggle	main.c	50;"	variable
 uint16_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	13;"	typedef
 uint16_t	register.h	14;"	macro
 uint32_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	14;"	typedef
@@ -694,7 +710,6 @@ uint_least32_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\
 uint_least8_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	21;"	typedef
 uintmax_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	42;"	typedef
 uintptr_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	37;"	typedef
-value	main.c	49;"	variable
 x	game\game.h	86;"	member	struct:__anon3
 x100u	lcd.c	25;"	variable
 xPosition	game\game.h	63;"	member	struct:__anon1

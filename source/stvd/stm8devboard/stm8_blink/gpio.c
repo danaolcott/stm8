@@ -7,7 +7,11 @@ PB6 - green
 
 //Joystick: EXTI0-EXTI5
 //order: left, center, up, right, down, user button - bits 0-5
-
+//
+//Configure user button and center button as interrupt
+//configure joystick up,down, left , right as polling
+//PD1 - joystick center, PD5 - user button
+//
 */
 
 #include <stdio.h>
@@ -44,10 +48,16 @@ void GPIO_init(void)
     //configure the input pins PD0-PD5
     //interrupt, pullups enabled, falling
     //edge trigger
-    PD_DDR &=~ 0x3F;
-    PD_CR1 |= 0x3F;
-    PD_CR2 |= 0x3F;
-
+//    PD_DDR &=~ 0x3F;
+//    PD_CR1 |= 0x3F;
+//    PD_CR2 |= 0x3F;
+    
+    //bits 1 and 5 are interrupts - joystick
+    //center and user button.  remaining are polling
+    PD_DDR &=~ 0x22;
+    PD_CR1 |= 0x22;
+    PD_CR2 |= 0x22;
+    
     GPIO_interrupt_config();
 }
 
@@ -66,12 +76,20 @@ void GPIO_interrupt_config(void)
     //EXTI_CR1 - interrupt sensitivity for 
     //bits 3, 2, 1, 0 of Port A-E
     //Falling edge trigger only - 10, 1010 1010
-    EXTI_CR1 = 0xAA;        //PD0-PD3 falling edge
+//    EXTI_CR1 = 0xAA;        //PD0-PD3 falling edge
+    
+    //correction - just bits 1 and 5 are interupts
+    EXTI_CR1 = 0x08;
+    
     
     //EXTI_CR2 - interrupt sensitivity for 
     //bits 7, 6, 5, 4 for Port A-E
     //Falling edge trigger only - Bits 5 and 4 = 0000 1010
-    EXTI_CR2 = 0x0A;
+//    EXTI_CR2 = 0x0A;
+
+    //correction - bit 5 is interrupt
+    EXTI_CR2 = 0x08;
+    
     
     //EXTI_CR3 - not sure about this one, for use 
     //with EXTID.
@@ -89,7 +107,11 @@ void GPIO_interrupt_config(void)
     //clear by writing a 1
     //clear the interrupts by writting a 1
     //to bits 5-0
-    EXTI_SR1 = 0x3F;
+//    EXTI_SR1 = 0x3F;
+    
+    //clear bits 5 and 1
+    EXTI_SR1 = 0x22;
+    
     
     //EXTI_SR2 - EXTID - bit 1 - 
     //Dont think there is a need for this one.
@@ -131,12 +153,7 @@ void GPIO_led_green_toggle(void)
 //order: left, center, up, right, down, user button - bits 0-5
 ////////////////////////////////////////////////
 //EXTI0_ISR - joystick left
-void GPIO_EXTI0_ISR(void)
-{
-    //do something
-    Button_setFlag(BUTTON_LEFT);
-    EXTI_SR1 |= BIT_0;          //write 1 to clear the interrupt
-}
+void GPIO_EXTI0_ISR(void){}
 
 
 ////////////////////////////////////////////////
@@ -146,40 +163,20 @@ void GPIO_EXTI1_ISR(void)
     //do something
     Button_setFlag(BUTTON_CENTER);
     EXTI_SR1 |= BIT_1;          //write 1 to clear the interrupt
-
 }
 
 
 ////////////////////////////////////////////////
 //EXTI2_ISR - joystick up
-void GPIO_EXTI2_ISR(void)
-{
-    //do something
-    Button_setFlag(BUTTON_UP);
-    EXTI_SR1 |= BIT_2;          //write 1 to clear the interrupt
-
-}
+void GPIO_EXTI2_ISR(void){}
 
 ////////////////////////////////////////////////
 //EXTI3_ISR - joystick right
-void GPIO_EXTI3_ISR(void)
-{
-    //do something
-    Button_setFlag(BUTTON_RIGHT);    
-    EXTI_SR1 |= BIT_3;          //write 1 to clear the interrupt
-
-}
+void GPIO_EXTI3_ISR(void){}
 
 ////////////////////////////////////////////////
 //EXTI4_ISR - joystick down
-void GPIO_EXTI4_ISR(void)
-{
-    //do something
-    Button_setFlag(BUTTON_DOWN);
-    EXTI_SR1 |= BIT_4;          //write 1 to clear the interrupt
-
-}
-
+void GPIO_EXTI4_ISR(void){}
 
 ////////////////////////////////////////////////
 //EXTI5_ISR - user button

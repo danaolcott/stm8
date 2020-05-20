@@ -119,6 +119,9 @@ void Game_levelUp(void);
 uint16_t Game_getGameScore(void);
 uint8_t Game_getGameLevel(void);
 uint8_t Game_getNumPlayers(void);
+void Game_setHighScore(uint16_t score);
+uint16_t Game_getHighScore(void);
+
 
 //flags
 uint8_t Game_flagGetPlayerHitFlag(void);

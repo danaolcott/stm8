@@ -22,6 +22,7 @@
 #include "bitmap.h"
 #include "gpio.h"
 #include "sound.h"
+#include "eeprom.h"
 
 
 //Game objects
@@ -46,6 +47,7 @@ volatile uint8_t mEnemyHitFlag = 0x00;
 //score and level
 static uint16_t mGameScore = 0x00;
 static uint8_t mGameLevel = 0x00;
+static uint16_t mGameHighScore = 0x00;
 
 
 /////////////////////////////////////////
@@ -60,6 +62,10 @@ void Game_init(void)
 	mGameScore = 0x00;
 	mGameLevel = 0x01;
 	mGameOverFlag = 0x00;
+    mGameHighScore = 0x00;
+    
+    //read the highscore from eeprom
+    mGameHighScore = EEPROM_getHighScore();
 	
 	lcd_clear(0x00);			//clear screen
 	lcd_clearBackground(0xAA);	//margins
@@ -675,6 +681,20 @@ uint8_t Game_getNumPlayers(void)
 	return mPlayer.numLives;
 }
 
+
+////////////////////////////////////////////
+void Game_setHighScore(uint16_t score)
+{
+    mGameHighScore = score;
+}
+
+uint16_t Game_getHighScore(void)
+{
+    return mGameHighScore;
+}
+
+
+
 ////////////////////////////////////////////
 //Flags - These are typically set object move
 //functions and checked in the main game loop
@@ -796,18 +816,25 @@ void Game_playExplosionPlayer_withSound(void)
 //draw a sequence on the boarder, flip from AA to 55
 void Game_playGameOver(void)
 {
-	static uint8_t toggle = 0x00;	
-
+	static uint8_t toggle = 0x00;
+    uint16_t length = 0x00;
+    uint16_t score = Game_getHighScore();
+    uint8_t buffer[16] = {0x00};
+    
 	system_disableInterrupts();
 	lcd_clearFrameBuffer(0x00, 0);
 	lcd_updateFrameBuffer();
     system_enableInterrupts();
     		
-	lcd_drawString(2, 34, "Game");
-	lcd_drawString(3, 34, "Over");
-	lcd_drawString(5, 31, "Press");	
+	lcd_drawString(2, 8, "Game Over");
+	lcd_drawString(5, 31, "Press");
 	lcd_drawString(6, 27, "Button");
 	
+    //display the high score
+    lcd_drawString(3, 8, "High Score");    
+    length = lcd_decimalToBuffer(score, buffer, 16);
+    lcd_drawStringLength(4, 24, buffer, length);
+        
 	if (toggle == 1)
 	{
 		lcd_clearBackground(0xAA);
