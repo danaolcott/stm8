@@ -1,6 +1,8 @@
 /*
 4/25/20
 Button Controller File
+For use with interrupted GPIO button pins,
+flags set in the ISR and polled in the main game loop
 
 */
 

@@ -827,7 +827,6 @@ void Game_playGameOver(void)
     system_enableInterrupts();
 
 	lcd_drawString(2, 16, "Game Over");
-//	lcd_drawString(5, 31, "Press");
 	lcd_drawString(6, 8, "PressButton");
 	
     //display the high score

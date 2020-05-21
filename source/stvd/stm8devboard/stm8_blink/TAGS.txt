@@ -408,26 +408,26 @@ SPI_writeByte	spi.h	19;"	prototype	signature:(uint8_t data)
 SYSCFG_RMPCR1	register.h	52;"	macro
 SYSCFG_RMPCR2	register.h	53;"	macro
 SoundData	sound\sound.h	16;"	typedef	typeref:struct:__anon4
-Sound_init	sound\sound.c	27;"	function	signature:(void)
-Sound_init	sound\sound.h	32;"	prototype	signature:(void)
-Sound_interruptHandler	sound\sound.c	72;"	function	signature:(void)
-Sound_interruptHandler	sound\sound.h	35;"	prototype	signature:(void)
-Sound_isPlaying	sound\sound.c	64;"	function	signature:(void)
-Sound_isPlaying	sound\sound.h	34;"	prototype	signature:(void)
-Sound_play	sound\sound.c	48;"	function	signature:(const SoundData *sound, unsigned int loop)
-Sound_play	sound\sound.h	33;"	prototype	signature:(const SoundData *sound, unsigned int loop)
-Sound_playEnemyExplode	sound\sound.c	133;"	function	signature:(void)
-Sound_playEnemyExplode	sound\sound.h	42;"	prototype	signature:(void)
-Sound_playEnemyFire	sound\sound.c	123;"	function	signature:(void)
-Sound_playEnemyFire	sound\sound.h	40;"	prototype	signature:(void)
-Sound_playGameOver	sound\sound.c	145;"	function	signature:(void)
-Sound_playGameOver	sound\sound.h	44;"	prototype	signature:(void)
-Sound_playLevelUp	sound\sound.c	138;"	function	signature:(void)
-Sound_playLevelUp	sound\sound.h	43;"	prototype	signature:(void)
-Sound_playPlayerExplode	sound\sound.c	128;"	function	signature:(void)
-Sound_playPlayerExplode	sound\sound.h	41;"	prototype	signature:(void)
-Sound_playPlayerFire	sound\sound.c	118;"	function	signature:(void)
-Sound_playPlayerFire	sound\sound.h	39;"	prototype	signature:(void)
+Sound_init	sound\sound.c	28;"	function	signature:(void)
+Sound_init	sound\sound.h	33;"	prototype	signature:(void)
+Sound_interruptHandler	sound\sound.c	91;"	function	signature:(void)
+Sound_interruptHandler	sound\sound.h	36;"	prototype	signature:(void)
+Sound_isPlaying	sound\sound.c	83;"	function	signature:(void)
+Sound_isPlaying	sound\sound.h	35;"	prototype	signature:(void)
+Sound_play	sound\sound.c	52;"	function	signature:(const SoundData *sound, unsigned int loop, unsigned char preventOverwrite)
+Sound_play	sound\sound.h	34;"	prototype	signature:(const SoundData *sound, unsigned int loop, unsigned char preventOverwight)
+Sound_playEnemyExplode	sound\sound.c	153;"	function	signature:(void)
+Sound_playEnemyExplode	sound\sound.h	43;"	prototype	signature:(void)
+Sound_playEnemyFire	sound\sound.c	143;"	function	signature:(void)
+Sound_playEnemyFire	sound\sound.h	41;"	prototype	signature:(void)
+Sound_playGameOver	sound\sound.c	165;"	function	signature:(void)
+Sound_playGameOver	sound\sound.h	45;"	prototype	signature:(void)
+Sound_playLevelUp	sound\sound.c	158;"	function	signature:(void)
+Sound_playLevelUp	sound\sound.h	44;"	prototype	signature:(void)
+Sound_playPlayerExplode	sound\sound.c	148;"	function	signature:(void)
+Sound_playPlayerExplode	sound\sound.h	42;"	prototype	signature:(void)
+Sound_playPlayerFire	sound\sound.c	138;"	function	signature:(void)
+Sound_playPlayerFire	sound\sound.h	40;"	prototype	signature:(void)
 TIM2_ARRH	register.h	233;"	macro
 TIM2_ARRL	register.h	234;"	macro
 TIM2_BKR	register.h	239;"	macro
@@ -513,7 +513,7 @@ __SYSTEM_H	system.h	9;"	macro
 __TIMER_H	timer.h	8;"	macro
 __WCHAR_T__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	13;"	macro
 __WCHAR_T__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	22;"	macro
-_acenemy1Bmp	display\enemy1.c	9;"	variable
+_acenemy1Bmp	display\enemy1.c	14;"	variable
 _acimgPlayerIcon_1	display\player1.c	130;"	variable
 _acimgPlayerIcon_2	display\player1.c	115;"	variable
 _acimgPlayerIcon_3	display\player1.c	100;"	variable
@@ -549,16 +549,16 @@ bmimgPlayerInvExp2Bmp	display\player1.c	59;"	variable
 bmimgPlayerInvExp3Bmp	display\player1.c	74;"	variable
 bmimgPlayerInvExp4Bmp	display\player1.c	89;"	variable
 calloc	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	40;"	prototype	signature:(unsigned int nelem, unsigned int elsize)
-cycleCounter	main.c	53;"	variable
+cycleCounter	main.c	55;"	variable
 div	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	41;"	prototype	signature:(int numer, int denom)
 div_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	29;"	typedef	typeref:struct:__anon6
 exit	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	42;"	prototype	signature:(int status)
 flag_VH	game\game.h	74;"	member	struct:__anon2
 font_table	display\font_table.c	11;"	variable
 free	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	43;"	prototype	signature:(void *ptr)
-gameCurrentScore	main.c	57;"	variable
-gameHighScore	main.c	56;"	variable
-gameLoopCounter	main.c	50;"	variable	file:
+gameCurrentScore	main.c	59;"	variable
+gameHighScore	main.c	58;"	variable
+gameLoopCounter	main.c	52;"	variable	file:
 getchar	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	15;"	prototype	signature:(void)
 gets	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	16;"	prototype	signature:(char *s)
 int16_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	10;"	typedef
@@ -577,9 +577,9 @@ interrupt_vector	stm8_interrupt_vector.c	30;"	struct	file:
 intmax_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	41;"	typedef
 intptr_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	36;"	typedef
 isqrt	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	53;"	prototype	signature:(unsigned int)
-lButton	main.c	47;"	variable	file:
+lButton	main.c	49;"	variable	file:
 labs	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	44;"	prototype	signature:(long l)
-launchResult	main.c	54;"	variable
+launchResult	main.c	56;"	variable
 lcd_clear	lcd.c	141;"	function	signature:(uint8_t value)
 lcd_clear	lcd.h	48;"	prototype	signature:(uint8_t value)
 lcd_clearBackground	lcd.c	206;"	function	signature:(uint8_t value)
@@ -622,7 +622,7 @@ lcd_writeDataBurst	lcd.c	109;"	function	signature:(uint8_t *data, uint16_t lengt
 lcd_writeDataBurst	lcd.h	44;"	prototype	signature:(uint8_t *data, uint16_t length)
 ldiv	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	45;"	prototype	signature:(long numer, long denom)
 ldiv_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	34;"	typedef	typeref:struct:__anon7
-length	main.c	51;"	variable
+length	main.c	53;"	variable
 length	sound\sound.h	14;"	member	struct:__anon4
 lsqrt	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	54;"	prototype	signature:(unsigned long)
 mButtonFlag	button.c	15;"	variable
@@ -638,12 +638,13 @@ mPlayer	game\game.c	34;"	variable	file:
 mPlayerHitFlag	game\game.c	42;"	variable
 mPlayerMissile	game\game.c	38;"	variable	file:
 mSoundCounter	sound\sound.c	20;"	variable	file:
-mSoundCurrent	sound\sound.c	24;"	variable
+mSoundCurrent	sound\sound.c	25;"	variable
 mSoundEnable	sound\sound.c	23;"	variable
 mSoundLoopCounter	sound\sound.c	21;"	variable	file:
-main	main.c	63;"	function
+mSoundOverwriteFlag	sound\sound.c	24;"	variable
+main	main.c	65;"	function
 malloc	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	46;"	prototype	signature:(unsigned int size)
-missileFlag	main.c	55;"	variable
+missileFlag	main.c	57;"	variable
 numLives	game\game.h	62;"	member	struct:__anon1
 offsetof	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	23;"	macro
 pImageData	display\bitmap.h	32;"	member	struct:ImageData
@@ -656,7 +657,7 @@ pSoundSquare_4ms_500hz	sound\wavsquare.c	33;"	variable
 pSoundTest1	sound\wavtest.c	15;"	variable
 pSoundTest2	sound\wavtest.c	32;"	variable
 pSoundValue	sound\sound.c	22;"	variable
-printBuffer	main.c	52;"	variable	file:
+printBuffer	main.c	54;"	variable	file:
 printf	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	17;"	prototype	signature:(char *format, ...)
 ptrdiff_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	17;"	typedef
 putchar	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	18;"	prototype	signature:(char c)
@@ -672,6 +673,7 @@ size_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\h
 size_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	10;"	typedef
 size_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	18;"	typedef
 soundData	sound\wavplayershoot.c	45;"	variable	file:
+soundData_levelUp	sound\wavlevelup.c	45;"	variable
 soundSquare_4ms_1000hz	sound\wavsquare.c	57;"	variable
 soundSquare_4ms_1800hz	sound\wavsquare.c	74;"	variable
 soundSquare_4ms_250hz	sound\wavsquare.c	24;"	variable
@@ -679,6 +681,7 @@ soundSquare_4ms_2600hz	sound\wavsquare.c	92;"	variable
 soundSquare_4ms_500hz	sound\wavsquare.c	40;"	variable
 soundTest1	sound\wavtest.c	23;"	variable
 soundTest2	sound\wavtest.c	41;"	variable
+sound_levelUp	sound\wavlevelup.c	1382;"	variable
 sound_playerShoot	sound\wavplayershoot.c	507;"	variable
 sprintf	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	22;"	prototype	signature:(char *s, char *format, ...)
 srand	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	49;"	prototype	signature:(unsigned int seed)

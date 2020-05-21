@@ -34,7 +34,6 @@ void SPI_init(void)
 
     //PC6 - SPI1_SCK
     //PA3 - SPI1_MOSI
-
     //SPI output pins MOSI, SCK - output, push pull
     //with CR2 bit kept low
     PC_DDR |= BIT_6;        //output
@@ -71,11 +70,11 @@ void SPI_init(void)
     //bits 1 and 0 = 11
     //For master clock speed = 16mhz, set bits 5-3
     //010 for spi output to 2mhz.
-    SPI1_CR1 |= 0x03;           //idle high, trailing edge
+    SPI1_CR1 |= 0x03;       //idle high, trailing edge
     
-    SPI1_CR1 |= 0x10;        //bits 5-3 010 - 250hz
-//    SPI1_CR1 |= 0x08;        //bits 5-3 001 - 500hz
-//    SPI1_CR1 |= 0x00;        //bits 5-3 000 - 1mhz clock speed
+    SPI1_CR1 |= 0x10;       //bits 5-3 010 - 250hz
+//    SPI1_CR1 |= 0x08;     //bits 5-3 001 - 500hz
+//    SPI1_CR1 |= 0x00;     //bits 5-3 000 - 1mhz clock speed
 
     SPI1_CR1 |= BIT_2;      //master mode
     SPI1_CR1 |= BIT_6;      //spi en

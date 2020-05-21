@@ -1,6 +1,7 @@
 /*
 4/6/20
-LCD Controller File
+LCD Controller File for the EA Display DOGS102N-6 LCD
+102x64 Display with SPI Interface.
 */
 
 

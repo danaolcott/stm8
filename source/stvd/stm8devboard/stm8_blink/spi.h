@@ -1,6 +1,12 @@
 /*
 4/5/20
 SPI Controller File
+Pinout: 
+PA6 - SPI1_CS
+PC6 - SPI1_SCK
+PA3 - SPI1_MOSI
+Note: SPI1 Miso pin not needed or defined.
+
 */
 
 

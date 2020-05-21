@@ -1,7 +1,12 @@
 ////////////////////////////////////////////////
-//Images for enemy.  LSB at top, images are 
-//page aligned, left to right.  
-
+//5/21/20
+//Dana Olcott
+//
+//Images for enemy.  These are listed left to right,
+//one bit per pixel.  Intended to be drawn into framebuffer.
+//Note: Not the same as player images, which are drawn
+//LSB at top, page aligned, left to right
+//
 #include "bitmap.h"
 #include "register.h"
 
@@ -10,11 +15,6 @@ const uint8_t _acenemy1Bmp[] =
 {
 0x08, 0x20, 0x04, 0x40, 0x0F, 0xE0, 0x1B, 0xB0,
 0x3F, 0xF8, 0x2F, 0xE8, 0x28, 0x28, 0x06, 0xC0};
-
-//const uint8_t _acenemy1Bmp[] =
-//{
-//0x10, 0x04, 0x20, 0x02, 0xF0, 0x07, 0xD8, 0x0D,
-//0xFC, 0x1F, 0xF4, 0x17, 0x14, 0x14, 0x60, 0x03};
 
 
 const ImageData bmenemy1Bmp = 

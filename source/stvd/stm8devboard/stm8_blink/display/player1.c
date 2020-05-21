@@ -10,7 +10,8 @@
  * 
  * NOTE: 
  * Use the (uint8_t *far) cast due to the tiny memory model
- * used for this nxp processor.
+ * used for this nxp processor. (see repo for nxp MC9S08QE8)
+ *
  */
 
 

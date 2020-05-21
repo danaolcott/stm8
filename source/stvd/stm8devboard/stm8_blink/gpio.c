@@ -5,6 +5,7 @@ Configure pins for leds red and green
 PB5 - red
 PB6 - green
 
+//Buttons - PD0 - PD5
 //Joystick: EXTI0-EXTI5
 //order: left, center, up, right, down, user button - bits 0-5
 //
@@ -45,13 +46,15 @@ void GPIO_init(void)
     PB_CR1 |= BIT_6;
     PB_CR2 &=~ BIT_6;
     
-    //configure the input pins PD0-PD5
+    //Case 1: Configure the input pins PD0-PD5
     //interrupt, pullups enabled, falling
     //edge trigger
 //    PD_DDR &=~ 0x3F;
 //    PD_CR1 |= 0x3F;
 //    PD_CR2 |= 0x3F;
-    
+
+    //Case 2: Configure only the user button and
+    //joystick center as interrupts: PD1 and PD5
     //bits 1 and 5 are interrupts - joystick
     //center and user button.  remaining are polling
     PD_DDR &=~ 0x22;
@@ -66,9 +69,10 @@ void GPIO_init(void)
 //////////////////////////////////////////////
 //Configure pin interrupts to run on Port D
 //EXTI_CRx, EXTI_CONF1, others?
-//PD0 - PD5 to run on interrupts, falling 
-//edge trigger.  EXTI0 - EXTI5
-
+//Consider 2 cases: PD0 - PD5 on interrupts,
+//Case 2: PD1 and PD5 on interrupts.  Each case,
+//configure as falling edge trigger
+//
 //NOTE: CHeck ITC_SPRx - section 12.9.2
 //This sets the priority of the interrupts
 void GPIO_interrupt_config(void)
@@ -80,8 +84,7 @@ void GPIO_interrupt_config(void)
     
     //correction - just bits 1 and 5 are interupts
     EXTI_CR1 = 0x08;
-    
-    
+        
     //EXTI_CR2 - interrupt sensitivity for 
     //bits 7, 6, 5, 4 for Port A-E
     //Falling edge trigger only - Bits 5 and 4 = 0000 1010
@@ -90,10 +93,6 @@ void GPIO_interrupt_config(void)
     //correction - bit 5 is interrupt
     EXTI_CR2 = 0x08;
     
-    
-    //EXTI_CR3 - not sure about this one, for use 
-    //with EXTID.
-
     //EXTI_CONF1 - selects for Portx - if EXTIn or EXTIx
     //is mapped to the interrupt.  ie, if you use 
     //EXTI0...5, or EXTID
@@ -109,12 +108,9 @@ void GPIO_interrupt_config(void)
     //to bits 5-0
 //    EXTI_SR1 = 0x3F;
     
-    //clear bits 5 and 1
+    //Clear pending interrupts - bits 1 and 5 for PD1 and PD5
     EXTI_SR1 = 0x22;
-    
-    
-    //EXTI_SR2 - EXTID - bit 1 - 
-    //Dont think there is a need for this one.
+
 }
 
 

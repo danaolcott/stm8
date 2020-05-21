@@ -9,22 +9,24 @@ Dana Olcott
 
 Project that initializes various peripherals on the 
 STM8L151K6 processor.  The pinouts are shown on the 
-STM8 devboard from DanasBoatshop.com.  In general, the 
-board has the following:
+STM8 devboard from DanasBoatshop.com.  A schematic is shown in the
+Github repository.  This project will implement many of the 
+peripherals and build a simple game Space Invaders.
 
-User LEDs - 
-User Button -
-Joystick - 
+Note: Many of the game files sounds, images, etc are used
+from the MC9S08QE8 dev board project.
+
+Several of the peripherals are listed below:
+
+User LEDs - red and green
+User Button - button - right
+Joystick - up/down/left/right/center
 LCD, SPI enabled + 2 GPIOs, 102x64
-ADC Temp sensors - 2
-DAC output
-Timer output
-I2C output for use with BME280 breakout board
+ADC Temp sensors - 2 - using temp sensor and thermistor
+DAC output - used for sound output
+Timer output - system timer, 1khz, and sound timer 11khz
+I2C output for use with BME280 breakout board - to be installed
 
-problems:
-blue board - left no trigger interrupt
-blue board - PA5 - lcd reset - no output, pin 5 not soldered?
-blue board - sck ok, no output on MOSI pin, pin 3 on mcu
 
 */
 
