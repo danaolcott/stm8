@@ -55,6 +55,7 @@ Debug\font_table.o
 Debug\player1.o
 Debug\game.o
 Debug\sound.o
+Debug\wavlevelup.o
 Debug\wavplayershoot.o
 Debug\wavsquare.o
 Debug\wavtest.o

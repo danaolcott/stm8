@@ -203,9 +203,9 @@ main()
                 Game_playGameOver();
                 
                 //draw the new cycle counter
-                lcd_drawString(1, 0, "Game#:");
+                lcd_drawString(1, 16, "Game#:");
                 length = lcd_decimalToBuffer(cycleCounter, printBuffer, GAME_PRINT_BUFFER_SIZE);
-                lcd_drawStringLength(1, 50, printBuffer, length);
+                lcd_drawStringLength(1, 66, printBuffer, length);
                 
                 //check to see if anything pressed....
                 //check for any button flags

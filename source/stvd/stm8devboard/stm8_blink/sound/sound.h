@@ -27,10 +27,11 @@ extern const SoundData soundSquare_4ms_2600hz;
 
 
 extern const SoundData sound_playerShoot;
+extern const SoundData sound_levelUp;
 
 //prototypes
 void Sound_init(void);
-void Sound_play(const SoundData *sound, unsigned int loop);
+void Sound_play(const SoundData *sound, unsigned int loop, unsigned char preventOverwight);
 unsigned char Sound_isPlaying(void);
 void Sound_interruptHandler(void);
 

@@ -55,6 +55,7 @@ Release\font_table.o
 Release\player1.o
 Release\game.o
 Release\sound.o
+Release\wavlevelup.o
 Release\wavplayershoot.o
 Release\wavsquare.o
 Release\wavtest.o

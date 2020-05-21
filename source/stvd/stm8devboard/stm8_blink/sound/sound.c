@@ -21,6 +21,7 @@ static unsigned int mSoundCounter = 0x00;   //down counter for sound array
 static unsigned char mSoundLoopCounter = 0x00;
 unsigned char *pSoundValue = 0x00;          //pointer to sound value
 unsigned char mSoundEnable = 0x00;          //is it playing or not
+unsigned char mSoundOverwriteFlag = 0x00;
 SoundData *mSoundCurrent = 0x00;
 
 
@@ -35,7 +36,7 @@ void Sound_init(void)
     pSoundValue = 0x00;        //pointer to sound value
     mSoundEnable = 0x00;        //is it playing or not
     mSoundCurrent = 0x00;       //current sound file playing
-    
+    mSoundOverwriteFlag = 0x00; //prevent overwrite when = 1
     
 }
 
@@ -45,16 +46,34 @@ void Sound_init(void)
 //set the sound pointer, counter, and enable
 //and turn on the timer - timer 2.  loop is the 
 //number of times it loops
-void Sound_play(const SoundData *sound, unsigned int loop)
+//preventOverwrite - set to one if you want to make sure
+//the sound plays through and not over write by another sound
+//
+void Sound_play(const SoundData *sound, unsigned int loop, unsigned char preventOverwrite)
 {
-    mSoundCounter = sound->length;
-    pSoundValue = sound->pSoundData;
-    mSoundEnable = 1;
-    mSoundLoopCounter = loop;
-    mSoundCurrent = sound;
+    if ((preventOverwrite == 1) && (!mSoundOverwriteFlag))
+    {
+        mSoundOverwriteFlag = 1;            //clears when sound completed
+        mSoundCounter = sound->length;
+        pSoundValue = sound->pSoundData;
+        mSoundEnable = 1;
+        mSoundLoopCounter = loop;
+        mSoundCurrent = sound;
+        
+        TIM2_start();
+    }
     
-    TIM2_start();
-    
+    //
+    else if (!mSoundOverwriteFlag)
+    {
+        mSoundCounter = sound->length;
+        pSoundValue = sound->pSoundData;
+        mSoundEnable = 1;
+        mSoundLoopCounter = loop;
+        mSoundCurrent = sound;
+        
+        TIM2_start();
+    }
 }
 
 
@@ -102,6 +121,7 @@ void Sound_interruptHandler(void)
         
         else
         {
+            mSoundOverwriteFlag = 0;    //clear any overwrites
             mSoundEnable = 0;       //disable sound
             mSoundCounter = 0;      //reset the counter
             mSoundLoopCounter = 0;
@@ -117,42 +137,42 @@ void Sound_interruptHandler(void)
 ////////////////////////////////////////////
 void Sound_playPlayerFire(void)
 {
-    Sound_play(&sound_playerShoot, 1);
+    Sound_play(&sound_playerShoot, 1, 0);
 }
 
 void Sound_playEnemyFire(void)
 {
-    Sound_play(&soundSquare_4ms_500hz, 50);
+    Sound_play(&soundSquare_4ms_500hz, 20, 0);
 }
 
 void Sound_playPlayerExplode(void)
 {
-    Sound_play(&soundSquare_4ms_1000hz, 50);
+    Sound_play(&soundSquare_4ms_1000hz, 50, 1);
 }
 
 void Sound_playEnemyExplode(void)
 {
-    Sound_play(&soundSquare_4ms_1800hz, 50);
+    Sound_play(&soundSquare_4ms_1800hz, 50, 0);
 }
 
 void Sound_playLevelUp(void)
 {
-    Sound_play(&soundSquare_4ms_2600hz, 50);
+    Sound_play(&sound_levelUp, 1, 1);
 }
 
 ///////////////////////////////////////////////
 //
 void Sound_playGameOver(void)
 {
-    Sound_play(&soundSquare_4ms_250hz, 20);
+    Sound_play(&soundSquare_4ms_250hz, 20, 1);
     while(Sound_isPlaying()){};
-    Sound_play(&soundSquare_4ms_500hz, 20);
+    Sound_play(&soundSquare_4ms_500hz, 20, 1);
     while(Sound_isPlaying()){};
-    Sound_play(&soundSquare_4ms_1000hz, 20);
+    Sound_play(&soundSquare_4ms_1000hz, 20, 1);
     while(Sound_isPlaying()){};
-    Sound_play(&soundSquare_4ms_1800hz, 20);
+    Sound_play(&soundSquare_4ms_1800hz, 20, 1);
     while(Sound_isPlaying()){};
-    Sound_play(&soundSquare_4ms_2600hz, 20);
+    Sound_play(&soundSquare_4ms_2600hz, 20, 1);
     while(Sound_isPlaying()){};
 }
 

@@ -792,19 +792,19 @@ void Game_playExplosionPlayer_withSound(void)
     
     
     //play sound and make the explosion
-    Sound_play(&soundSquare_4ms_250hz, 20);
+    Sound_play(&soundSquare_4ms_250hz, 20, 1);
 	lcd_drawImagePage(LCD_PLAYER_PAGE, mPlayer.xPosition, BITMAP_PLAYER_EXP1);
     while (Sound_isPlaying()){};
 
-    Sound_play(&soundSquare_4ms_500hz, 20);
+    Sound_play(&soundSquare_4ms_500hz, 20, 1);
 	lcd_drawImagePage(LCD_PLAYER_PAGE, mPlayer.xPosition, BITMAP_PLAYER_EXP2);
     while (Sound_isPlaying()){};
 	
-    Sound_play(&soundSquare_4ms_1800hz, 20);
+    Sound_play(&soundSquare_4ms_1800hz, 20, 1);
 	lcd_drawImagePage(LCD_PLAYER_PAGE, mPlayer.xPosition, BITMAP_PLAYER_EXP3);
     while (Sound_isPlaying()){};
     
-    Sound_play(&soundSquare_4ms_2600hz, 20);	
+    Sound_play(&soundSquare_4ms_2600hz, 20, 1);
 	lcd_drawImagePage(LCD_PLAYER_PAGE, mPlayer.xPosition, BITMAP_PLAYER_EXP4);
     while (Sound_isPlaying()){};
 }
@@ -825,16 +825,16 @@ void Game_playGameOver(void)
 	lcd_clearFrameBuffer(0x00, 0);
 	lcd_updateFrameBuffer();
     system_enableInterrupts();
-    		
-	lcd_drawString(2, 8, "Game Over");
-	lcd_drawString(5, 31, "Press");
-	lcd_drawString(6, 27, "Button");
+
+	lcd_drawString(2, 16, "Game Over");
+//	lcd_drawString(5, 31, "Press");
+	lcd_drawString(6, 8, "PressButton");
 	
     //display the high score
     lcd_drawString(3, 8, "High Score");    
     length = lcd_decimalToBuffer(score, buffer, 16);
-    lcd_drawStringLength(4, 24, buffer, length);
-        
+    lcd_drawStringLength(4, 32, buffer, length);
+
 	if (toggle == 1)
 	{
 		lcd_clearBackground(0xAA);

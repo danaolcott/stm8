@@ -14,7 +14,7 @@ ExternDep= display\font_table.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CX
 ExternDep= display\player1.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods.h"  display\bitmap.h register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
 
 [Root.Source Files.Source Files\game.game\game.c.Config.0]
-ExternDep= game\game.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  register.h "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h" system.h  timer.h game\game.h display\bitmap.h lcd.h gpio.h sound\sound.h
+ExternDep= game\game.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  register.h "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h" system.h  timer.h game\game.h display\bitmap.h lcd.h gpio.h sound\sound.h eeprom.h
 
 [Root.Source Files.Source Files\sound.sound\sound.c.Config.0]
 ExternDep= sound\sound.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  register.h sound\sound.h dac.h timer.h
