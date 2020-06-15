@@ -1,0 +1,122 @@
+;	STMicroelectronics dependencies file
+
+[Version]
+Keyword=ST7Project
+Number=1.3
+
+[Root.Source Files.main.c.Config.0]
+ExternDep= main.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  hardware\system.h hardware\gpio.h hardware\spi.h hardware\lcd.h  display\bitmap.h hardware\timer.h hardware\dac.h sound\sound.h  hardware\button.h hardware\eeprom.h game\sprite.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"
+
+[Root.Source Files.stm8_interrupt_vector.c.Config.0]
+ExternDep= stm8_interrupt_vector.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  hardware\gpio.h hardware\timer.h
+
+[Root.display.display\font_table.c.Config.0]
+ExternDep= display\font_table.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  display\font_table.h
+
+[Root.display.display\player1.c.Config.0]
+ExternDep= display\player1.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.game.game\sprite.c.Config.0]
+ExternDep= game\sprite.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\string.h"  hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  hardware\system.h hardware\timer.h game\sprite.h hardware\lcd.h  display\bitmap.h hardware\gpio.h sound\sound.h hardware\eeprom.h
+
+[Root.hardware.hardware\button.c.Config.0]
+ExternDep= hardware\button.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  hardware\register.h hardware\button.h
+
+[Root.hardware.hardware\dac.c.Config.0]
+ExternDep= hardware\dac.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  hardware\register.h hardware\dac.h
+
+[Root.hardware.hardware\eeprom.c.Config.0]
+ExternDep= hardware\eeprom.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  hardware\register.h hardware\eeprom.h hardware\gpio.h
+
+[Root.hardware.hardware\gpio.c.Config.0]
+ExternDep= hardware\gpio.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  hardware\register.h hardware\gpio.h hardware\button.h game\sprite.h  hardware\system.h hardware\timer.h hardware\lcd.h display\bitmap.h  sound\sound.h hardware\eeprom.h
+
+[Root.hardware.hardware\lcd.c.Config.0]
+ExternDep= hardware\lcd.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  hardware\register.h hardware\lcd.h display\bitmap.h hardware\spi.h  display\font_table.h
+
+[Root.hardware.hardware\spi.c.Config.0]
+ExternDep= hardware\spi.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  hardware\register.h hardware\spi.h
+
+[Root.hardware.hardware\system.c.Config.0]
+ExternDep= hardware\system.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.hardware.hardware\timer.c.Config.0]
+ExternDep= hardware\timer.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  hardware\register.h hardware\timer.h hardware\gpio.h hardware\system.h  sound\sound.h
+
+[Root.images.images\imgasteroidmd.c.Config.0]
+ExternDep= images\imgasteroidmd.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgasteroidsm.c.Config.0]
+ExternDep= images\imgasteroidsm.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgplayer0.c.Config.0]
+ExternDep= images\imgplayer0.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgplayer116.c.Config.0]
+ExternDep= images\imgplayer116.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgplayer135.c.Config.0]
+ExternDep= images\imgplayer135.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgplayer153.c.Config.0]
+ExternDep= images\imgplayer153.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgplayer180.c.Config.0]
+ExternDep= images\imgplayer180.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgplayer206.c.Config.0]
+ExternDep= images\imgplayer206.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgplayer225.c.Config.0]
+ExternDep= images\imgplayer225.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgplayer243.c.Config.0]
+ExternDep= images\imgplayer243.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgplayer26.c.Config.0]
+ExternDep= images\imgplayer26.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgplayer270.c.Config.0]
+ExternDep= images\imgplayer270.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgplayer296.c.Config.0]
+ExternDep= images\imgplayer296.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgplayer315.c.Config.0]
+ExternDep= images\imgplayer315.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgplayer333.c.Config.0]
+ExternDep= images\imgplayer333.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgplayer45.c.Config.0]
+ExternDep= images\imgplayer45.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgplayer63.c.Config.0]
+ExternDep= images\imgplayer63.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgplayer90.c.Config.0]
+ExternDep= images\imgplayer90.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgplayerexp1.c.Config.0]
+ExternDep= images\imgplayerexp1.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgplayerexp2.c.Config.0]
+ExternDep= images\imgplayerexp2.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.images.images\imgplayerexp3.c.Config.0]
+ExternDep= images\imgplayerexp3.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdlib.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
+
+[Root.sound.sound\wavthruster.c.Config.0]
+ExternDep= sound\wavthruster.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  sound\Sound.h
+
+[Root.sound.sound\sound.c.Config.0]
+ExternDep= sound\sound.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  hardware\register.h sound\sound.h hardware\dac.h hardware\timer.h
+
+[Root.sound.sound\wavenemyexplode.c.Config.0]
+ExternDep= sound\wavenemyexplode.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  sound\Sound.h
+
+[Root.sound.sound\wavplayershoot.c.Config.0]
+ExternDep= sound\wavplayershoot.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  sound\sound.h
+
+[Root.sound.sound\wavsquare.c.Config.0]
+ExternDep= sound\wavsquare.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  sound\sound.h

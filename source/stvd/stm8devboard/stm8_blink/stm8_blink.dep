@@ -19,6 +19,9 @@ ExternDep= game\game.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM
 [Root.Source Files.Source Files\sound.sound\sound.c.Config.0]
 ExternDep= sound\sound.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  register.h sound\sound.h dac.h timer.h
 
+[Root.Source Files.Source Files\sound.sound\wavlevelup.c.Config.0]
+ExternDep= sound\wavlevelup.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods.h"  sound\sound.h
+
 [Root.Source Files.Source Files\sound.sound\wavplayershoot.c.Config.0]
 ExternDep= sound\wavplayershoot.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods.h"  sound\sound.h
 

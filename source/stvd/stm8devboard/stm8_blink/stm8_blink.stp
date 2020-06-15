@@ -348,6 +348,11 @@ Next=Root.Source Files.Source Files\sound.sound\sound.h
 [Root.Source Files.Source Files\sound.sound\sound.h]
 ElemType=File
 PathName=sound\sound.h
+Next=Root.Source Files.Source Files\sound.sound\wavlevelup.c
+
+[Root.Source Files.Source Files\sound.sound\wavlevelup.c]
+ElemType=File
+PathName=sound\wavlevelup.c
 Next=Root.Source Files.Source Files\sound.sound\wavplayershoot.c
 
 [Root.Source Files.Source Files\sound.sound\wavplayershoot.c]
