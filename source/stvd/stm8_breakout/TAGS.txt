@@ -1,0 +1,616 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BITMAP_H_	display\bitmap.h	11;"	macro
+BIT_0	hardware\register.h	17;"	macro
+BIT_1	hardware\register.h	18;"	macro
+BIT_2	hardware\register.h	19;"	macro
+BIT_3	hardware\register.h	20;"	macro
+BIT_4	hardware\register.h	21;"	macro
+BIT_5	hardware\register.h	22;"	macro
+BIT_6	hardware\register.h	23;"	macro
+BIT_7	hardware\register.h	24;"	macro
+BUFSIZ	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	26;"	macro
+BUTTON_CENTER	hardware\button.h	16;"	enumerator	enum:__anon7
+BUTTON_DOWN	hardware\button.h	19;"	enumerator	enum:__anon7
+BUTTON_LEFT	hardware\button.h	15;"	enumerator	enum:__anon7
+BUTTON_RIGHT	hardware\button.h	18;"	enumerator	enum:__anon7
+BUTTON_UP	hardware\button.h	17;"	enumerator	enum:__anon7
+BUTTON_USER	hardware\button.h	20;"	enumerator	enum:__anon7
+BallStruct	game\game.h	97;"	typedef	typeref:struct:__anon5
+ButtonType_t	hardware\button.h	21;"	typedef	typeref:enum:__anon7
+Button_clearFlag	hardware\button.c	31;"	function	signature:(void)
+Button_clearFlag	hardware\button.h	25;"	prototype	signature:(void)
+Button_getFlag	hardware\button.c	26;"	function	signature:(void)
+Button_getFlag	hardware\button.h	24;"	prototype	signature:(void)
+Button_init	hardware\button.c	21;"	function	signature:(void)
+Button_init	hardware\button.h	23;"	prototype	signature:(void)
+Button_setFlag	hardware\button.c	36;"	function	signature:(ButtonType_t button)
+Button_setFlag	hardware\button.h	26;"	prototype	signature:(ButtonType_t button)
+CLK_CBEEPR	hardware\register.h	79;"	macro
+CLK_CCOR	hardware\register.h	73;"	macro
+CLK_CRTCR	hardware\register.h	69;"	macro
+CLK_CSSR	hardware\register.h	78;"	macro
+CLK_DIVR	hardware\register.h	68;"	macro
+CLK_ECKR	hardware\register.h	74;"	macro
+CLK_HSICALR	hardware\register.h	80;"	macro
+CLK_HSITRIMR	hardware\register.h	81;"	macro
+CLK_HSIUNLCKR	hardware\register.h	82;"	macro
+CLK_ICKR	hardware\register.h	70;"	macro
+CLK_PCKENR1	hardware\register.h	71;"	macro
+CLK_PCKENR2	hardware\register.h	72;"	macro
+CLK_REGCSR	hardware\register.h	83;"	macro
+CLK_SCSR	hardware\register.h	75;"	macro
+CLK_SWCR	hardware\register.h	77;"	macro
+CLK_SWR	hardware\register.h	76;"	macro
+COMP_CSR1	hardware\register.h	150;"	macro
+COMP_CSR2	hardware\register.h	151;"	macro
+COMP_CSR3	hardware\register.h	152;"	macro
+COMP_CSR4	hardware\register.h	153;"	macro
+COMP_CSR5	hardware\register.h	154;"	macro
+DAC_BIT_CR1_BOFF	hardware\register.h	206;"	macro
+DAC_BIT_CR1_EN	hardware\register.h	207;"	macro
+DAC_BIT_CR1_TEN	hardware\register.h	205;"	macro
+DAC_BIT_CR1_TSEL0	hardware\register.h	201;"	macro
+DAC_BIT_CR1_TSEL1	hardware\register.h	202;"	macro
+DAC_BIT_CR1_TSEL2	hardware\register.h	203;"	macro
+DAC_BIT_SWTRIGR_SWTRIG1	hardware\register.h	209;"	macro
+DAC_CR1	hardware\register.h	185;"	macro
+DAC_CR2	hardware\register.h	186;"	macro
+DAC_DHR8	hardware\register.h	196;"	macro
+DAC_DORH	hardware\register.h	198;"	macro
+DAC_DORL	hardware\register.h	199;"	macro
+DAC_LDHRH	hardware\register.h	193;"	macro
+DAC_LDHRL	hardware\register.h	194;"	macro
+DAC_RDHRH	hardware\register.h	190;"	macro
+DAC_RDHRL	hardware\register.h	191;"	macro
+DAC_SR	hardware\register.h	188;"	macro
+DAC_SWTRIGR	hardware\register.h	187;"	macro
+DAC_init	hardware\dac.c	25;"	function	signature:(void)
+DAC_init	hardware\dac.h	12;"	prototype	signature:(void)
+DAC_set	hardware\dac.c	40;"	function	signature:(unsigned int value)
+DAC_set	hardware\dac.h	13;"	prototype	signature:(unsigned int value)
+DAC_set8Bit	hardware\dac.c	59;"	function	signature:(unsigned char value)
+DAC_set8Bit	hardware\dac.h	14;"	prototype	signature:(unsigned char value)
+DIRECTION_0	game\game.h	60;"	enumerator	enum:__anon3
+DIRECTION_116	game\game.h	65;"	enumerator	enum:__anon3
+DIRECTION_135	game\game.h	66;"	enumerator	enum:__anon3
+DIRECTION_153	game\game.h	67;"	enumerator	enum:__anon3
+DIRECTION_180	game\game.h	68;"	enumerator	enum:__anon3
+DIRECTION_206	game\game.h	69;"	enumerator	enum:__anon3
+DIRECTION_225	game\game.h	70;"	enumerator	enum:__anon3
+DIRECTION_243	game\game.h	71;"	enumerator	enum:__anon3
+DIRECTION_26	game\game.h	61;"	enumerator	enum:__anon3
+DIRECTION_270	game\game.h	72;"	enumerator	enum:__anon3
+DIRECTION_296	game\game.h	73;"	enumerator	enum:__anon3
+DIRECTION_315	game\game.h	74;"	enumerator	enum:__anon3
+DIRECTION_333	game\game.h	75;"	enumerator	enum:__anon3
+DIRECTION_45	game\game.h	62;"	enumerator	enum:__anon3
+DIRECTION_63	game\game.h	63;"	enumerator	enum:__anon3
+DIRECTION_90	game\game.h	64;"	enumerator	enum:__anon3
+Direction_t	game\game.h	76;"	typedef	typeref:enum:__anon3
+EEPROM_ADDRESS_CYCLE_COUNT_LSB	hardware\eeprom.h	19;"	macro
+EEPROM_ADDRESS_CYCLE_COUNT_MSB	hardware\eeprom.h	18;"	macro
+EEPROM_ADDRESS_HIGH_SCORE_LSB	hardware\eeprom.h	22;"	macro
+EEPROM_ADDRESS_HIGH_SCORE_MSB	hardware\eeprom.h	21;"	macro
+EEPROM_HW_KEY1	hardware\eeprom.h	14;"	macro
+EEPROM_HW_KEY2	hardware\eeprom.h	15;"	macro
+EEPROM_START_ADDR	hardware\eeprom.h	12;"	macro
+EEPROM_STOP_ADDR	hardware\eeprom.h	13;"	macro
+EEPROM_clearEEPROM	hardware\eeprom.c	153;"	function	signature:(uint8_t value)
+EEPROM_clearEEPROM	hardware\eeprom.h	32;"	prototype	signature:(uint8_t value)
+EEPROM_delay	hardware\eeprom.c	17;"	function	signature:(uint16_t delay)
+EEPROM_delay	hardware\eeprom.h	25;"	prototype	signature:(uint16_t delay)
+EEPROM_getHighScore	hardware\eeprom.c	200;"	function	signature:(void)
+EEPROM_getHighScore	hardware\eeprom.h	36;"	prototype	signature:(void)
+EEPROM_init	hardware\eeprom.c	29;"	function	signature:(void)
+EEPROM_init	hardware\eeprom.h	26;"	prototype	signature:(void)
+EEPROM_lock	hardware\eeprom.c	96;"	function	signature:(void)
+EEPROM_lock	hardware\eeprom.h	28;"	prototype	signature:(void)
+EEPROM_read	hardware\eeprom.c	140;"	function	signature:(uint16_t address)
+EEPROM_read	hardware\eeprom.h	30;"	prototype	signature:(uint16_t address)
+EEPROM_readCycleCount	hardware\eeprom.c	184;"	function	signature:(void)
+EEPROM_readCycleCount	hardware\eeprom.h	34;"	prototype	signature:(void)
+EEPROM_unlock	hardware\eeprom.c	52;"	function	signature:(void)
+EEPROM_unlock	hardware\eeprom.h	27;"	prototype	signature:(void)
+EEPROM_updateCycleCount	hardware\eeprom.c	165;"	function	signature:(void)
+EEPROM_updateCycleCount	hardware\eeprom.h	33;"	prototype	signature:(void)
+EEPROM_updateHighScore	hardware\eeprom.c	215;"	function	signature:(uint16_t score)
+EEPROM_updateHighScore	hardware\eeprom.h	37;"	prototype	signature:(uint16_t score)
+EEPROM_write	hardware\eeprom.c	110;"	function	signature:(uint16_t address, uint8_t data)
+EEPROM_write	hardware\eeprom.h	29;"	prototype	signature:(uint16_t address, uint8_t data)
+EOF	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	27;"	macro
+EXTI0_IRQ	hardware\register.h	256;"	macro
+EXTI0_InterruptHandler	stm8_interrupt_vector.c	17;"	prototype	file:	signature:(void)
+EXTI0_InterruptHandler	stm8_interrupt_vector.c	51;"	function	signature:(void)
+EXTI1_IRQ	hardware\register.h	257;"	macro
+EXTI1_InterruptHandler	stm8_interrupt_vector.c	18;"	prototype	file:	signature:(void)
+EXTI1_InterruptHandler	stm8_interrupt_vector.c	60;"	function	signature:(void)
+EXTI2_IRQ	hardware\register.h	258;"	macro
+EXTI2_InterruptHandler	stm8_interrupt_vector.c	19;"	prototype	file:	signature:(void)
+EXTI2_InterruptHandler	stm8_interrupt_vector.c	69;"	function	signature:(void)
+EXTI3_IRQ	hardware\register.h	259;"	macro
+EXTI3_InterruptHandler	stm8_interrupt_vector.c	20;"	prototype	file:	signature:(void)
+EXTI3_InterruptHandler	stm8_interrupt_vector.c	78;"	function	signature:(void)
+EXTI4_IRQ	hardware\register.h	260;"	macro
+EXTI4_InterruptHandler	stm8_interrupt_vector.c	21;"	prototype	file:	signature:(void)
+EXTI4_InterruptHandler	stm8_interrupt_vector.c	87;"	function	signature:(void)
+EXTI5_IRQ	hardware\register.h	261;"	macro
+EXTI5_InterruptHandler	stm8_interrupt_vector.c	22;"	prototype	file:	signature:(void)
+EXTI5_InterruptHandler	stm8_interrupt_vector.c	96;"	function	signature:(void)
+EXTI6_IRQ	hardware\register.h	262;"	macro
+EXTI7_IRQ	hardware\register.h	263;"	macro
+EXTI_CONF1	hardware\register.h	131;"	macro
+EXTI_CR1	hardware\register.h	126;"	macro
+EXTI_CR2	hardware\register.h	127;"	macro
+EXTI_CR3	hardware\register.h	128;"	macro
+EXTI_SR1	hardware\register.h	129;"	macro
+EXTI_SR2	hardware\register.h	130;"	macro
+FLASH_CR1	hardware\register.h	56;"	macro
+FLASH_CR2	hardware\register.h	57;"	macro
+FLASH_DUKR	hardware\register.h	59;"	macro
+FLASH_DUL_BIT	hardware\register.h	62;"	macro
+FLASH_EOP_BIT	hardware\register.h	63;"	macro
+FLASH_IAPSR	hardware\register.h	60;"	macro
+FLASH_PUKR	hardware\register.h	58;"	macro
+FRAME_BUFFER_HEIGHT	hardware\lcd.h	29;"	macro
+FRAME_BUFFER_NUM_PAGES	hardware\lcd.h	33;"	macro
+FRAME_BUFFER_OFFSET_X	hardware\lcd.h	30;"	macro
+FRAME_BUFFER_SIZE	hardware\lcd.h	25;"	macro
+FRAME_BUFFER_START_PAGE	hardware\lcd.h	31;"	macro
+FRAME_BUFFER_STOP_PAGE	hardware\lcd.h	32;"	macro
+FRAME_BUFFER_WIDTH	hardware\lcd.h	28;"	macro
+GAME_MAX_X	game\game.h	15;"	macro
+GAME_MAX_Y	game\game.h	17;"	macro
+GAME_MIN_X	game\game.h	14;"	macro
+GAME_MIN_Y	game\game.h	16;"	macro
+GAME_PLAYER_DEFAULT_X	game\game.h	26;"	macro
+GAME_PLAYER_DEFAULT_Y	game\game.h	27;"	macro
+GAME_PLAYER_INC_X	game\game.h	28;"	macro
+GAME_PLAYER_NUM_LIVES	game\game.h	25;"	macro
+GAME_TILE_MARGINE_LEFT	game\game.h	31;"	macro
+GAME_TILE_NUM_COL	game\game.h	33;"	macro
+GAME_TILE_NUM_ROW	game\game.h	32;"	macro
+GAME_TILE_NUM_TILE	game\game.h	34;"	macro
+GAME_TILE_SPACING_X	game\game.h	35;"	macro
+GAME_TILE_SPACING_Y	game\game.h	36;"	macro
+GPIO_EXTI0_ISR	hardware\gpio.c	151;"	function	signature:(void)
+GPIO_EXTI0_ISR	hardware\gpio.h	21;"	prototype	signature:(void)
+GPIO_EXTI1_ISR	hardware\gpio.c	156;"	function	signature:(void)
+GPIO_EXTI1_ISR	hardware\gpio.h	22;"	prototype	signature:(void)
+GPIO_EXTI2_ISR	hardware\gpio.c	166;"	function	signature:(void)
+GPIO_EXTI2_ISR	hardware\gpio.h	23;"	prototype	signature:(void)
+GPIO_EXTI3_ISR	hardware\gpio.c	170;"	function	signature:(void)
+GPIO_EXTI3_ISR	hardware\gpio.h	24;"	prototype	signature:(void)
+GPIO_EXTI4_ISR	hardware\gpio.c	174;"	function	signature:(void)
+GPIO_EXTI4_ISR	hardware\gpio.h	25;"	prototype	signature:(void)
+GPIO_EXTI5_ISR	hardware\gpio.c	178;"	function	signature:(void)
+GPIO_EXTI5_ISR	hardware\gpio.h	26;"	prototype	signature:(void)
+GPIO_init	hardware\gpio.c	35;"	function	signature:(void)
+GPIO_init	hardware\gpio.h	11;"	prototype	signature:(void)
+GPIO_interrupt_config	hardware\gpio.c	77;"	function	signature:(void)
+GPIO_interrupt_config	hardware\gpio.h	12;"	prototype	signature:(void)
+GPIO_led_green_off	hardware\gpio.c	133;"	function	signature:(void)
+GPIO_led_green_off	hardware\gpio.h	17;"	prototype	signature:(void)
+GPIO_led_green_on	hardware\gpio.c	123;"	function	signature:(void)
+GPIO_led_green_on	hardware\gpio.h	15;"	prototype	signature:(void)
+GPIO_led_green_toggle	hardware\gpio.c	143;"	function	signature:(void)
+GPIO_led_green_toggle	hardware\gpio.h	19;"	prototype	signature:(void)
+GPIO_led_red_off	hardware\gpio.c	128;"	function	signature:(void)
+GPIO_led_red_off	hardware\gpio.h	16;"	prototype	signature:(void)
+GPIO_led_red_on	hardware\gpio.c	118;"	function	signature:(void)
+GPIO_led_red_on	hardware\gpio.h	14;"	prototype	signature:(void)
+GPIO_led_red_toggle	hardware\gpio.c	138;"	function	signature:(void)
+GPIO_led_red_toggle	hardware\gpio.h	18;"	prototype	signature:(void)
+INT16_C	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	97;"	macro
+INT16_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	50;"	macro
+INT16_MIN	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	47;"	macro
+INT32_C	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	98;"	macro
+INT32_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	51;"	macro
+INT32_MIN	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	48;"	macro
+INT8_C	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	96;"	macro
+INT8_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	49;"	macro
+INT8_MIN	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	46;"	macro
+INTMAX_C	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	104;"	macro
+INTMAX_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	91;"	macro
+INTMAX_MIN	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	90;"	macro
+INTPTR_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	83;"	macro
+INTPTR_MIN	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	82;"	macro
+INT_FAST16_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	74;"	macro
+INT_FAST16_MIN	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	71;"	macro
+INT_FAST32_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	75;"	macro
+INT_FAST32_MIN	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	72;"	macro
+INT_FAST8_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	73;"	macro
+INT_FAST8_MIN	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	70;"	macro
+INT_LEAST16_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	62;"	macro
+INT_LEAST16_MIN	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	59;"	macro
+INT_LEAST32_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	63;"	macro
+INT_LEAST32_MIN	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	60;"	macro
+INT_LEAST8_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	61;"	macro
+INT_LEAST8_MIN	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	58;"	macro
+ImageData	display\bitmap.h	16;"	struct
+ImageData	display\bitmap.h	25;"	typedef	typeref:struct:ImageData
+LCD_CMD_PIN	hardware\lcd.h	15;"	macro
+LCD_HEIGHT	hardware\lcd.h	18;"	macro
+LCD_NUM_PAGES	hardware\lcd.h	20;"	macro
+LCD_RST_PIN	hardware\lcd.h	16;"	macro
+LCD_SCORE_PAGE	hardware\lcd.h	35;"	macro
+LCD_WIDTH	hardware\lcd.h	19;"	macro
+NULL	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	20;"	macro
+NULL	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	30;"	macro
+NonHandledInterrupt	stm8_interrupt_vector.c	35;"	function	signature:(void)
+ORIENTATION_HORIZONTAL	game\game.h	81;"	enumerator	enum:__anon4
+ORIENTATION_VERTICAL	game\game.h	82;"	enumerator	enum:__anon4
+Orientation_t	game\game.h	83;"	typedef	typeref:enum:__anon4
+PA_CR1	hardware\register.h	92;"	macro
+PA_CR2	hardware\register.h	93;"	macro
+PA_DDR	hardware\register.h	91;"	macro
+PA_IDR	hardware\register.h	90;"	macro
+PA_ODR	hardware\register.h	89;"	macro
+PB_CR1	hardware\register.h	98;"	macro
+PB_CR2	hardware\register.h	99;"	macro
+PB_DDR	hardware\register.h	97;"	macro
+PB_IDR	hardware\register.h	96;"	macro
+PB_ODR	hardware\register.h	95;"	macro
+PC_CR1	hardware\register.h	104;"	macro
+PC_CR2	hardware\register.h	105;"	macro
+PC_DDR	hardware\register.h	103;"	macro
+PC_IDR	hardware\register.h	102;"	macro
+PC_ODR	hardware\register.h	101;"	macro
+PD_CR1	hardware\register.h	110;"	macro
+PD_CR2	hardware\register.h	111;"	macro
+PD_DDR	hardware\register.h	109;"	macro
+PD_IDR	hardware\register.h	108;"	macro
+PD_ODR	hardware\register.h	107;"	macro
+PE_CR1	hardware\register.h	116;"	macro
+PE_CR2	hardware\register.h	117;"	macro
+PE_DDR	hardware\register.h	115;"	macro
+PE_IDR	hardware\register.h	114;"	macro
+PE_ODR	hardware\register.h	113;"	macro
+PF_CR1	hardware\register.h	122;"	macro
+PF_CR2	hardware\register.h	123;"	macro
+PF_DDR	hardware\register.h	121;"	macro
+PF_IDR	hardware\register.h	120;"	macro
+PF_ODR	hardware\register.h	119;"	macro
+PTRDIFF_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	86;"	macro
+PTRDIFF_MIN	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	85;"	macro
+PlayerStruct	game\game.h	49;"	typedef	typeref:struct:__anon1
+RI_ASCR1	hardware\register.h	169;"	macro
+RI_ASCR1	hardware\register.h	181;"	macro
+RI_ASCR2	hardware\register.h	170;"	macro
+RI_ASCR2	hardware\register.h	182;"	macro
+RI_ICR1	hardware\register.h	157;"	macro
+RI_ICR2	hardware\register.h	158;"	macro
+RI_IOCMR1	hardware\register.h	162;"	macro
+RI_IOCMR2	hardware\register.h	163;"	macro
+RI_IOCMR3	hardware\register.h	164;"	macro
+RI_IOGCR	hardware\register.h	168;"	macro
+RI_IOGCR	hardware\register.h	180;"	macro
+RI_IOIR1	hardware\register.h	159;"	macro
+RI_IOIR2	hardware\register.h	160;"	macro
+RI_IOIR3	hardware\register.h	161;"	macro
+RI_IOSR1	hardware\register.h	165;"	macro
+RI_IOSR1	hardware\register.h	177;"	macro
+RI_IOSR2	hardware\register.h	166;"	macro
+RI_IOSR2	hardware\register.h	178;"	macro
+RI_IOSR3	hardware\register.h	167;"	macro
+RI_IOSR3	hardware\register.h	179;"	macro
+RI_RCR	hardware\register.h	171;"	macro
+SCREEN_BOTTOM	game\game.h	20;"	macro
+SCREEN_LEFT	game\game.h	21;"	macro
+SCREEN_RIGHT	game\game.h	22;"	macro
+SCREEN_TOP	game\game.h	19;"	macro
+SPEED_FAST	game\game.h	55;"	enumerator	enum:__anon2
+SPEED_MEDIUM	game\game.h	54;"	enumerator	enum:__anon2
+SPEED_SLOW	game\game.h	53;"	enumerator	enum:__anon2
+SPI1_BSY_FLAG	hardware\register.h	134;"	macro
+SPI1_CR1	hardware\register.h	138;"	macro
+SPI1_CR2	hardware\register.h	139;"	macro
+SPI1_CRCPR	hardware\register.h	143;"	macro
+SPI1_DR	hardware\register.h	142;"	macro
+SPI1_ICR	hardware\register.h	140;"	macro
+SPI1_RXCRCR	hardware\register.h	144;"	macro
+SPI1_RXNE_FLAG	hardware\register.h	136;"	macro
+SPI1_SR	hardware\register.h	141;"	macro
+SPI1_TXCRCR	hardware\register.h	145;"	macro
+SPI1_TXE_FLAG	hardware\register.h	135;"	macro
+SPI_deselect	hardware\spi.c	89;"	function	signature:(void)
+SPI_deselect	hardware\spi.h	23;"	prototype	signature:(void)
+SPI_init	hardware\spi.c	27;"	function	signature:(void)
+SPI_init	hardware\spi.h	21;"	prototype	signature:(void)
+SPI_select	hardware\spi.c	84;"	function	signature:(void)
+SPI_select	hardware\spi.h	22;"	prototype	signature:(void)
+SPI_tx	hardware\spi.c	97;"	function	signature:(uint8_t data)
+SPI_tx	hardware\spi.h	24;"	prototype	signature:(uint8_t data)
+SPI_writeArray	hardware\spi.c	114;"	function	signature:(uint8_t *data, uint16_t length)
+SPI_writeArray	hardware\spi.h	26;"	prototype	signature:(uint8_t *data, uint16_t length)
+SPI_writeByte	hardware\spi.c	105;"	function	signature:(uint8_t data)
+SPI_writeByte	hardware\spi.h	25;"	prototype	signature:(uint8_t data)
+SYSCFG_RMPCR1	hardware\register.h	52;"	macro
+SYSCFG_RMPCR2	hardware\register.h	53;"	macro
+SoundData	sound\sound.h	16;"	typedef	typeref:struct:__anon8
+Sound_init	sound\sound.c	28;"	function	signature:(void)
+Sound_init	sound\sound.h	27;"	prototype	signature:(void)
+Sound_interruptHandler	sound\sound.c	91;"	function	signature:(void)
+Sound_interruptHandler	sound\sound.h	30;"	prototype	signature:(void)
+Sound_isPlaying	sound\sound.c	83;"	function	signature:(void)
+Sound_isPlaying	sound\sound.h	29;"	prototype	signature:(void)
+Sound_play	sound\sound.c	52;"	function	signature:(const SoundData *sound, unsigned int loop, unsigned char preventOverwrite)
+Sound_play	sound\sound.h	28;"	prototype	signature:(const SoundData *sound, unsigned int loop, unsigned char preventOverwight)
+Speed_t	game\game.h	56;"	typedef	typeref:enum:__anon2
+TIM2_ARRH	hardware\register.h	233;"	macro
+TIM2_ARRL	hardware\register.h	234;"	macro
+TIM2_BKR	hardware\register.h	239;"	macro
+TIM2_CCER1	hardware\register.h	229;"	macro
+TIM2_CCMR1	hardware\register.h	227;"	macro
+TIM2_CCMR2	hardware\register.h	228;"	macro
+TIM2_CCR1H	hardware\register.h	235;"	macro
+TIM2_CCR1L	hardware\register.h	236;"	macro
+TIM2_CCR2H	hardware\register.h	237;"	macro
+TIM2_CCR2L	hardware\register.h	238;"	macro
+TIM2_CNTRH	hardware\register.h	230;"	macro
+TIM2_CNTRL	hardware\register.h	231;"	macro
+TIM2_CR1	hardware\register.h	218;"	macro
+TIM2_CR2	hardware\register.h	219;"	macro
+TIM2_DER	hardware\register.h	222;"	macro
+TIM2_EGR	hardware\register.h	226;"	macro
+TIM2_ETR	hardware\register.h	221;"	macro
+TIM2_IER	hardware\register.h	223;"	macro
+TIM2_ISR	hardware\timer.c	100;"	function	signature:(void)
+TIM2_ISR	hardware\timer.h	19;"	prototype	signature:(void)
+TIM2_InterruptHandler	stm8_interrupt_vector.c	106;"	function	signature:(void)
+TIM2_InterruptHandler	stm8_interrupt_vector.c	25;"	prototype	file:	signature:(void)
+TIM2_OISR	hardware\register.h	240;"	macro
+TIM2_PSCR	hardware\register.h	232;"	macro
+TIM2_SMCR	hardware\register.h	220;"	macro
+TIM2_SR1	hardware\register.h	224;"	macro
+TIM2_SR2	hardware\register.h	225;"	macro
+TIM2_init	hardware\timer.c	41;"	function	signature:(void)
+TIM2_init	hardware\timer.h	13;"	prototype	signature:(void)
+TIM2_start	hardware\timer.c	78;"	function	signature:(void)
+TIM2_start	hardware\timer.h	16;"	prototype	signature:(void)
+TIM2_stop	hardware\timer.c	88;"	function	signature:(void)
+TIM2_stop	hardware\timer.h	17;"	prototype	signature:(void)
+TIM4_ARR	hardware\register.h	252;"	macro
+TIM4_CNTR	hardware\register.h	250;"	macro
+TIM4_CR1	hardware\register.h	243;"	macro
+TIM4_CR2	hardware\register.h	244;"	macro
+TIM4_DER	hardware\register.h	246;"	macro
+TIM4_EGR	hardware\register.h	249;"	macro
+TIM4_IER	hardware\register.h	247;"	macro
+TIM4_ISR	hardware\timer.c	109;"	function	signature:(void)
+TIM4_ISR	hardware\timer.h	20;"	prototype	signature:(void)
+TIM4_InterruptHandler	stm8_interrupt_vector.c	115;"	function	signature:(void)
+TIM4_InterruptHandler	stm8_interrupt_vector.c	26;"	prototype	file:	signature:(void)
+TIM4_PSCR	hardware\register.h	251;"	macro
+TIM4_SMCR	hardware\register.h	245;"	macro
+TIM4_SR1	hardware\register.h	248;"	macro
+TIM4_init	hardware\timer.c	63;"	function	signature:(void)
+TIM4_init	hardware\timer.h	14;"	prototype	signature:(void)
+TileStruct	game\game.h	108;"	typedef	typeref:struct:__anon6
+UINT16_C	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	101;"	macro
+UINT16_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	53;"	macro
+UINT32_C	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	102;"	macro
+UINT32_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	54;"	macro
+UINT8_C	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	100;"	macro
+UINT8_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	52;"	macro
+UINTMAX_C	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	105;"	macro
+UINTMAX_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	92;"	macro
+UINTPTR_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	84;"	macro
+UINT_FAST16_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	77;"	macro
+UINT_FAST32_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	78;"	macro
+UINT_FAST8_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	76;"	macro
+UINT_LEAST16_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	65;"	macro
+UINT_LEAST32_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	66;"	macro
+UINT_LEAST8_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	64;"	macro
+__BUTTON_H	hardware\button.h	10;"	macro
+__DAC_H	hardware\dac.h	9;"	macro
+__EEPROM_H	hardware\eeprom.h	8;"	macro
+__FONT_TABLE_H	display\font_table.h	9;"	macro
+__GAME_H	game\game.h	8;"	macro
+__GPIO_H	hardware\gpio.h	8;"	macro
+__LCD_H	hardware\lcd.h	9;"	macro
+__MODSL0__	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\modsl0.h	8;"	macro
+__REGISTER_H	hardware\register.h	8;"	macro
+__SIZE_T__	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	8;"	macro
+__SIZE_T__	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	9;"	macro
+__SOUND_H	sound\sound.h	9;"	macro
+__SPI_H	hardware\spi.h	14;"	macro
+__STDDEF__	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	5;"	macro
+__STDINT__	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	5;"	macro
+__STDIO__	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	6;"	macro
+__SYSTEM_H	hardware\system.h	9;"	macro
+__TIMER_H	hardware\timer.h	8;"	macro
+__WCHAR_T__	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	13;"	macro
+_acimgPlayerIcon_1	display\player1.c	65;"	variable
+_acimgPlayerIcon_2	display\player1.c	48;"	variable
+_acimgPlayerIcon_3	display\player1.c	31;"	variable
+_ball_8	display\player1.c	98;"	variable
+_player_24	display\player1.c	82;"	variable
+_stext	stm8_interrupt_vector.c	126;"	prototype	file:
+_tileBlank_8	display\player1.c	129;"	variable
+_tile_8	display\player1.c	113;"	variable
+_vectab	stm8_interrupt_vector.c	128;"	variable
+abs	hardware\lcd.c	19;"	macro	file:
+alive	game\game.h	105;"	member	struct:__anon6
+bitsPerPixel	display\bitmap.h	21;"	member	struct:ImageData
+bmimgBall_8	display\player1.c	102;"	variable
+bmimgPlayerIcon_1	display\player1.c	70;"	variable
+bmimgPlayerIcon_2	display\player1.c	53;"	variable
+bmimgPlayerIcon_3	display\player1.c	36;"	variable
+bmimgPlayer_24	display\player1.c	86;"	variable
+bmimgTileBlank_8	display\player1.c	133;"	variable
+bmimgTile_8	display\player1.c	117;"	variable
+bytesPerLine	display\bitmap.h	20;"	member	struct:ImageData
+direction	game\game.h	95;"	member	struct:__anon5
+font_table	display\font_table.c	11;"	variable
+gameBallMissedFlag	game\game.c	28;"	variable	file:
+gameScore	game\game.c	27;"	variable	file:
+game_ball_draw	game\game.c	90;"	function	signature:(uint8_t update)
+game_ball_draw	game\game.h	118;"	prototype	signature:(uint8_t update)
+game_ball_init	game\game.c	49;"	function	signature:(void)
+game_ball_init	game\game.h	114;"	prototype	signature:(void)
+game_ball_move	game\game.c	148;"	function	signature:(void)
+game_ball_move	game\game.h	124;"	prototype	signature:(void)
+game_getReboundAngle	game\game.c	369;"	function	signature:(Direction_t direction, Orientation_t orientation)
+game_getReboundAngle	game\game.h	128;"	prototype	signature:(Direction_t direction, Orientation_t orientation)
+game_get_dx_fromAngle	game\game.c	430;"	function	signature:(Direction_t angle)
+game_get_dx_fromAngle	game\game.h	129;"	prototype	signature:(Direction_t angle)
+game_get_dy_fromAngle	game\game.c	458;"	function	signature:(Direction_t angle)
+game_get_dy_fromAngle	game\game.h	130;"	prototype	signature:(Direction_t angle)
+game_init	game\game.c	31;"	function	signature:(void)
+game_init	game\game.h	112;"	prototype	signature:(void)
+game_player_draw	game\game.c	85;"	function	signature:(uint8_t update)
+game_player_draw	game\game.h	117;"	prototype	signature:(uint8_t update)
+game_player_init	game\game.c	38;"	function	signature:(void)
+game_player_init	game\game.h	113;"	prototype	signature:(void)
+game_player_move_auto	game\game.c	120;"	function	signature:(void)
+game_player_move_auto	game\game.h	123;"	prototype	signature:(void)
+game_player_move_left	game\game.c	105;"	function	signature:(void)
+game_player_move_left	game\game.h	121;"	prototype	signature:(void)
+game_player_move_right	game\game.c	111;"	function	signature:(void)
+game_player_move_right	game\game.h	122;"	prototype	signature:(void)
+game_tile_draw	game\game.c	95;"	function	signature:(uint8_t update)
+game_tile_draw	game\game.h	119;"	prototype	signature:(uint8_t update)
+game_tile_init	game\game.c	60;"	function	signature:(void)
+game_tile_init	game\game.h	115;"	prototype	signature:(void)
+getchar	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	15;"	prototype	signature:(void)
+gets	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	16;"	prototype	signature:(char *s)
+imagePtr	game\game.h	107;"	member	struct:__anon6
+imagePtr	game\game.h	48;"	member	struct:__anon1
+imagePtr	game\game.h	96;"	member	struct:__anon5
+int16_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	10;"	typedef
+int32_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	11;"	typedef
+int8_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	9;"	typedef
+int_fast16_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	28;"	typedef
+int_fast32_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	29;"	typedef
+int_fast8_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	27;"	typedef
+int_least16_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	19;"	typedef
+int_least32_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	20;"	typedef
+int_least8_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	18;"	typedef
+interrupt_handler	stm8_interrupt_vector.c	32;"	member	struct:interrupt_vector	file:
+interrupt_handler_t	stm8_interrupt_vector.c	12;"	typedef	file:
+interrupt_instruction	stm8_interrupt_vector.c	31;"	member	struct:interrupt_vector	file:
+interrupt_vector	stm8_interrupt_vector.c	30;"	struct	file:
+intmax_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	41;"	typedef
+intptr_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	36;"	typedef
+lButton	main.c	30;"	variable	file:
+lcd_clear	hardware\lcd.c	129;"	function	signature:(uint8_t value)
+lcd_clear	hardware\lcd.h	47;"	prototype	signature:(uint8_t value)
+lcd_clearBackground	hardware\lcd.c	194;"	function	signature:(uint8_t value)
+lcd_clearBackground	hardware\lcd.h	51;"	prototype	signature:(uint8_t value)
+lcd_clearFrameBuffer	hardware\lcd.c	160;"	function	signature:(uint8_t value, uint8_t update)
+lcd_clearFrameBuffer	hardware\lcd.h	50;"	prototype	signature:(uint8_t value, uint8_t update)
+lcd_clearPage	hardware\lcd.c	144;"	function	signature:(uint8_t page, uint8_t value)
+lcd_clearPage	hardware\lcd.h	49;"	prototype	signature:(uint8_t page, uint8_t value)
+lcd_decimalToBuffer	hardware\lcd.c	326;"	function	signature:(unsigned int val, char *buffer, uint8_t size)
+lcd_decimalToBuffer	hardware\lcd.h	57;"	prototype	signature:(unsigned int val, char *buffer, uint8_t size)
+lcd_drawIcon	hardware\lcd.c	431;"	function	signature:(uint32_t xPosition, uint32_t yPosition, const ImageData *pImage, uint8_t update)
+lcd_drawIcon	hardware\lcd.h	65;"	prototype	signature:(uint32_t xPosition, uint32_t yPosition, const ImageData *pImage, uint8_t update)
+lcd_drawIconWrap	hardware\lcd.c	496;"	function	signature:(uint32_t xPosition, uint32_t yPosition, const ImageData *pImage, uint8_t update)
+lcd_drawIconWrap	hardware\lcd.h	66;"	prototype	signature:(uint32_t xPosition, uint32_t yPosition, const ImageData *pImage, uint8_t update)
+lcd_drawString	hardware\lcd.c	251;"	function	signature:(uint8_t row, uint8_t col, char *myString)
+lcd_drawString	hardware\lcd.h	54;"	prototype	signature:(uint8_t row, uint8_t col, char *myString)
+lcd_drawStringLength	hardware\lcd.c	289;"	function	signature:(uint8_t row, uint8_t col, char *mystring, uint8_t length)
+lcd_drawStringLength	hardware\lcd.h	55;"	prototype	signature:(uint8_t row, uint8_t col, char *mystring, uint8_t length)
+lcd_dummyDelay	hardware\lcd.c	66;"	function	signature:(unsigned long delay)
+lcd_dummyDelay	hardware\lcd.h	39;"	prototype	signature:(unsigned long delay)
+lcd_init	hardware\lcd.c	30;"	function	signature:(void)
+lcd_init	hardware\lcd.h	38;"	prototype	signature:(void)
+lcd_putPixelRam	hardware\lcd.c	373;"	function	signature:(uint16_t x, uint16_t y, uint8_t color, uint8_t update)
+lcd_putPixelRam	hardware\lcd.h	61;"	prototype	signature:(uint16_t x, uint16_t y, uint8_t color, uint8_t update)
+lcd_reset	hardware\lcd.c	77;"	function	signature:(void)
+lcd_reset	hardware\lcd.h	40;"	prototype	signature:(void)
+lcd_setColumn	hardware\lcd.c	118;"	function	signature:(uint8_t column)
+lcd_setColumn	hardware\lcd.h	46;"	prototype	signature:(uint8_t column)
+lcd_setPage	hardware\lcd.c	109;"	function	signature:(uint8_t page)
+lcd_setPage	hardware\lcd.h	45;"	prototype	signature:(uint8_t page)
+lcd_updateFrameBuffer	hardware\lcd.c	221;"	function	signature:(void)
+lcd_updateFrameBuffer	hardware\lcd.h	52;"	prototype	signature:(void)
+lcd_writeCommand	hardware\lcd.c	85;"	function	signature:(uint8_t cmd)
+lcd_writeCommand	hardware\lcd.h	41;"	prototype	signature:(uint8_t cmd)
+lcd_writeData	hardware\lcd.c	91;"	function	signature:(uint8_t data)
+lcd_writeData	hardware\lcd.h	42;"	prototype	signature:(uint8_t data)
+lcd_writeDataBurst	hardware\lcd.c	97;"	function	signature:(uint8_t *data, uint16_t length)
+lcd_writeDataBurst	hardware\lcd.h	43;"	prototype	signature:(uint8_t *data, uint16_t length)
+length	sound\sound.h	14;"	member	struct:__anon8
+lives	game\game.h	47;"	member	struct:__anon1
+mBall	game\game.c	23;"	variable
+mButtonFlag	hardware\button.c	17;"	variable
+mPlayer	game\game.c	22;"	variable
+mSoundCounter	sound\sound.c	20;"	variable	file:
+mSoundCurrent	sound\sound.c	25;"	variable
+mSoundEnable	sound\sound.c	23;"	variable
+mSoundLoopCounter	sound\sound.c	21;"	variable	file:
+mSoundOverwriteFlag	sound\sound.c	24;"	variable
+mTile	game\game.c	24;"	variable
+main	main.c	34;"	function
+offsetof	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	23;"	macro
+pImageData	display\bitmap.h	22;"	member	struct:ImageData
+pSoundData	sound\sound.h	15;"	member	struct:__anon8
+pSoundSquare_4ms_1000hz	sound\wavsquare.c	50;"	variable
+pSoundSquare_4ms_1800hz	sound\wavsquare.c	66;"	variable
+pSoundSquare_4ms_250hz	sound\wavsquare.c	17;"	variable
+pSoundSquare_4ms_2600hz	sound\wavsquare.c	83;"	variable
+pSoundSquare_4ms_500hz	sound\wavsquare.c	33;"	variable
+pSoundValue	sound\sound.c	22;"	variable
+points	game\game.h	106;"	member	struct:__anon6
+printf	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	17;"	prototype	signature:(char *format, ...)
+ptrdiff_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	17;"	typedef
+putchar	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	18;"	prototype	signature:(char c)
+puts	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	19;"	prototype	signature:(char *s)
+scanf	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	20;"	prototype	signature:(char *format, ...)
+sizeX	game\game.h	103;"	member	struct:__anon6
+sizeX	game\game.h	45;"	member	struct:__anon1
+sizeX	game\game.h	92;"	member	struct:__anon5
+sizeY	game\game.h	104;"	member	struct:__anon6
+sizeY	game\game.h	46;"	member	struct:__anon1
+sizeY	game\game.h	93;"	member	struct:__anon5
+size_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	9;"	typedef
+size_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	10;"	typedef
+soundSquare_4ms_1000hz	sound\wavsquare.c	57;"	variable
+soundSquare_4ms_1800hz	sound\wavsquare.c	74;"	variable
+soundSquare_4ms_250hz	sound\wavsquare.c	24;"	variable
+soundSquare_4ms_2600hz	sound\wavsquare.c	92;"	variable
+soundSquare_4ms_500hz	sound\wavsquare.c	40;"	variable
+speed	game\game.h	94;"	member	struct:__anon5
+sprintf	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	22;"	prototype	signature:(char *s, char *format, ...)
+sscanf	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	21;"	prototype	signature:(char *s, char *format, ...)
+system_clock_config	hardware\system.c	49;"	function	signature:(void)
+system_clock_config	hardware\system.h	13;"	prototype	signature:(void)
+system_disableInterrupts	hardware\system.c	98;"	function	signature:(void)
+system_disableInterrupts	hardware\system.h	16;"	prototype	signature:(void)
+system_enableInterrupts	hardware\system.c	88;"	function	signature:(void)
+system_enableInterrupts	hardware\system.h	15;"	prototype	signature:(void)
+system_init	hardware\system.c	15;"	function	signature:(void)
+system_init	hardware\system.h	12;"	prototype	signature:(void)
+system_peripheral_clock_config	hardware\system.c	63;"	function	signature:(void)
+system_peripheral_clock_config	hardware\system.h	14;"	prototype	signature:(void)
+timerTick	hardware\timer.c	22;"	variable
+timer_delay_ms	hardware\timer.c	27;"	function	signature:(unsigned long delay)
+timer_delay_ms	hardware\timer.h	11;"	prototype	signature:(unsigned long delay)
+uint16_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	13;"	typedef
+uint16_t	hardware\register.h	14;"	macro
+uint32_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	14;"	typedef
+uint8_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	12;"	typedef
+uint8_t	hardware\register.h	13;"	macro
+uint_fast16_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	31;"	typedef
+uint_fast32_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	32;"	typedef
+uint_fast8_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	30;"	typedef
+uint_least16_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	22;"	typedef
+uint_least32_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	23;"	typedef
+uint_least8_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	21;"	typedef
+uintmax_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	42;"	typedef
+uintptr_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	37;"	typedef
+x	game\game.h	101;"	member	struct:__anon6
+x	game\game.h	43;"	member	struct:__anon1
+x	game\game.h	90;"	member	struct:__anon5
+x100u	hardware\lcd.c	24;"	variable
+xSize	display\bitmap.h	18;"	member	struct:ImageData
+y	game\game.h	102;"	member	struct:__anon6
+y	game\game.h	44;"	member	struct:__anon1
+y	game\game.h	91;"	member	struct:__anon5
+ySize	display\bitmap.h	19;"	member	struct:ImageData

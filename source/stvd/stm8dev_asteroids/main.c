@@ -68,7 +68,7 @@ main()
     system_enableInterrupts();
     
     //clear the eeprom
-    EEPROM_clearEEPROM(0x00);
+    //EEPROM_clearEEPROM(0x00);
     
 	while (1)
     {

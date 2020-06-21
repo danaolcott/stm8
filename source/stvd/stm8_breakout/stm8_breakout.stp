@@ -5,7 +5,7 @@ Keyword=ST7Project
 Number=1.3
 
 [Project]
-Name=stm8_asteroids
+Name=stm8_breakout
 Toolset=STM8 Cosmic
 
 [Config]
@@ -14,19 +14,19 @@ Toolset=STM8 Cosmic
 
 [Config.0]
 ConfigName=Debug
-Target=stm8_asteroids.elf
+Target=stm8_breakout.elf
 OutputFolder=Debug
 Debug=$(TargetFName)
 
 [Config.1]
 ConfigName=Release
-Target=stm8_asteroids.elf
+Target=stm8_breakout.elf
 OutputFolder=Release
 Debug=$(TargetFName)
 
 [Root]
 ElemType=Project
-PathName=stm8_asteroids
+PathName=stm8_breakout
 Child=Root.Source Files
 Config.0=Root.Config.0
 Config.1=Root.Config.1
@@ -54,7 +54,7 @@ Settings.1.7=Root.Config.1.Settings.7
 Settings.1.8=Root.Config.1.Settings.8
 
 [Root.Config.0.Settings.0]
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 String.100.0=ST Assembler Linker
 String.100.1=ST7 Cosmic
 String.100.2=STM8 Cosmic
@@ -66,37 +66,37 @@ String.103.0=
 String.104.0=Hstm8
 String.105.0=Lib
 String.106.0=Debug
-String.107.0=stm8_asteroids.elf
+String.107.0=stm8_breakout.elf
 Int.108=0
 
 [Root.Config.0.Settings.1]
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 String.100.0=$(TargetFName)
 String.101.0=
-String.103.0=.\;hardware;display;game;sound;images;
+String.103.0=.\;sound;hardware;display;game;
 
 [Root.Config.0.Settings.2]
 String.2.0=
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 String.100.0=STM8L151K6
 
 [Root.Config.0.Settings.3]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -isound  -igame  -idisplay  -ihardware  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -igame  -idisplay  -ihardware  -isound  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Config.0.Settings.4]
 String.2.0=Assembling $(InputFile)...
 String.3.0=castm8 -xx -l $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Config.0.Settings.5]
 String.2.0=Running Pre-Link step
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 String.8.0=
 
 [Root.Config.0.Settings.6]
@@ -105,7 +105,7 @@ String.3.0=clnk -customMapFile -customMapFile-m $(OutputPath)$(TargetSName).map 
 String.3.1=cvdwarf $(OutputPath)$(TargetSName).sm8 -fakeVectAddr0x8000
 String.4.0=$(OutputPath)$(TargetFName)
 String.5.0=$(OutputPath)$(TargetSName).map $(OutputPath)$(TargetSName).st7 $(OutputPath)$(TargetSName).s19
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 String.101.0=crtsi.st7
 String.102.0=+seg .const -b 0x8080 -m 0x7f80  -n .const -it 
 String.102.1=+seg .text -a .const  -n .text 
@@ -127,14 +127,14 @@ Int.1=0
 [Root.Config.0.Settings.7]
 String.2.0=Running Post-Build step
 String.3.0=chex -o $(OutputPath)$(TargetSName).s19 $(OutputPath)$(TargetSName).sm8
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Config.0.Settings.8]
 String.2.0=Performing Custom Build on $(InputFile)
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Config.1.Settings.0]
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 String.100.0=ST Assembler Linker
 String.100.1=ST7 Cosmic
 String.100.2=STM8 Cosmic
@@ -146,37 +146,37 @@ String.103.0=
 String.104.0=Hstm8
 String.105.0=Lib
 String.106.0=Release
-String.107.0=stm8_asteroids.elf
+String.107.0=stm8_breakout.elf
 Int.108=0
 
 [Root.Config.1.Settings.1]
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 String.100.0=$(TargetFName)
 String.101.0=
-String.103.0=.\;hardware;display;game;sound;images;
+String.103.0=.\;sound;hardware;display;game;
 
 [Root.Config.1.Settings.2]
 String.2.0=
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 String.100.0=STM8L151K6
 
 [Root.Config.1.Settings.3]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -isound  -igame  -idisplay  -ihardware  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -igame  -idisplay  -ihardware  -isound  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Config.1.Settings.4]
 String.2.0=Assembling $(InputFile)...
 String.3.0=castm8 $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Config.1.Settings.5]
 String.2.0=Running Pre-Link step
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Config.1.Settings.6]
 String.2.0=Running Linker
@@ -184,7 +184,7 @@ String.3.0=clnk -fakeRunConv  -fakeInteger  -fakeSemiAutoGen  $(ToolsetLibOpts) 
 String.3.1=cvdwarf $(OutputPath)$(TargetSName).sm8 -fakeVectAddr0x8000
 String.4.0=$(OutputPath)$(TargetFName)
 String.5.0=$(OutputPath)$(TargetSName).map $(OutputPath)$(TargetSName).st7 $(OutputPath)$(TargetSName).s19
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 String.101.0=crtsi.st7
 String.102.0=+seg .const -b 0x8080 -m 0x7f80  -n .const -it 
 String.102.1=+seg .text -a .const  -n .text 
@@ -206,11 +206,11 @@ Int.1=0
 [Root.Config.1.Settings.7]
 String.2.0=Running Post-Build step
 String.3.0=chex -o $(OutputPath)$(TargetSName).s19 $(OutputPath)$(TargetSName).sm8
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Config.1.Settings.8]
 String.2.0=Performing Custom Build on $(InputFile)
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Source Files]
 ElemType=Folder
@@ -233,58 +233,58 @@ Settings.1.2=Root.Source Files.Config.1.Settings.2
 Settings.1.3=Root.Source Files.Config.1.Settings.3
 
 [Root.Source Files.Config.0.Settings.0]
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 String.8.0=Debug
 Int.0=0
 Int.1=0
 
 [Root.Source Files.Config.0.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -isound  -igame  -idisplay  -ihardware  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -igame  -idisplay  -ihardware  -isound  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Source Files.Config.0.Settings.2]
 String.2.0=Assembling $(InputFile)...
 String.3.0=castm8 -xx -l $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Source Files.Config.0.Settings.3]
 String.2.0=Performing Custom Build on $(InputFile)
 String.3.0=
 String.4.0=
 String.5.0=
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Source Files.Config.1.Settings.0]
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 String.8.0=Release
 Int.0=0
 Int.1=0
 
 [Root.Source Files.Config.1.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -isound  -igame  -idisplay  -ihardware  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -igame  -idisplay  -ihardware  -isound  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Source Files.Config.1.Settings.2]
 String.2.0=Assembling $(InputFile)...
 String.3.0=castm8 $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Source Files.Config.1.Settings.3]
 String.2.0=Performing Custom Build on $(InputFile)
 String.3.0=
 String.4.0=
 String.5.0=
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Source Files.main.c]
 ElemType=File
@@ -315,58 +315,58 @@ Settings.1.2=Root.Include Files.Config.1.Settings.2
 Settings.1.3=Root.Include Files.Config.1.Settings.3
 
 [Root.Include Files.Config.0.Settings.0]
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 String.8.0=Debug
 Int.0=0
 Int.1=0
 
 [Root.Include Files.Config.0.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -isound  -igame  -idisplay  -ihardware  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -igame  -idisplay  -ihardware  -isound  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Include Files.Config.0.Settings.2]
 String.2.0=Assembling $(InputFile)...
 String.3.0=castm8 -xx -l $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Include Files.Config.0.Settings.3]
 String.2.0=Performing Custom Build on $(InputFile)
 String.3.0=
 String.4.0=
 String.5.0=
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Include Files.Config.1.Settings.0]
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 String.8.0=Release
 Int.0=0
 Int.1=0
 
 [Root.Include Files.Config.1.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -isound  -igame  -idisplay  -ihardware  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -igame  -idisplay  -ihardware  -isound  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Include Files.Config.1.Settings.2]
 String.2.0=Assembling $(InputFile)...
 String.3.0=castm8 $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.Include Files.Config.1.Settings.3]
 String.2.0=Performing Custom Build on $(InputFile)
 String.3.0=
 String.4.0=
 String.5.0=
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.display]
 ElemType=Folder
@@ -389,58 +389,58 @@ Settings.1.2=Root.display.Config.1.Settings.2
 Settings.1.3=Root.display.Config.1.Settings.3
 
 [Root.display.Config.0.Settings.0]
-String.6.0=2020,6,3,19,4,10
+String.6.0=2020,6,16,9,21,58
 String.8.0=Debug
 Int.0=0
 Int.1=0
 
 [Root.display.Config.0.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -isound  -igame  -idisplay  -ihardware  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -igame  -idisplay  -ihardware  -isound  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.display.Config.0.Settings.2]
 String.2.0=Assembling $(InputFile)...
 String.3.0=castm8 -xx -l $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.display.Config.0.Settings.3]
 String.2.0=Performing Custom Build on $(InputFile)
 String.3.0=
 String.4.0=
 String.5.0=
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.display.Config.1.Settings.0]
-String.6.0=2020,6,3,19,4,10
+String.6.0=2020,6,16,9,21,58
 String.8.0=Release
 Int.0=0
 Int.1=0
 
 [Root.display.Config.1.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -isound  -igame  -idisplay  -ihardware  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -igame  -idisplay  -ihardware  -isound  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.display.Config.1.Settings.2]
 String.2.0=Assembling $(InputFile)...
 String.3.0=castm8 $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.display.Config.1.Settings.3]
 String.2.0=Performing Custom Build on $(InputFile)
 String.3.0=
 String.4.0=
 String.5.0=
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.display.display\bitmap.h]
 ElemType=File
@@ -464,7 +464,7 @@ PathName=display\player1.c
 [Root.game]
 ElemType=Folder
 PathName=game
-Child=Root.game.game\sprite.c
+Child=Root.game.game\game.c
 Next=Root.hardware
 Config.0=Root.game.Config.0
 Config.1=Root.game.Config.1
@@ -482,67 +482,67 @@ Settings.1.2=Root.game.Config.1.Settings.2
 Settings.1.3=Root.game.Config.1.Settings.3
 
 [Root.game.Config.0.Settings.0]
-String.6.0=2020,6,3,19,4,55
+String.6.0=2020,6,16,9,22,4
 String.8.0=Debug
 Int.0=0
 Int.1=0
 
 [Root.game.Config.0.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -isound  -igame  -idisplay  -ihardware  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -igame  -idisplay  -ihardware  -isound  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.game.Config.0.Settings.2]
 String.2.0=Assembling $(InputFile)...
 String.3.0=castm8 -xx -l $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.game.Config.0.Settings.3]
 String.2.0=Performing Custom Build on $(InputFile)
 String.3.0=
 String.4.0=
 String.5.0=
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.game.Config.1.Settings.0]
-String.6.0=2020,6,3,19,4,55
+String.6.0=2020,6,16,9,22,4
 String.8.0=Release
 Int.0=0
 Int.1=0
 
 [Root.game.Config.1.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -isound  -igame  -idisplay  -ihardware  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -igame  -idisplay  -ihardware  -isound  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.game.Config.1.Settings.2]
 String.2.0=Assembling $(InputFile)...
 String.3.0=castm8 $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.game.Config.1.Settings.3]
 String.2.0=Performing Custom Build on $(InputFile)
 String.3.0=
 String.4.0=
 String.5.0=
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
-[Root.game.game\sprite.c]
+[Root.game.game\game.c]
 ElemType=File
-PathName=game\sprite.c
-Next=Root.game.game\sprite.h
+PathName=game\game.c
+Next=Root.game.game\game.h
 
-[Root.game.game\sprite.h]
+[Root.game.game\game.h]
 ElemType=File
-PathName=game\sprite.h
+PathName=game\game.h
 
 [Root.hardware]
 ElemType=Folder
@@ -565,58 +565,58 @@ Settings.1.2=Root.hardware.Config.1.Settings.2
 Settings.1.3=Root.hardware.Config.1.Settings.3
 
 [Root.hardware.Config.0.Settings.0]
-String.6.0=2020,6,3,19,2,22
+String.6.0=2020,6,16,9,22,12
 String.8.0=Debug
 Int.0=0
 Int.1=0
 
 [Root.hardware.Config.0.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -isound  -igame  -idisplay  -ihardware  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -igame  -idisplay  -ihardware  -isound  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.hardware.Config.0.Settings.2]
 String.2.0=Assembling $(InputFile)...
 String.3.0=castm8 -xx -l $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.hardware.Config.0.Settings.3]
 String.2.0=Performing Custom Build on $(InputFile)
 String.3.0=
 String.4.0=
 String.5.0=
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.hardware.Config.1.Settings.0]
-String.6.0=2020,6,3,19,2,22
+String.6.0=2020,6,16,9,22,12
 String.8.0=Release
 Int.0=0
 Int.1=0
 
 [Root.hardware.Config.1.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -isound  -igame  -idisplay  -ihardware  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -igame  -idisplay  -ihardware  -isound  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.hardware.Config.1.Settings.2]
 String.2.0=Assembling $(InputFile)...
 String.3.0=castm8 $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.hardware.Config.1.Settings.3]
 String.2.0=Performing Custom Build on $(InputFile)
 String.3.0=
 String.4.0=
 String.5.0=
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.hardware.hardware\button.c]
 ElemType=File
@@ -705,7 +705,6 @@ PathName=hardware\timer.h
 [Root.images]
 ElemType=Folder
 PathName=images
-Child=Root.images.images\imgasteroidmd.c
 Next=Root.sound
 Config.0=Root.images.Config.0
 Config.1=Root.images.Config.1
@@ -723,167 +722,63 @@ Settings.1.2=Root.images.Config.1.Settings.2
 Settings.1.3=Root.images.Config.1.Settings.3
 
 [Root.images.Config.0.Settings.0]
-String.6.0=2020,6,9,12,28,52
+String.6.0=2020,6,16,9,22,19
 String.8.0=Debug
 Int.0=0
 Int.1=0
 
 [Root.images.Config.0.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -isound  -igame  -idisplay  -ihardware  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -igame  -idisplay  -ihardware  -isound  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.images.Config.0.Settings.2]
 String.2.0=Assembling $(InputFile)...
 String.3.0=castm8 -xx -l $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.images.Config.0.Settings.3]
 String.2.0=Performing Custom Build on $(InputFile)
 String.3.0=
 String.4.0=
 String.5.0=
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.images.Config.1.Settings.0]
-String.6.0=2020,6,9,12,28,52
+String.6.0=2020,6,16,9,22,19
 String.8.0=Release
 Int.0=0
 Int.1=0
 
 [Root.images.Config.1.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -isound  -igame  -idisplay  -ihardware  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -igame  -idisplay  -ihardware  -isound  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.images.Config.1.Settings.2]
 String.2.0=Assembling $(InputFile)...
 String.3.0=castm8 $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.images.Config.1.Settings.3]
 String.2.0=Performing Custom Build on $(InputFile)
 String.3.0=
 String.4.0=
 String.5.0=
-String.6.0=2020,6,3,18,53,54
-
-[Root.images.images\imgasteroidmd.c]
-ElemType=File
-PathName=images\imgasteroidmd.c
-Next=Root.images.images\imgasteroidsm.c
-
-[Root.images.images\imgasteroidsm.c]
-ElemType=File
-PathName=images\imgasteroidsm.c
-Next=Root.images.images\imgplayer0.c
-
-[Root.images.images\imgplayer0.c]
-ElemType=File
-PathName=images\imgplayer0.c
-Next=Root.images.images\imgplayer116.c
-
-[Root.images.images\imgplayer116.c]
-ElemType=File
-PathName=images\imgplayer116.c
-Next=Root.images.images\imgplayer135.c
-
-[Root.images.images\imgplayer135.c]
-ElemType=File
-PathName=images\imgplayer135.c
-Next=Root.images.images\imgplayer153.c
-
-[Root.images.images\imgplayer153.c]
-ElemType=File
-PathName=images\imgplayer153.c
-Next=Root.images.images\imgplayer180.c
-
-[Root.images.images\imgplayer180.c]
-ElemType=File
-PathName=images\imgplayer180.c
-Next=Root.images.images\imgplayer206.c
-
-[Root.images.images\imgplayer206.c]
-ElemType=File
-PathName=images\imgplayer206.c
-Next=Root.images.images\imgplayer225.c
-
-[Root.images.images\imgplayer225.c]
-ElemType=File
-PathName=images\imgplayer225.c
-Next=Root.images.images\imgplayer243.c
-
-[Root.images.images\imgplayer243.c]
-ElemType=File
-PathName=images\imgplayer243.c
-Next=Root.images.images\imgplayer26.c
-
-[Root.images.images\imgplayer26.c]
-ElemType=File
-PathName=images\imgplayer26.c
-Next=Root.images.images\imgplayer270.c
-
-[Root.images.images\imgplayer270.c]
-ElemType=File
-PathName=images\imgplayer270.c
-Next=Root.images.images\imgplayer296.c
-
-[Root.images.images\imgplayer296.c]
-ElemType=File
-PathName=images\imgplayer296.c
-Next=Root.images.images\imgplayer315.c
-
-[Root.images.images\imgplayer315.c]
-ElemType=File
-PathName=images\imgplayer315.c
-Next=Root.images.images\imgplayer333.c
-
-[Root.images.images\imgplayer333.c]
-ElemType=File
-PathName=images\imgplayer333.c
-Next=Root.images.images\imgplayer45.c
-
-[Root.images.images\imgplayer45.c]
-ElemType=File
-PathName=images\imgplayer45.c
-Next=Root.images.images\imgplayer63.c
-
-[Root.images.images\imgplayer63.c]
-ElemType=File
-PathName=images\imgplayer63.c
-Next=Root.images.images\imgplayer90.c
-
-[Root.images.images\imgplayer90.c]
-ElemType=File
-PathName=images\imgplayer90.c
-Next=Root.images.images\imgplayerexp1.c
-
-[Root.images.images\imgplayerexp1.c]
-ElemType=File
-PathName=images\imgplayerexp1.c
-Next=Root.images.images\imgplayerexp2.c
-
-[Root.images.images\imgplayerexp2.c]
-ElemType=File
-PathName=images\imgplayerexp2.c
-Next=Root.images.images\imgplayerexp3.c
-
-[Root.images.images\imgplayerexp3.c]
-ElemType=File
-PathName=images\imgplayerexp3.c
+String.6.0=2020,6,16,9,18,22
 
 [Root.sound]
 ElemType=Folder
 PathName=sound
-Child=Root.sound.sound\wavthruster.c
+Child=Root.sound.sound\sound.c
 Config.0=Root.sound.Config.0
 Config.1=Root.sound.Config.1
 
@@ -900,63 +795,58 @@ Settings.1.2=Root.sound.Config.1.Settings.2
 Settings.1.3=Root.sound.Config.1.Settings.3
 
 [Root.sound.Config.0.Settings.0]
-String.6.0=2020,6,3,19,5,31
+String.6.0=2020,6,16,9,22,29
 String.8.0=Debug
 Int.0=0
 Int.1=0
 
 [Root.sound.Config.0.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -isound  -igame  -idisplay  -ihardware  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -igame  -idisplay  -ihardware  -isound  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.sound.Config.0.Settings.2]
 String.2.0=Assembling $(InputFile)...
 String.3.0=castm8 -xx -l $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.sound.Config.0.Settings.3]
 String.2.0=Performing Custom Build on $(InputFile)
 String.3.0=
 String.4.0=
 String.5.0=
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.sound.Config.1.Settings.0]
-String.6.0=2020,6,3,19,5,31
+String.6.0=2020,6,16,9,22,29
 String.8.0=Release
 Int.0=0
 Int.1=0
 
 [Root.sound.Config.1.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -isound  -igame  -idisplay  -ihardware  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -igame  -idisplay  -ihardware  -isound  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.sound.Config.1.Settings.2]
 String.2.0=Assembling $(InputFile)...
 String.3.0=castm8 $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
-String.6.0=2020,6,3,18,53,54
+String.6.0=2020,6,16,9,18,22
 
 [Root.sound.Config.1.Settings.3]
 String.2.0=Performing Custom Build on $(InputFile)
 String.3.0=
 String.4.0=
 String.5.0=
-String.6.0=2020,6,3,18,53,54
-
-[Root.sound.sound\wavthruster.c]
-ElemType=File
-PathName=sound\wavthruster.c
-Next=Root.sound.sound\sound.c
+String.6.0=2020,6,16,9,18,22
 
 [Root.sound.sound\sound.c]
 ElemType=File
@@ -966,16 +856,6 @@ Next=Root.sound.sound\sound.h
 [Root.sound.sound\sound.h]
 ElemType=File
 PathName=sound\sound.h
-Next=Root.sound.sound\wavenemyexplode.c
-
-[Root.sound.sound\wavenemyexplode.c]
-ElemType=File
-PathName=sound\wavenemyexplode.c
-Next=Root.sound.sound\wavplayershoot.c
-
-[Root.sound.sound\wavplayershoot.c]
-ElemType=File
-PathName=sound\wavplayershoot.c
 Next=Root.sound.sound\wavsquare.c
 
 [Root.sound.sound\wavsquare.c]
