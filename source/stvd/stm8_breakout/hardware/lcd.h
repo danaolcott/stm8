@@ -64,6 +64,8 @@ void lcd_putPixelRam(uint16_t x, uint16_t y, uint8_t color, uint8_t update);
 //carryover draw image functions
 void lcd_drawIcon(uint32_t xPosition, uint32_t yPosition, const ImageData *pImage, uint8_t update);
 void lcd_drawIconWrap(uint32_t xPosition, uint32_t yPosition, const ImageData *pImage, uint8_t update);
+void lcd_drawIconPage(uint8_t page, uint8_t offset, const ImageDataVertical *pImage);
+
 
 
 

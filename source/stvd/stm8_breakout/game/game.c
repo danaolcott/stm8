@@ -27,10 +27,17 @@ TileStruct mTile[GAME_TILE_NUM_TILE];
 //score, flags, etc
 static uint16_t gameScore = 0;
 static uint8_t gameBallMissedFlag = 0;
+static GameMode_t mGameMode = GAME_MODE_AUTO;
+static uint8_t gameLevelUpFlag = 0;
+static uint8_t gameLevel = 1;
+static uint8_t gameOverFlag = 0;
 
 
 void game_init(void)
-{
+{   
+    gameScore = 0;
+    gameLevel = 1;
+    
     game_player_init();
     game_ball_init();
     game_tile_init();
@@ -41,7 +48,7 @@ void game_player_init(void)
     mPlayer.x = GAME_PLAYER_DEFAULT_X;
     mPlayer.y = GAME_PLAYER_DEFAULT_Y;
     mPlayer.lives = GAME_PLAYER_NUM_LIVES;
-    mPlayer.imagePtr = &bmimgPlayer_24;
+    mPlayer.imagePtr = &bmimgPlayer_16;
     mPlayer.sizeX = mPlayer.imagePtr->xSize;
     mPlayer.sizeY = mPlayer.imagePtr->ySize;
 }
@@ -83,12 +90,12 @@ void game_tile_init(void)
 
 void game_player_draw(uint8_t update)
 {
-    lcd_drawIcon(mPlayer.x, mPlayer.y, &bmimgPlayer_24, (update & 0x01));
+    lcd_drawIcon(mPlayer.x, mPlayer.y, mPlayer.imagePtr, (update & 0x01));
 }
 
 void game_ball_draw(uint8_t update)
 {
-    lcd_drawIcon(mBall.x, mBall.y, &bmimgBall_8, (update & 0x01));
+    lcd_drawIcon(mBall.x, mBall.y, mBall.imagePtr, (update & 0x01));
 }
 
 void game_tile_draw(uint8_t update)
@@ -190,10 +197,14 @@ void game_ball_move(void)
 			updated = game_getReboundAngle(mBall.direction, ORIENTATION_HORIZONTAL);
 	}
 
-	//ball drops out the bottom - set a flag to be evaluated in main
+	//ball drops out the bottom - set a flag to be evaluated
+    //in main loop.  Decrement numplayers in main loop
 	else if (bTop >= SCREEN_BOTTOM)
+    {
 		gameBallMissedFlag = 1;
-
+    }
+    
+    
 	//top - lhs corner
 	else if ((bTop <= SCREEN_TOP) && (bLeft <= SCREEN_LEFT))
 	{
@@ -324,6 +335,11 @@ void game_ball_move(void)
 
 		//play sound
         Sound_playBallBounceTile();
+        
+        if (!game_getNumTiles())
+        {
+            game_setLevelUpFlag();
+        }
 	}
 
 	//hit a wall
@@ -481,14 +497,128 @@ void game_clearBallMissedFlag(void)
 {
     gameBallMissedFlag = 0;
 }
+
 uint8_t game_getBallMissedFlag(void)
 {
     return gameBallMissedFlag;
 }
 
 
+void game_clearLevelUpFlag(void)
+{
+    gameLevelUpFlag = 0;
+}
+
+uint8_t game_getLevelUpFlag(void)
+{
+    return gameLevelUpFlag;
+}
+
+void game_setLevelUpFlag(void)
+{
+    gameLevelUpFlag = 1;
+}
 
 
+uint8_t game_getGameOverFlag(void)
+{
+    return gameOverFlag;
+}
+
+void game_clearGameOverFlag(void)
+{
+    gameOverFlag = 0;
+}
+
+
+void game_setGameOverFlag(void)
+{
+    gameOverFlag = 1;
+}
+
+
+
+
+void game_setGameMode(GameMode_t mode)
+{
+    if ((mode == GAME_MODE_AUTO) || (mode == GAME_MODE_MANUAL))
+        mGameMode = mode;
+}
+
+GameMode_t game_getGameMode(void)
+{
+    return mGameMode;    
+}
+
+
+GameMode_t game_toggleGameMode(void)
+{
+    if (mGameMode == GAME_MODE_AUTO)
+        mGameMode = GAME_MODE_MANUAL;
+    else
+        mGameMode = GAME_MODE_AUTO;
+    
+    return mGameMode;
+}
+
+void game_setGameLevel(uint8_t level)
+{
+    gameLevel = level;
+}
+
+uint8_t game_getGameLevel(void)
+{
+    return gameLevel;
+}
+
+void game_incrementGameLevel(void)
+{
+    gameLevel++;
+}
+
+
+uint16_t game_getGameScore(void)
+{
+    return gameScore;
+}
+
+
+
+
+uint8_t game_getNumTiles(void)
+{
+    uint8_t remaining = 0;
+    uint8_t i = 0;
+    
+    for (i = 0 ; i < GAME_TILE_NUM_TILE ; i++)
+    {
+        if (mTile[i].alive == 1)
+            remaining++;
+    }
+    
+    return remaining;
+}
+
+
+uint8_t game_getNumPlayers(void)
+{
+    return mPlayer.lives;
+}
+
+uint8_t game_decrementPlayer(void)
+{
+    if (mPlayer.lives > 0)
+        mPlayer.lives--;
+    else
+        mPlayer.lives = 0;
+        
+    return mPlayer.lives;
+}
+
+void game_setNumPlayers(uint8_t num)
+{
+    mPlayer.lives = num;
+}
 
 
 

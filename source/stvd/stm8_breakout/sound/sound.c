@@ -23,6 +23,8 @@ unsigned char *pSoundValue = 0x00;          //pointer to sound value
 unsigned char mSoundEnable = 0x00;          //is it playing or not
 unsigned char mSoundOverwriteFlag = 0x00;
 SoundData *mSoundCurrent = 0x00;
+static uint8_t mSoundOn = 0;
+
 
 
 void Sound_init(void)
@@ -135,17 +137,20 @@ void Sound_interruptHandler(void)
 
 void Sound_playBallBounceWall(void)
 {
-    Sound_play(&soundSquare_4ms_1000hz, 50, 0);
+    if (mSoundOn == 1)
+        Sound_play(&soundSquare_4ms_1000hz, 50, 0);
 }
 
 void Sound_playBallBounceTile(void)
 {
-    Sound_play(&soundSquare_4ms_500hz, 50, 0);
+    if (mSoundOn == 1)
+        Sound_play(&soundSquare_4ms_500hz, 50, 0);
 }
 
 void Sound_playBallBouncePlayer(void)
 {
-    Sound_play(&soundSquare_4ms_250hz, 50, 0);    
+    if (mSoundOn == 1)    
+        Sound_play(&soundSquare_4ms_250hz, 50, 0);    
 }
 
 
@@ -153,10 +158,75 @@ void Sound_playBallBouncePlayer(void)
 //Dropped ball
 void Sound_playBallMissed(void)
 {
-    Sound_play(&soundSquare_4ms_500hz, 50, 0);
-    while(Sound_isPlaying() == 1);
-    Sound_play(&soundSquare_4ms_1000hz, 50, 0);
-    while(Sound_isPlaying() == 1);
+    if (mSoundOn == 1)
+    {
+        Sound_play(&soundSquare_4ms_500hz, 50, 0);
+        while(Sound_isPlaying() == 1);
+        Sound_play(&soundSquare_4ms_1000hz, 50, 0);
+        while(Sound_isPlaying() == 1);
+    }
+}
+
+
+void Sound_playLevelUp(void)
+{
+    if (mSoundOn == 1)
+    {
+        Sound_play(&soundSquare_4ms_500hz, 30, 0);
+        while(Sound_isPlaying() == 1);
+        Sound_play(&soundSquare_4ms_1000hz, 30, 0);
+        while(Sound_isPlaying() == 1);
+        Sound_play(&soundSquare_4ms_500hz, 30, 0);
+        while(Sound_isPlaying() == 1);
+        Sound_play(&soundSquare_4ms_1000hz, 30, 0);
+        while(Sound_isPlaying() == 1);
+        
+    }
+}
+
+
+
+void Sound_playGameOver(void)
+{
+    if (mSoundOn == 1)
+    {
+        Sound_play(&soundSquare_4ms_1000hz, 30, 0);
+        while(Sound_isPlaying() == 1);
+        Sound_play(&soundSquare_4ms_500hz, 30, 0);
+        while(Sound_isPlaying() == 1);
+        Sound_play(&soundSquare_4ms_250hz, 30, 0);
+        while(Sound_isPlaying() == 1);
+        
+        Sound_play(&soundSquare_4ms_1000hz, 30, 0);
+        while(Sound_isPlaying() == 1);
+        Sound_play(&soundSquare_4ms_500hz, 30, 0);
+        while(Sound_isPlaying() == 1);
+        Sound_play(&soundSquare_4ms_250hz, 30, 0);
+        while(Sound_isPlaying() == 1);
+        
+    }
+}
+
+
+
+
+
+void Sound_on(void)
+{
+    mSoundOn = 1;
+}
+
+void Sound_off(void)
+{
+    mSoundOn = 0;
+}
+
+void Sound_toggle(void)
+{
+    if (mSoundOn == 1)
+        mSoundOn = 0;
+    else
+        mSoundOn = 1;
 }
 
 

@@ -14,14 +14,14 @@ BIT_5	hardware\register.h	22;"	macro
 BIT_6	hardware\register.h	23;"	macro
 BIT_7	hardware\register.h	24;"	macro
 BUFSIZ	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	26;"	macro
-BUTTON_CENTER	hardware\button.h	16;"	enumerator	enum:__anon7
-BUTTON_DOWN	hardware\button.h	19;"	enumerator	enum:__anon7
-BUTTON_LEFT	hardware\button.h	15;"	enumerator	enum:__anon7
-BUTTON_RIGHT	hardware\button.h	18;"	enumerator	enum:__anon7
-BUTTON_UP	hardware\button.h	17;"	enumerator	enum:__anon7
-BUTTON_USER	hardware\button.h	20;"	enumerator	enum:__anon7
-BallStruct	game\game.h	97;"	typedef	typeref:struct:__anon5
-ButtonType_t	hardware\button.h	21;"	typedef	typeref:enum:__anon7
+BUTTON_CENTER	hardware\button.h	16;"	enumerator	enum:__anon8
+BUTTON_DOWN	hardware\button.h	19;"	enumerator	enum:__anon8
+BUTTON_LEFT	hardware\button.h	15;"	enumerator	enum:__anon8
+BUTTON_RIGHT	hardware\button.h	18;"	enumerator	enum:__anon8
+BUTTON_UP	hardware\button.h	17;"	enumerator	enum:__anon8
+BUTTON_USER	hardware\button.h	20;"	enumerator	enum:__anon8
+BallStruct	game\game.h	104;"	typedef	typeref:struct:__anon6
+ButtonType_t	hardware\button.h	21;"	typedef	typeref:enum:__anon8
 Button_clearFlag	hardware\button.c	31;"	function	signature:(void)
 Button_clearFlag	hardware\button.h	25;"	prototype	signature:(void)
 Button_getFlag	hardware\button.c	26;"	function	signature:(void)
@@ -75,23 +75,23 @@ DAC_set	hardware\dac.c	40;"	function	signature:(unsigned int value)
 DAC_set	hardware\dac.h	13;"	prototype	signature:(unsigned int value)
 DAC_set8Bit	hardware\dac.c	59;"	function	signature:(unsigned char value)
 DAC_set8Bit	hardware\dac.h	14;"	prototype	signature:(unsigned char value)
-DIRECTION_0	game\game.h	60;"	enumerator	enum:__anon3
-DIRECTION_116	game\game.h	65;"	enumerator	enum:__anon3
-DIRECTION_135	game\game.h	66;"	enumerator	enum:__anon3
-DIRECTION_153	game\game.h	67;"	enumerator	enum:__anon3
-DIRECTION_180	game\game.h	68;"	enumerator	enum:__anon3
-DIRECTION_206	game\game.h	69;"	enumerator	enum:__anon3
-DIRECTION_225	game\game.h	70;"	enumerator	enum:__anon3
-DIRECTION_243	game\game.h	71;"	enumerator	enum:__anon3
-DIRECTION_26	game\game.h	61;"	enumerator	enum:__anon3
-DIRECTION_270	game\game.h	72;"	enumerator	enum:__anon3
-DIRECTION_296	game\game.h	73;"	enumerator	enum:__anon3
-DIRECTION_315	game\game.h	74;"	enumerator	enum:__anon3
-DIRECTION_333	game\game.h	75;"	enumerator	enum:__anon3
-DIRECTION_45	game\game.h	62;"	enumerator	enum:__anon3
-DIRECTION_63	game\game.h	63;"	enumerator	enum:__anon3
-DIRECTION_90	game\game.h	64;"	enumerator	enum:__anon3
-Direction_t	game\game.h	76;"	typedef	typeref:enum:__anon3
+DIRECTION_0	game\game.h	70;"	enumerator	enum:__anon4
+DIRECTION_116	game\game.h	75;"	enumerator	enum:__anon4
+DIRECTION_135	game\game.h	76;"	enumerator	enum:__anon4
+DIRECTION_153	game\game.h	77;"	enumerator	enum:__anon4
+DIRECTION_180	game\game.h	78;"	enumerator	enum:__anon4
+DIRECTION_206	game\game.h	79;"	enumerator	enum:__anon4
+DIRECTION_225	game\game.h	80;"	enumerator	enum:__anon4
+DIRECTION_243	game\game.h	81;"	enumerator	enum:__anon4
+DIRECTION_26	game\game.h	71;"	enumerator	enum:__anon4
+DIRECTION_270	game\game.h	82;"	enumerator	enum:__anon4
+DIRECTION_296	game\game.h	83;"	enumerator	enum:__anon4
+DIRECTION_315	game\game.h	84;"	enumerator	enum:__anon4
+DIRECTION_333	game\game.h	85;"	enumerator	enum:__anon4
+DIRECTION_45	game\game.h	72;"	enumerator	enum:__anon4
+DIRECTION_63	game\game.h	73;"	enumerator	enum:__anon4
+DIRECTION_90	game\game.h	74;"	enumerator	enum:__anon4
+Direction_t	game\game.h	86;"	typedef	typeref:enum:__anon4
 EEPROM_ADDRESS_CYCLE_COUNT_LSB	hardware\eeprom.h	19;"	macro
 EEPROM_ADDRESS_CYCLE_COUNT_MSB	hardware\eeprom.h	18;"	macro
 EEPROM_ADDRESS_HIGH_SCORE_LSB	hardware\eeprom.h	22;"	macro
@@ -163,14 +163,20 @@ FRAME_BUFFER_SIZE	hardware\lcd.h	25;"	macro
 FRAME_BUFFER_START_PAGE	hardware\lcd.h	31;"	macro
 FRAME_BUFFER_STOP_PAGE	hardware\lcd.h	32;"	macro
 FRAME_BUFFER_WIDTH	hardware\lcd.h	28;"	macro
+GAME_BALL_DEFAULT_DIRECTION	game\game.h	41;"	macro
+GAME_BALL_DEFAULT_X	game\game.h	38;"	macro
+GAME_BALL_DEFAULT_Y	game\game.h	39;"	macro
+GAME_BALL_PADDING	game\game.h	40;"	macro
 GAME_MAX_X	game\game.h	15;"	macro
 GAME_MAX_Y	game\game.h	17;"	macro
 GAME_MIN_X	game\game.h	14;"	macro
 GAME_MIN_Y	game\game.h	16;"	macro
-GAME_PLAYER_DEFAULT_X	game\game.h	26;"	macro
-GAME_PLAYER_DEFAULT_Y	game\game.h	27;"	macro
-GAME_PLAYER_INC_X	game\game.h	28;"	macro
-GAME_PLAYER_NUM_LIVES	game\game.h	25;"	macro
+GAME_MODE_AUTO	game\game.h	64;"	enumerator	enum:__anon3
+GAME_MODE_MANUAL	game\game.h	65;"	enumerator	enum:__anon3
+GAME_PLAYER_DEFAULT_X	game\game.h	27;"	macro
+GAME_PLAYER_DEFAULT_Y	game\game.h	28;"	macro
+GAME_PLAYER_INC_X	game\game.h	29;"	macro
+GAME_PLAYER_NUM_LIVES	game\game.h	26;"	macro
 GAME_TILE_MARGINE_LEFT	game\game.h	31;"	macro
 GAME_TILE_NUM_COL	game\game.h	33;"	macro
 GAME_TILE_NUM_ROW	game\game.h	32;"	macro
@@ -205,6 +211,7 @@ GPIO_led_red_on	hardware\gpio.c	118;"	function	signature:(void)
 GPIO_led_red_on	hardware\gpio.h	14;"	prototype	signature:(void)
 GPIO_led_red_toggle	hardware\gpio.c	138;"	function	signature:(void)
 GPIO_led_red_toggle	hardware\gpio.h	18;"	prototype	signature:(void)
+GameMode_t	game\game.h	66;"	typedef	typeref:enum:__anon3
 INT16_C	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	97;"	macro
 INT16_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	50;"	macro
 INT16_MIN	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	47;"	macro
@@ -231,8 +238,10 @@ INT_LEAST32_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cx
 INT_LEAST32_MIN	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	60;"	macro
 INT_LEAST8_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	61;"	macro
 INT_LEAST8_MIN	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	58;"	macro
-ImageData	display\bitmap.h	16;"	struct
-ImageData	display\bitmap.h	25;"	typedef	typeref:struct:ImageData
+ImageData	display\bitmap.h	18;"	struct
+ImageData	display\bitmap.h	27;"	typedef	typeref:struct:ImageData
+ImageDataVertical	display\bitmap.h	33;"	struct
+ImageDataVertical	display\bitmap.h	40;"	typedef	typeref:struct:ImageDataVertical
 LCD_CMD_PIN	hardware\lcd.h	15;"	macro
 LCD_HEIGHT	hardware\lcd.h	18;"	macro
 LCD_NUM_PAGES	hardware\lcd.h	20;"	macro
@@ -242,9 +251,9 @@ LCD_WIDTH	hardware\lcd.h	19;"	macro
 NULL	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	20;"	macro
 NULL	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	30;"	macro
 NonHandledInterrupt	stm8_interrupt_vector.c	35;"	function	signature:(void)
-ORIENTATION_HORIZONTAL	game\game.h	81;"	enumerator	enum:__anon4
-ORIENTATION_VERTICAL	game\game.h	82;"	enumerator	enum:__anon4
-Orientation_t	game\game.h	83;"	typedef	typeref:enum:__anon4
+ORIENTATION_HORIZONTAL	game\game.h	90;"	enumerator	enum:__anon5
+ORIENTATION_VERTICAL	game\game.h	91;"	enumerator	enum:__anon5
+Orientation_t	game\game.h	92;"	typedef	typeref:enum:__anon5
 PA_CR1	hardware\register.h	92;"	macro
 PA_CR2	hardware\register.h	93;"	macro
 PA_DDR	hardware\register.h	91;"	macro
@@ -277,7 +286,7 @@ PF_IDR	hardware\register.h	120;"	macro
 PF_ODR	hardware\register.h	119;"	macro
 PTRDIFF_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	86;"	macro
 PTRDIFF_MIN	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	85;"	macro
-PlayerStruct	game\game.h	49;"	typedef	typeref:struct:__anon1
+PlayerStruct	game\game.h	53;"	typedef	typeref:struct:__anon1
 RI_ASCR1	hardware\register.h	169;"	macro
 RI_ASCR1	hardware\register.h	181;"	macro
 RI_ASCR2	hardware\register.h	170;"	macro
@@ -299,13 +308,13 @@ RI_IOSR2	hardware\register.h	178;"	macro
 RI_IOSR3	hardware\register.h	167;"	macro
 RI_IOSR3	hardware\register.h	179;"	macro
 RI_RCR	hardware\register.h	171;"	macro
-SCREEN_BOTTOM	game\game.h	20;"	macro
-SCREEN_LEFT	game\game.h	21;"	macro
-SCREEN_RIGHT	game\game.h	22;"	macro
-SCREEN_TOP	game\game.h	19;"	macro
-SPEED_FAST	game\game.h	55;"	enumerator	enum:__anon2
-SPEED_MEDIUM	game\game.h	54;"	enumerator	enum:__anon2
-SPEED_SLOW	game\game.h	53;"	enumerator	enum:__anon2
+SCREEN_BOTTOM	game\game.h	21;"	macro
+SCREEN_LEFT	game\game.h	22;"	macro
+SCREEN_RIGHT	game\game.h	23;"	macro
+SCREEN_TOP	game\game.h	20;"	macro
+SPEED_FAST	game\game.h	59;"	enumerator	enum:__anon2
+SPEED_MEDIUM	game\game.h	58;"	enumerator	enum:__anon2
+SPEED_SLOW	game\game.h	57;"	enumerator	enum:__anon2
 SPI1_BSY_FLAG	hardware\register.h	134;"	macro
 SPI1_CR1	hardware\register.h	138;"	macro
 SPI1_CR2	hardware\register.h	139;"	macro
@@ -331,16 +340,34 @@ SPI_writeByte	hardware\spi.c	105;"	function	signature:(uint8_t data)
 SPI_writeByte	hardware\spi.h	25;"	prototype	signature:(uint8_t data)
 SYSCFG_RMPCR1	hardware\register.h	52;"	macro
 SYSCFG_RMPCR2	hardware\register.h	53;"	macro
-SoundData	sound\sound.h	16;"	typedef	typeref:struct:__anon8
-Sound_init	sound\sound.c	28;"	function	signature:(void)
+SoundData	sound\sound.h	16;"	typedef	typeref:struct:__anon9
+Sound_init	sound\sound.c	30;"	function	signature:(void)
 Sound_init	sound\sound.h	27;"	prototype	signature:(void)
-Sound_interruptHandler	sound\sound.c	91;"	function	signature:(void)
+Sound_interruptHandler	sound\sound.c	93;"	function	signature:(void)
 Sound_interruptHandler	sound\sound.h	30;"	prototype	signature:(void)
-Sound_isPlaying	sound\sound.c	83;"	function	signature:(void)
+Sound_isPlaying	sound\sound.c	85;"	function	signature:(void)
 Sound_isPlaying	sound\sound.h	29;"	prototype	signature:(void)
-Sound_play	sound\sound.c	52;"	function	signature:(const SoundData *sound, unsigned int loop, unsigned char preventOverwrite)
+Sound_off	sound\sound.c	219;"	function	signature:(void)
+Sound_off	sound\sound.h	40;"	prototype	signature:(void)
+Sound_on	sound\sound.c	214;"	function	signature:(void)
+Sound_on	sound\sound.h	39;"	prototype	signature:(void)
+Sound_play	sound\sound.c	54;"	function	signature:(const SoundData *sound, unsigned int loop, unsigned char preventOverwrite)
 Sound_play	sound\sound.h	28;"	prototype	signature:(const SoundData *sound, unsigned int loop, unsigned char preventOverwight)
-Speed_t	game\game.h	56;"	typedef	typeref:enum:__anon2
+Sound_playBallBouncePlayer	sound\sound.c	150;"	function	signature:(void)
+Sound_playBallBouncePlayer	sound\sound.h	34;"	prototype	signature:(void)
+Sound_playBallBounceTile	sound\sound.c	144;"	function	signature:(void)
+Sound_playBallBounceTile	sound\sound.h	33;"	prototype	signature:(void)
+Sound_playBallBounceWall	sound\sound.c	138;"	function	signature:(void)
+Sound_playBallBounceWall	sound\sound.h	32;"	prototype	signature:(void)
+Sound_playBallMissed	sound\sound.c	159;"	function	signature:(void)
+Sound_playBallMissed	sound\sound.h	35;"	prototype	signature:(void)
+Sound_playGameOver	sound\sound.c	189;"	function	signature:(void)
+Sound_playGameOver	sound\sound.h	37;"	prototype	signature:(void)
+Sound_playLevelUp	sound\sound.c	171;"	function	signature:(void)
+Sound_playLevelUp	sound\sound.h	36;"	prototype	signature:(void)
+Sound_toggle	sound\sound.c	224;"	function	signature:(void)
+Sound_toggle	sound\sound.h	41;"	prototype	signature:(void)
+Speed_t	game\game.h	60;"	typedef	typeref:enum:__anon2
 TIM2_ARRH	hardware\register.h	233;"	macro
 TIM2_ARRL	hardware\register.h	234;"	macro
 TIM2_BKR	hardware\register.h	239;"	macro
@@ -390,7 +417,7 @@ TIM4_SMCR	hardware\register.h	245;"	macro
 TIM4_SR1	hardware\register.h	248;"	macro
 TIM4_init	hardware\timer.c	63;"	function	signature:(void)
 TIM4_init	hardware\timer.h	14;"	prototype	signature:(void)
-TileStruct	game\game.h	108;"	typedef	typeref:struct:__anon6
+TileStruct	game\game.h	115;"	typedef	typeref:struct:__anon7
 UINT16_C	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	101;"	macro
 UINT16_MAX	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	53;"	macro
 UINT32_C	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	102;"	macro
@@ -425,63 +452,108 @@ __STDIO__	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\h
 __SYSTEM_H	hardware\system.h	9;"	macro
 __TIMER_H	hardware\timer.h	8;"	macro
 __WCHAR_T__	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	13;"	macro
-_acimgPlayerIcon_1	display\player1.c	65;"	variable
+_acimgPlayerIcon_1	display\player1.c	63;"	variable
 _acimgPlayerIcon_2	display\player1.c	48;"	variable
 _acimgPlayerIcon_3	display\player1.c	31;"	variable
-_ball_8	display\player1.c	98;"	variable
-_player_24	display\player1.c	82;"	variable
+_ball_8	display\player1.c	110;"	variable
+_player_16	display\player1.c	94;"	variable
+_player_24	display\player1.c	78;"	variable
 _stext	stm8_interrupt_vector.c	126;"	prototype	file:
-_tileBlank_8	display\player1.c	129;"	variable
-_tile_8	display\player1.c	113;"	variable
+_tileBlank_8	display\player1.c	141;"	variable
+_tile_8	display\player1.c	125;"	variable
 _vectab	stm8_interrupt_vector.c	128;"	variable
 abs	hardware\lcd.c	19;"	macro	file:
-alive	game\game.h	105;"	member	struct:__anon6
-bitsPerPixel	display\bitmap.h	21;"	member	struct:ImageData
-bmimgBall_8	display\player1.c	102;"	variable
-bmimgPlayerIcon_1	display\player1.c	70;"	variable
+alive	game\game.h	112;"	member	struct:__anon7
+bitsPerPixel	display\bitmap.h	23;"	member	struct:ImageData
+bmimgBall_8	display\player1.c	114;"	variable
+bmimgPlayerIcon_1	display\player1.c	68;"	variable
+bmimgPlayerIcon_1	hardware\lcd.c	574;"	variable
 bmimgPlayerIcon_2	display\player1.c	53;"	variable
 bmimgPlayerIcon_3	display\player1.c	36;"	variable
-bmimgPlayer_24	display\player1.c	86;"	variable
-bmimgTileBlank_8	display\player1.c	133;"	variable
-bmimgTile_8	display\player1.c	117;"	variable
-bytesPerLine	display\bitmap.h	20;"	member	struct:ImageData
-direction	game\game.h	95;"	member	struct:__anon5
+bmimgPlayer_16	display\player1.c	98;"	variable
+bmimgPlayer_24	display\player1.c	82;"	variable
+bmimgTileBlank_8	display\player1.c	145;"	variable
+bmimgTile_8	display\player1.c	129;"	variable
+bytesPerLine	display\bitmap.h	22;"	member	struct:ImageData
+direction	game\game.h	102;"	member	struct:__anon6
 font_table	display\font_table.c	11;"	variable
-gameBallMissedFlag	game\game.c	28;"	variable	file:
-gameScore	game\game.c	27;"	variable	file:
-game_ball_draw	game\game.c	90;"	function	signature:(uint8_t update)
-game_ball_draw	game\game.h	118;"	prototype	signature:(uint8_t update)
-game_ball_init	game\game.c	49;"	function	signature:(void)
-game_ball_init	game\game.h	114;"	prototype	signature:(void)
-game_ball_move	game\game.c	148;"	function	signature:(void)
-game_ball_move	game\game.h	124;"	prototype	signature:(void)
-game_getReboundAngle	game\game.c	369;"	function	signature:(Direction_t direction, Orientation_t orientation)
-game_getReboundAngle	game\game.h	128;"	prototype	signature:(Direction_t direction, Orientation_t orientation)
-game_get_dx_fromAngle	game\game.c	430;"	function	signature:(Direction_t angle)
-game_get_dx_fromAngle	game\game.h	129;"	prototype	signature:(Direction_t angle)
-game_get_dy_fromAngle	game\game.c	458;"	function	signature:(Direction_t angle)
-game_get_dy_fromAngle	game\game.h	130;"	prototype	signature:(Direction_t angle)
-game_init	game\game.c	31;"	function	signature:(void)
-game_init	game\game.h	112;"	prototype	signature:(void)
-game_player_draw	game\game.c	85;"	function	signature:(uint8_t update)
-game_player_draw	game\game.h	117;"	prototype	signature:(uint8_t update)
-game_player_init	game\game.c	38;"	function	signature:(void)
-game_player_init	game\game.h	113;"	prototype	signature:(void)
-game_player_move_auto	game\game.c	120;"	function	signature:(void)
-game_player_move_auto	game\game.h	123;"	prototype	signature:(void)
-game_player_move_left	game\game.c	105;"	function	signature:(void)
-game_player_move_left	game\game.h	121;"	prototype	signature:(void)
-game_player_move_right	game\game.c	111;"	function	signature:(void)
-game_player_move_right	game\game.h	122;"	prototype	signature:(void)
-game_tile_draw	game\game.c	95;"	function	signature:(uint8_t update)
-game_tile_draw	game\game.h	119;"	prototype	signature:(uint8_t update)
-game_tile_init	game\game.c	60;"	function	signature:(void)
-game_tile_init	game\game.h	115;"	prototype	signature:(void)
+frameBuffer	hardware\lcd.c	27;"	variable
+gameBallMissedFlag	game\game.c	29;"	variable	file:
+gameLevel	game\game.c	32;"	variable	file:
+gameLevelUpFlag	game\game.c	31;"	variable	file:
+gameOverFlag	game\game.c	33;"	variable	file:
+gameScore	game\game.c	28;"	variable	file:
+game_ball_draw	game\game.c	96;"	function	signature:(uint8_t update)
+game_ball_draw	game\game.h	125;"	prototype	signature:(uint8_t update)
+game_ball_init	game\game.c	56;"	function	signature:(void)
+game_ball_init	game\game.h	121;"	prototype	signature:(void)
+game_ball_move	game\game.c	154;"	function	signature:(void)
+game_ball_move	game\game.h	131;"	prototype	signature:(void)
+game_clearBallMissedFlag	game\game.c	500;"	function	signature:(void)
+game_clearBallMissedFlag	game\game.h	140;"	prototype	signature:(void)
+game_clearGameOverFlag	game\game.c	532;"	function	signature:(void)
+game_clearGameOverFlag	game\game.h	148;"	prototype	signature:(void)
+game_clearLevelUpFlag	game\game.c	511;"	function	signature:(void)
+game_clearLevelUpFlag	game\game.h	143;"	prototype	signature:(void)
+game_decrementPlayer	game\game.c	612;"	function	signature:(void)
+game_decrementPlayer	game\game.h	164;"	prototype	signature:(void)
+game_getBallMissedFlag	game\game.c	505;"	function	signature:(void)
+game_getBallMissedFlag	game\game.h	141;"	prototype	signature:(void)
+game_getGameLevel	game\game.c	573;"	function	signature:(void)
+game_getGameLevel	game\game.h	158;"	prototype	signature:(void)
+game_getGameMode	game\game.c	552;"	function	signature:(void)
+game_getGameMode	game\game.h	154;"	prototype	signature:(void)
+game_getGameOverFlag	game\game.c	527;"	function	signature:(void)
+game_getGameOverFlag	game\game.h	147;"	prototype	signature:(void)
+game_getGameScore	game\game.c	584;"	function	signature:(void)
+game_getGameScore	game\game.h	160;"	prototype	signature:(void)
+game_getLevelUpFlag	game\game.c	516;"	function	signature:(void)
+game_getLevelUpFlag	game\game.h	144;"	prototype	signature:(void)
+game_getNumPlayers	game\game.c	607;"	function	signature:(void)
+game_getNumPlayers	game\game.h	163;"	prototype	signature:(void)
+game_getNumTiles	game\game.c	592;"	function	signature:(void)
+game_getNumTiles	game\game.h	161;"	prototype	signature:(void)
+game_getReboundAngle	game\game.c	383;"	function	signature:(Direction_t direction, Orientation_t orientation)
+game_getReboundAngle	game\game.h	135;"	prototype	signature:(Direction_t direction, Orientation_t orientation)
+game_get_dx_fromAngle	game\game.c	444;"	function	signature:(Direction_t angle)
+game_get_dx_fromAngle	game\game.h	136;"	prototype	signature:(Direction_t angle)
+game_get_dy_fromAngle	game\game.c	472;"	function	signature:(Direction_t angle)
+game_get_dy_fromAngle	game\game.h	137;"	prototype	signature:(Direction_t angle)
+game_incrementGameLevel	game\game.c	578;"	function	signature:(void)
+game_incrementGameLevel	game\game.h	159;"	prototype	signature:(void)
+game_init	game\game.c	36;"	function	signature:(void)
+game_init	game\game.h	119;"	prototype	signature:(void)
+game_player_draw	game\game.c	91;"	function	signature:(uint8_t update)
+game_player_draw	game\game.h	124;"	prototype	signature:(uint8_t update)
+game_player_init	game\game.c	46;"	function	signature:(void)
+game_player_init	game\game.h	120;"	prototype	signature:(void)
+game_player_move_auto	game\game.c	126;"	function	signature:(void)
+game_player_move_auto	game\game.h	130;"	prototype	signature:(void)
+game_player_move_left	game\game.c	111;"	function	signature:(void)
+game_player_move_left	game\game.h	128;"	prototype	signature:(void)
+game_player_move_right	game\game.c	117;"	function	signature:(void)
+game_player_move_right	game\game.h	129;"	prototype	signature:(void)
+game_setGameLevel	game\game.c	568;"	function	signature:(uint8_t level)
+game_setGameLevel	game\game.h	157;"	prototype	signature:(uint8_t level)
+game_setGameMode	game\game.c	546;"	function	signature:(GameMode_t mode)
+game_setGameMode	game\game.h	153;"	prototype	signature:(GameMode_t mode)
+game_setGameOverFlag	game\game.c	538;"	function	signature:(void)
+game_setGameOverFlag	game\game.h	149;"	prototype	signature:(void)
+game_setLevelUpFlag	game\game.c	521;"	function	signature:(void)
+game_setLevelUpFlag	game\game.h	145;"	prototype	signature:(void)
+game_setNumPlayers	game\game.c	622;"	function	signature:(uint8_t num)
+game_setNumPlayers	game\game.h	165;"	prototype	signature:(uint8_t num)
+game_tile_draw	game\game.c	101;"	function	signature:(uint8_t update)
+game_tile_draw	game\game.h	126;"	prototype	signature:(uint8_t update)
+game_tile_init	game\game.c	67;"	function	signature:(void)
+game_tile_init	game\game.h	122;"	prototype	signature:(void)
+game_toggleGameMode	game\game.c	558;"	function	signature:(void)
+game_toggleGameMode	game\game.h	155;"	prototype	signature:(void)
 getchar	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	15;"	prototype	signature:(void)
 gets	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	16;"	prototype	signature:(char *s)
-imagePtr	game\game.h	107;"	member	struct:__anon6
-imagePtr	game\game.h	48;"	member	struct:__anon1
-imagePtr	game\game.h	96;"	member	struct:__anon5
+imagePtr	game\game.h	103;"	member	struct:__anon6
+imagePtr	game\game.h	114;"	member	struct:__anon7
+imagePtr	game\game.h	52;"	member	struct:__anon1
 int16_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	10;"	typedef
 int32_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	11;"	typedef
 int8_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	9;"	typedef
@@ -498,77 +570,86 @@ interrupt_vector	stm8_interrupt_vector.c	30;"	struct	file:
 intmax_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	41;"	typedef
 intptr_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	36;"	typedef
 lButton	main.c	30;"	variable	file:
-lcd_clear	hardware\lcd.c	129;"	function	signature:(uint8_t value)
+lcd_clear	hardware\lcd.c	132;"	function	signature:(uint8_t value)
 lcd_clear	hardware\lcd.h	47;"	prototype	signature:(uint8_t value)
-lcd_clearBackground	hardware\lcd.c	194;"	function	signature:(uint8_t value)
+lcd_clearBackground	hardware\lcd.c	197;"	function	signature:(uint8_t value)
 lcd_clearBackground	hardware\lcd.h	51;"	prototype	signature:(uint8_t value)
-lcd_clearFrameBuffer	hardware\lcd.c	160;"	function	signature:(uint8_t value, uint8_t update)
+lcd_clearFrameBuffer	hardware\lcd.c	163;"	function	signature:(uint8_t value, uint8_t update)
 lcd_clearFrameBuffer	hardware\lcd.h	50;"	prototype	signature:(uint8_t value, uint8_t update)
-lcd_clearPage	hardware\lcd.c	144;"	function	signature:(uint8_t page, uint8_t value)
+lcd_clearPage	hardware\lcd.c	147;"	function	signature:(uint8_t page, uint8_t value)
 lcd_clearPage	hardware\lcd.h	49;"	prototype	signature:(uint8_t page, uint8_t value)
-lcd_decimalToBuffer	hardware\lcd.c	326;"	function	signature:(unsigned int val, char *buffer, uint8_t size)
+lcd_decimalToBuffer	hardware\lcd.c	329;"	function	signature:(unsigned int val, char *buffer, uint8_t size)
 lcd_decimalToBuffer	hardware\lcd.h	57;"	prototype	signature:(unsigned int val, char *buffer, uint8_t size)
-lcd_drawIcon	hardware\lcd.c	431;"	function	signature:(uint32_t xPosition, uint32_t yPosition, const ImageData *pImage, uint8_t update)
+lcd_drawIcon	hardware\lcd.c	434;"	function	signature:(uint32_t xPosition, uint32_t yPosition, const ImageData *pImage, uint8_t update)
 lcd_drawIcon	hardware\lcd.h	65;"	prototype	signature:(uint32_t xPosition, uint32_t yPosition, const ImageData *pImage, uint8_t update)
-lcd_drawIconWrap	hardware\lcd.c	496;"	function	signature:(uint32_t xPosition, uint32_t yPosition, const ImageData *pImage, uint8_t update)
+lcd_drawIconPage	hardware\lcd.c	569;"	function	signature:(uint8_t page, uint8_t offset, const ImageDataVertical *pImage)
+lcd_drawIconPage	hardware\lcd.h	67;"	prototype	signature:(uint8_t page, uint8_t offset, const ImageDataVertical *pImage)
+lcd_drawIconWrap	hardware\lcd.c	499;"	function	signature:(uint32_t xPosition, uint32_t yPosition, const ImageData *pImage, uint8_t update)
 lcd_drawIconWrap	hardware\lcd.h	66;"	prototype	signature:(uint32_t xPosition, uint32_t yPosition, const ImageData *pImage, uint8_t update)
-lcd_drawString	hardware\lcd.c	251;"	function	signature:(uint8_t row, uint8_t col, char *myString)
+lcd_drawString	hardware\lcd.c	254;"	function	signature:(uint8_t row, uint8_t col, char *myString)
 lcd_drawString	hardware\lcd.h	54;"	prototype	signature:(uint8_t row, uint8_t col, char *myString)
-lcd_drawStringLength	hardware\lcd.c	289;"	function	signature:(uint8_t row, uint8_t col, char *mystring, uint8_t length)
+lcd_drawStringLength	hardware\lcd.c	292;"	function	signature:(uint8_t row, uint8_t col, char *mystring, uint8_t length)
 lcd_drawStringLength	hardware\lcd.h	55;"	prototype	signature:(uint8_t row, uint8_t col, char *mystring, uint8_t length)
-lcd_dummyDelay	hardware\lcd.c	66;"	function	signature:(unsigned long delay)
+lcd_dummyDelay	hardware\lcd.c	69;"	function	signature:(unsigned long delay)
 lcd_dummyDelay	hardware\lcd.h	39;"	prototype	signature:(unsigned long delay)
-lcd_init	hardware\lcd.c	30;"	function	signature:(void)
+lcd_init	hardware\lcd.c	33;"	function	signature:(void)
 lcd_init	hardware\lcd.h	38;"	prototype	signature:(void)
-lcd_putPixelRam	hardware\lcd.c	373;"	function	signature:(uint16_t x, uint16_t y, uint8_t color, uint8_t update)
+lcd_putPixelRam	hardware\lcd.c	376;"	function	signature:(uint16_t x, uint16_t y, uint8_t color, uint8_t update)
 lcd_putPixelRam	hardware\lcd.h	61;"	prototype	signature:(uint16_t x, uint16_t y, uint8_t color, uint8_t update)
-lcd_reset	hardware\lcd.c	77;"	function	signature:(void)
+lcd_reset	hardware\lcd.c	80;"	function	signature:(void)
 lcd_reset	hardware\lcd.h	40;"	prototype	signature:(void)
-lcd_setColumn	hardware\lcd.c	118;"	function	signature:(uint8_t column)
+lcd_setColumn	hardware\lcd.c	121;"	function	signature:(uint8_t column)
 lcd_setColumn	hardware\lcd.h	46;"	prototype	signature:(uint8_t column)
-lcd_setPage	hardware\lcd.c	109;"	function	signature:(uint8_t page)
+lcd_setPage	hardware\lcd.c	112;"	function	signature:(uint8_t page)
 lcd_setPage	hardware\lcd.h	45;"	prototype	signature:(uint8_t page)
-lcd_updateFrameBuffer	hardware\lcd.c	221;"	function	signature:(void)
+lcd_updateFrameBuffer	hardware\lcd.c	224;"	function	signature:(void)
 lcd_updateFrameBuffer	hardware\lcd.h	52;"	prototype	signature:(void)
-lcd_writeCommand	hardware\lcd.c	85;"	function	signature:(uint8_t cmd)
+lcd_writeCommand	hardware\lcd.c	88;"	function	signature:(uint8_t cmd)
 lcd_writeCommand	hardware\lcd.h	41;"	prototype	signature:(uint8_t cmd)
-lcd_writeData	hardware\lcd.c	91;"	function	signature:(uint8_t data)
+lcd_writeData	hardware\lcd.c	94;"	function	signature:(uint8_t data)
 lcd_writeData	hardware\lcd.h	42;"	prototype	signature:(uint8_t data)
-lcd_writeDataBurst	hardware\lcd.c	97;"	function	signature:(uint8_t *data, uint16_t length)
+lcd_writeDataBurst	hardware\lcd.c	100;"	function	signature:(uint8_t *data, uint16_t length)
 lcd_writeDataBurst	hardware\lcd.h	43;"	prototype	signature:(uint8_t *data, uint16_t length)
-length	sound\sound.h	14;"	member	struct:__anon8
-lives	game\game.h	47;"	member	struct:__anon1
-mBall	game\game.c	23;"	variable
+length	main.c	31;"	variable	file:
+length	sound\sound.h	14;"	member	struct:__anon9
+lives	game\game.h	51;"	member	struct:__anon1
+mBall	game\game.c	24;"	variable
 mButtonFlag	hardware\button.c	17;"	variable
-mPlayer	game\game.c	22;"	variable
+mGameMode	game\game.c	30;"	variable	file:
+mPlayer	game\game.c	23;"	variable
 mSoundCounter	sound\sound.c	20;"	variable	file:
 mSoundCurrent	sound\sound.c	25;"	variable
 mSoundEnable	sound\sound.c	23;"	variable
 mSoundLoopCounter	sound\sound.c	21;"	variable	file:
+mSoundOn	sound\sound.c	26;"	variable	file:
 mSoundOverwriteFlag	sound\sound.c	24;"	variable
-mTile	game\game.c	24;"	variable
-main	main.c	34;"	function
+mTile	game\game.c	25;"	variable
+main	main.c	38;"	function
+numPages	display\bitmap.h	36;"	member	struct:ImageDataVertical
 offsetof	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	23;"	macro
-pImageData	display\bitmap.h	22;"	member	struct:ImageData
-pSoundData	sound\sound.h	15;"	member	struct:__anon8
+pImageData	display\bitmap.h	24;"	member	struct:ImageData
+pImageData	display\bitmap.h	37;"	member	struct:ImageDataVertical
+pSoundData	sound\sound.h	15;"	member	struct:__anon9
 pSoundSquare_4ms_1000hz	sound\wavsquare.c	50;"	variable
 pSoundSquare_4ms_1800hz	sound\wavsquare.c	66;"	variable
 pSoundSquare_4ms_250hz	sound\wavsquare.c	17;"	variable
 pSoundSquare_4ms_2600hz	sound\wavsquare.c	83;"	variable
 pSoundSquare_4ms_500hz	sound\wavsquare.c	33;"	variable
 pSoundValue	sound\sound.c	22;"	variable
-points	game\game.h	106;"	member	struct:__anon6
+points	game\game.h	113;"	member	struct:__anon7
+printBuffer	main.c	32;"	variable	file:
 printf	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	17;"	prototype	signature:(char *format, ...)
 ptrdiff_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	17;"	typedef
 putchar	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	18;"	prototype	signature:(char c)
 puts	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	19;"	prototype	signature:(char *s)
+remaining	main.c	34;"	variable	file:
 scanf	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	20;"	prototype	signature:(char *format, ...)
-sizeX	game\game.h	103;"	member	struct:__anon6
-sizeX	game\game.h	45;"	member	struct:__anon1
-sizeX	game\game.h	92;"	member	struct:__anon5
-sizeY	game\game.h	104;"	member	struct:__anon6
-sizeY	game\game.h	46;"	member	struct:__anon1
-sizeY	game\game.h	93;"	member	struct:__anon5
+sizeX	game\game.h	110;"	member	struct:__anon7
+sizeX	game\game.h	49;"	member	struct:__anon1
+sizeX	game\game.h	99;"	member	struct:__anon6
+sizeY	game\game.h	100;"	member	struct:__anon6
+sizeY	game\game.h	111;"	member	struct:__anon7
+sizeY	game\game.h	50;"	member	struct:__anon1
 size_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	9;"	typedef
 size_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	10;"	typedef
 soundSquare_4ms_1000hz	sound\wavsquare.c	57;"	variable
@@ -576,7 +657,7 @@ soundSquare_4ms_1800hz	sound\wavsquare.c	74;"	variable
 soundSquare_4ms_250hz	sound\wavsquare.c	24;"	variable
 soundSquare_4ms_2600hz	sound\wavsquare.c	92;"	variable
 soundSquare_4ms_500hz	sound\wavsquare.c	40;"	variable
-speed	game\game.h	94;"	member	struct:__anon5
+speed	game\game.h	101;"	member	struct:__anon6
 sprintf	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	22;"	prototype	signature:(char *s, char *format, ...)
 sscanf	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdio.h	21;"	prototype	signature:(char *s, char *format, ...)
 system_clock_config	hardware\system.c	49;"	function	signature:(void)
@@ -592,6 +673,7 @@ system_peripheral_clock_config	hardware\system.h	14;"	prototype	signature:(void)
 timerTick	hardware\timer.c	22;"	variable
 timer_delay_ms	hardware\timer.c	27;"	function	signature:(unsigned long delay)
 timer_delay_ms	hardware\timer.h	11;"	prototype	signature:(unsigned long delay)
+toggle	main.c	33;"	variable	file:
 uint16_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	13;"	typedef
 uint16_t	hardware\register.h	14;"	macro
 uint32_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	14;"	typedef
@@ -605,12 +687,12 @@ uint_least32_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxs
 uint_least8_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	21;"	typedef
 uintmax_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	42;"	typedef
 uintptr_t	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	37;"	typedef
-x	game\game.h	101;"	member	struct:__anon6
-x	game\game.h	43;"	member	struct:__anon1
-x	game\game.h	90;"	member	struct:__anon5
-x100u	hardware\lcd.c	24;"	variable
-xSize	display\bitmap.h	18;"	member	struct:ImageData
-y	game\game.h	102;"	member	struct:__anon6
-y	game\game.h	44;"	member	struct:__anon1
-y	game\game.h	91;"	member	struct:__anon5
-ySize	display\bitmap.h	19;"	member	struct:ImageData
+x	game\game.h	108;"	member	struct:__anon7
+x	game\game.h	47;"	member	struct:__anon1
+x	game\game.h	97;"	member	struct:__anon6
+xSize	display\bitmap.h	20;"	member	struct:ImageData
+xSize	display\bitmap.h	35;"	member	struct:ImageDataVertical
+y	game\game.h	109;"	member	struct:__anon7
+y	game\game.h	48;"	member	struct:__anon1
+y	game\game.h	98;"	member	struct:__anon6
+ySize	display\bitmap.h	21;"	member	struct:ImageData

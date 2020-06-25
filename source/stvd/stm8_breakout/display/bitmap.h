@@ -12,7 +12,9 @@
 
 #include "register.h"
 
-
+////////////////////////////////////////
+//ImageData
+//Assumes aligned horizontal
 typedef struct ImageData
 {
     uint8_t xSize;              // pixels in x-direction
@@ -25,10 +27,26 @@ typedef struct ImageData
 typedef struct ImageData ImageData;
 
 
-extern const ImageData bmimgPlayerIcon_1;
-extern const ImageData bmimgPlayerIcon_2;
-extern const ImageData bmimgPlayerIcon_3;
+//////////////////////////////////////////
+//ImageDataVertical
+//Assumes aligned top to bottom, LSB first
+typedef struct ImageDataVertical
+{
+    uint8_t xSize;              // pixels in x-direction
+    uint8_t numPages;           // num pages
+    const uint8_t * const pImageData;
+};
+
+typedef struct ImageDataVertical ImageDataVertical;
+
+
+
+extern const ImageDataVertical bmimgPlayerIcon_1;
+extern const ImageDataVertical bmimgPlayerIcon_2;
+extern const ImageDataVertical bmimgPlayerIcon_3;
+
 extern const ImageData bmimgPlayer_24;
+extern const ImageData bmimgPlayer_16;
 extern const ImageData bmimgBall_8;
 extern const ImageData bmimgTile_8;
 extern const ImageData bmimgTileBlank_8;

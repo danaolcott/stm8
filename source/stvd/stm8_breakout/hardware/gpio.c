@@ -179,7 +179,6 @@ void GPIO_EXTI5_ISR(void)
 {
     //do something
     EXTI_SR1 |= BIT_5;          //clear the interrupt
-    Button_setFlag(BUTTON_USER);    
-        
+    Button_setFlag(BUTTON_USER);
 }
 

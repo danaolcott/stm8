@@ -562,6 +562,39 @@ void lcd_drawIconWrap(uint32_t xPosition, uint32_t yPosition, const ImageData *p
 
 
 
+/////////////////////////////////////////////////////////
+//lcd_drawIconPage()
+//Draws image directly to the screen.  Images assumed vertically
+//aligned, just like characters.  Does not use the framebuffer
+void lcd_drawIconPage(uint8_t page, uint8_t offset, const ImageDataVertical *pImage)
+{
+    uint8_t width = pImage->xSize;
+    uint8_t numPages = pImage->numPages;
+    uint8_t i, j = 0;
+    uint8_t* data = pImage->pImageData;
+    
+    lcd_setPage(page);
+    lcd_setColumn(offset);
+    
+    for (i = 0 ; i < numPages ; i++)
+    {
+        lcd_setColumn(offset);              //reset the x
+        
+        for (j = 0 ; j < width ; j++)
+        {
+            lcd_writeData(*data);
+            data++;
+        }
+        
+        //increment the page
+        lcd_setPage(page + i + 1);          //increment the page
+    }    
+}
+
+
+
+
+
 
 
 

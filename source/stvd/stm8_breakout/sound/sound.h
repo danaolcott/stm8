@@ -33,7 +33,12 @@ void Sound_playBallBounceWall(void);
 void Sound_playBallBounceTile(void);
 void Sound_playBallBouncePlayer(void);
 void Sound_playBallMissed(void);
+void Sound_playLevelUp(void);
+void Sound_playGameOver(void);
 
+void Sound_on(void);
+void Sound_off(void);
+void Sound_toggle(void);
 
 #endif
 

@@ -27,33 +27,31 @@
 
 
 /////////////////////////////////////////////////
-//Player icons - 3 players
+//Player icons - 3 players - vertically aligned
 const uint8_t _acimgPlayerIcon_3[] = 
 {
 0xFF, 0x00, 0x00, 0xFF, 0x00, 0x00, 0xFF, 0x00
 };
 
-const ImageData bmimgPlayerIcon_3 = {
+const ImageDataVertical bmimgPlayerIcon_3 = {
 	8,
-	8,
-    1,
-    1,
+	1,
 	(uint8_t*)_acimgPlayerIcon_3,
 };
 
 
+  
+
 
 /////////////////////////////////////////////////
-//Player icons - 2 players
+//Player icons - 2 players - vertically aligned
 const uint8_t _acimgPlayerIcon_2[] = 
 {
 0x00, 0x00, 0xFF, 0x00, 0x00, 0xFF, 0x00, 0x00
 };
 
-const ImageData bmimgPlayerIcon_2 = {
+const ImageDataVertical bmimgPlayerIcon_2 = {
 	8,
-	8,
-    1,
     1,
 	(uint8_t*)_acimgPlayerIcon_2,
 };
@@ -61,16 +59,14 @@ const ImageData bmimgPlayerIcon_2 = {
 
 
 /////////////////////////////////////////////////
-//Player icons - 1 players
+//Player icons - 1 players - vertically aligned
 const uint8_t _acimgPlayerIcon_1[] = 
 {
 0x00, 0x00, 0x00, 0xFF, 0x00, 0x00, 0x00, 0x00
 };
 
-const ImageData bmimgPlayerIcon_1 = {
+const ImageDataVertical bmimgPlayerIcon_1 = {
 	8,
-	8,
-    1,
     1,
 	(uint8_t*)_acimgPlayerIcon_1,
 };
@@ -89,6 +85,22 @@ const ImageData bmimgPlayer_24 = {
     3,
     1,
     (uint8_t*)_player_24,
+};
+
+
+////////////////////////////////////////////
+//Player - Simple solid line, 16 pixels
+//wide by 2 pixels high, drawn left to right
+const uint8_t _player_16[] = {
+0xFF, 0xFF, 0xFF, 0xFF    
+};
+
+const ImageData bmimgPlayer_16 = {
+    16,
+    2,
+    2,
+    1,
+    (uint8_t*)_player_16,
 };
 
 
