@@ -1,0 +1,59 @@
+;	STMicroelectronics dependencies file
+
+[Version]
+Keyword=ST7Project
+Number=1.3
+
+[Root.Source Files.main.c.Config.0]
+ExternDep= main.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"  hardware\system.h hardware\gpio.h hardware\spi.h hardware\lcd.h  display\bitmap.h hardware\timer.h hardware\dac.h sound\sound.h  hardware\button.h hardware\eeprom.h qpn\qpn_port.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdbool.h"  qpn\qepn.h qpn\qfn.h qpn\qassert.h main.h bsp\bsp.h
+
+[Root.Source Files.stm8_interrupt_vector.c.Config.0]
+ExternDep= stm8_interrupt_vector.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl0.h"  hardware\gpio.h hardware\timer.h
+
+[Root.bsp.bsp\bsp.c.Config.0]
+ExternDep= bsp\bsp.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl0.h"  qpn\qpn_port.h hardware\system.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdbool.h"  qpn\qepn.h qpn\qfn.h qpn\qassert.h bsp\bsp.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"
+
+[Root.display.display\font_table.c.Config.0]
+ExternDep= display\font_table.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl0.h"  hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"  display\font_table.h
+
+[Root.hardware.hardware\button.c.Config.0]
+ExternDep= hardware\button.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  hardware\register.h hardware\button.h
+
+[Root.hardware.hardware\dac.c.Config.0]
+ExternDep= hardware\dac.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  hardware\register.h hardware\dac.h
+
+[Root.hardware.hardware\eeprom.c.Config.0]
+ExternDep= hardware\eeprom.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  hardware\register.h hardware\eeprom.h hardware\gpio.h
+
+[Root.hardware.hardware\gpio.c.Config.0]
+ExternDep= hardware\gpio.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  hardware\register.h hardware\gpio.h hardware\button.h
+
+[Root.hardware.hardware\lcd.c.Config.0]
+ExternDep= hardware\lcd.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  hardware\register.h hardware\lcd.h display\bitmap.h hardware\spi.h  display\font_table.h
+
+[Root.hardware.hardware\spi.c.Config.0]
+ExternDep= hardware\spi.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  hardware\register.h hardware\spi.h
+
+[Root.hardware.hardware\system.c.Config.0]
+ExternDep= hardware\system.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl0.h"  hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"
+
+[Root.hardware.hardware\timer.c.Config.0]
+ExternDep= hardware\timer.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  hardware\register.h hardware\timer.h hardware\system.h sound\sound.h  qpn\qpn_port.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdbool.h"  qpn\qepn.h qpn\qfn.h qpn\qassert.h
+
+[Root.objects.objects\ao_blinky.c.Config.0]
+ExternDep= objects\ao_blinky.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl0.h"  qpn\qpn_port.h hardware\system.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdbool.h"  qpn\qepn.h qpn\qfn.h qpn\qassert.h bsp\bsp.h main.h hardware\gpio.h
+
+[Root.objects.objects\ao_button.c.Config.0]
+ExternDep= objects\ao_button.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl0.h"  qpn\qpn_port.h hardware\system.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdbool.h"  qpn\qepn.h qpn\qfn.h qpn\qassert.h bsp\bsp.h main.h hardware\button.h  hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"
+
+[Root.qpn.qpn\qepn.c.Config.0]
+ExternDep= qpn\qepn.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl0.h"  qpn\qpn_port.h hardware\system.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdbool.h"  qpn\qepn.h qpn\qfn.h qpn\qassert.h
+
+[Root.qpn.qpn\qfn.c.Config.0]
+ExternDep= qpn\qfn.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl0.h"  qpn\qpn_port.h hardware\system.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdbool.h"  qpn\qepn.h qpn\qfn.h qpn\qassert.h
+
+[Root.sound.sound\sound.c.Config.0]
+ExternDep= sound\sound.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  hardware\register.h sound\sound.h hardware\dac.h hardware\timer.h
+
+[Root.sound.sound\wavsquare.c.Config.0]
+ExternDep= sound\wavsquare.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\modsl0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  sound\sound.h
