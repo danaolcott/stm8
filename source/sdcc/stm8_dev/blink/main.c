@@ -1,27 +1,12 @@
 /*
+Dana Olcott
+June 29, 2020
 STM8 Development Board - Blink Project
 The purpose of this project is to flash the 
 leds on the STM8 developent board by Danasboatshop.com
 
-Project that initializes various peripherals on the 
-STM8L151K6 processor.  The pinouts are shown on the 
-STM8 devboard from DanasBoatshop.com.  A schematic is shown in the
-Github repository.  This project will implement many of the 
-peripherals and build a simple game Space Invaders.
-
-Note: Many of the game files sounds, images, etc are used
-from the MC9S08QE8 dev board project.
-
-Several of the peripherals are listed below:
-
-User LEDs - red and green
-User Button - button - right
-Joystick - up/down/left/right/center
-LCD, SPI enabled + 2 GPIOs, 102x64
-ADC Temp sensors - 2 - using temp sensor and thermistor
-DAC output - used for sound output
-Timer output - system timer, 1khz, and sound timer 11khz
-I2C output for use with BME280 breakout board - to be installed
+Project that initializes leds red and green as outputs
+and timers TIM2 and TIM4 to flash the LEDs.
 
 
 */
