@@ -64,18 +64,17 @@ main()
     BMP280_read(&bmpData);      //initial readings
     
     //read the base pressure from eeprom
+    BMP280_getBasePressure(&basePressure);
 
 	while (1)
     {
-        
-        
         //poll button push for update base pressure
         //user button and center updates and writes to eeprom
-        if ((!(PD_IDR & BIT_1)) && (!(PD_IDR & BIT_1))) 
+        if ((!(PD_IDR & BIT_1)) && (!(PD_IDR & BIT_5))) 
         {
             basePressure = bmpData.cPressurePa;
             
-            //write the updated base pressure to eeprom
+            BMP280_setBasePressure(basePressure);
             
             GPIO_led_red_toggle();
             timer_delay_ms(100);
@@ -90,22 +89,38 @@ main()
         
         //write the pressure and temp to the lcd
         lcd_clear(0x00);
-            
-        lcd_drawString(1, 0, "T:");
+
+        //temperature
+        lcd_drawString(0, 0, "T:");
         length = lcd_decimalToBuffer((uint16_t)bmpData.cTemperatureF, printBuffer, 16);
-        lcd_drawStringLength(1, 16, printBuffer, 16);
+        lcd_drawStringLength(0, 16, printBuffer, 16);
         
-        lcd_drawString(2, 0, "P:");
+        //pressure
+        lcd_drawString(1, 0, "P:");
         pInt = ((uint16_t)(bmpData.cPressurePa / 1000));
         pFrac = ((uint16_t)(bmpData.cPressurePa % 1000));
                 
         length = lcd_decimalToBuffer(pInt, printBuffer, 16);
-        lcd_drawStringLength(2, 16, printBuffer, length);
+        lcd_drawStringLength(1, 16, printBuffer, length);
         
-        lcd_drawString(2, 40, ".");
+        lcd_drawString(1, 40, ".");
         length = lcd_decimalToBuffer(pFrac, printBuffer, 16);
-        lcd_drawStringLength(2, 48, printBuffer, length);
+        lcd_drawStringLength(1, 48, printBuffer, length);
         
+        //basepressure
+        lcd_drawString(3, 0, "BP:");
+        pInt = ((uint16_t)(basePressure / 1000));
+        pFrac = ((uint16_t)(basePressure % 1000));
+                
+        length = lcd_decimalToBuffer(pInt, printBuffer, 16);
+        lcd_drawStringLength(3, 24, printBuffer, length);
+        
+        lcd_drawString(3, 48, ".");
+        length = lcd_decimalToBuffer(pFrac, printBuffer, 16);
+        lcd_drawStringLength(3, 56, printBuffer, length);
+        
+        
+        //elevation
         lcd_drawString(4, 0, "FT:");
         if (deltaFt < 0)
         {

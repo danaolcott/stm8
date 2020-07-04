@@ -20,6 +20,7 @@
 
 #include "BMP280.h"
 #include "i2c.h"
+#include "eeprom.h"
 
 /////////////////////////////////////////////////////////
 static void BMP280_dummyDelay(uint32_t delay);
@@ -136,6 +137,50 @@ void BMP280_read(BMP280_Data *result)
 
 	result->cTemperatureF = cTemperatureF / 100;
     result->cPressurePa = cPressure;
+}
+
+
+
+///////////////////////////////////////////////
+//Stores a baseline pressure reading in EEPROM
+void BMP280_setBasePressure(uint32_t pressure)
+{
+    uint8_t byte0;
+    uint8_t byte1;
+    uint8_t byte2;
+    uint8_t byte3;
+
+    byte0 = (uint8_t)(pressure & 0xFF);
+    byte1 = (uint8_t)((pressure >> 8) & 0xFF);
+    byte2 = (uint8_t)((pressure >> 16) & 0xFF);
+    byte3 = (uint8_t)((pressure >> 24) & 0xFF);
+    
+    EEPROM_write(EEPROM_ADDRESS_BASE_PRESS_BYTE_0, byte0);
+    EEPROM_write(EEPROM_ADDRESS_BASE_PRESS_BYTE_1, byte1);
+    EEPROM_write(EEPROM_ADDRESS_BASE_PRESS_BYTE_2, byte2);
+    EEPROM_write(EEPROM_ADDRESS_BASE_PRESS_BYTE_3, byte3);
+
+}
+
+///////////////////////////////////////////////
+//Reads a baseline pressure reading from EEPROM
+//and saves to the basePressure global
+void BMP280_getBasePressure(uint32_t* pressure)
+{
+    unsigned long byte0;
+    unsigned long byte1;
+    unsigned long byte2;
+    unsigned long byte3;
+    unsigned long result = 0;
+    
+    byte0 = (unsigned long)(EEPROM_read(EEPROM_ADDRESS_BASE_PRESS_BYTE_0)) & 0xFF;
+    byte1 = (unsigned long)(EEPROM_read(EEPROM_ADDRESS_BASE_PRESS_BYTE_1)) & 0xFF;
+    byte2 = (unsigned long)(EEPROM_read(EEPROM_ADDRESS_BASE_PRESS_BYTE_2)) & 0xFF;
+    byte3 = (unsigned long)(EEPROM_read(EEPROM_ADDRESS_BASE_PRESS_BYTE_3)) & 0xFF;
+    
+    result = (byte3 << 24) | (byte2 << 16) | (byte1 << 8) | (byte0);
+    
+    *pressure = result;
 }
 
 

@@ -24,15 +24,11 @@
 #include <stdint.h>
 #include "register.h"
 
-
 //datatypes - for use in mfg compensation equations
 #define BMP280_S32_t			signed long
 #define BMP280_U32_t			unsigned long
 
-
-
 #define BMP280_I2C_ADDRESS		(uint8_t)(0x76)     //not upshifted
-
 
 #define BMP280_REG_TEMP_XLSB	0xFC
 #define BMP280_REG_TEMP_LSB		0xFB
@@ -83,6 +79,9 @@ void BMP280_init(void);
 void BMP280_reset(void);
 uint8_t BMP280_readChipID(void);
 void BMP280_read(BMP280_Data *result);
+void BMP280_setBasePressure(uint32_t pressure);
+void BMP280_getBasePressure(uint32_t* pressure);
+
 
 void BMP280_sleep(void);
 void BMP280_wakeup(void);

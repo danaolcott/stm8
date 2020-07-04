@@ -21,6 +21,12 @@ EEPROM Controller File
 #define EEPROM_ADDRESS_HIGH_SCORE_MSB           ((uint16_t)0x04)
 #define EEPROM_ADDRESS_HIGH_SCORE_LSB           ((uint16_t)0x05)
 
+#define EEPROM_ADDRESS_BASE_PRESS_BYTE_0        ((uint16_t)0x10)
+#define EEPROM_ADDRESS_BASE_PRESS_BYTE_1        ((uint16_t)0x11)
+#define EEPROM_ADDRESS_BASE_PRESS_BYTE_2        ((uint16_t)0x12)
+#define EEPROM_ADDRESS_BASE_PRESS_BYTE_3        ((uint16_t)0x13)
+
+
 
 void EEPROM_delay(uint16_t delay);
 void EEPROM_init(void);
@@ -36,7 +42,8 @@ uint16_t EEPROM_readCycleCount(void);
 uint16_t EEPROM_getHighScore(void);
 void EEPROM_updateHighScore(uint16_t score);
 
-
+void EEPROM_getBasePressure(unsigned long *pressure);
+void EEPROM_setBasePressure(unsigned long pressure);
 
 #endif
 
