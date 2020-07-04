@@ -50,6 +50,11 @@ stm8_qpn
 --------
 Using QP Nano on the STM8 development board.  The project was originally written for the MSP430 processor and modified to work with the STM8 processor.  It contains two objects, blinky LED and a button.  Press the button to send message to blinky object to toggle between 2 states.  One state also plays a tone on the speaker.  The port of QPN is at least 1 year old, so Im' sure there is a newer QPN library, and will likely get used in subsequent projects.
 
+stm8_dev_i2c
+------------
+A simple i2c project that uses the BMP280 temperature/pressure sensor.  Reads the temperature and pressure and displays on the LCD.  Changes in pressure are used to track changes in elevation using a simple coorelation of about 3pa / ft.  Press the user button and center button to update a baseline pressure and reset the current base elevation.
+
+
 
 ![alt text](https://raw.githubusercontent.com/danaolcott/stm8/master/source/stvd/stm8devboard_schematics/stm8_dev2.jpg)
 
