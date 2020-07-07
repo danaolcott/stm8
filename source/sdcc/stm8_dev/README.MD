@@ -5,4 +5,5 @@ Projects in this folder are intended to be used with the development board from 
 
 * blink - A simple project that blinks two leds.
 * sound - makes a sound if you push the joystick up, down, left, right.  Uses a timer and dac output to make the sound.
+* display - Draw lines on display, flash leds, play sound
 
