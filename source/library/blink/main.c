@@ -34,6 +34,7 @@ user button, polling and interrupt, spi output, ...etc
 
 
 #include "stm8l15x.h"
+#include "main.h"
 
 /** @addtogroup STM8L15x_StdPeriph_Template
   * @{
@@ -49,9 +50,13 @@ user button, polling and interrupt, spi output, ...etc
 
 void delay(uint32_t time);
 void gpio_init(void);
+void tim2_init(void);
+void clock_init(void);
 void interrupt_enable(void);
 void interrupt_disable(void);
 
+
+volatile uint32_t gTimerTick = 0x00;
 
 /**
   * @brief  Main program.
@@ -64,7 +69,9 @@ void main(void)
     interrupt_disable();
     
     //configure peripherals
+    clock_init();
     gpio_init();
+    tim2_init();
     
     //enable global interrupts
     interrupt_enable();
@@ -72,8 +79,8 @@ void main(void)
     /* Infinite loop */
     while (1)
     {
-        GPIO_ToggleBits(GPIOB, GPIO_Pin_6);
-        delay(50000);
+        GPIO_ToggleBits(GPIOB, GPIO_Pin_5);
+        delay(500);
     }
 }
 
@@ -82,11 +89,11 @@ void main(void)
 
 
 ////////////////////////////////////////////
+//Delay ms
 void delay(uint32_t time)
 {
-    volatile uint32_t temp = time;
-    while (temp > 0)
-        temp--;
+    volatile uint32_t temp = gTimerTick + time;
+    while (gTimerTick < temp);
 }
 
 
@@ -123,6 +130,36 @@ void gpio_init(void)
 
 
 
+/////////////////////////////////////////////
+//Configure timer2 to timeout at 1ms and 
+//generate an interrupt
+//Assuming base clock = 1mhz, prescale = 2, period of 
+//(clock / 1000) - 1 gives a timeout at 1ms. 
+void tim2_init(void)
+{
+    uint16_t period = 999;
+    TIM2_DeInit();
+    
+    //enable internal clock
+    TIM2_InternalClockConfig();
+    TIM2_TimeBaseInit(TIM2_Prescaler_2, TIM2_CounterMode_Up, period);
+    
+    //configure interrupt - see stm8_interrupt_vector.c
+    TIM2_ITConfig(TIM2_IT_Update, ENABLE);
+
+    //start the timer
+    TIM2_Cmd(ENABLE);
+}
+
+
+////////////////////////////////////////////
+//Configure main clocks and enable the
+//peripheral clocks
+void clock_init(void)
+{
+    CLK_PeripheralClockConfig(CLK_Peripheral_TIM2, ENABLE);
+}
+
 ////////////////////////////////////////////
 //Enable global interrupts
 void interrupt_enable(void)
@@ -137,6 +174,14 @@ void interrupt_disable(void)
     _asm("SIM");
 }
 
+
+void tim2_isr(void)
+{
+    //clear the interrupt
+    TIM2_ClearITPendingBit(TIM2_IT_Update);
+
+    gTimerTick++;
+}
 
 
 

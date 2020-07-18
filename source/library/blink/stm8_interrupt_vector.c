@@ -3,7 +3,7 @@
  */
  
 #include "stm8l15x_it.h"
- 
+#include "main.h"
 
 typedef void @far (*interrupt_handler_t)(void);
 
@@ -69,7 +69,17 @@ typedef void @far (*interrupt_handler_t)(void);
 @far @interrupt void LCD_AES_IRQHandler(void){return;} /* LCD /AES */
 @far @interrupt void SWITCH_CSS_BREAK_DAC_IRQHandler(void){return;} /* Switch CLK/CSS/TIM1 Break/DAC */
 @far @interrupt void ADC1_COMP_IRQHandler(void){return;} /*ADC1/COMP*/
-@far @interrupt void TIM2_UPD_OVF_TRG_BRK_USART2_TX_IRQHandler(void){return;}/* TIM2 UPD/OVF/TRG/BRK / USART2 TX */
+
+/* TIM2 UPD/OVF/TRG/BRK / USART2 TX */
+//Timer 2 Interrupt
+@far @interrupt void TIM2_UPD_OVF_TRG_BRK_USART2_TX_IRQHandler(void)
+{    
+    tim2_isr();
+    
+    return;
+}
+
+
 @far @interrupt void TIM2_CC_USART2_RX_IRQHandler(void){return;} /* TIM2 CAP / USART2 RX */
 @far @interrupt void TIM3_UPD_OVF_TRG_BRK_USART3_TX_IRQHandler(void){return;} /* TIM3 UPD/OVF/TRG/BRK /USART3 TX*/
 @far @interrupt void TIM3_CC_USART3_RX_IRQHandler(void){return;} /* TIM3 CAP/ USART3 RX */
