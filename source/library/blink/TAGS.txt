@@ -1447,7 +1447,7 @@ HTRL	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2322;"	member	struct:ADC_struct
 I2C1	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2870;"	macro
 I2C1_BASE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2822;"	macro
 I2C1_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	82;"	enumerator	enum:__anon85
-I2C1_SPI2_IRQHandler	stm8_interrupt_vector.c	96;"	function	signature:(void)
+I2C1_SPI2_IRQHandler	stm8_interrupt_vector.c	92;"	function	signature:(void)
 I2C_ARPCmd	..\stm8l15x_stdperiph_driver\inc\stm8l15x_i2c.h	665;"	prototype	signature:(I2C_TypeDef* I2Cx, FunctionalState NewState)
 I2C_ARPCmd	..\stm8l15x_stdperiph_driver\src\stm8l15x_i2c.c	446;"	function	signature:(I2C_TypeDef* I2Cx, FunctionalState NewState)
 I2C_AckPositionConfig	..\stm8l15x_stdperiph_driver\inc\stm8l15x_i2c.h	671;"	prototype	signature:(I2C_TypeDef* I2Cx, I2C_AckPosition_TypeDef I2C_AckPosition)
@@ -2394,7 +2394,7 @@ NEAR	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	133;"	macro
 NEAR	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	139;"	macro
 NEAR	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	153;"	macro
 NOT_CORRECT_TAMPER	..\stm8l15x_stdperiph_driver\inc\stm8l15x_rtc.h	776;"	macro
-NonHandledInterrupt	stm8_interrupt_vector.c	104;"	function	signature:(void)
+NonHandledInterrupt	stm8_interrupt_vector.c	100;"	function	signature:(void)
 OAR1_ADD0_Reset	..\stm8l15x_stdperiph_driver\src\stm8l15x_i2c.c	109;"	macro	file:
 OAR1_ADD0_Set	..\stm8l15x_stdperiph_driver\src\stm8l15x_i2c.c	108;"	macro	file:
 OAR2	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1087;"	member	struct:I2C_struct
@@ -3140,7 +3140,7 @@ SMCR	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1962;"	member	struct:TIM_struct
 SMCR	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2144;"	member	struct:TIM4_struct
 SPI1	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2868;"	macro
 SPI1_BASE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2820;"	macro
-SPI1_IRQHandler	stm8_interrupt_vector.c	93;"	function	signature:(void)
+SPI1_IRQHandler	stm8_interrupt_vector.c	89;"	function	signature:(void)
 SPI1_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	67;"	enumerator	enum:__anon85
 SPI2	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2869;"	macro
 SPI2_BASE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2821;"	macro
@@ -3439,7 +3439,7 @@ TIM1_CCR4H_CCR4	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1920;"	macro
 TIM1_CCR4H_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1794;"	macro
 TIM1_CCR4L_CCR4	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1921;"	macro
 TIM1_CCR4L_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1795;"	macro
-TIM1_CC_IRQHandler	stm8_interrupt_vector.c	91;"	function	signature:(void)
+TIM1_CC_IRQHandler	stm8_interrupt_vector.c	87;"	function	signature:(void)
 TIM1_CC_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	79;"	enumerator	enum:__anon85
 TIM1_CCxCmd	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim1.h	972;"	prototype	signature:(TIM1_Channel_TypeDef TIM1_Channel, FunctionalState NewState)
 TIM1_CCxCmd	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim1.c	1468;"	function	signature:(TIM1_Channel_TypeDef TIM1_Channel, FunctionalState NewState)
@@ -3887,7 +3887,7 @@ TIM1_TRGSelection_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim1.h	358;"
 TIM1_TimeBaseInit	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim1.h	895;"	prototype	signature:(uint16_t TIM1_Prescaler, TIM1_CounterMode_TypeDef TIM1_CounterMode, uint16_t TIM1_Period, uint8_t TIM1_RepetitionCounter)
 TIM1_TimeBaseInit	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim1.c	241;"	function	signature:(uint16_t TIM1_Prescaler, TIM1_CounterMode_TypeDef TIM1_CounterMode, uint16_t TIM1_Period, uint8_t TIM1_RepetitionCounter)
 TIM1_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1761;"	typedef	typeref:struct:TIM1_struct
-TIM1_UPD_OVF_TRG_COM_IRQHandler	stm8_interrupt_vector.c	90;"	function	signature:(void)
+TIM1_UPD_OVF_TRG_COM_IRQHandler	stm8_interrupt_vector.c	86;"	function	signature:(void)
 TIM1_UPD_OVF_TRG_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	78;"	enumerator	enum:__anon85
 TIM1_UpdateDisableConfig	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim1.h	906;"	prototype	signature:(FunctionalState NewState)
 TIM1_UpdateDisableConfig	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim1.c	380;"	function	signature:(FunctionalState NewState)
@@ -3913,7 +3913,7 @@ TIM2_BreakState_Disable	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	174;"	e
 TIM2_BreakState_Enable	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	175;"	enumerator	enum:__anon196
 TIM2_BreakState_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	177;"	typedef	typeref:enum:__anon196
 TIM2_CC_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	75;"	enumerator	enum:__anon85
-TIM2_CC_USART2_RX_IRQHandler	stm8_interrupt_vector.c	87;"	function	signature:(void)
+TIM2_CC_USART2_RX_IRQHandler	stm8_interrupt_vector.c	83;"	function	signature:(void)
 TIM2_CCxCmd	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	840;"	prototype	signature:(TIM2_Channel_TypeDef TIM2_Channel, FunctionalState NewState)
 TIM2_CCxCmd	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim2.c	1074;"	function	signature:(TIM2_Channel_TypeDef TIM2_Channel, FunctionalState NewState)
 TIM2_Channel_1	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	119;"	enumerator	enum:__anon192
@@ -4163,7 +4163,7 @@ TIM3_BreakState_Disable	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim3.h	176;"	e
 TIM3_BreakState_Enable	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim3.h	177;"	enumerator	enum:__anon226
 TIM3_BreakState_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim3.h	178;"	typedef	typeref:enum:__anon226
 TIM3_CC_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	77;"	enumerator	enum:__anon85
-TIM3_CC_USART3_RX_IRQHandler	stm8_interrupt_vector.c	89;"	function	signature:(void)
+TIM3_CC_USART3_RX_IRQHandler	stm8_interrupt_vector.c	85;"	function	signature:(void)
 TIM3_CCxCmd	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim3.h	844;"	prototype	signature:(TIM3_Channel_TypeDef TIM3_Channel, FunctionalState NewState)
 TIM3_CCxCmd	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim3.c	1074;"	function	signature:(TIM3_Channel_TypeDef TIM3_Channel, FunctionalState NewState)
 TIM3_Channel_1	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim3.h	119;"	enumerator	enum:__anon222
@@ -4389,7 +4389,7 @@ TIM3_TRGSelection_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim3.h	337;"
 TIM3_TimeBaseInit	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim3.h	799;"	prototype	signature:(TIM3_Prescaler_TypeDef TIM3_Prescaler, TIM3_CounterMode_TypeDef TIM3_CounterMode, uint16_t TIM3_Period)
 TIM3_TimeBaseInit	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim3.c	231;"	function	signature:(TIM3_Prescaler_TypeDef TIM3_Prescaler, TIM3_CounterMode_TypeDef TIM3_CounterMode, uint16_t TIM3_Period)
 TIM3_UPD_OVF_TRG_BRK_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	76;"	enumerator	enum:__anon85
-TIM3_UPD_OVF_TRG_BRK_USART3_TX_IRQHandler	stm8_interrupt_vector.c	88;"	function	signature:(void)
+TIM3_UPD_OVF_TRG_BRK_USART3_TX_IRQHandler	stm8_interrupt_vector.c	84;"	function	signature:(void)
 TIM3_UpdateDisableConfig	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim3.h	809;"	prototype	signature:(FunctionalState NewState)
 TIM3_UpdateDisableConfig	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim3.c	396;"	function	signature:(FunctionalState NewState)
 TIM3_UpdateRequestConfig	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim3.h	810;"	prototype	signature:(TIM3_UpdateSource_TypeDef TIM3_UpdateSource)
@@ -4522,7 +4522,7 @@ TIM4_TRGSelection_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	196;"
 TIM4_TimeBaseInit	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	331;"	prototype	signature:(TIM4_Prescaler_TypeDef TIM4_Prescaler, uint8_t TIM4_Period)
 TIM4_TimeBaseInit	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim4.c	165;"	function	signature:(TIM4_Prescaler_TypeDef TIM4_Prescaler, uint8_t TIM4_Period)
 TIM4_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2153;"	typedef	typeref:struct:TIM4_struct
-TIM4_UPD_OVF_TRG_IRQHandler	stm8_interrupt_vector.c	92;"	function	signature:(void)
+TIM4_UPD_OVF_TRG_IRQHandler	stm8_interrupt_vector.c	88;"	function	signature:(void)
 TIM4_UPD_OVF_TRG_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	66;"	enumerator	enum:__anon85
 TIM4_UpdateDisableConfig	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	339;"	prototype	signature:(FunctionalState NewState)
 TIM4_UpdateDisableConfig	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim4.c	296;"	function	signature:(FunctionalState NewState)
@@ -4886,9 +4886,9 @@ UBC	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1361;"	member	struct:OPT_struct
 USART1	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2871;"	macro
 USART1_BASE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2823;"	macro
 USART1_RX_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	81;"	enumerator	enum:__anon85
-USART1_RX_TIM5_CC_IRQHandler	stm8_interrupt_vector.c	95;"	function	signature:(void)
+USART1_RX_TIM5_CC_IRQHandler	stm8_interrupt_vector.c	91;"	function	signature:(void)
 USART1_TX_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	80;"	enumerator	enum:__anon85
-USART1_TX_TIM5_UPD_OVF_TRG_BRK_IRQHandler	stm8_interrupt_vector.c	94;"	function	signature:(void)
+USART1_TX_TIM5_UPD_OVF_TRG_BRK_IRQHandler	stm8_interrupt_vector.c	90;"	function	signature:(void)
 USART2	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2872;"	macro
 USART2_BASE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2824;"	macro
 USART3	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2873;"	macro
@@ -5166,6 +5166,7 @@ _RAISONANCE_	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	89;"	macro
 __CONST	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	162;"	macro
 __I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	218;"	macro
 __IO	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	220;"	macro
+__MAIN_H	main.h	11;"	macro
 __MODS0__	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\mods0.h	11;"	macro
 __O	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	219;"	macro
 __STM8L15X_STDPERIPH_VERSION	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	198;"	macro
@@ -5204,40 +5205,41 @@ __STM8L15x_TIM5_H	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim5.h	31;"	macro
 __STM8L15x_USART_H	..\stm8l15x_stdperiph_driver\inc\stm8l15x_usart.h	31;"	macro
 __STM8L15x_WFE_H	..\stm8l15x_stdperiph_driver\inc\stm8l15x_wfe.h	31;"	macro
 __STM8L15x_WWDG_H	..\stm8l15x_stdperiph_driver\inc\stm8l15x_wwdg.h	31;"	macro
-_stext	stm8_interrupt_vector.c	112;"	prototype	file:
-_vectab	stm8_interrupt_vector.c	114;"	variable
-assert_failed	main.c	187;"	function	signature:(uint8_t* file, uint32_t line)
+_stext	stm8_interrupt_vector.c	108;"	prototype	file:
+_vectab	stm8_interrupt_vector.c	110;"	variable
+assert_failed	main.c	199;"	function	signature:(uint8_t* file, uint32_t line)
 assert_failed	stm8l15x_conf.h	78;"	prototype	signature:(uint8_t* file, uint32_t line)
 assert_param	stm8l15x_conf.h	76;"	macro
 assert_param	stm8l15x_conf.h	80;"	macro
 bool	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	243;"	typedef	typeref:enum:__anon1
-clock_init	main.c	154;"	function	signature:(void)
-clock_init	main.c	53;"	prototype	file:	signature:(void)
-delay	main.c	50;"	prototype	file:	signature:(uint32_t time)
-delay	main.c	89;"	function	signature:(uint32_t time)
+clock_init	main.c	158;"	function	signature:(void)
+clock_init	main.c	54;"	prototype	file:	signature:(void)
+delay	main.c	51;"	prototype	file:	signature:(uint32_t time)
+delay	main.c	93;"	function	signature:(uint32_t time)
 disableInterrupts	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2906;"	macro
 disableInterrupts	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2916;"	macro
 disableInterrupts	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2927;"	macro
 enableInterrupts	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2905;"	macro
 enableInterrupts	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2915;"	macro
 enableInterrupts	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2926;"	macro
-gpio_init	main.c	105;"	function	signature:(void)
-gpio_init	main.c	51;"	prototype	file:	signature:(void)
+gTimerTick	main.c	59;"	variable
+gpio_init	main.c	108;"	function	signature:(void)
+gpio_init	main.c	52;"	prototype	file:	signature:(void)
 halt	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2913;"	macro
 halt	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2923;"	macro
 halt	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2934;"	macro
 int16_t	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	224;"	typedef
 int32_t	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	225;"	typedef
 int8_t	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	223;"	typedef
-interrupt_disable	main.c	168;"	function	signature:(void)
-interrupt_disable	main.c	55;"	prototype	file:	signature:(void)
-interrupt_enable	main.c	161;"	function	signature:(void)
-interrupt_enable	main.c	54;"	prototype	file:	signature:(void)
-interrupt_handler	stm8_interrupt_vector.c	101;"	member	struct:interrupt_vector	file:
+interrupt_disable	main.c	172;"	function	signature:(void)
+interrupt_disable	main.c	56;"	prototype	file:	signature:(void)
+interrupt_enable	main.c	165;"	function	signature:(void)
+interrupt_enable	main.c	55;"	prototype	file:	signature:(void)
+interrupt_handler	stm8_interrupt_vector.c	97;"	member	struct:interrupt_vector	file:
 interrupt_handler_t	stm8_interrupt_vector.c	8;"	typedef	file:
-interrupt_instruction	stm8_interrupt_vector.c	100;"	member	struct:interrupt_vector	file:
-interrupt_vector	stm8_interrupt_vector.c	99;"	struct	file:
-main	main.c	63;"	function	signature:(void)
+interrupt_instruction	stm8_interrupt_vector.c	96;"	member	struct:interrupt_vector	file:
+interrupt_vector	stm8_interrupt_vector.c	95;"	struct	file:
+main	main.c	66;"	function	signature:(void)
 nop	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2909;"	macro
 nop	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2919;"	macro
 nop	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2930;"	macro
@@ -5250,8 +5252,10 @@ s8	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	236;"	typedef
 sim	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2908;"	macro
 sim	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2918;"	macro
 sim	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2929;"	macro
-tim2_init	main.c	133;"	function	signature:(void)
-tim2_init	main.c	52;"	prototype	file:	signature:(void)
+tim2_init	main.c	138;"	function	signature:(void)
+tim2_init	main.c	53;"	prototype	file:	signature:(void)
+tim2_isr	main.c	178;"	function	signature:(void)
+tim2_isr	main.h	13;"	prototype	signature:(void)
 trap	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2910;"	macro
 trap	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2920;"	macro
 trap	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2931;"	macro

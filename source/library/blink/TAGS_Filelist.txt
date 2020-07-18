@@ -1,4 +1,5 @@
 main.c
+main.h
 stm8_interrupt_vector.c
 stm8l15x_conf.h
 stm8l15x_it.c

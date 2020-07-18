@@ -157,6 +157,11 @@ void tim2_init(void)
 //peripheral clocks
 void clock_init(void)
 {
+    //system clock source
+    CLK_SYSCLKSourceConfig(CLK_SYSCLKSource_HSI);
+    CLK_HSICmd(ENABLE);
+    
+    //peripheral clocks
     CLK_PeripheralClockConfig(CLK_Peripheral_TIM2, ENABLE);
 }
 
