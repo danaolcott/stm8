@@ -25,6 +25,14 @@ When you plug in the STLink, should should see stlinkv2_1, _2, etc in /dev/direc
 Copy the stm8flash executable into appropriate location, (ie, /usr/bin... etc)
 
 
+Directories
+-----------
+* library - Projects that were built using STVD and STM Standard Peripheral Library.  I have not used the standard library much at all, so far, there is one simple blink project.
+* sdcc - Projects that were built using the Small Device C Compilier.
+* stvd - Projects that were built using STVD environment.
+
+See next section for a list of projects (work in progress).
+
 
 
 The following is a list of projects:
