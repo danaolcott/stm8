@@ -33,8 +33,9 @@ void system_init(void)
     //VrefInt is about 1.22V as shown in Figure 21.
     //Section 11.3.5 - route output to PD6 - Figure 43.
     //configure PD6 as output - see gpio.c configure
-    COMP_CSR3 |= BIT_0;     //set VREFOUTEN bit 0 in COMP_CSR3
-    RI_IOSR3 |= BIT_2;      //CH9E in RI_IOSR3 - Bit 2
+//    COMP_CSR3 |= BIT_0;     //set VREFOUTEN bit 0 in COMP_CSR3
+//    RI_IOSR3 |= BIT_2;      //CH9E in RI_IOSR3 - Bit 2
+    //RI_ASCR1 |= BIT_2;      //AS2 switch to read and output vref
 
     //Route DAC output to PB4 - See Section 11.4.11
     RI_IOSR3 |= BIT_4;      //close CH15E bit
@@ -42,7 +43,23 @@ void system_init(void)
 
     //Route ADC........ - Do nothing for GPIO used as 
     //ADC inputs.  The routing is controlled by the ADC
-        
+    //close switches as2 and as5
+    //
+    
+    //I think this is the hardware error - vref int output
+    //is shorted to the voltage divider read, showing the 
+    //divider read = vrefint output
+   // RI_ASCR1 |= BIT_2;      //AS2 switch to read and output vref
+   // RI_IOSR2 |= BIT_2;      //CH8E to close the switch to read
+    
+    
+    //temp sensor on PB2 - should be ok to close these since
+    //PB1 and PB3 are not populated
+    RI_ASCR1 |= BIT_5;      //AS5 switch - PB2 - need to close PB2 switch at CHxE...CH17E bit
+    RI_IOSR2 |= BIT_5;      //CH17E bit to close PB2
+    RI_IOCMR2 |= BIT_5;     //mode control - GPIO settings no effect.
+    
+   
 }
 
 ////////////////////////////////////////////////////

@@ -215,7 +215,7 @@ Register Definitions for the STM8L151K6
 #define ADC_CR1_ADON_BIT        BIT_0
 #define ADC_SR_EOC_BIT          BIT_2
 
-
+#define ADC_VREFINT_LSB_REG    *((volatile uint8_t*)0x4910)
 
 #define ADC_CR1        *((volatile uint8_t*)0x5340)
 #define ADC_CR2        *((volatile uint8_t*)0x5341)

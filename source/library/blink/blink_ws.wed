@@ -6,8 +6,8 @@ ptn_Child3=Frames
 
 [WorkState_v1_2.DockState]
 Bars=33
-ScreenCX=3286
-ScreenCY=1080
+ScreenCX=1366
+ScreenCY=768
 ptn_Child1=Bar-0
 ptn_Child2=Bar-1
 ptn_Child3=Bar-2
@@ -44,7 +44,7 @@ ptn_Child33=Bar-32
 
 [WorkState_v1_2.DockState.Bar-0]
 BarID=59419
-Bars=20
+Bars=21
 Bar#0=0
 Bar#1=59647
 Bar#2=0
@@ -62,9 +62,10 @@ Bar#13=59401
 Bar#14=124933
 Bar#15=124938
 Bar#16=0
-Bar#17=32768
-Bar#18=0
+Bar#17=0
+Bar#18=32768
 Bar#19=0
+Bar#20=0
 Style=0
 ExStyle=0
 PrevFloating=False
@@ -327,12 +328,12 @@ ResourceID=0
 
 [WorkState_v1_2.DockState.Bar-8]
 BarID=59647
-MRUWidth=291
+MRUWidth=412
 Docking=True
 MRUDockID=59419
 MRUDockLeftPos=-1
 MRUDockTopPos=-1
-MRUDockRightPos=1241
+MRUDockRightPos=1248
 MRUDockBottomPos=28
 MRUFloatStyle=8196
 MRUFloatXPos=-1
@@ -345,12 +346,12 @@ AutoHide=False
 AutoHidePinned=False
 LastAlignedDocking=0
 PctWidth=1000000
-MRUFloatCX=308
-MRUFloatCY=50
-MRUHorzDockCX=1242
+MRUFloatCX=429
+MRUFloatCY=27
+MRUHorzDockCX=1249
 MRUHorzDockCY=29
-MRUVertDockCX=118
-MRUVertDockCY=462
+MRUVertDockCX=72
+MRUVertDockCY=527
 MRUDockingState=0
 DockingStyle=61440
 TypeID=14947
@@ -369,10 +370,10 @@ YPos=28
 MRUWidth=131
 Docking=True
 MRUDockID=59419
-MRUDockLeftPos=8
-MRUDockTopPos=31
-MRUDockRightPos=156
-MRUDockBottomPos=61
+MRUDockLeftPos=-1
+MRUDockTopPos=28
+MRUDockRightPos=147
+MRUDockBottomPos=58
 MRUFloatStyle=8196
 MRUFloatXPos=-1
 MRUFloatYPos=0
@@ -480,7 +481,7 @@ ptn_Child1=ToolBarInfoEx
 
 [WorkState_v1_2.DockState.Bar-11.ToolBarInfoEx]
 Title=View
-Buttons=IFGBAAAAAAJFGBAAAAAAAAAAAAAAAAFEGBAAAAAAIEGBAAAAAAMBJIAAAAAAMEGBAAAAAAAAAAAAAAAAOEGBAAAAAAKEGBAAAAAALEGBAAAAAAPEGBAAAAAA
+Buttons=IFGBAAAAAAJFGBAAAAAAAAAAAAAAAAFEGBAAAAAAIEGBAAAAAAEEGBAAAAAAMEGBAAAAAAAAAAAAAAAAOEGBAAAAAAKEGBAAAAAALEGBAAAAAAPEGBAAAAAA
 
 [WorkState_v1_2.DockState.Bar-12]
 BarID=59398
@@ -611,7 +612,7 @@ Docking=True
 MRUDockID=59419
 MRUDockLeftPos=925
 MRUDockTopPos=58
-MRUDockRightPos=996
+MRUDockRightPos=1019
 MRUDockBottomPos=88
 MRUFloatStyle=8196
 MRUFloatXPos=-1
@@ -626,7 +627,7 @@ LastAlignedDocking=0
 PctWidth=158405
 MRUFloatCX=94
 MRUFloatCY=30
-MRUHorzDockCX=71
+MRUHorzDockCX=94
 MRUHorzDockCY=30
 MRUVertDockCX=31
 MRUVertDockCY=88
@@ -640,7 +641,7 @@ ptn_Child1=ToolBarInfoEx
 
 [WorkState_v1_2.DockState.Bar-15.ToolBarInfoEx]
 Title=Tools
-Buttons=AHHBAAAAAABHHBAAAAAAAAAAAAAAAA
+Buttons=AHHBAAAAAABHHBAAAAAAAAAAAAAAAAPFPBAAAAAA
 
 [WorkState_v1_2.DockState.Bar-16]
 BarID=59402
@@ -730,8 +731,8 @@ Docking=True
 MRUDockID=0
 MRUDockLeftPos=1
 MRUDockTopPos=-2
-MRUDockRightPos=230
-MRUDockBottomPos=462
+MRUDockRightPos=225
+MRUDockBottomPos=366
 MRUFloatStyle=4
 MRUFloatXPos=-1
 MRUFloatYPos=0
@@ -747,8 +748,8 @@ MRUFloatCX=300
 MRUFloatCY=180
 MRUHorzDockCX=300
 MRUHorzDockCY=180
-MRUVertDockCX=229
-MRUVertDockCY=464
+MRUVertDockCX=224
+MRUVertDockCY=368
 MRUDockingState=0
 DockingStyle=61440
 TypeID=0
@@ -764,8 +765,8 @@ Docking=True
 MRUDockID=0
 MRUDockLeftPos=1
 MRUDockTopPos=5
-MRUDockRightPos=1242
-MRUDockBottomPos=96
+MRUDockRightPos=1249
+MRUDockBottomPos=155
 MRUFloatStyle=4
 MRUFloatXPos=-1
 MRUFloatYPos=0
@@ -779,8 +780,8 @@ LastAlignedDocking=0
 PctWidth=1000000
 MRUFloatCX=300
 MRUFloatCY=180
-MRUHorzDockCX=1241
-MRUHorzDockCY=91
+MRUHorzDockCX=1248
+MRUHorzDockCY=150
 MRUVertDockCX=300
 MRUVertDockCY=180
 MRUDockingState=0
@@ -850,7 +851,7 @@ PctWidth=500000
 MRUFloatCX=300
 MRUFloatCY=180
 MRUHorzDockCX=300
-MRUHorzDockCY=91
+MRUHorzDockCY=150
 MRUVertDockCX=300
 MRUVertDockCY=180
 MRUDockingState=0
@@ -1026,7 +1027,7 @@ MRUFloatCX=300
 MRUFloatCY=180
 MRUHorzDockCX=300
 MRUHorzDockCY=180
-MRUVertDockCX=229
+MRUVertDockCX=224
 MRUVertDockCY=180
 MRUDockingState=0
 DockingStyle=61440
@@ -1060,7 +1061,7 @@ PctWidth=666665
 MRUFloatCX=300
 MRUFloatCY=180
 MRUHorzDockCX=300
-MRUHorzDockCY=91
+MRUHorzDockCY=150
 MRUVertDockCX=300
 MRUVertDockCY=180
 MRUDockingState=0
@@ -1095,7 +1096,7 @@ PctWidth=750000
 MRUFloatCX=300
 MRUFloatCY=180
 MRUHorzDockCX=300
-MRUHorzDockCY=91
+MRUHorzDockCY=150
 MRUVertDockCX=300
 MRUVertDockCY=180
 MRUDockingState=0
@@ -1130,7 +1131,7 @@ PctWidth=800000
 MRUFloatCX=300
 MRUFloatCY=180
 MRUHorzDockCX=300
-MRUHorzDockCY=91
+MRUHorzDockCY=150
 MRUVertDockCX=300
 MRUVertDockCY=180
 MRUDockingState=0
@@ -1243,7 +1244,55 @@ ptn_Child1=MainFrame
 ptn_Child2=ChildFrames
 
 [WorkState_v1_2.Frames.MainFrame]
-WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPMCAAAAAANEAAAAAAGBFAAAAABBDAAAAA
-Title=ST Visual Develop - stm8_dev_adc_ws.stw
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPMCAAAAAAKBAAAAAANBFAAAAAJLCAAAAA
+Title=ST Visual Develop - blink_ws.stw* - [main.c]
 
 [WorkState_v1_2.Frames.ChildFrames]
+ptn_Child1=Document-0
+ptn_Child2=Document-1
+ptn_Child3=Document-2
+ptn_Child4=Document-3
+
+[WorkState_v1_2.Frames.ChildFrames.Document-0]
+ptn_Child1=ViewFrame-0
+
+[WorkState_v1_2.Frames.ChildFrames.Document-0.ViewFrame-0]
+DocPathName=main.c
+DocumentString=
+DocTemplateIndex=0
+WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPEDAAAAAAEDAAAAAANBEAAAAABFBAAAAA
+IsActiveChildFrame=True
+IsFrameVisible=True
+
+[WorkState_v1_2.Frames.ChildFrames.Document-1]
+ptn_Child1=ViewFrame-0
+
+[WorkState_v1_2.Frames.ChildFrames.Document-1.ViewFrame-0]
+DocPathName=..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h
+DocumentString=
+DocTemplateIndex=0
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPEDAAAAAAEDAAAAAAHAEAAAAALDBAAAAA
+IsActiveChildFrame=False
+IsFrameVisible=True
+
+[WorkState_v1_2.Frames.ChildFrames.Document-2]
+ptn_Child1=ViewFrame-0
+
+[WorkState_v1_2.Frames.ChildFrames.Document-2.ViewFrame-0]
+DocPathName=stm8l15x_conf.h
+DocumentString=
+DocTemplateIndex=0
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPOEAAAAAAOEAAAAAABCEAAAAAFFBAAAAA
+IsActiveChildFrame=False
+IsFrameVisible=True
+
+[WorkState_v1_2.Frames.ChildFrames.Document-3]
+ptn_Child1=ViewFrame-0
+
+[WorkState_v1_2.Frames.ChildFrames.Document-3.ViewFrame-0]
+DocPathName=stm8_interrupt_vector.c
+DocumentString=
+DocTemplateIndex=0
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPIGAAAAAAIGAAAAAALDEAAAAAPGBAAAAA
+IsActiveChildFrame=False
+IsFrameVisible=True

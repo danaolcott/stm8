@@ -87,13 +87,24 @@ main()
 
         adcResult = ADC_read(ADC_CH7);
         length = lcd_decimalToBuffer(adcResult, printBuffer, 16);
-        lcd_drawString(1, 0, "ADC_CH7:");
-        lcd_drawStringLength(2, 0, printBuffer, length);
+        lcd_drawString(1, 0, "CH7: ");
+        lcd_drawStringLength(1, 40, printBuffer, length);
 
         adcResult = ADC_read(ADC_CH16);
         length = lcd_decimalToBuffer(adcResult, printBuffer, 16);
-        lcd_drawString(4, 0, "ADC_CH16:");
-        lcd_drawStringLength(5, 0, printBuffer, length);
+        lcd_drawString(2, 0, "CH16:");
+        lcd_drawStringLength(2, 40, printBuffer, length);
+        
+        adcResult = ADC_readFactoryVref();
+        length = lcd_decimalToBuffer(adcResult, printBuffer, 16);
+        lcd_drawString(3, 0, "FAC: ");
+        lcd_drawStringLength(3, 40, printBuffer, length);
+
+        adcResult = ADC_read(ADC_VREF);
+        length = lcd_decimalToBuffer(adcResult, printBuffer, 16);
+        lcd_drawString(4, 0, "VREF:");
+        lcd_drawStringLength(4, 40, printBuffer, length);
+        
         
         GPIO_led_green_toggle();
         timer_delay_ms(500);
