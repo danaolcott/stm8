@@ -11,6 +11,8 @@ but available to the interrupt files
 #define __MAIN_H
 
 void tim2_isr(void);
+void exti1_isr(void);
+void exti5_isr(void);
 
 
 #endif

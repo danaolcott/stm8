@@ -5207,7 +5207,7 @@ __STM8L15x_WFE_H	..\stm8l15x_stdperiph_driver\inc\stm8l15x_wfe.h	31;"	macro
 __STM8L15x_WWDG_H	..\stm8l15x_stdperiph_driver\inc\stm8l15x_wwdg.h	31;"	macro
 _stext	stm8_interrupt_vector.c	108;"	prototype	file:
 _vectab	stm8_interrupt_vector.c	110;"	variable
-assert_failed	main.c	199;"	function	signature:(uint8_t* file, uint32_t line)
+assert_failed	main.c	204;"	function	signature:(uint8_t* file, uint32_t line)
 assert_failed	stm8l15x_conf.h	78;"	prototype	signature:(uint8_t* file, uint32_t line)
 assert_param	stm8l15x_conf.h	76;"	macro
 assert_param	stm8l15x_conf.h	80;"	macro
@@ -5231,9 +5231,9 @@ halt	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2934;"	macro
 int16_t	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	224;"	typedef
 int32_t	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	225;"	typedef
 int8_t	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	223;"	typedef
-interrupt_disable	main.c	172;"	function	signature:(void)
+interrupt_disable	main.c	177;"	function	signature:(void)
 interrupt_disable	main.c	56;"	prototype	file:	signature:(void)
-interrupt_enable	main.c	165;"	function	signature:(void)
+interrupt_enable	main.c	170;"	function	signature:(void)
 interrupt_enable	main.c	55;"	prototype	file:	signature:(void)
 interrupt_handler	stm8_interrupt_vector.c	97;"	member	struct:interrupt_vector	file:
 interrupt_handler_t	stm8_interrupt_vector.c	8;"	typedef	file:
@@ -5254,7 +5254,7 @@ sim	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2918;"	macro
 sim	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2929;"	macro
 tim2_init	main.c	138;"	function	signature:(void)
 tim2_init	main.c	53;"	prototype	file:	signature:(void)
-tim2_isr	main.c	178;"	function	signature:(void)
+tim2_isr	main.c	183;"	function	signature:(void)
 tim2_isr	main.h	13;"	prototype	signature:(void)
 trap	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2910;"	macro
 trap	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2920;"	macro

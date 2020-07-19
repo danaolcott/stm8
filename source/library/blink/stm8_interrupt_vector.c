@@ -32,35 +32,21 @@ typedef void @far (*interrupt_handler_t)(void);
 //EXTI 1
 @far @interrupt void EXTI1_IRQHandler(void)
 {
-    //read the status
-    if (EXTI_GetITStatus(EXTI_IT_PortD) == RESET)
-    {
-        GPIO_ToggleBits(GPIOB, GPIO_Pin_6);
-    }
-
-    EXTI_ClearITPendingBit(EXTI_IT_Pin1);
+    exti1_isr();    
+    return;
 }
-
 
 @far @interrupt void EXTI2_IRQHandler(void){return;} /* EXTI PIN2 */
 @far @interrupt void EXTI3_IRQHandler(void){return;} /* EXTI PIN3 */
 @far @interrupt void EXTI4_IRQHandler(void){return;} /* EXTI PIN4 */
 
-
 //////////////////////////////////////////////////////////
 //User button interrupt
 @far @interrupt void EXTI5_IRQHandler(void)
 {
-    //read the status
-    if (EXTI_GetITStatus(EXTI_IT_PortD) == RESET)
-    {
-        GPIO_ToggleBits(GPIOB, GPIO_Pin_5);
-    }
-
-    EXTI_ClearITPendingBit(EXTI_IT_Pin5);
-
+    exti5_isr();    
     return;
-} 
+}
 
 
 
@@ -75,7 +61,6 @@ typedef void @far (*interrupt_handler_t)(void);
 @far @interrupt void TIM2_UPD_OVF_TRG_BRK_USART2_TX_IRQHandler(void)
 {    
     tim2_isr();
-    
     return;
 }
 

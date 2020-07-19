@@ -289,6 +289,11 @@ String.6.0=2020,7,14,20,31,58
 [Root.Source Files.main.c]
 ElemType=File
 PathName=main.c
+Next=Root.Source Files.main.h
+
+[Root.Source Files.main.h]
+ElemType=File
+PathName=main.h
 Next=Root.Source Files.stm8_interrupt_vector.c
 
 [Root.Source Files.stm8_interrupt_vector.c]

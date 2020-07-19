@@ -158,6 +158,7 @@ void tim2_init(void)
 void clock_init(void)
 {
     //system clock source
+    CLK_DeInit();
     CLK_SYSCLKSourceConfig(CLK_SYSCLKSource_HSI);
     CLK_HSICmd(ENABLE);
     
@@ -189,6 +190,28 @@ void tim2_isr(void)
 }
 
 
+void exti1_isr(void)
+{
+        //read the status
+    if (EXTI_GetITStatus(EXTI_IT_PortD) == RESET)
+    {
+        GPIO_ToggleBits(GPIOB, GPIO_Pin_6);
+    }
+
+    EXTI_ClearITPendingBit(EXTI_IT_Pin1);
+}
+
+void exti5_isr(void)
+{
+    
+    //read the status
+    if (EXTI_GetITStatus(EXTI_IT_PortD) == RESET)
+    {
+        GPIO_ToggleBits(GPIOB, GPIO_Pin_5);
+    }
+
+    EXTI_ClearITPendingBit(EXTI_IT_Pin5);
+}
 
 
 
