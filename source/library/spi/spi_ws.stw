@@ -1,0 +1,12 @@
+;	STMicroelectronics Workspace file
+
+[Version]
+Keyword=ST7Workspace-V0.7
+
+[Project0]
+Filename=spi.stp
+Dependencies=
+[Options]
+ActiveProject=spi
+ActiveConfig=Debug
+AddSortedElements=1
