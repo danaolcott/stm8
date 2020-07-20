@@ -73,7 +73,7 @@ Int.108=0
 String.6.0=2020,7,18,20,18,19
 String.100.0=$(TargetFName)
 String.101.0=
-String.103.0=.\;..\stm8l15x_stdperiph_driver\inc;..\stm8l15x_stdperiph_driver\src;hardware;
+String.103.0=.\;..\stm8l15x_stdperiph_driver\inc;..\stm8l15x_stdperiph_driver\src;hardware;display;
 
 [Root.Config.0.Settings.2]
 String.2.0=
@@ -82,7 +82,7 @@ String.100.0=STM8L151K6
 
 [Root.Config.0.Settings.3]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -ihardware  -i..\stm8l15x_stdperiph_driver\inc  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -idisplay  -ihardware  -i..\stm8l15x_stdperiph_driver\inc  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
 String.6.0=2020,7,18,20,18,19
@@ -153,7 +153,7 @@ Int.108=0
 String.6.0=2020,7,18,20,18,19
 String.100.0=$(TargetFName)
 String.101.0=
-String.103.0=.\;..\stm8l15x_stdperiph_driver\inc;..\stm8l15x_stdperiph_driver\src;hardware;
+String.103.0=.\;..\stm8l15x_stdperiph_driver\inc;..\stm8l15x_stdperiph_driver\src;hardware;display;
 
 [Root.Config.1.Settings.2]
 String.2.0=
@@ -162,7 +162,7 @@ String.100.0=STM8L151K6
 
 [Root.Config.1.Settings.3]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -ihardware  -i..\stm8l15x_stdperiph_driver\inc  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -idisplay  -ihardware  -i..\stm8l15x_stdperiph_driver\inc  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
 String.6.0=2020,7,18,20,18,19
@@ -240,7 +240,7 @@ Int.1=0
 
 [Root.Source Files.Config.0.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -ihardware  -i..\stm8l15x_stdperiph_driver\inc  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -idisplay  -ihardware  -i..\stm8l15x_stdperiph_driver\inc  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
 String.6.0=2020,7,18,20,18,19
@@ -267,7 +267,7 @@ Int.1=0
 
 [Root.Source Files.Config.1.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -ihardware  -i..\stm8l15x_stdperiph_driver\inc  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -idisplay  -ihardware  -i..\stm8l15x_stdperiph_driver\inc  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
 String.6.0=2020,7,18,20,18,19
@@ -318,7 +318,7 @@ PathName=stm8l15x_it.h
 [Root.Include Files]
 ElemType=Folder
 PathName=Include Files
-Next=Root.hardware
+Next=Root.display
 Config.0=Root.Include Files.Config.0
 Config.1=Root.Include Files.Config.1
 
@@ -342,7 +342,7 @@ Int.1=0
 
 [Root.Include Files.Config.0.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -ihardware  -i..\stm8l15x_stdperiph_driver\inc  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -idisplay  -ihardware  -i..\stm8l15x_stdperiph_driver\inc  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
 String.6.0=2020,7,18,20,18,19
@@ -369,7 +369,7 @@ Int.1=0
 
 [Root.Include Files.Config.1.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -ihardware  -i..\stm8l15x_stdperiph_driver\inc  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -idisplay  -ihardware  -i..\stm8l15x_stdperiph_driver\inc  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
 String.6.0=2020,7,18,20,18,19
@@ -387,6 +387,99 @@ String.3.0=
 String.4.0=
 String.5.0=
 String.6.0=2020,7,18,20,18,19
+
+[Root.display]
+ElemType=Folder
+PathName=display
+Child=Root.display.display\bitmap.h
+Next=Root.hardware
+Config.0=Root.display.Config.0
+Config.1=Root.display.Config.1
+
+[Root.display.Config.0]
+Settings.0.0=Root.display.Config.0.Settings.0
+Settings.0.1=Root.display.Config.0.Settings.1
+Settings.0.2=Root.display.Config.0.Settings.2
+Settings.0.3=Root.display.Config.0.Settings.3
+
+[Root.display.Config.1]
+Settings.1.0=Root.display.Config.1.Settings.0
+Settings.1.1=Root.display.Config.1.Settings.1
+Settings.1.2=Root.display.Config.1.Settings.2
+Settings.1.3=Root.display.Config.1.Settings.3
+
+[Root.display.Config.0.Settings.0]
+String.6.0=2020,7,20,8,13,6
+String.8.0=Debug
+Int.0=0
+Int.1=0
+
+[Root.display.Config.0.Settings.1]
+String.2.0=Compiling $(InputFile)...
+String.3.0=cxstm8 -idisplay  -ihardware  -i..\stm8l15x_stdperiph_driver\inc  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2020,7,18,20,18,19
+
+[Root.display.Config.0.Settings.2]
+String.2.0=Assembling $(InputFile)...
+String.3.0=castm8 -xx -l $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2020,7,18,20,18,19
+
+[Root.display.Config.0.Settings.3]
+String.2.0=Performing Custom Build on $(InputFile)
+String.3.0=
+String.4.0=
+String.5.0=
+String.6.0=2020,7,18,20,18,19
+
+[Root.display.Config.1.Settings.0]
+String.6.0=2020,7,20,8,13,6
+String.8.0=Release
+Int.0=0
+Int.1=0
+
+[Root.display.Config.1.Settings.1]
+String.2.0=Compiling $(InputFile)...
+String.3.0=cxstm8 -idisplay  -ihardware  -i..\stm8l15x_stdperiph_driver\inc  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2020,7,18,20,18,19
+
+[Root.display.Config.1.Settings.2]
+String.2.0=Assembling $(InputFile)...
+String.3.0=castm8 $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2020,7,18,20,18,19
+
+[Root.display.Config.1.Settings.3]
+String.2.0=Performing Custom Build on $(InputFile)
+String.3.0=
+String.4.0=
+String.5.0=
+String.6.0=2020,7,18,20,18,19
+
+[Root.display.display\bitmap.h]
+ElemType=File
+PathName=display\bitmap.h
+Next=Root.display.display\font_table.c
+
+[Root.display.display\font_table.c]
+ElemType=File
+PathName=display\font_table.c
+Next=Root.display.display\font_table.h
+
+[Root.display.display\font_table.h]
+ElemType=File
+PathName=display\font_table.h
+Next=Root.display.display\player1.c
+
+[Root.display.display\player1.c]
+ElemType=File
+PathName=display\player1.c
 
 [Root.hardware]
 ElemType=Folder
@@ -416,7 +509,7 @@ Int.1=0
 
 [Root.hardware.Config.0.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -ihardware  -i..\stm8l15x_stdperiph_driver\inc  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -idisplay  -ihardware  -i..\stm8l15x_stdperiph_driver\inc  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
 String.6.0=2020,7,18,20,18,19
@@ -443,7 +536,7 @@ Int.1=0
 
 [Root.hardware.Config.1.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -ihardware  -i..\stm8l15x_stdperiph_driver\inc  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -idisplay  -ihardware  -i..\stm8l15x_stdperiph_driver\inc  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
 String.6.0=2020,7,18,20,18,19
@@ -470,6 +563,16 @@ Next=Root.hardware.hardware\gpio.h
 [Root.hardware.hardware\gpio.h]
 ElemType=File
 PathName=hardware\gpio.h
+Next=Root.hardware.hardware\lcd.c
+
+[Root.hardware.hardware\lcd.c]
+ElemType=File
+PathName=hardware\lcd.c
+Next=Root.hardware.hardware\lcd.h
+
+[Root.hardware.hardware\lcd.h]
+ElemType=File
+PathName=hardware\lcd.h
 Next=Root.hardware.hardware\spi.c
 
 [Root.hardware.hardware\spi.c]
@@ -518,7 +621,7 @@ Int.1=0
 
 [Root.std_lib.Config.0.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -ihardware  -i..\stm8l15x_stdperiph_driver\inc  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -idisplay  -ihardware  -i..\stm8l15x_stdperiph_driver\inc  -customDbg -customDebCompat -customOpt-no -customLst -l +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
 String.6.0=2020,7,18,20,18,19
@@ -545,7 +648,7 @@ Int.1=0
 
 [Root.std_lib.Config.1.Settings.1]
 String.2.0=Compiling $(InputFile)...
-String.3.0=cxstm8 -ihardware  -i..\stm8l15x_stdperiph_driver\inc  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
+String.3.0=cxstm8 -idisplay  -ihardware  -i..\stm8l15x_stdperiph_driver\inc  +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile) 
 String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
 String.5.0=$(IntermPath)$(InputName).ls
 String.6.0=2020,7,18,20,18,19
