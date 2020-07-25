@@ -1,7 +1,7 @@
 # stm8
-Projects Built on STMicro STM8 Processors
+Projects Built on STM8 Processors
 ------------------------------------------
-This repository contains several projects using the STM8 processor by STMicro.  Two varients of the STM8 including STM8S103F3P6 and  STM8L151K6 are used for these projects.  The general intent was to implement various peripherals and compile into some type of a game or other useful device.  A development board for the STM8S103F3P6 is commonly found on Ebay for about $1.  The development board for the STM8L151K6 is from DanasBoatshop.com.  The The development board was built in KiCad and made by OSHPark.  The schematics are provided in the repository.
+This repository contains several projects using the STM8 processor.  Two varients of the STM8 include STM8S103F3P6 and STM8L151K6 are used for these projects.  A development board for the STM8S103F3P6 is commonly found on Ebay for about $1.  The development board for the STM8L151K6 is from DanasBoatshop.com.  The The development board was built in KiCad and made by OSHPark.  The schematics are provided in the repository.
 
 Two development environments are used in these projects, STVD for building the projects in Windows, and SDCC (Small Device C Compilier) for building the projects in Linux.  Using STVD is pretty self-explainatory in terms of installation, building, debug, etc.  It seems to have some problems, but overall works ok.  Using SDCC and flashing the program onto the processor in Linux seems to require a bit more effort.  In general, the following additional steps are required:
 
@@ -27,13 +27,11 @@ Copy the stm8flash executable into appropriate location, (ie, /usr/bin... etc)
 
 Directories
 -----------
-* library - Projects that were built using STVD and STM Standard Peripheral Library.  I have not used the standard library much at all, so far, there is one simple blink project.
+* library - Projects that were built using STVD and the STM8 Standard Peripheral Library.
 * sdcc - Projects that were built using the Small Device C Compilier.
 * stvd - Projects that were built using STVD environment.
 
 See next section for a list of projects (work in progress).
-
-
 
 The following is a list of projects:
 ------------------------------------
@@ -61,6 +59,23 @@ Using QP Nano on the STM8 development board.  The project was originally written
 stm8_dev_i2c
 ------------
 A simple i2c project that uses the BMP280 temperature/pressure sensor.  Reads the temperature and pressure and displays on the LCD.  Changes in pressure are used to track changes in elevation using a simple coorelation of about 3pa / ft.  Press the user button and center button to update a baseline pressure and reset the current base elevation.
+
+library / adc
+-------------
+A project that uses the STM8 Standard Library to read a temperature sensor and output the results to an LCD.
+
+library / blink
+---------------
+A project that uses the STM8 Standard Library to initialize GPIOs for LEDs and toggle the LEDs
+
+library / spi
+-------------
+A project that inintializes the SPI peripheral and controls a SPI-enabled LCD.
+
+library / i2c
+-------------
+A project that uses i2c----  to be completed.
+
 
 
 
