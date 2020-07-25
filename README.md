@@ -62,7 +62,7 @@ A simple i2c project that uses the BMP280 temperature/pressure sensor.  Reads th
 
 library / adc
 -------------
-A project that uses the STM8 Standard Library to read a temperature sensor and output the results to an LCD.
+A project that uses the STM8 Standard Library to read a temperature sensor and output the results to an LCD.  This project also initializes the DAC output and routes the output to a GPIO pin to generate sound on a speaker.  The sound is a simple squarewave.
 
 library / blink
 ---------------
