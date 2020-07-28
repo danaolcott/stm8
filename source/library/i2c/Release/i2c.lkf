@@ -61,6 +61,7 @@ Release\i2c.o
 Release\lcd.o
 Release\spi.o
 Release\timer.o
+Release\bmp280.o
 Release\stm8l15x_adc.o
 Release\stm8l15x_aes.o
 Release\stm8l15x_beep.o

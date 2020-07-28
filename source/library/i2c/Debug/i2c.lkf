@@ -61,6 +61,7 @@ Debug\i2c.o
 Debug\lcd.o
 Debug\spi.o
 Debug\timer.o
+Debug\bmp280.o
 Debug\stm8l15x_adc.o
 Debug\stm8l15x_aes.o
 Debug\stm8l15x_beep.o

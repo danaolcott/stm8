@@ -44,6 +44,8 @@ by 1 in order to work properly.
 #include "adc.h"
 #include "dac.h"
 #include "i2c.h"
+#include "bmp280.h"
+
 
 
 /** @addtogroup STM8L15x_StdPeriph_Template
@@ -70,8 +72,11 @@ uint8_t toggle = 0x00;
 int value = 0x00;
 uint8_t result = 0x00;
 uint8_t rx[16];
+BMP280_Data bmpData;
 
-
+uint16_t pInt = 0;
+uint16_t pFrac = 0;
+int temperature = 0x00;
 
 
 
@@ -95,28 +100,49 @@ void main(void)
     adc_init(ADC_CHANNEL_16);
     dac_init();
     I2C_init();
+    BMP280_init();
+    
     
     //enable global interrupts
     interrupt_enable();
     
     lcd_clear(0x00);    
     lcd_drawString(0, 0, "I2C Project");
-        
+                
     /* Infinite loop */
     while (1)
     {
-        result = I2C_readReg(0xD0);
-        if (result == 0x58)
-        {
-            GPIO_SetBits(GPIOB, GPIO_Pin_6);
-        }
-        else
-        {
-            GPIO_ResetBits(GPIOB, GPIO_Pin_6);
-        }
+        lcd_clear(0x00);
         
-        GPIO_ToggleBits(GPIOB, GPIO_Pin_5);
-        delay_ms(100);
+        //read the pressure and temp from BMP280
+        BMP280_read(&bmpData);
+        temperature = adc_readTempF();
+        
+        //temperature
+        lcd_drawString(0, 0, "T:");
+        length = lcd_decimalToBuffer((uint16_t)bmpData.cTemperatureF, printBuffer, 16);
+        lcd_drawStringLength(0, 16, printBuffer, 16);
+        
+        //pressure
+        lcd_drawString(1, 0, "P:");
+        pInt = ((uint16_t)(bmpData.cPressurePa / 1000));
+        pFrac = ((uint16_t)(bmpData.cPressurePa % 1000));
+                
+        length = lcd_decimalToBuffer(pInt, printBuffer, 16);
+        lcd_drawStringLength(1, 16, printBuffer, length);
+        
+        lcd_drawString(1, 40, ".");
+        length = lcd_decimalToBuffer(pFrac, printBuffer, 16);
+        lcd_drawStringLength(1, 48, printBuffer, length);
+        
+        
+        lcd_drawString(3, 0, "MCP9700:");
+        length = lcd_decimalToBuffer((uint16_t)temperature, printBuffer, 16);
+        lcd_drawStringLength(4, 0, printBuffer, 16);
+
+        
+        GPIO_ToggleBits(GPIOB, GPIO_Pin_6);
+        delay_ms(500);
     }
 }
 
@@ -142,8 +168,7 @@ void clock_init(void)
     CLK_PeripheralClockConfig(CLK_Peripheral_ADC1, ENABLE);
     CLK_PeripheralClockConfig(CLK_Peripheral_COMP, ENABLE); //routing
     CLK_PeripheralClockConfig(CLK_Peripheral_DAC, ENABLE);  //dac    
-    CLK_PeripheralClockConfig(CLK_Peripheral_I2C1, ENABLE);  //dac
-
+    CLK_PeripheralClockConfig(CLK_Peripheral_I2C1, ENABLE); //dac
 }
 
 void system_init(void)
