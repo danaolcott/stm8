@@ -6,7 +6,7 @@
  *
  * Controller file for the BMP280 Barometer / Temperature Sensor.
  * the purpose of this file is to provide a simple interface for
- * reading temperature and pressure, and humidity.
+ * reading temperature and pressure.
  
     Modified July 3, 2020
     - Updated the temperature and pressure compensation
@@ -183,7 +183,7 @@ uint8_t BMP280_readReg(uint8_t reg)
 	return result;
 }
 
-//////////////////////////////////////////////////
+//////////////////////////////////////////////////////
 //Standard write I2C function
 void BMP280_writeReg(uint8_t reg, uint8_t value)
 {

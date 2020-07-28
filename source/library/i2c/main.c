@@ -26,12 +26,6 @@ to measure temperature and pressure using the BMP280 breakout board.
 This project uses the STM8 standard peripheral library.  It is a 
 continuation of previous projects, also enableing the ADC, DAC, etc...
 
-The project reads the chip id at register 0xD0 and returns the value.
-If the value == 0x58, it turns the green LED on.  The i2c address
-for the BMP280 is 0x78.  Note that the address has to be up-shifted
-by 1 in order to work properly.
-
-
 */
 
 
@@ -117,28 +111,30 @@ void main(void)
         //read the pressure and temp from BMP280
         BMP280_read(&bmpData);
         temperature = adc_readTempF();
-        
+
+        lcd_drawString(0, 0, "BMP280");
+
         //temperature
-        lcd_drawString(0, 0, "T:");
+        lcd_drawString(1, 0, "T:");
         length = lcd_decimalToBuffer((uint16_t)bmpData.cTemperatureF, printBuffer, 16);
-        lcd_drawStringLength(0, 16, printBuffer, 16);
+        lcd_drawStringLength(1, 16, printBuffer, 16);
         
         //pressure
-        lcd_drawString(1, 0, "P:");
+        lcd_drawString(2, 0, "P:");
         pInt = ((uint16_t)(bmpData.cPressurePa / 1000));
         pFrac = ((uint16_t)(bmpData.cPressurePa % 1000));
                 
         length = lcd_decimalToBuffer(pInt, printBuffer, 16);
-        lcd_drawStringLength(1, 16, printBuffer, length);
+        lcd_drawStringLength(2, 16, printBuffer, length);
         
-        lcd_drawString(1, 40, ".");
+        lcd_drawString(2, 40, ".");
         length = lcd_decimalToBuffer(pFrac, printBuffer, 16);
-        lcd_drawStringLength(1, 48, printBuffer, length);
+        lcd_drawStringLength(2, 48, printBuffer, length);
         
         
-        lcd_drawString(3, 0, "MCP9700:");
+        lcd_drawString(4, 0, "MCP9700:");
         length = lcd_decimalToBuffer((uint16_t)temperature, printBuffer, 16);
-        lcd_drawStringLength(4, 0, printBuffer, 16);
+        lcd_drawStringLength(5, 0, printBuffer, 16);
 
         
         GPIO_ToggleBits(GPIOB, GPIO_Pin_6);
@@ -150,8 +146,8 @@ void main(void)
 
 
 
-////////////////////////////////////////////
-//Configure main clocks and enable the
+/////////////////////////////////////////////////
+//Configure main clock for 16mhz internal, enable
 //peripheral clocks
 void clock_init(void)
 {
@@ -181,11 +177,9 @@ void system_init(void)
     SYSCFG_RIIOSwitchConfig(RI_IOSwitch_15,ENABLE);
 
     //enable the vref output on PD6 - RI_IOSR3 - CH9E
-    SYSCFG_RIIOSwitchConfig(RI_IOSwitch_9,ENABLE);    
+    SYSCFG_RIIOSwitchConfig(RI_IOSwitch_9,ENABLE);
     COMP_VrefintToCOMP1Connect(ENABLE);
     COMP_VrefintOutputCmd(ENABLE);
-
-
 }
 
 

@@ -1,55 +1,26 @@
 /*
 7/26/20
 I2C Controller File using the STM8 Standard Library.
+Functions for write and read to a register.  The test
+device for this file was  the BMP280 pressure and
+temperature sensor.
 
 PC1 - I2C1 - CLK
 PC0 - I2C1 - Data
 
-Looking at the standard lib, the main functions for 
-controlling the i2c, seem to be the following:
+Note:  There is no need to remap any pin or 
+configure the GPIO pins as open drain.  Enabling 
+the I2C does this automatically.  The peripheral 
+clock needs to be enabled for this to work.
 
-//reset the i2c to power on state
-void I2C_DeInit(I2C_TypeDef* I2Cx); - deinit the i2c
-
-//configure the i2c
-void I2C_Init(I2C_TypeDef* I2Cx, uint32_t OutputClockFrequency, uint16_t OwnAddress,
-              I2C_Mode_TypeDef I2C_Mode, I2C_DutyCycle_TypeDef I2C_DutyCycle,
-              I2C_Ack_TypeDef I2C_Ack, I2C_AcknowledgedAddress_TypeDef I2C_AcknowledgedAddress);
-
-
-//start the i2c
-void I2C_Cmd(I2C_TypeDef* I2Cx, FunctionalState NewState);
-
-
-communications:
-
-//generate start condition
-void I2C_GenerateSTART(I2C_TypeDef* I2Cx, FunctionalState NewState);
-
-//generate the stop condition
-void I2C_GenerateSTOP(I2C_TypeDef* I2Cx, FunctionalState NewState);
-
-//set / clear the ACK bit
-void I2C_AcknowledgeConfig(I2C_TypeDef* I2Cx, FunctionalState NewState);
-
-//send the target address
-void I2C_Send7bitAddress(I2C_TypeDef* I2Cx, uint8_t Address, I2C_Direction_TypeDef I2C_Direction);
-
-//read / write
-void I2C_SendData(I2C_TypeDef* I2Cx, uint8_t Data);
-uint8_t I2C_ReceiveData(I2C_TypeDef* I2Cx);
-
-
-
-
+The I2C address also needs to be the upshifted
+value that is passed into the write/read address functions.
 
 */
 
 
 #include "main.h"
 #include "i2c.h"
-#include "register.h"
-
 
 
 ///////////////////////////////////////////
@@ -71,8 +42,8 @@ void I2C_init(void)
 
 
 
-///////////////////////////////////////////////
-//write data to register
+////////////////////////////////////////////////////
+//Write data to register
 void I2C_writeReg(uint8_t reg, uint8_t data)
 {
     //wait while busy
@@ -88,27 +59,22 @@ void I2C_writeReg(uint8_t reg, uint8_t data)
     //wait
     while(!I2C_CheckEvent(I2C1, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED));
 
-    I2C_SendData(I2C1, reg);
-    
+    I2C_SendData(I2C1, reg);    
     while (!I2C_CheckEvent(I2C1, I2C_EVENT_MASTER_BYTE_TRANSMITTING));
     
     I2C_SendData(I2C1, data);
-    
     while (!I2C_CheckEvent(I2C1, I2C_EVENT_MASTER_BYTE_TRANSMITTING));
 
-    I2C_GenerateSTOP(I2C1, ENABLE);
-    
+    I2C_GenerateSTOP(I2C1, ENABLE);    
 }
 
-////////////////////////////////////////
-//Read register
-//Generate a start condition for a write
-//write address
-//generate a start condition
-//send address as a read - no ack
-//read the DR
-//generate the stop
-//return value
+//////////////////////////////////////////////////////////
+//Read data from a register
+//Note: The order of the check event / read
+//data register is important.  If reversed, the
+//scope shows the data should be accurate, but the
+//return value is not accurate.  Polling the event appears
+//to start the read process.
 uint8_t I2C_readReg(uint8_t reg)
 {
     uint8_t result = 0x00;
@@ -125,22 +91,21 @@ uint8_t I2C_readReg(uint8_t reg)
     //wait
     while(!I2C_CheckEvent(I2C1, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED));
 
-    I2C_SendData(I2C1, reg);
-    
+    I2C_SendData(I2C1, reg);    
     while (!I2C_CheckEvent(I2C1, I2C_EVENT_MASTER_BYTE_TRANSMITTED));
     
-    //generate a restart
+    //generate a restart as a read
     I2C_GenerateSTART(I2C1, ENABLE);
     while(!I2C_CheckEvent(I2C1, I2C_EVENT_MASTER_MODE_SELECT));
 
     //send address as receiver
-    I2C_Send7bitAddress(I2C1, I2C_ADDRESS, I2C_Direction_Receiver);
-    
+    I2C_Send7bitAddress(I2C1, I2C_ADDRESS, I2C_Direction_Receiver);    
     while(!I2C_CheckEvent(I2C1,I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED));
     
     I2C_AcknowledgeConfig(I2C1, DISABLE);
     I2C_GenerateSTOP(I2C1, ENABLE);
-       
+
+    //start the read process
     while(!I2C_CheckEvent(I2C1,I2C_EVENT_MASTER_BYTE_RECEIVED));
     result = I2C_ReceiveData(I2C1);
         
@@ -148,9 +113,11 @@ uint8_t I2C_readReg(uint8_t reg)
 }
 
 
-//////////////////////////////////////////////////
+////////////////////////////////////////////////////
 //Read length bytes into data starting at 
-//address startAddress
+//address startAddress.  Disable the ack and generate
+//the stop condition on the last byte.
+//
 void I2C_readArray(uint8_t startAddress, uint8_t* data, uint8_t length)
 {
     uint8_t counter = 0x00;
