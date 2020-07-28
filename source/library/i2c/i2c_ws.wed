@@ -332,7 +332,7 @@ Docking=True
 MRUDockID=59419
 MRUDockLeftPos=-1
 MRUDockTopPos=-1
-MRUDockRightPos=924
+MRUDockRightPos=1365
 MRUDockBottomPos=28
 MRUFloatStyle=8196
 MRUFloatXPos=-1
@@ -347,7 +347,7 @@ LastAlignedDocking=0
 PctWidth=1000000
 MRUFloatCX=429
 MRUFloatCY=27
-MRUHorzDockCX=925
+MRUHorzDockCX=1366
 MRUHorzDockCY=29
 MRUVertDockCX=72
 MRUVertDockCY=527
@@ -730,7 +730,7 @@ MRUDockID=0
 MRUDockLeftPos=1
 MRUDockTopPos=-2
 MRUDockRightPos=248
-MRUDockBottomPos=401
+MRUDockBottomPos=474
 MRUFloatStyle=4
 MRUFloatXPos=-1
 MRUFloatYPos=0
@@ -747,7 +747,7 @@ MRUFloatCY=180
 MRUHorzDockCX=300
 MRUHorzDockCY=180
 MRUVertDockCX=247
-MRUVertDockCY=403
+MRUVertDockCY=476
 MRUDockingState=0
 DockingStyle=61440
 TypeID=0
@@ -763,7 +763,7 @@ Docking=True
 MRUDockID=0
 MRUDockLeftPos=1
 MRUDockTopPos=5
-MRUDockRightPos=925
+MRUDockRightPos=1366
 MRUDockBottomPos=120
 MRUFloatStyle=4
 MRUFloatXPos=-1
@@ -778,7 +778,7 @@ LastAlignedDocking=0
 PctWidth=1000000
 MRUFloatCX=300
 MRUFloatCY=180
-MRUHorzDockCX=924
+MRUHorzDockCX=1365
 MRUHorzDockCY=115
 MRUVertDockCX=300
 MRUVertDockCY=180
@@ -1242,8 +1242,8 @@ ptn_Child1=MainFrame
 ptn_Child2=ChildFrames
 
 [WorkState_v1_2.Frames.MainFrame]
-WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPLAAAAAACBAAAAAAMGEAAAAABLCAAAAA
-Title=ST Visual Develop - i2c_ws.stw - [i2c.h]
+WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAAADIPPPPAADIPPPPPPPPPPPPPPPPPPPPPLAAAAAACBAAAAAAMGEAAAAABLCAAAAA
+Title=ST Visual Develop - i2c_ws.stw - [main.c]
 
 [WorkState_v1_2.Frames.ChildFrames]
 ptn_Child1=Document-0
@@ -1271,8 +1271,8 @@ ptn_Child1=ViewFrame-0
 DocPathName=main.c
 DocumentString=
 DocTemplateIndex=0
-WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPKBAAAAAAKBAAAAAAGNDAAAAABCBAAAAA
-IsActiveChildFrame=False
+WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPKBAAAAAAKBAAAAAAGNDAAAAABCBAAAAA
+IsActiveChildFrame=True
 IsFrameVisible=True
 
 [WorkState_v1_2.Frames.ChildFrames.Document-2]
@@ -1304,8 +1304,8 @@ ptn_Child1=ViewFrame-0
 DocPathName=hardware\i2c.h
 DocumentString=
 DocTemplateIndex=0
-WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPIGAAAAAAIGAAAAAAECEAAAAACJBAAAAA
-IsActiveChildFrame=True
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPIGAAAAAAIGAAAAAAECEAAAAACJBAAAAA
+IsActiveChildFrame=False
 IsFrameVisible=True
 
 [WorkState_v1_2.Frames.ChildFrames.Document-5]
