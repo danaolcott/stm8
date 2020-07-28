@@ -14,8 +14,11 @@ hardware\dac.c
 hardware\dac.h
 hardware\gpio.c
 hardware\gpio.h
+hardware\i2c.c
+hardware\i2c.h
 hardware\lcd.c
 hardware\lcd.h
+hardware\register.h
 hardware\spi.c
 hardware\spi.h
 hardware\timer.c

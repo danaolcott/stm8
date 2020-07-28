@@ -45,10 +45,10 @@ ADC_AnalogWatchdogSelection_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_ad
 ADC_AnalogWatchdogSelection_Vrefint	..\stm8l15x_stdperiph_driver\inc\stm8l15x_adc.h	265;"	enumerator	enum:__anon14
 ADC_AnalogWatchdogThresholdsConfig	..\stm8l15x_stdperiph_driver\inc\stm8l15x_adc.h	341;"	prototype	signature:(ADC_TypeDef* ADCx, uint16_t HighThreshold, uint16_t LowThreshold)
 ADC_AnalogWatchdogThresholdsConfig	..\stm8l15x_stdperiph_driver\src\stm8l15x_adc.c	361;"	function	signature:(ADC_TypeDef* ADCx, uint16_t HighThreshold, uint16_t LowThreshold)
-ADC_BATTERY	hardware\adc.h	23;"	enumerator	enum:__anon1
-ADC_CHANNEL_16	hardware\adc.h	21;"	enumerator	enum:__anon1
-ADC_CHANNEL_7	hardware\adc.h	20;"	enumerator	enum:__anon1
-ADC_CHANNEL_VREF	hardware\adc.h	22;"	enumerator	enum:__anon1
+ADC_BATTERY	hardware\adc.h	21;"	enumerator	enum:__anon1
+ADC_CHANNEL_16	hardware\adc.h	19;"	enumerator	enum:__anon1
+ADC_CHANNEL_7	hardware\adc.h	18;"	enumerator	enum:__anon1
+ADC_CHANNEL_VREF	hardware\adc.h	20;"	enumerator	enum:__anon1
 ADC_CR1_ADON	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2360;"	macro
 ADC_CR1_AWDIE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2364;"	macro
 ADC_CR1_CONT	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2362;"	macro
@@ -65,7 +65,7 @@ ADC_CR2_TRIGEDGE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2371;"	macro
 ADC_CR3_CHSEL	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2374;"	macro
 ADC_CR3_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2335;"	macro
 ADC_CR3_SMPT2	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2375;"	macro
-ADC_Channel	hardware\adc.h	25;"	typedef	typeref:enum:__anon1
+ADC_Channel	hardware\adc.h	23;"	typedef	typeref:enum:__anon1
 ADC_ChannelCmd	..\stm8l15x_stdperiph_driver\inc\stm8l15x_adc.h	353;"	prototype	signature:(ADC_TypeDef* ADCx, ADC_Channel_TypeDef ADC_Channels, FunctionalState NewState)
 ADC_ChannelCmd	..\stm8l15x_stdperiph_driver\src\stm8l15x_adc.c	583;"	function	signature:(ADC_TypeDef* ADCx, ADC_Channel_TypeDef ADC_Channels, FunctionalState NewState)
 ADC_Channel_0	..\stm8l15x_stdperiph_driver\inc\stm8l15x_adc.h	55;"	enumerator	enum:__anon6
@@ -131,7 +131,7 @@ ADC_ExtTRGSensitivity_Rising	..\stm8l15x_stdperiph_driver\inc\stm8l15x_adc.h	156
 ADC_ExtTRGSensitivity_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_adc.h	159;"	typedef	typeref:enum:__anon10
 ADC_ExternalTrigConfig	..\stm8l15x_stdperiph_driver\inc\stm8l15x_adc.h	334;"	prototype	signature:(ADC_TypeDef* ADCx, ADC_ExtEventSelection_TypeDef ADC_ExtEventSelection, ADC_ExtTRGSensitivity_TypeDef ADC_ExtTRGSensitivity)
 ADC_ExternalTrigConfig	..\stm8l15x_stdperiph_driver\src\stm8l15x_adc.c	261;"	function	signature:(ADC_TypeDef* ADCx, ADC_ExtEventSelection_TypeDef ADC_ExtEventSelection, ADC_ExtTRGSensitivity_TypeDef ADC_ExtTRGSensitivity)
-ADC_FACTORY	hardware\adc.h	24;"	enumerator	enum:__anon1
+ADC_FACTORY	hardware\adc.h	22;"	enumerator	enum:__anon1
 ADC_FLAG_AWD	..\stm8l15x_stdperiph_driver\inc\stm8l15x_adc.h	297;"	enumerator	enum:__anon16
 ADC_FLAG_EOC	..\stm8l15x_stdperiph_driver\inc\stm8l15x_adc.h	296;"	enumerator	enum:__anon16
 ADC_FLAG_OVER	..\stm8l15x_stdperiph_driver\inc\stm8l15x_adc.h	298;"	enumerator	enum:__anon16
@@ -320,6 +320,14 @@ BEEP_LSICalibrationConfig	..\stm8l15x_stdperiph_driver\src\stm8l15x_beep.c	207;"
 BEEP_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	611;"	typedef	typeref:struct:BEEP_struct
 BEEP_struct	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	604;"	struct
 BITMAP_H_	display\bitmap.h	11;"	macro
+BIT_0	hardware\register.h	13;"	macro
+BIT_1	hardware\register.h	14;"	macro
+BIT_2	hardware\register.h	15;"	macro
+BIT_3	hardware\register.h	16;"	macro
+BIT_4	hardware\register.h	17;"	macro
+BIT_5	hardware\register.h	18;"	macro
+BIT_6	hardware\register.h	19;"	macro
+BIT_7	hardware\register.h	20;"	macro
 BIT_MASK	..\stm8l15x_stdperiph_driver\src\stm8l15x_wwdg.c	89;"	macro	file:
 BKR	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1754;"	member	struct:TIM1_struct
 BKR	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1981;"	member	struct:TIM_struct
@@ -406,6 +414,7 @@ CLK_BEEPCLKSource_Off	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	148;"	enum
 CLK_BEEPCLKSource_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	151;"	typedef	typeref:enum:__anon27
 CLK_BEEPClockConfig	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	415;"	prototype	signature:(CLK_BEEPCLKSource_TypeDef CLK_BEEPCLKSource)
 CLK_BEEPClockConfig	..\stm8l15x_stdperiph_driver\src\stm8l15x_clk.c	635;"	function	signature:(CLK_BEEPCLKSource_TypeDef CLK_BEEPCLKSource)
+CLK_CBEEPR	hardware\register.h	75;"	macro
 CLK_CBEEPR_BEEPSWBSY	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	846;"	macro
 CLK_CBEEPR_CLKBEEPSEL	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	845;"	macro
 CLK_CBEEPR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	769;"	macro
@@ -419,6 +428,7 @@ CLK_CCODiv_4	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	126;"	enumerator	en
 CLK_CCODiv_64	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	130;"	enumerator	enum:__anon26
 CLK_CCODiv_8	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	127;"	enumerator	enum:__anon26
 CLK_CCODiv_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	131;"	typedef	typeref:enum:__anon26
+CLK_CCOR	hardware\register.h	69;"	macro
 CLK_CCOR_CCODIV	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	819;"	macro
 CLK_CCOR_CCOSEL	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	820;"	macro
 CLK_CCOR_CCOSWBSY	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	821;"	macro
@@ -431,10 +441,12 @@ CLK_CCOSource_Off	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	104;"	enumerat
 CLK_CCOSource_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	109;"	typedef	typeref:enum:__anon25
 CLK_CKDIVR_CKM	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	782;"	macro
 CLK_CKDIVR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	757;"	macro
+CLK_CRTCR	hardware\register.h	65;"	macro
 CLK_CRTCR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	758;"	macro
 CLK_CRTCR_RTCDIV	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	784;"	macro
 CLK_CRTCR_RTCSEL	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	785;"	macro
 CLK_CRTCR_RTCSWBSY	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	786;"	macro
+CLK_CSSR	hardware\register.h	74;"	macro
 CLK_CSSR_AUX	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	842;"	macro
 CLK_CSSR_CSSD	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	840;"	macro
 CLK_CSSR_CSSDGON	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	839;"	macro
@@ -449,6 +461,7 @@ CLK_ClockSecuritySystemEnable	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	40
 CLK_ClockSecuritySystemEnable	..\stm8l15x_stdperiph_driver\src\stm8l15x_clk.c	306;"	function	signature:(void)
 CLK_ClockSecuritySytemDeglitchCmd	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	403;"	prototype	signature:(FunctionalState NewState)
 CLK_ClockSecuritySytemDeglitchCmd	..\stm8l15x_stdperiph_driver\src\stm8l15x_clk.c	317;"	function	signature:(FunctionalState NewState)
+CLK_DIVR	hardware\register.h	64;"	macro
 CLK_DeInit	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	394;"	prototype	signature:(void)
 CLK_DeInit	..\stm8l15x_stdperiph_driver\src\stm8l15x_clk.c	120;"	function	signature:(void)
 CLK_ECKCR_HSEBYP	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	824;"	macro
@@ -458,6 +471,7 @@ CLK_ECKCR_LSEBYP	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	823;"	macro
 CLK_ECKCR_LSEON	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	826;"	macro
 CLK_ECKCR_LSERDY	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	825;"	macro
 CLK_ECKCR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	764;"	macro
+CLK_ECKR	hardware\register.h	70;"	macro
 CLK_FLAG_AUX	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	313;"	enumerator	enum:__anon32
 CLK_FLAG_BEEPSWBSY	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	315;"	enumerator	enum:__anon32
 CLK_FLAG_CCOBSY	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	309;"	enumerator	enum:__anon32
@@ -492,12 +506,15 @@ CLK_HSE_Bypass	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	56;"	enumerator	e
 CLK_HSE_OFF	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	54;"	enumerator	enum:__anon22
 CLK_HSE_ON	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	55;"	enumerator	enum:__anon22
 CLK_HSE_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	57;"	typedef	typeref:enum:__anon22
+CLK_HSICALR	hardware\register.h	76;"	macro
 CLK_HSICALR_HSICAL	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	848;"	macro
 CLK_HSICALR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	770;"	macro
 CLK_HSICmd	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	397;"	prototype	signature:(FunctionalState NewState)
 CLK_HSICmd	..\stm8l15x_stdperiph_driver\src\stm8l15x_clk.c	160;"	function	signature:(FunctionalState NewState)
+CLK_HSITRIMR	hardware\register.h	77;"	macro
 CLK_HSITRIMR_HSITRIM	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	850;"	macro
 CLK_HSITRIMR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	771;"	macro
+CLK_HSIUNLCKR	hardware\register.h	78;"	macro
 CLK_HSIUNLCKR_HSIUNLCK	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	852;"	macro
 CLK_HSIUNLCKR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	772;"	macro
 CLK_HaltConfig	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	423;"	prototype	signature:(CLK_Halt_TypeDef CLK_Halt, FunctionalState NewState)
@@ -514,6 +531,7 @@ CLK_ICKCR_LSION	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	792;"	macro
 CLK_ICKCR_LSIRDY	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	791;"	macro
 CLK_ICKCR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	759;"	macro
 CLK_ICKCR_SAHALT	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	790;"	macro
+CLK_ICKR	hardware\register.h	66;"	macro
 CLK_ITConfig	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	427;"	prototype	signature:(CLK_IT_TypeDef CLK_IT, FunctionalState NewState)
 CLK_ITConfig	..\stm8l15x_stdperiph_driver\src\stm8l15x_clk.c	875;"	function	signature:(CLK_IT_TypeDef CLK_IT, FunctionalState NewState)
 CLK_IT_CSSD	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	354;"	enumerator	enum:__anon33
@@ -532,6 +550,7 @@ CLK_LSICmd	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	399;"	prototype	signa
 CLK_LSICmd	..\stm8l15x_stdperiph_driver\src\stm8l15x_clk.c	212;"	function	signature:(FunctionalState NewState)
 CLK_MainRegulatorCmd	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	424;"	prototype	signature:(FunctionalState NewState)
 CLK_MainRegulatorCmd	..\stm8l15x_stdperiph_driver\src\stm8l15x_clk.c	831;"	function	signature:(FunctionalState NewState)
+CLK_PCKENR1	hardware\register.h	67;"	macro
 CLK_PCKENR1_BEEP	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	802;"	macro
 CLK_PCKENR1_DAC	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	803;"	macro
 CLK_PCKENR1_I2C1	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	799;"	macro
@@ -541,6 +560,7 @@ CLK_PCKENR1_TIM2	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	796;"	macro
 CLK_PCKENR1_TIM3	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	797;"	macro
 CLK_PCKENR1_TIM4	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	798;"	macro
 CLK_PCKENR1_USART1	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	801;"	macro
+CLK_PCKENR2	hardware\register.h	68;"	macro
 CLK_PCKENR2_ADC1	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	805;"	macro
 CLK_PCKENR2_BOOTROM	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	811;"	macro
 CLK_PCKENR2_COMP	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	810;"	macro
@@ -579,6 +599,7 @@ CLK_Peripheral_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	236;"	typ
 CLK_Peripheral_USART1	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	220;"	enumerator	enum:__anon30
 CLK_Peripheral_USART2	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	233;"	enumerator	enum:__anon30
 CLK_Peripheral_USART3	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	234;"	enumerator	enum:__anon30
+CLK_REGCSR	hardware\register.h	79;"	macro
 CLK_REGCSR_EEBUSY	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	855;"	macro
 CLK_REGCSR_EEREADY	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	854;"	macro
 CLK_REGCSR_HSEPD	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	857;"	macro
@@ -606,13 +627,16 @@ CLK_RTCCLKSwitchOnLSEFailureEnable	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk
 CLK_RTCCLKSwitchOnLSEFailureEnable	..\stm8l15x_stdperiph_driver\src\stm8l15x_clk.c	777;"	function	signature:(void)
 CLK_RTCClockConfig	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	414;"	prototype	signature:(CLK_RTCCLKSource_TypeDef CLK_RTCCLKSource, CLK_RTCCLKDiv_TypeDef CLK_RTCCLKDiv)
 CLK_RTCClockConfig	..\stm8l15x_stdperiph_driver\src\stm8l15x_clk.c	616;"	function	signature:(CLK_RTCCLKSource_TypeDef CLK_RTCCLKSource, CLK_RTCCLKDiv_TypeDef CLK_RTCCLKDiv)
+CLK_SCSR	hardware\register.h	71;"	macro
 CLK_SCSR_CKM	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	830;"	macro
 CLK_SCSR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	765;"	macro
+CLK_SWCR	hardware\register.h	73;"	macro
 CLK_SWCR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	767;"	macro
 CLK_SWCR_SWBSY	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	837;"	macro
 CLK_SWCR_SWEN	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	836;"	macro
 CLK_SWCR_SWIEN	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	835;"	macro
 CLK_SWCR_SWIF	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	834;"	macro
+CLK_SWR	hardware\register.h	72;"	macro
 CLK_SWR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	766;"	macro
 CLK_SWR_SWI	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	832;"	macro
 CLK_SYSCLKDivConfig	..\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h	410;"	prototype	signature:(CLK_SYSCLKDiv_TypeDef CLK_SYSCLKDiv)
@@ -648,27 +672,32 @@ CNTRL	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1740;"	member	struct:TIM1_stru
 CNTRL	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1973;"	member	struct:TIM_struct
 COMP	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2890;"	macro
 COMP_BASE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2837;"	macro
+COMP_CSR1	hardware\register.h	146;"	macro
 COMP_CSR1_CMP1	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	905;"	macro
 COMP_CSR1_CMP1OUT	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	903;"	macro
 COMP_CSR1_EF1	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	902;"	macro
 COMP_CSR1_IE1	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	901;"	macro
 COMP_CSR1_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	886;"	macro
 COMP_CSR1_STE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	904;"	macro
+COMP_CSR2	hardware\register.h	147;"	macro
 COMP_CSR2_CMP2	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	912;"	macro
 COMP_CSR2_CMP2OUT	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	910;"	macro
 COMP_CSR2_EF2	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	909;"	macro
 COMP_CSR2_IE2	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	908;"	macro
 COMP_CSR2_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	887;"	macro
 COMP_CSR2_SPEED	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	911;"	macro
+COMP_CSR3	hardware\register.h	148;"	macro
 COMP_CSR3_INSEL	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	916;"	macro
 COMP_CSR3_OUTSEL	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	915;"	macro
 COMP_CSR3_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	888;"	macro
 COMP_CSR3_VREFEN	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	917;"	macro
 COMP_CSR3_VREFOUTEN	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	919;"	macro
 COMP_CSR3_WNDWE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	918;"	macro
+COMP_CSR4	hardware\register.h	149;"	macro
 COMP_CSR4_INVTRIG	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	923;"	macro
 COMP_CSR4_NINVTRIG	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	922;"	macro
 COMP_CSR4_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	889;"	macro
+COMP_CSR5	hardware\register.h	150;"	macro
 COMP_CSR5_DACTRIG	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	926;"	macro
 COMP_CSR5_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	890;"	macro
 COMP_CSR5_VREFTRIG	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	927;"	macro
@@ -822,12 +851,21 @@ DAC_Align_12b_R	..\stm8l15x_stdperiph_driver\inc\stm8l15x_dac.h	76;"	enumerator	
 DAC_Align_8b_R	..\stm8l15x_stdperiph_driver\inc\stm8l15x_dac.h	78;"	enumerator	enum:__anon44
 DAC_Align_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_dac.h	79;"	typedef	typeref:enum:__anon44
 DAC_BASE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2833;"	macro
+DAC_BIT_CR1_BOFF	hardware\register.h	201;"	macro
+DAC_BIT_CR1_EN	hardware\register.h	202;"	macro
+DAC_BIT_CR1_TEN	hardware\register.h	200;"	macro
+DAC_BIT_CR1_TSEL0	hardware\register.h	197;"	macro
+DAC_BIT_CR1_TSEL1	hardware\register.h	198;"	macro
+DAC_BIT_CR1_TSEL2	hardware\register.h	199;"	macro
+DAC_BIT_SWTRIGR_SWTRIG1	hardware\register.h	204;"	macro
+DAC_CR1	hardware\register.h	181;"	macro
 DAC_CR1_BOFF	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2491;"	macro
 DAC_CR1_EN	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2492;"	macro
 DAC_CR1_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2469;"	macro
 DAC_CR1_TEN	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2490;"	macro
 DAC_CR1_TSEL	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2489;"	macro
 DAC_CR1_WAVEN	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2493;"	macro
+DAC_CR2	hardware\register.h	182;"	macro
 DAC_CR2_DMAEN	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2497;"	macro
 DAC_CR2_DMAUDRIE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2496;"	macro
 DAC_CR2_MAMPx	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2498;"	macro
@@ -841,12 +879,15 @@ DAC_ClearITPendingBit	..\stm8l15x_stdperiph_driver\inc\stm8l15x_dac.h	281;"	prot
 DAC_ClearITPendingBit	..\stm8l15x_stdperiph_driver\src\stm8l15x_dac.c	813;"	function	signature:(DAC_Channel_TypeDef DAC_Channel, DAC_IT_TypeDef DAC_IT)
 DAC_Cmd	..\stm8l15x_stdperiph_driver\inc\stm8l15x_dac.h	262;"	prototype	signature:(DAC_Channel_TypeDef DAC_Channel, FunctionalState NewState)
 DAC_Cmd	..\stm8l15x_stdperiph_driver\src\stm8l15x_dac.c	254;"	function	signature:(DAC_Channel_TypeDef DAC_Channel, FunctionalState NewState)
+DAC_DHR8	hardware\register.h	192;"	macro
 DAC_DHR8_8DHR	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2521;"	macro
 DAC_DHR8_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2477;"	macro
 DAC_DMACmd	..\stm8l15x_stdperiph_driver\inc\stm8l15x_dac.h	274;"	prototype	signature:(DAC_Channel_TypeDef DAC_Channel, FunctionalState NewState)
 DAC_DMACmd	..\stm8l15x_stdperiph_driver\src\stm8l15x_dac.c	613;"	function	signature:(DAC_Channel_TypeDef DAC_Channel, FunctionalState NewState)
+DAC_DORH	hardware\register.h	194;"	macro
 DAC_DORH_DORH	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2524;"	macro
 DAC_DORH_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2478;"	macro
+DAC_DORL	hardware\register.h	195;"	macro
 DAC_DORL_DORL	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2527;"	macro
 DAC_DORL_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2479;"	macro
 DAC_DeInit	..\stm8l15x_stdperiph_driver\inc\stm8l15x_dac.h	256;"	prototype	signature:(void)
@@ -867,8 +908,10 @@ DAC_IT_DMAUDR	..\stm8l15x_stdperiph_driver\inc\stm8l15x_dac.h	140;"	enumerator	e
 DAC_IT_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_dac.h	141;"	typedef	typeref:enum:__anon48
 DAC_Init	..\stm8l15x_stdperiph_driver\inc\stm8l15x_dac.h	259;"	prototype	signature:(DAC_Channel_TypeDef DAC_Channel, DAC_Trigger_TypeDef DAC_Trigger, DAC_OutputBuffer_TypeDef DAC_OutputBuffer)
 DAC_Init	..\stm8l15x_stdperiph_driver\src\stm8l15x_dac.c	208;"	function	signature:(DAC_Channel_TypeDef DAC_Channel, DAC_Trigger_TypeDef DAC_Trigger, DAC_OutputBuffer_TypeDef DAC_OutputBuffer)
+DAC_LDHRH	hardware\register.h	189;"	macro
 DAC_LDHRH_LDHRH	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2515;"	macro
 DAC_LDHRH_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2475;"	macro
+DAC_LDHRL	hardware\register.h	190;"	macro
 DAC_LDHRL_LDHRL	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2518;"	macro
 DAC_LDHRL_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2476;"	macro
 DAC_LFSRUnmask_Bit0	..\stm8l15x_stdperiph_driver\inc\stm8l15x_dac.h	169;"	enumerator	enum:__anon50
@@ -888,13 +931,17 @@ DAC_NoiseWaveLFSR	..\stm8l15x_stdperiph_driver\inc\stm8l15x_dac.h	243;"	macro
 DAC_OutputBuffer_Disable	..\stm8l15x_stdperiph_driver\inc\stm8l15x_dac.h	126;"	enumerator	enum:__anon47
 DAC_OutputBuffer_Enable	..\stm8l15x_stdperiph_driver\inc\stm8l15x_dac.h	125;"	enumerator	enum:__anon47
 DAC_OutputBuffer_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_dac.h	127;"	typedef	typeref:enum:__anon47
+DAC_RDHRH	hardware\register.h	186;"	macro
 DAC_RDHRH_RDHRH	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2509;"	macro
 DAC_RDHRH_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2473;"	macro
+DAC_RDHRL	hardware\register.h	187;"	macro
 DAC_RDHRL_RDHRL	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2512;"	macro
 DAC_RDHRL_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2474;"	macro
+DAC_SR	hardware\register.h	184;"	macro
 DAC_SR_DMAUDR1	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2505;"	macro
 DAC_SR_DMAUDR2	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2506;"	macro
 DAC_SR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2472;"	macro
+DAC_SWTRIGR	hardware\register.h	183;"	macro
 DAC_SWTRIGR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2471;"	macro
 DAC_SWTRIGR_SWTRIG1	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2501;"	macro
 DAC_SWTRIGR_SWTRIG2	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2502;"	macro
@@ -1115,20 +1162,28 @@ ERROR	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	250;"	enumerator	enum:__anon5
 ETR	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1727;"	member	struct:TIM1_struct
 ETR	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1963;"	member	struct:TIM_struct
 EXTI	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2859;"	macro
+EXTI0_IRQ	hardware\register.h	269;"	macro
 EXTI0_IRQHandler	stm8_interrupt_vector.c	33;"	function	signature:(void)
 EXTI0_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	57;"	enumerator	enum:__anon86
+EXTI1_IRQ	hardware\register.h	270;"	macro
 EXTI1_IRQHandler	stm8_interrupt_vector.c	37;"	function	signature:(void)
 EXTI1_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	58;"	enumerator	enum:__anon86
+EXTI2_IRQ	hardware\register.h	271;"	macro
 EXTI2_IRQHandler	stm8_interrupt_vector.c	43;"	function	signature:(void)
 EXTI2_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	59;"	enumerator	enum:__anon86
+EXTI3_IRQ	hardware\register.h	272;"	macro
 EXTI3_IRQHandler	stm8_interrupt_vector.c	44;"	function	signature:(void)
 EXTI3_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	60;"	enumerator	enum:__anon86
+EXTI4_IRQ	hardware\register.h	273;"	macro
 EXTI4_IRQHandler	stm8_interrupt_vector.c	45;"	function	signature:(void)
 EXTI4_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	61;"	enumerator	enum:__anon86
+EXTI5_IRQ	hardware\register.h	274;"	macro
 EXTI5_IRQHandler	stm8_interrupt_vector.c	49;"	function	signature:(void)
 EXTI5_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	62;"	enumerator	enum:__anon86
+EXTI6_IRQ	hardware\register.h	275;"	macro
 EXTI6_IRQHandler	stm8_interrupt_vector.c	57;"	function	signature:(void)
 EXTI6_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	63;"	enumerator	enum:__anon86
+EXTI7_IRQ	hardware\register.h	276;"	macro
 EXTI7_IRQHandler	stm8_interrupt_vector.c	58;"	function	signature:(void)
 EXTI7_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	64;"	enumerator	enum:__anon86
 EXTIB_G_IRQHandler	stm8_interrupt_vector.c	31;"	function	signature:(void)
@@ -1138,6 +1193,7 @@ EXTID_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	71;"	enumerator	enum:
 EXTIE_F_PVD_IRQHandler	stm8_interrupt_vector.c	30;"	function	signature:(void)
 EXTIE_F_PVD_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	56;"	enumerator	enum:__anon86
 EXTI_BASE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2810;"	macro
+EXTI_CONF1	hardware\register.h	127;"	macro
 EXTI_CONF1_PBHIS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	992;"	macro
 EXTI_CONF1_PBLIS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	991;"	macro
 EXTI_CONF1_PDHIS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	994;"	macro
@@ -1155,16 +1211,19 @@ EXTI_CONF2_PHDS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1011;"	macro
 EXTI_CONF2_PHHIS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1009;"	macro
 EXTI_CONF2_PHLIS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1008;"	macro
 EXTI_CONF2_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	963;"	macro
+EXTI_CR1	hardware\register.h	122;"	macro
 EXTI_CR1_P0IS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	976;"	macro
 EXTI_CR1_P1IS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	975;"	macro
 EXTI_CR1_P2IS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	974;"	macro
 EXTI_CR1_P3IS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	973;"	macro
 EXTI_CR1_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	956;"	macro
+EXTI_CR2	hardware\register.h	123;"	macro
 EXTI_CR2_P4IS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	982;"	macro
 EXTI_CR2_P5IS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	981;"	macro
 EXTI_CR2_P6IS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	980;"	macro
 EXTI_CR2_P7IS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	979;"	macro
 EXTI_CR2_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	957;"	macro
+EXTI_CR3	hardware\register.h	124;"	macro
 EXTI_CR3_PBIS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	985;"	macro
 EXTI_CR3_PDIS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	986;"	macro
 EXTI_CR3_PEIS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	987;"	macro
@@ -1227,7 +1286,9 @@ EXTI_Port_F	..\stm8l15x_stdperiph_driver\inc\stm8l15x_exti.h	109;"	enumerator	en
 EXTI_Port_G	..\stm8l15x_stdperiph_driver\inc\stm8l15x_exti.h	110;"	enumerator	enum:__anon62
 EXTI_Port_H	..\stm8l15x_stdperiph_driver\inc\stm8l15x_exti.h	111;"	enumerator	enum:__anon62
 EXTI_Port_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_exti.h	112;"	typedef	typeref:enum:__anon62
+EXTI_SR1	hardware\register.h	125;"	macro
 EXTI_SR1_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	960;"	macro
+EXTI_SR2	hardware\register.h	126;"	macro
 EXTI_SR2_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	961;"	macro
 EXTI_SelectPort	..\stm8l15x_stdperiph_driver\inc\stm8l15x_exti.h	268;"	prototype	signature:(EXTI_Port_TypeDef EXTI_Port)
 EXTI_SelectPort	..\stm8l15x_stdperiph_driver\src\stm8l15x_exti.c	219;"	function	signature:(EXTI_Port_TypeDef EXTI_Port)
@@ -1256,11 +1317,13 @@ FLASH_BLOCK_SIZE	..\stm8l15x_stdperiph_driver\inc\stm8l15x_flash.h	58;"	macro
 FLASH_BLOCK_SIZE	..\stm8l15x_stdperiph_driver\inc\stm8l15x_flash.h	67;"	macro
 FLASH_BLOCK_SIZE	..\stm8l15x_stdperiph_driver\inc\stm8l15x_flash.h	76;"	macro
 FLASH_CLEAR_BYTE	..\stm8l15x_stdperiph_driver\src\stm8l15x_flash.c	129;"	macro	file:
+FLASH_CR1	hardware\register.h	52;"	macro
 FLASH_CR1_EEPM	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1049;"	macro
 FLASH_CR1_FIX	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1052;"	macro
 FLASH_CR1_IE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1051;"	macro
 FLASH_CR1_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1035;"	macro
 FLASH_CR1_WAITM	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1050;"	macro
+FLASH_CR2	hardware\register.h	53;"	macro
 FLASH_CR2_ERASE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1056;"	macro
 FLASH_CR2_FPRG	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1057;"	macro
 FLASH_CR2_OPT	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1054;"	macro
@@ -1274,10 +1337,13 @@ FLASH_DATA_EEPROM_END_PHYSICAL_ADDRESS	..\stm8l15x_stdperiph_driver\inc\stm8l15x
 FLASH_DATA_EEPROM_END_PHYSICAL_ADDRESS	..\stm8l15x_stdperiph_driver\inc\stm8l15x_flash.h	64;"	macro
 FLASH_DATA_EEPROM_END_PHYSICAL_ADDRESS	..\stm8l15x_stdperiph_driver\inc\stm8l15x_flash.h	73;"	macro
 FLASH_DATA_EEPROM_START_PHYSICAL_ADDRESS	..\stm8l15x_stdperiph_driver\inc\stm8l15x_flash.h	50;"	macro
+FLASH_DUKR	hardware\register.h	55;"	macro
 FLASH_DUKR_DUK	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1068;"	macro
 FLASH_DUKR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1038;"	macro
+FLASH_DUL_BIT	hardware\register.h	58;"	macro
 FLASH_DeInit	..\stm8l15x_stdperiph_driver\inc\stm8l15x_flash.h	304;"	prototype	signature:(void)
 FLASH_DeInit	..\stm8l15x_stdperiph_driver\src\stm8l15x_flash.c	259;"	function	signature:(void)
+FLASH_EOP_BIT	hardware\register.h	59;"	macro
 FLASH_EraseByte	..\stm8l15x_stdperiph_driver\inc\stm8l15x_flash.h	308;"	prototype	signature:(uint32_t Address)
 FLASH_EraseByte	..\stm8l15x_stdperiph_driver\src\stm8l15x_flash.c	331;"	function	signature:(uint32_t Address)
 FLASH_EraseOptionByte	..\stm8l15x_stdperiph_driver\inc\stm8l15x_flash.h	317;"	prototype	signature:(uint16_t Address)
@@ -1300,6 +1366,7 @@ FLASH_GetProgrammingTime	..\stm8l15x_stdperiph_driver\inc\stm8l15x_flash.h	299;"
 FLASH_GetProgrammingTime	..\stm8l15x_stdperiph_driver\src\stm8l15x_flash.c	188;"	function	signature:(void)
 FLASH_GetReadOutProtectionStatus	..\stm8l15x_stdperiph_driver\inc\stm8l15x_flash.h	315;"	prototype	signature:(void)
 FLASH_GetReadOutProtectionStatus	..\stm8l15x_stdperiph_driver\src\stm8l15x_flash.c	462;"	function	signature:(void)
+FLASH_IAPSR	hardware\register.h	56;"	macro
 FLASH_IAPSR_DUL	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1061;"	macro
 FLASH_IAPSR_EOP	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1062;"	macro
 FLASH_IAPSR_HVOFF	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1060;"	macro
@@ -1324,6 +1391,7 @@ FLASH_PROGRAM_END_PHYSICAL_ADDRESS	..\stm8l15x_stdperiph_driver\inc\stm8l15x_fla
 FLASH_PROGRAM_END_PHYSICAL_ADDRESS	..\stm8l15x_stdperiph_driver\inc\stm8l15x_flash.h	63;"	macro
 FLASH_PROGRAM_END_PHYSICAL_ADDRESS	..\stm8l15x_stdperiph_driver\inc\stm8l15x_flash.h	72;"	macro
 FLASH_PROGRAM_START_PHYSICAL_ADDRESS	..\stm8l15x_stdperiph_driver\inc\stm8l15x_flash.h	49;"	macro
+FLASH_PUKR	hardware\register.h	54;"	macro
 FLASH_PUKR_PUK	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1066;"	macro
 FLASH_PUKR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1037;"	macro
 FLASH_PowerStatus_IDDQDuringRunMode	..\stm8l15x_stdperiph_driver\inc\stm8l15x_flash.h	170;"	enumerator	enum:__anon70
@@ -1464,8 +1532,27 @@ HTRH	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2321;"	member	struct:ADC_struct
 HTRL	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2322;"	member	struct:ADC_struct
 I2C1	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2870;"	macro
 I2C1_BASE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2822;"	macro
+I2C1_CCRH	hardware\register.h	221;"	macro
+I2C1_CCRL	hardware\register.h	220;"	macro
+I2C1_CR1	hardware\register.h	209;"	macro
+I2C1_CR1_PE_BIT	hardware\register.h	225;"	macro
+I2C1_CR2	hardware\register.h	210;"	macro
+I2C1_CR2_START_BIT	hardware\register.h	226;"	macro
+I2C1_CR2_STOP_BIT	hardware\register.h	227;"	macro
+I2C1_DR	hardware\register.h	215;"	macro
+I2C1_FREQR	hardware\register.h	211;"	macro
+I2C1_IRQ	hardware\register.h	277;"	macro
 I2C1_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	82;"	enumerator	enum:__anon86
+I2C1_ITR	hardware\register.h	219;"	macro
+I2C1_OARH	hardware\register.h	213;"	macro
+I2C1_OARL	hardware\register.h	212;"	macro
+I2C1_PECR	hardware\register.h	223;"	macro
 I2C1_SPI2_IRQHandler	stm8_interrupt_vector.c	81;"	function	signature:(void)
+I2C1_SR1	hardware\register.h	216;"	macro
+I2C1_SR2	hardware\register.h	217;"	macro
+I2C1_SR3	hardware\register.h	218;"	macro
+I2C1_TRISER	hardware\register.h	222;"	macro
+I2C_ADDRESS	hardware\i2c.h	14;"	macro
 I2C_ARPCmd	..\stm8l15x_stdperiph_driver\inc\stm8l15x_i2c.h	665;"	prototype	signature:(I2C_TypeDef* I2Cx, FunctionalState NewState)
 I2C_ARPCmd	..\stm8l15x_stdperiph_driver\src\stm8l15x_i2c.c	446;"	function	signature:(I2C_TypeDef* I2Cx, FunctionalState NewState)
 I2C_AckPositionConfig	..\stm8l15x_stdperiph_driver\inc\stm8l15x_i2c.h	671;"	prototype	signature:(I2C_TypeDef* I2Cx, I2C_AckPosition_TypeDef I2C_AckPosition)
@@ -1704,7 +1791,15 @@ I2C_TRISER_TRISE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1194;"	macro
 I2C_TransmitPEC	..\stm8l15x_stdperiph_driver\inc\stm8l15x_i2c.h	683;"	prototype	signature:(I2C_TypeDef* I2Cx, FunctionalState NewState)
 I2C_TransmitPEC	..\stm8l15x_stdperiph_driver\src\stm8l15x_i2c.c	705;"	function	signature:(I2C_TypeDef* I2Cx, FunctionalState NewState)
 I2C_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1098;"	typedef	typeref:struct:I2C_struct
+I2C_init	hardware\i2c.c	61;"	function	signature:(void)
+I2C_init	hardware\i2c.h	16;"	prototype	signature:(void)
+I2C_readArray	hardware\i2c.c	152;"	function	signature:(uint8_t startAddress, uint8_t* data, uint8_t length)
+I2C_readArray	hardware\i2c.h	20;"	prototype	signature:(uint8_t startAddress, uint8_t* data, uint8_t length)
+I2C_readReg	hardware\i2c.c	112;"	function	signature:(uint8_t reg)
+I2C_readReg	hardware\i2c.h	19;"	prototype	signature:(uint8_t reg)
 I2C_struct	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1080;"	struct
+I2C_writeReg	hardware\i2c.c	76;"	function	signature:(uint8_t reg, uint8_t data)
+I2C_writeReg	hardware\i2c.h	18;"	prototype	signature:(uint8_t reg, uint8_t data)
 IAPSR	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1028;"	member	struct:FLASH_struct
 ICKCR	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	736;"	member	struct:CLK_struct
 ICR1	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1467;"	member	struct:RI_struct
@@ -2434,11 +2529,41 @@ OPT	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2894;"	macro
 OPT_BASE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2793;"	macro
 OPT_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1371;"	typedef	typeref:struct:OPT_struct
 OPT_struct	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1357;"	struct
+PA_CR1	hardware\register.h	88;"	macro
+PA_CR2	hardware\register.h	89;"	macro
+PA_DDR	hardware\register.h	87;"	macro
+PA_IDR	hardware\register.h	86;"	macro
+PA_ODR	hardware\register.h	85;"	macro
+PB_CR1	hardware\register.h	94;"	macro
+PB_CR2	hardware\register.h	95;"	macro
+PB_DDR	hardware\register.h	93;"	macro
+PB_IDR	hardware\register.h	92;"	macro
+PB_ODR	hardware\register.h	91;"	macro
 PCKENR1	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	737;"	member	struct:CLK_struct
 PCKENR2	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	738;"	member	struct:CLK_struct
 PCKENR3	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	750;"	member	struct:CLK_struct
 PCODESIZE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1366;"	member	struct:OPT_struct
+PC_CR1	hardware\register.h	100;"	macro
+PC_CR2	hardware\register.h	101;"	macro
+PC_DDR	hardware\register.h	99;"	macro
+PC_IDR	hardware\register.h	98;"	macro
+PC_ODR	hardware\register.h	97;"	macro
+PD_CR1	hardware\register.h	106;"	macro
+PD_CR2	hardware\register.h	107;"	macro
+PD_DDR	hardware\register.h	105;"	macro
+PD_IDR	hardware\register.h	104;"	macro
+PD_ODR	hardware\register.h	103;"	macro
 PECR	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1096;"	member	struct:I2C_struct
+PE_CR1	hardware\register.h	112;"	macro
+PE_CR2	hardware\register.h	113;"	macro
+PE_DDR	hardware\register.h	111;"	macro
+PE_IDR	hardware\register.h	110;"	macro
+PE_ODR	hardware\register.h	109;"	macro
+PF_CR1	hardware\register.h	118;"	macro
+PF_CR2	hardware\register.h	119;"	macro
+PF_DDR	hardware\register.h	117;"	macro
+PF_IDR	hardware\register.h	116;"	macro
+PF_ODR	hardware\register.h	115;"	macro
 PM	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2688;"	member	struct:LCD_struct
 PR	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1267;"	member	struct:IWDG_struct
 PSCR	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1974;"	member	struct:TIM_struct
@@ -2565,6 +2690,8 @@ RESERVED8	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2460;"	member	struct:DAC_s
 RESERVED8	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	359;"	member	struct:RTC_struct
 RESET	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	245;"	enumerator	enum:__anon3
 RI	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2889;"	macro
+RI_ASCR1	hardware\register.h	165;"	macro
+RI_ASCR1	hardware\register.h	177;"	macro
 RI_ASCR1_AS0	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1617;"	macro
 RI_ASCR1_AS1	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1618;"	macro
 RI_ASCR1_AS2	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1619;"	macro
@@ -2574,6 +2701,8 @@ RI_ASCR1_AS5	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1622;"	macro
 RI_ASCR1_AS6	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1623;"	macro
 RI_ASCR1_AS7	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1624;"	macro
 RI_ASCR1_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1513;"	macro
+RI_ASCR2	hardware\register.h	166;"	macro
+RI_ASCR2	hardware\register.h	178;"	macro
 RI_ASCR2_AS10	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1628;"	macro
 RI_ASCR2_AS11	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1629;"	macro
 RI_ASCR2_AS14	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1630;"	macro
@@ -2595,10 +2724,13 @@ RI_AnalogSwitch_8	..\stm8l15x_stdperiph_driver\inc\stm8l15x_syscfg.h	114;"	enume
 RI_AnalogSwitch_9	..\stm8l15x_stdperiph_driver\inc\stm8l15x_syscfg.h	115;"	enumerator	enum:__anon149
 RI_AnalogSwitch_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_syscfg.h	119;"	typedef	typeref:enum:__anon149
 RI_BASE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2836;"	macro
+RI_ICR1	hardware\register.h	153;"	macro
 RI_ICR1_IC2CS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1527;"	macro
 RI_ICR1_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1500;"	macro
+RI_ICR2	hardware\register.h	154;"	macro
 RI_ICR2_IC3CS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1529;"	macro
 RI_ICR2_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1501;"	macro
+RI_IOCMR1	hardware\register.h	158;"	macro
 RI_IOCMR1_CH10M	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1561;"	macro
 RI_IOCMR1_CH13M	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1562;"	macro
 RI_IOCMR1_CH16M	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1563;"	macro
@@ -2608,6 +2740,7 @@ RI_IOCMR1_CH22M	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1565;"	macro
 RI_IOCMR1_CH4M	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1559;"	macro
 RI_IOCMR1_CH7M	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1560;"	macro
 RI_IOCMR1_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1503;"	macro
+RI_IOCMR2	hardware\register.h	159;"	macro
 RI_IOCMR2_CH11M	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1570;"	macro
 RI_IOCMR2_CH14M	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1571;"	macro
 RI_IOCMR2_CH17M	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1572;"	macro
@@ -2617,6 +2750,7 @@ RI_IOCMR2_CH2M	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1567;"	macro
 RI_IOCMR2_CH5M	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1568;"	macro
 RI_IOCMR2_CH8M	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1569;"	macro
 RI_IOCMR2_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1504;"	macro
+RI_IOCMR3	hardware\register.h	160;"	macro
 RI_IOCMR3_CH12M	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1579;"	macro
 RI_IOCMR3_CH15M	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1580;"	macro
 RI_IOCMR3_CH18M	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1581;"	macro
@@ -2627,11 +2761,14 @@ RI_IOCMR3_CH6M	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1577;"	macro
 RI_IOCMR3_CH9M	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1578;"	macro
 RI_IOCMR3_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1505;"	macro
 RI_IOCMR4_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1517;"	macro
+RI_IOGCR	hardware\register.h	164;"	macro
+RI_IOGCR	hardware\register.h	176;"	macro
 RI_IOGCR_IOM1	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1612;"	macro
 RI_IOGCR_IOM2	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1613;"	macro
 RI_IOGCR_IOM3	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1614;"	macro
 RI_IOGCR_IOM4	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1615;"	macro
 RI_IOGCR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1511;"	macro
+RI_IOIR1	hardware\register.h	155;"	macro
 RI_IOIR1_CH10I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1534;"	macro
 RI_IOIR1_CH13I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1535;"	macro
 RI_IOIR1_CH16I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1536;"	macro
@@ -2640,6 +2777,7 @@ RI_IOIR1_CH1I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1531;"	macro
 RI_IOIR1_CH22I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1538;"	macro
 RI_IOIR1_CH4I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1532;"	macro
 RI_IOIR1_CH7I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1533;"	macro
+RI_IOIR2	hardware\register.h	156;"	macro
 RI_IOIR2_CH11I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1543;"	macro
 RI_IOIR2_CH14I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1544;"	macro
 RI_IOIR2_CH17I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1545;"	macro
@@ -2648,6 +2786,7 @@ RI_IOIR2_CH23I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1547;"	macro
 RI_IOIR2_CH2I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1540;"	macro
 RI_IOIR2_CH5I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1541;"	macro
 RI_IOIR2_CH8I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1542;"	macro
+RI_IOIR3	hardware\register.h	157;"	macro
 RI_IOIR3_CH12I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1552;"	macro
 RI_IOIR3_CH15I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1553;"	macro
 RI_IOIR3_CH18I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1554;"	macro
@@ -2656,6 +2795,8 @@ RI_IOIR3_CH24I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1556;"	macro
 RI_IOIR3_CH3I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1549;"	macro
 RI_IOIR3_CH6I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1550;"	macro
 RI_IOIR3_CH9I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1551;"	macro
+RI_IOSR1	hardware\register.h	161;"	macro
+RI_IOSR1	hardware\register.h	173;"	macro
 RI_IOSR1_CH10E	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1588;"	macro
 RI_IOSR1_CH13E	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1589;"	macro
 RI_IOSR1_CH16E	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1590;"	macro
@@ -2665,6 +2806,8 @@ RI_IOSR1_CH22E	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1592;"	macro
 RI_IOSR1_CH4E	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1586;"	macro
 RI_IOSR1_CH7E	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1587;"	macro
 RI_IOSR1_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1507;"	macro
+RI_IOSR2	hardware\register.h	162;"	macro
+RI_IOSR2	hardware\register.h	174;"	macro
 RI_IOSR2_CH11E	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1597;"	macro
 RI_IOSR2_CH14E	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1598;"	macro
 RI_IOSR2_CH17E	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1599;"	macro
@@ -2674,6 +2817,8 @@ RI_IOSR2_CH2E	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1594;"	macro
 RI_IOSR2_CH5E	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1595;"	macro
 RI_IOSR2_CH8E	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1596;"	macro
 RI_IOSR2_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1508;"	macro
+RI_IOSR3	hardware\register.h	163;"	macro
+RI_IOSR3	hardware\register.h	175;"	macro
 RI_IOSR3_CH12E	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1606;"	macro
 RI_IOSR3_CH15E	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1607;"	macro
 RI_IOSR3_CH18E	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1608;"	macro
@@ -2744,6 +2889,7 @@ RI_InputCaptureRouting_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_syscfg.
 RI_InputCapture_IC2	..\stm8l15x_stdperiph_driver\inc\stm8l15x_syscfg.h	53;"	enumerator	enum:__anon147
 RI_InputCapture_IC3	..\stm8l15x_stdperiph_driver\inc\stm8l15x_syscfg.h	54;"	enumerator	enum:__anon147
 RI_InputCapture_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_syscfg.h	55;"	typedef	typeref:enum:__anon147
+RI_RCR	hardware\register.h	167;"	macro
 RI_RCR_10KPD	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1633;"	macro
 RI_RCR_10KPU	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1635;"	macro
 RI_RCR_400KPD	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1632;"	macro
@@ -3166,8 +3312,19 @@ SMCR	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1962;"	member	struct:TIM_struct
 SMCR	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2144;"	member	struct:TIM4_struct
 SPI1	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2868;"	macro
 SPI1_BASE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2820;"	macro
+SPI1_BSY_FLAG	hardware\register.h	130;"	macro
+SPI1_CR1	hardware\register.h	134;"	macro
+SPI1_CR2	hardware\register.h	135;"	macro
+SPI1_CRCPR	hardware\register.h	139;"	macro
+SPI1_DR	hardware\register.h	138;"	macro
+SPI1_ICR	hardware\register.h	136;"	macro
 SPI1_IRQHandler	stm8_interrupt_vector.c	78;"	function	signature:(void)
 SPI1_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	67;"	enumerator	enum:__anon86
+SPI1_RXCRCR	hardware\register.h	140;"	macro
+SPI1_RXNE_FLAG	hardware\register.h	132;"	macro
+SPI1_SR	hardware\register.h	137;"	macro
+SPI1_TXCRCR	hardware\register.h	141;"	macro
+SPI1_TXE_FLAG	hardware\register.h	131;"	macro
 SPI2	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2869;"	macro
 SPI2_BASE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2821;"	macro
 SPI_BaudRatePrescaler_128	..\stm8l15x_stdperiph_driver\inc\stm8l15x_spi.h	114;"	enumerator	enum:__anon139
@@ -3343,12 +3500,14 @@ SYSCFG_RIResistorConfig	..\stm8l15x_stdperiph_driver\inc\stm8l15x_syscfg.h	407;"
 SYSCFG_RIResistorConfig	..\stm8l15x_stdperiph_driver\src\stm8l15x_syscfg.c	320;"	function	signature:(RI_Resistor_TypeDef RI_Resistor, FunctionalState NewState)
 SYSCFG_RITIMInputCaptureConfig	..\stm8l15x_stdperiph_driver\inc\stm8l15x_syscfg.h	402;"	prototype	signature:(RI_InputCapture_TypeDef RI_InputCapture, RI_InputCaptureRouting_TypeDef RI_InputCaptureRouting)
 SYSCFG_RITIMInputCaptureConfig	..\stm8l15x_stdperiph_driver\src\stm8l15x_syscfg.c	142;"	function	signature:(RI_InputCapture_TypeDef RI_InputCapture, RI_InputCaptureRouting_TypeDef RI_InputCaptureRouting)
+SYSCFG_RMPCR1	hardware\register.h	48;"	macro
 SYSCFG_RMPCR1_ADC1DMA_REMAP	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	699;"	macro
 SYSCFG_RMPCR1_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	686;"	macro
 SYSCFG_RMPCR1_SPI1_REMAP	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	706;"	macro
 SYSCFG_RMPCR1_TIM4DMA_REMAP	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	700;"	macro
 SYSCFG_RMPCR1_USART1CK_REMAP	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	705;"	macro
 SYSCFG_RMPCR1_USART1TR_REMAP	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	704;"	macro
+SYSCFG_RMPCR2	hardware\register.h	49;"	macro
 SYSCFG_RMPCR2_ADC1TRIG_REMAP	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	708;"	macro
 SYSCFG_RMPCR2_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	687;"	macro
 SYSCFG_RMPCR2_SPI2_REMAP	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	713;"	macro
@@ -3924,12 +4083,15 @@ TIM1_UpdateSource_Regular	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim1.h	443;"
 TIM1_UpdateSource_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim1.h	444;"	typedef	typeref:enum:__anon181
 TIM1_struct	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	1722;"	struct
 TIM2	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2876;"	macro
+TIM2_ARRH	hardware\register.h	246;"	macro
+TIM2_ARRL	hardware\register.h	247;"	macro
 TIM2_ARRPreloadConfig	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	808;"	prototype	signature:(FunctionalState NewState)
 TIM2_ARRPreloadConfig	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim2.c	442;"	function	signature:(FunctionalState NewState)
 TIM2_AutomaticOutput_Disable	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	203;"	enumerator	enum:__anon199
 TIM2_AutomaticOutput_Enable	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	202;"	enumerator	enum:__anon199
 TIM2_AutomaticOutput_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	204;"	typedef	typeref:enum:__anon199
 TIM2_BASE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2826;"	macro
+TIM2_BKR	hardware\register.h	252;"	macro
 TIM2_BKRConfig	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	823;"	prototype	signature:(TIM2_OSSIState_TypeDef TIM2_OSSIState, TIM2_LockLevel_TypeDef TIM2_LockLevel, TIM2_BreakState_TypeDef TIM2_BreakState, TIM2_BreakPolarity_TypeDef TIM2_BreakPolarity, TIM2_AutomaticOutput_TypeDef TIM2_AutomaticOutput)
 TIM2_BKRConfig	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim2.c	754;"	function	signature:(TIM2_OSSIState_TypeDef TIM2_OSSIState, TIM2_LockLevel_TypeDef TIM2_LockLevel, TIM2_BreakState_TypeDef TIM2_BreakState, TIM2_BreakPolarity_TypeDef TIM2_BreakPolarity, TIM2_AutomaticOutput_TypeDef TIM2_AutomaticOutput)
 TIM2_BreakPolarity_High	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	188;"	enumerator	enum:__anon198
@@ -3938,10 +4100,21 @@ TIM2_BreakPolarity_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	191;
 TIM2_BreakState_Disable	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	174;"	enumerator	enum:__anon197
 TIM2_BreakState_Enable	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	175;"	enumerator	enum:__anon197
 TIM2_BreakState_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	177;"	typedef	typeref:enum:__anon197
+TIM2_CCER1	hardware\register.h	242;"	macro
+TIM2_CCMR1	hardware\register.h	240;"	macro
+TIM2_CCMR2	hardware\register.h	241;"	macro
+TIM2_CCR1H	hardware\register.h	248;"	macro
+TIM2_CCR1L	hardware\register.h	249;"	macro
+TIM2_CCR2H	hardware\register.h	250;"	macro
+TIM2_CCR2L	hardware\register.h	251;"	macro
 TIM2_CC_IRQn	..\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h	75;"	enumerator	enum:__anon86
 TIM2_CC_USART2_RX_IRQHandler	stm8_interrupt_vector.c	72;"	function	signature:(void)
 TIM2_CCxCmd	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	840;"	prototype	signature:(TIM2_Channel_TypeDef TIM2_Channel, FunctionalState NewState)
 TIM2_CCxCmd	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim2.c	1074;"	function	signature:(TIM2_Channel_TypeDef TIM2_Channel, FunctionalState NewState)
+TIM2_CNTRH	hardware\register.h	243;"	macro
+TIM2_CNTRL	hardware\register.h	244;"	macro
+TIM2_CR1	hardware\register.h	231;"	macro
+TIM2_CR2	hardware\register.h	232;"	macro
 TIM2_Channel_1	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	119;"	enumerator	enum:__anon193
 TIM2_Channel_2	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	120;"	enumerator	enum:__anon193
 TIM2_Channel_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	121;"	typedef	typeref:enum:__anon193
@@ -3961,6 +4134,7 @@ TIM2_CounterMode_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	137;"	
 TIM2_CounterMode_Up	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	132;"	enumerator	enum:__anon194
 TIM2_CtrlPWMOutputs	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	828;"	prototype	signature:(FunctionalState NewState)
 TIM2_CtrlPWMOutputs	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim2.c	783;"	function	signature:(FunctionalState NewState)
+TIM2_DER	hardware\register.h	235;"	macro
 TIM2_DMACmd	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	865;"	prototype	signature:(TIM2_DMASource_TypeDef TIM2_DMASource, FunctionalState NewState)
 TIM2_DMACmd	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim2.c	1581;"	function	signature:( TIM2_DMASource_TypeDef TIM2_DMASource, FunctionalState NewState)
 TIM2_DMASource_CC1	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	482;"	enumerator	enum:__anon218
@@ -3969,6 +4143,8 @@ TIM2_DMASource_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	484;"	ty
 TIM2_DMASource_Update	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	481;"	enumerator	enum:__anon218
 TIM2_DeInit	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	796;"	prototype	signature:(void)
 TIM2_DeInit	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim2.c	168;"	function	signature:(void)
+TIM2_EGR	hardware\register.h	239;"	macro
+TIM2_ETR	hardware\register.h	234;"	macro
 TIM2_ETRClockMode1Config	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	873;"	prototype	signature:(TIM2_ExtTRGPSC_TypeDef TIM2_ExtTRGPrescaler, TIM2_ExtTRGPolarity_TypeDef TIM2_ExtTRGPolarity, uint8_t ExtTRGFilter)
 TIM2_ETRClockMode1Config	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim2.c	1707;"	function	signature:(TIM2_ExtTRGPSC_TypeDef TIM2_ExtTRGPrescaler, TIM2_ExtTRGPolarity_TypeDef TIM2_ExtTRGPolarity, uint8_t ExtTRGFilter)
 TIM2_ETRClockMode2Config	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	876;"	prototype	signature:(TIM2_ExtTRGPSC_TypeDef TIM2_ExtTRGPrescaler, TIM2_ExtTRGPolarity_TypeDef TIM2_ExtTRGPolarity, uint8_t ExtTRGFilter)
@@ -4038,6 +4214,7 @@ TIM2_ICSelection_DirectTI	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	269;"
 TIM2_ICSelection_IndirectTI	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	270;"	enumerator	enum:__anon204
 TIM2_ICSelection_TRGI	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	271;"	enumerator	enum:__anon204
 TIM2_ICSelection_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	272;"	typedef	typeref:enum:__anon204
+TIM2_IER	hardware\register.h	236;"	macro
 TIM2_ITConfig	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	859;"	prototype	signature:(TIM2_IT_TypeDef TIM2_IT, FunctionalState NewState)
 TIM2_ITConfig	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim2.c	1422;"	function	signature:(TIM2_IT_TypeDef TIM2_IT, FunctionalState NewState)
 TIM2_IT_Break	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	302;"	enumerator	enum:__anon206
@@ -4082,6 +4259,7 @@ TIM2_OCMode_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	95;"	typede
 TIM2_OCPolarity_High	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	148;"	enumerator	enum:__anon195
 TIM2_OCPolarity_Low	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	149;"	enumerator	enum:__anon195
 TIM2_OCPolarity_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	150;"	typedef	typeref:enum:__anon195
+TIM2_OISR	hardware\register.h	253;"	macro
 TIM2_OPMode_Repetitive	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	107;"	enumerator	enum:__anon192
 TIM2_OPMode_Single	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	106;"	enumerator	enum:__anon192
 TIM2_OPMode_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	108;"	typedef	typeref:enum:__anon192
@@ -4091,6 +4269,7 @@ TIM2_OSSIState_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	232;"	ty
 TIM2_OutputState_Disable	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	161;"	enumerator	enum:__anon196
 TIM2_OutputState_Enable	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	162;"	enumerator	enum:__anon196
 TIM2_OutputState_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	163;"	typedef	typeref:enum:__anon196
+TIM2_PSCR	hardware\register.h	245;"	macro
 TIM2_PSCReloadMode_Immediate	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	376;"	enumerator	enum:__anon211
 TIM2_PSCReloadMode_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	377;"	typedef	typeref:enum:__anon211
 TIM2_PSCReloadMode_Update	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	375;"	enumerator	enum:__anon211
@@ -4107,6 +4286,9 @@ TIM2_Prescaler_4	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	72;"	enumerato
 TIM2_Prescaler_64	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	76;"	enumerator	enum:__anon190
 TIM2_Prescaler_8	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	73;"	enumerator	enum:__anon190
 TIM2_Prescaler_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	78;"	typedef	typeref:enum:__anon190
+TIM2_SMCR	hardware\register.h	233;"	macro
+TIM2_SR1	hardware\register.h	237;"	macro
+TIM2_SR2	hardware\register.h	238;"	macro
 TIM2_SelectCCDMA	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	866;"	prototype	signature:(FunctionalState NewState)
 TIM2_SelectCCDMA	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim2.c	1605;"	function	signature:(FunctionalState NewState)
 TIM2_SelectHallSensor	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h	893;"	prototype	signature:(FunctionalState NewState)
@@ -4424,19 +4606,23 @@ TIM3_UpdateSource_Global	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim3.h	418;"	
 TIM3_UpdateSource_Regular	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim3.h	419;"	enumerator	enum:__anon244
 TIM3_UpdateSource_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim3.h	420;"	typedef	typeref:enum:__anon244
 TIM4	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2878;"	macro
+TIM4_ARR	hardware\register.h	265;"	macro
 TIM4_ARRPreloadConfig	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	341;"	prototype	signature:(FunctionalState NewState)
 TIM4_ARRPreloadConfig	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim4.c	342;"	function	signature:(FunctionalState NewState)
 TIM4_ARR_ARR	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2212;"	macro
 TIM4_ARR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2166;"	macro
 TIM4_BASE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2829;"	macro
+TIM4_CNTR	hardware\register.h	263;"	macro
 TIM4_CNTR_CNT	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2206;"	macro
 TIM4_CNTR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2164;"	macro
+TIM4_CR1	hardware\register.h	256;"	macro
 TIM4_CR1_ARPE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2176;"	macro
 TIM4_CR1_CEN	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2180;"	macro
 TIM4_CR1_OPM	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2177;"	macro
 TIM4_CR1_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2157;"	macro
 TIM4_CR1_UDIS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2179;"	macro
 TIM4_CR1_URS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2178;"	macro
+TIM4_CR2	hardware\register.h	257;"	macro
 TIM4_CR2_MMS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2183;"	macro
 TIM4_CR2_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2158;"	macro
 TIM4_ClearFlag	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	349;"	prototype	signature:(TIM4_FLAG_TypeDef TIM4_FLAG)
@@ -4445,6 +4631,7 @@ TIM4_ClearITPendingBit	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	351;"	pr
 TIM4_ClearITPendingBit	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim4.c	550;"	function	signature:(TIM4_IT_TypeDef TIM4_IT)
 TIM4_Cmd	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	343;"	prototype	signature:(FunctionalState NewState)
 TIM4_Cmd	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim4.c	388;"	function	signature:(FunctionalState NewState)
+TIM4_DER	hardware\register.h	259;"	macro
 TIM4_DER_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2160;"	macro
 TIM4_DER_UDE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2191;"	macro
 TIM4_DMACmd	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	352;"	prototype	signature:(TIM4_DMASource_TypeDef TIM4_DMASource, FunctionalState NewState)
@@ -4453,6 +4640,7 @@ TIM4_DMASource_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	208;"	ty
 TIM4_DMASource_Update	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	207;"	enumerator	enum:__anon259
 TIM4_DeInit	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	330;"	prototype	signature:(void)
 TIM4_DeInit	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim4.c	130;"	function	signature:(void)
+TIM4_EGR	hardware\register.h	262;"	macro
 TIM4_EGR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2163;"	macro
 TIM4_EGR_TG	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2203;"	macro
 TIM4_EGR_UG	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2202;"	macro
@@ -4472,6 +4660,7 @@ TIM4_GetITStatus	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	350;"	prototyp
 TIM4_GetITStatus	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim4.c	518;"	function	signature:(TIM4_IT_TypeDef TIM4_IT)
 TIM4_GetPrescaler	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	338;"	prototype	signature:(void)
 TIM4_GetPrescaler	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim4.c	284;"	function	signature:(void)
+TIM4_IER	hardware\register.h	260;"	macro
 TIM4_IER_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2161;"	macro
 TIM4_IER_TIE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2194;"	macro
 TIM4_IER_UIE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2195;"	macro
@@ -4485,6 +4674,7 @@ TIM4_InternalClockConfig	..\stm8l15x_stdperiph_driver\src\stm8l15x_tim4.c	607;"	
 TIM4_OPMode_Repetitive	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	84;"	enumerator	enum:__anon250
 TIM4_OPMode_Single	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	83;"	enumerator	enum:__anon250
 TIM4_OPMode_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	85;"	typedef	typeref:enum:__anon250
+TIM4_PSCR	hardware\register.h	264;"	macro
 TIM4_PSCR_PSC	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2209;"	macro
 TIM4_PSCR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2165;"	macro
 TIM4_PSCReloadMode_Immediate	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	97;"	enumerator	enum:__anon251
@@ -4509,10 +4699,12 @@ TIM4_Prescaler_64	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	62;"	enumerat
 TIM4_Prescaler_8	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	59;"	enumerator	enum:__anon249
 TIM4_Prescaler_8192	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	69;"	enumerator	enum:__anon249
 TIM4_Prescaler_TypeDef	..\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h	72;"	typedef	typeref:enum:__anon249
+TIM4_SMCR	hardware\register.h	258;"	macro
 TIM4_SMCR_MSM	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2186;"	macro
 TIM4_SMCR_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2159;"	macro
 TIM4_SMCR_SMS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2188;"	macro
 TIM4_SMCR_TS	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2187;"	macro
+TIM4_SR1	hardware\register.h	261;"	macro
 TIM4_SR1_RESET_VALUE	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2162;"	macro
 TIM4_SR1_TIF	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2199;"	macro
 TIM4_SR1_UIF	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2198;"	macro
@@ -5195,11 +5387,13 @@ __DAC_H	hardware\dac.h	8;"	macro
 __FONT_TABLE_H	display\font_table.h	9;"	macro
 __GPIO_H	hardware\gpio.h	8;"	macro
 __I	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	218;"	macro
+__I2C_H	hardware\i2c.h	9;"	macro
 __IO	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	220;"	macro
 __LCD_H	hardware\lcd.h	9;"	macro
 __MAIN_H	main.h	11;"	macro
 __MODS0__	..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\mods0.h	11;"	macro
 __O	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	219;"	macro
+__REGISTER_H	hardware\register.h	8;"	macro
 __SPI_H	hardware\spi.h	14;"	macro
 __STM8L15X_STDPERIPH_VERSION	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	198;"	macro
 __STM8L15X_STDPERIPH_VERSION_MAIN	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	194;"	macro
@@ -5249,18 +5443,20 @@ _tileBlank_8	display\player1.c	140;"	variable
 _tile_8	display\player1.c	124;"	variable
 _vectab	stm8_interrupt_vector.c	99;"	variable
 abs	hardware\lcd.c	16;"	macro	file:
-adcResult	main.c	58;"	variable
-adc_disableVrefOutput	hardware\adc.c	143;"	function	signature:(void)
-adc_disableVrefOutput	hardware\adc.h	31;"	prototype	signature:(void)
-adc_enableVrefOutput	hardware\adc.c	133;"	function	signature:(void)
-adc_enableVrefOutput	hardware\adc.h	30;"	prototype	signature:(void)
+adcResult	main.c	63;"	variable
+adc_disableVrefOutput	hardware\adc.c	160;"	function	signature:(void)
+adc_disableVrefOutput	hardware\adc.h	30;"	prototype	signature:(void)
+adc_enableVrefOutput	hardware\adc.c	150;"	function	signature:(void)
+adc_enableVrefOutput	hardware\adc.h	29;"	prototype	signature:(void)
 adc_init	hardware\adc.c	36;"	function	signature:(ADC_Channel ch)
-adc_init	hardware\adc.h	27;"	prototype	signature:(ADC_Channel ch)
-adc_read	hardware\adc.c	66;"	function	signature:(ADC_Channel ch)
-adc_read	hardware\adc.h	28;"	prototype	signature:(ADC_Channel ch)
-adc_read_mv	hardware\adc.c	100;"	function	signature:(ADC_Channel ch)
-adc_read_mv	hardware\adc.h	29;"	prototype	signature:(ADC_Channel ch)
-assert_failed	main.c	239;"	function	signature:(uint8_t* file, uint32_t line)
+adc_init	hardware\adc.h	25;"	prototype	signature:(ADC_Channel ch)
+adc_read	hardware\adc.c	68;"	function	signature:(ADC_Channel ch)
+adc_read	hardware\adc.h	26;"	prototype	signature:(ADC_Channel ch)
+adc_readTempF	hardware\adc.c	135;"	function	signature:(void)
+adc_readTempF	hardware\adc.h	28;"	prototype	signature:(void)
+adc_read_mv	hardware\adc.c	102;"	function	signature:(ADC_Channel ch)
+adc_read_mv	hardware\adc.h	27;"	prototype	signature:(ADC_Channel ch)
+assert_failed	main.c	199;"	function	signature:(uint8_t* file, uint32_t line)
 assert_failed	stm8l15x_conf.h	78;"	prototype	signature:(uint8_t* file, uint32_t line)
 assert_param	stm8l15x_conf.h	76;"	macro
 assert_param	stm8l15x_conf.h	80;"	macro
@@ -5276,9 +5472,9 @@ bmimgTile_8	display\player1.c	128;"	variable
 bool	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	243;"	typedef	typeref:enum:__anon2
 bytesPerLine	display\bitmap.h	22;"	member	struct:ImageData
 centerButtonFlag	hardware\gpio.c	24;"	variable
-clock_init	main.c	175;"	function	signature:(void)
-clock_init	main.c	55;"	prototype	file:	signature:(void)
-counter	main.c	61;"	variable
+clock_init	main.c	132;"	function	signature:(void)
+clock_init	main.c	60;"	prototype	file:	signature:(void)
+counter	main.c	66;"	variable
 dac_init	hardware\dac.c	18;"	function	signature:(void)
 dac_init	hardware\dac.h	12;"	prototype	signature:(void)
 dac_write	hardware\dac.c	28;"	function	signature:(uint16_t value)
@@ -5313,9 +5509,9 @@ halt	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2934;"	macro
 int16_t	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	224;"	typedef
 int32_t	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	225;"	typedef
 int8_t	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	223;"	typedef
-interrupt_disable	main.c	221;"	function	signature:(void)
+interrupt_disable	main.c	181;"	function	signature:(void)
 interrupt_disable	main.h	17;"	prototype	signature:(void)
-interrupt_enable	main.c	214;"	function	signature:(void)
+interrupt_enable	main.c	174;"	function	signature:(void)
 interrupt_enable	main.h	16;"	prototype	signature:(void)
 interrupt_handler	stm8_interrupt_vector.c	86;"	member	struct:interrupt_vector	file:
 interrupt_handler_t	stm8_interrupt_vector.c	12;"	typedef	file:
@@ -5359,18 +5555,20 @@ lcd_writeData	hardware\lcd.c	87;"	function	signature:(uint8_t data)
 lcd_writeData	hardware\lcd.h	40;"	prototype	signature:(uint8_t data)
 lcd_writeDataBurst	hardware\lcd.c	93;"	function	signature:(uint8_t *data, uint16_t length)
 lcd_writeDataBurst	hardware\lcd.h	41;"	prototype	signature:(uint8_t *data, uint16_t length)
-length	main.c	59;"	variable
-main	main.c	72;"	function	signature:(void)
+length	main.c	64;"	variable
+main	main.c	81;"	function	signature:(void)
 nop	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2909;"	macro
 nop	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2919;"	macro
 nop	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2930;"	macro
 numPages	display\bitmap.h	36;"	member	struct:ImageDataVertical
 pImageData	display\bitmap.h	24;"	member	struct:ImageData
 pImageData	display\bitmap.h	37;"	member	struct:ImageDataVertical
-printBuffer	main.c	60;"	variable
+printBuffer	main.c	65;"	variable
+result	main.c	69;"	variable
 rim	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2907;"	macro
 rim	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2917;"	macro
 rim	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2928;"	macro
+rx	main.c	70;"	variable
 s16	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	235;"	typedef
 s32	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	234;"	typedef
 s8	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	236;"	typedef
@@ -5389,13 +5587,13 @@ spi_writeArray	hardware\spi.c	76;"	function	signature:(uint8_t *data, uint16_t l
 spi_writeArray	hardware\spi.h	23;"	prototype	signature:(uint8_t *data, uint16_t length)
 spi_writeByte	hardware\spi.c	67;"	function	signature:(uint8_t data)
 spi_writeByte	hardware\spi.h	22;"	prototype	signature:(uint8_t data)
-system_init	main.c	191;"	function	signature:(void)
-system_init	main.c	56;"	prototype	file:	signature:(void)
+system_init	main.c	151;"	function	signature:(void)
+system_init	main.c	61;"	prototype	file:	signature:(void)
 tim2_init	hardware\timer.c	27;"	function	signature:(void)
 tim2_init	hardware\timer.h	12;"	prototype	signature:(void)
 tim2_isr	hardware\timer.c	46;"	function	signature:(void)
 tim2_isr	hardware\timer.h	13;"	prototype	signature:(void)
-toggle	main.c	62;"	variable
+toggle	main.c	67;"	variable
 trap	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2910;"	macro
 trap	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2920;"	macro
 trap	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2931;"	macro
@@ -5406,6 +5604,7 @@ uint16_t	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	229;"	typedef
 uint32_t	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	230;"	typedef
 uint8_t	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	228;"	typedef
 userButtonFlag	hardware\gpio.c	23;"	variable
+value	main.c	68;"	variable
 wfe	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2912;"	macro
 wfe	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2922;"	macro
 wfe	..\stm8l15x_stdperiph_driver\inc\stm8l15x.h	2933;"	macro

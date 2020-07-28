@@ -37,7 +37,7 @@
 #include "stm8l15x_exti.h"
 //#include "stm8l15x_flash.h"
 #include "stm8l15x_gpio.h"
-//#include "stm8l15x_i2c.h"
+#include "stm8l15x_i2c.h"
 //#include "stm8l15x_irtim.h"
 //#include "stm8l15x_itc.h"
 //#include "stm8l15x_iwdg.h"

@@ -21,10 +21,16 @@
 	
 /* Includes ------------------------------------------------------------------*/
 /*
-The purpose of this project is to enable the ADC interface, read 
-the temp sensor and display the value on the LCD.  This project also
-initializes the DAC peripheral and outputs to PB4.  The project uses
-the STM standard library and is a continuation of previous projects.
+The purpose of this project is to enable the i2c peripheral
+to measure temperature and pressure using the BMP280 breakout board.
+This project uses the STM8 standard peripheral library.  It is a 
+continuation of previous projects, also enableing the ADC, DAC, etc...
+
+The project reads the chip id at register 0xD0 and returns the value.
+If the value == 0x58, it turns the green LED on.  The i2c address
+for the BMP280 is 0x78.  Note that the address has to be up-shifted
+by 1 in order to work properly.
+
 
 */
 
@@ -37,6 +43,7 @@ the STM standard library and is a continuation of previous projects.
 #include "lcd.h"
 #include "adc.h"
 #include "dac.h"
+#include "i2c.h"
 
 
 /** @addtogroup STM8L15x_StdPeriph_Template
@@ -61,6 +68,9 @@ uint8_t printBuffer[16];
 uint16_t counter = 0x00;
 uint8_t toggle = 0x00;
 int value = 0x00;
+uint8_t result = 0x00;
+uint8_t rx[16];
+
 
 
 
@@ -84,108 +94,29 @@ void main(void)
     lcd_init();
     adc_init(ADC_CHANNEL_16);
     dac_init();
-    
+    I2C_init();
     
     //enable global interrupts
     interrupt_enable();
     
     lcd_clear(0x00);    
-    lcd_drawString(0, 0, "ADC Readings");
+    lcd_drawString(0, 0, "I2C Project");
         
     /* Infinite loop */
     while (1)
     {
-        lcd_clear(0x00);
-                
-        //read ch16
-        lcd_drawString(0, 0, "C16:");
-        adcResult = adc_read(ADC_CHANNEL_16);
-        length = lcd_decimalToBuffer(adcResult, printBuffer, 16);
-        lcd_drawStringLength(0, 40, printBuffer, length);
-
-        //read ch7
-        lcd_drawString(1, 0, "C 7:");
-        adcResult = adc_read(ADC_CHANNEL_7);
-        length = lcd_decimalToBuffer(adcResult, printBuffer, 16);
-        lcd_drawStringLength(1, 40, printBuffer, length);
-
-        //read vref
-        lcd_drawString(2, 0, "Vrf:");
-        adcResult = adc_read(ADC_CHANNEL_VREF);
-        length = lcd_decimalToBuffer(adcResult, printBuffer, 16);
-        lcd_drawStringLength(2, 40, printBuffer, length);
-        
-        //read fac
-        lcd_drawString(3, 0, "Fac:");
-        adcResult = adc_read(ADC_FACTORY);
-        length = lcd_decimalToBuffer(adcResult, printBuffer, 16);
-        lcd_drawStringLength(3, 40, printBuffer, length);
-        
-        //read ch16 as mv        
-        lcd_drawString(4, 0, "mv:");
-        adcResult = adc_read_mv(ADC_CHANNEL_16);
-        length = lcd_decimalToBuffer(adcResult, printBuffer, 16);
-        lcd_drawStringLength(4, 40, printBuffer, length);
-
-        //read battery voltage
-        lcd_drawString(5, 0, "bat:");
-        adcResult = adc_read_mv(ADC_BATTERY);
-        length = lcd_decimalToBuffer(adcResult, printBuffer, 16);
-        lcd_drawStringLength(5, 48, printBuffer, length);
-        
-        lcd_drawString(6, 0, "tmp:");
-        value = adc_readTempF();
-        
-        if (value < 0)
+        result = I2C_readReg(0xD0);
+        if (result == 0x58)
         {
-            value = value * -1;
-            length = lcd_decimalToBuffer((uint16_t)(value / 10), printBuffer, 16);
-            lcd_drawString(6, 40, "-");
-            lcd_drawStringLength(6, 48, printBuffer, length);
-            lcd_drawString(6, 48 + 16, ".");
-            length = lcd_decimalToBuffer((uint16_t)(value % 10), printBuffer, 16);
-            lcd_drawStringLength(6, 48 + 24, printBuffer, length);
+            GPIO_SetBits(GPIOB, GPIO_Pin_6);
         }
         else
         {
-            length = lcd_decimalToBuffer((uint16_t)(value / 10), printBuffer, 16);
-            lcd_drawString(6, 40, "+");
-            lcd_drawStringLength(6, 48, printBuffer, length);
-            lcd_drawString(6, 48 + 16, ".");
-            length = lcd_decimalToBuffer((uint16_t)(value % 10), printBuffer, 16);
-            lcd_drawStringLength(6, 48 + 24, printBuffer, length);
-        }
-                
-        
-        //poll flags - user button
-        if (gpio_getUserButtonFlag() == 1)
-        {
-            gpio_clearUserButtonFlag();
-        
-            for (counter = 0 ; counter < 100 ; counter++)
-            {
-                dac_write(0x00);
-                delay_ms(1);
-                dac_write(0xFFF);
-                delay_ms(1);            
-            }        
+            GPIO_ResetBits(GPIOB, GPIO_Pin_6);
         }
         
-        if (gpio_getCenterButtonFlag() == 1)
-        {
-            gpio_clearCenterButtonFlag();
-
-            for (counter = 0 ; counter < 200 ; counter++)
-            {
-                dac_write(0x00);
-                delay_ms(1);
-                dac_write(0xFFF);
-                delay_ms(1);            
-            }                    
-        }
-
         GPIO_ToggleBits(GPIOB, GPIO_Pin_5);
-        delay_ms(500);
+        delay_ms(100);
     }
 }
 
@@ -201,6 +132,8 @@ void clock_init(void)
     //system clock source
     CLK_DeInit();
     CLK_SYSCLKSourceConfig(CLK_SYSCLKSource_HSI);
+    CLK_SYSCLKDivConfig(CLK_SYSCLKDiv_1);
+    
     CLK_HSICmd(ENABLE);
     
     //peripheral clocks
@@ -208,8 +141,9 @@ void clock_init(void)
     CLK_PeripheralClockConfig(CLK_Peripheral_SPI1, ENABLE);
     CLK_PeripheralClockConfig(CLK_Peripheral_ADC1, ENABLE);
     CLK_PeripheralClockConfig(CLK_Peripheral_COMP, ENABLE); //routing
-    CLK_PeripheralClockConfig(CLK_Peripheral_DAC, ENABLE);  //dac
-    
+    CLK_PeripheralClockConfig(CLK_Peripheral_DAC, ENABLE);  //dac    
+    CLK_PeripheralClockConfig(CLK_Peripheral_I2C1, ENABLE);  //dac
+
 }
 
 void system_init(void)
@@ -227,8 +161,6 @@ void system_init(void)
     COMP_VrefintOutputCmd(ENABLE);
 
 
-
-    
 }
 
 
