@@ -65,10 +65,10 @@ void GPIO_init(void)
     
     //PD6 - configure as output for Vref output
     //routed to PD6
-    PD_ODR &=~ BIT_6;    
-    PD_DDR |= BIT_6;
-    PD_CR1 |= BIT_6;
-    PD_CR2 &=~ BIT_6;
+//    PD_ODR &=~ BIT_6;    
+//    PD_DDR |= BIT_6;
+//    PD_CR1 |= BIT_6;
+//    PD_CR2 &=~ BIT_6;
     
     GPIO_interrupt_config();
 }

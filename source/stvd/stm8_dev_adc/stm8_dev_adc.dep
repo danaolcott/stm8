@@ -5,7 +5,7 @@ Keyword=ST7Project
 Number=1.3
 
 [Root.Source Files.main.c.Config.0]
-ExternDep= main.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\mods0.h"  hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"  hardware\system.h hardware\gpio.h hardware\spi.h hardware\lcd.h  display\bitmap.h hardware\timer.h hardware\dac.h hardware\button.h  hardware\eeprom.h hardware\adc.h
+ExternDep= main.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  hardware\system.h hardware\gpio.h hardware\spi.h hardware\lcd.h  display\bitmap.h hardware\timer.h hardware\dac.h hardware\button.h  hardware\eeprom.h hardware\adc.h
 
 [Root.Source Files.stm8_interrupt_vector.c.Config.0]
 ExternDep= stm8_interrupt_vector.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\mods0.h"  hardware\gpio.h hardware\timer.h
@@ -17,7 +17,7 @@ ExternDep= display\font_table.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CX
 ExternDep= display\player1.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\mods0.h"  display\bitmap.h hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"
 
 [Root.hardware.hardware\adc.c.Config.0]
-ExternDep= hardware\adc.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  hardware\register.h hardware\adc.h
+ExternDep= hardware\adc.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  hardware\register.h hardware\adc.h
 
 [Root.hardware.hardware\button.c.Config.0]
 ExternDep= hardware\button.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  hardware\register.h hardware\button.h
@@ -29,7 +29,7 @@ ExternDep= hardware\dac.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\H
 ExternDep= hardware\eeprom.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  hardware\register.h hardware\eeprom.h hardware\gpio.h
 
 [Root.hardware.hardware\gpio.c.Config.0]
-ExternDep= hardware\gpio.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  hardware\register.h hardware\gpio.h hardware\button.h
+ExternDep= hardware\gpio.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  hardware\register.h hardware\gpio.h hardware\button.h
 
 [Root.hardware.hardware\i2c.c.Config.0]
 ExternDep= hardware\i2c.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  hardware\register.h hardware\i2c.h
@@ -41,7 +41,7 @@ ExternDep= hardware\lcd.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\H
 ExternDep= hardware\spi.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  hardware\register.h hardware\spi.h
 
 [Root.hardware.hardware\system.c.Config.0]
-ExternDep= hardware\system.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\mods0.h"  hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"
+ExternDep= hardware\system.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\mods0.h"  hardware\register.h  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stdint.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\HSTM8\stddef.h"
 
 [Root.hardware.hardware\timer.c.Config.0]
 ExternDep= hardware\timer.c  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\mods0.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdio.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stddef.h"  "C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Hstm8\stdint.h"  hardware\register.h hardware\timer.h hardware\gpio.h hardware\system.h
