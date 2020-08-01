@@ -74,7 +74,7 @@ A project that inintializes the SPI peripheral and controls a SPI-enabled LCD.
 
 library / i2c
 -------------
-A project that uses i2c----  to be completed.
+A project that initializes the i2c to read temperature and pressure from the BMP280 and display results on the LCD.
 
 
 
