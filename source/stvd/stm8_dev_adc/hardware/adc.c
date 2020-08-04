@@ -54,33 +54,21 @@ void ADC_dummyDelay(uint16_t delay)
 //
 void ADC_init(void)
 {
-    //CR1 - CONT and RES bits
-    //no need - auto set to 12 bit mode and single conversion
-    
-    
+   
     //CR2 - set the prescale bits as needed
     //no need - assume prescale = 1
     
-    //CR2 - slow channels - bits 0 -2
-    ADC_CR2 &=~ 0x07;
-    ADC_CR2 |= 0x07;        //set to 384 clock cycles
-    
-    //CR3 - fast channels
-    ADC_CR3 &=~ 0xE0;       //clear the top 3 bits
-    ADC_CR3 |= 0xE0;        //set to 384 clock cycles
+    ADC_CR2 |= 0x07;        //set slow channels to 384 clock cycles
+    ADC_CR3 |= 0xE0;        //set fast channels to 384 clock cycles
     
     //enable the AD
     ADC_CR1 |= ADC_CR1_ADON_BIT;
-    
-    //disable DMA
-    ADC_SQR1 |= BIT_7;
-    
+        
     //enable the channel - ch16 - SQR register
     ADC_SQR2 |= BIT_0;      //channel 16
     
-    
-    
-    
+    //enable  the vref in 
+    ADC_TRIGR1 |= BIT_4;    //enable the vref
     
 }
 
@@ -98,13 +86,28 @@ uint16_t ADC_read (ADC_Channel_t channel)
     uint8_t addValue = 0x00;
     uint8_t regValue = 0x00;
     
-    //wake up
-   // ADC_CR1 |= ADC_CR1_ADON_BIT;
+    //clear the sequence control registers
+    ADC_SQR1 = 0x00;
+    ADC_SQR2 = 0x00;
+    ADC_SQR3 = 0x00;
+    ADC_SQR4 = 0x00;
+    
+    //set the sequence control register based onthe channel
+    switch(channel)
+    {
+        case ADC_CH7:   ADC_SQR4 |= BIT_7;    break;
+        case ADC_CH16:  ADC_SQR2 |= BIT_0;    break;
+        case ADC_VREF:  ADC_SQR1 |= BIT_4;    break;        
+    }
+    
     ADC_CR1 |= ADC_CR1_START_BIT;       //set the start bit
 
     //returns the EOC value BIT 0 - set when complete.
     while (!ADC_isConversionComplete());    //wait
     
+    //wait a bit longer
+    ADC_dummyDelay(10000);
+        
     ADC_SR &=~ BIT_0;               //clear the EOC bit
     
     

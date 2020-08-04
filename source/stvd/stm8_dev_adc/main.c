@@ -91,6 +91,10 @@ main()
         lcd_drawString(2, 0, "CH16:");
         lcd_drawStringLength(2, 40, printBuffer, length);
         
+        adcResult = ADC_read(ADC_VREF);
+        length = lcd_decimalToBuffer(adcResult, printBuffer, 16);
+        lcd_drawString(3, 0, "VRF:");
+        lcd_drawStringLength(3, 40, printBuffer, length);
       
         
         
