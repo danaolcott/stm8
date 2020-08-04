@@ -46,6 +46,7 @@ uint8_t printBuffer[16];
 uint8_t length = 0;
 uint16_t adcResult = 0x00;
 uint8_t counter = 0x00;
+int temperature = 0x00;
 
 
 main()
@@ -96,28 +97,53 @@ main()
         
         //display the result on the lcd
         lcd_clear(0x00);
-        
+        lcd_drawString(0, 0, "ADC Project");
+
         adcResult = ADC_read(ADC_CH16);
         length = lcd_decimalToBuffer(adcResult, printBuffer, 16);
-        lcd_drawString(2, 0, "CH16:");
-        lcd_drawStringLength(2, 40, printBuffer, length);
+        lcd_drawString(1, 0, "CH16:");
+        lcd_drawStringLength(1, 40, printBuffer, length);
         
         adcResult = ADC_read(ADC_VREF);
         length = lcd_decimalToBuffer(adcResult, printBuffer, 16);
-        lcd_drawString(3, 0, "VRF:");
-        lcd_drawStringLength(3, 40, printBuffer, length);
+        lcd_drawString(2, 0, "VRF:");
+        lcd_drawStringLength(2, 40, printBuffer, length);
       
         adcResult = ADC_read(ADC_FACTORY);
         length = lcd_decimalToBuffer(adcResult, printBuffer, 16);
-        lcd_drawString(4, 0, "FAC:");
-        lcd_drawStringLength(4, 40, printBuffer, length);
+        lcd_drawString(3, 0, "FAC:");
+        lcd_drawStringLength(3, 40, printBuffer, length);
+        
+        lcd_drawString(5, 0, "Temp Sensor");
         
         adcResult = ADC_read_mv(ADC_CH16);
         length = lcd_decimalToBuffer(adcResult, printBuffer, 16);
-        lcd_drawString(5, 0, "mv:");
-        lcd_drawStringLength(5, 40, printBuffer, length);
+        lcd_drawString(6, 0, "mv:");
+        lcd_drawStringLength(6, 40, printBuffer, length);
         
+        temperature = ADC_readTemperatureF();
+        lcd_drawString(7, 0, "T:");        
         
+        if (temperature < 0)
+        {
+            temperature = temperature * -1;
+            length = lcd_decimalToBuffer((uint16_t)(temperature / 10), printBuffer, 16);
+            lcd_drawString(7, 40, "-");
+            lcd_drawStringLength(7, 48, printBuffer, length);
+            lcd_drawString(7, 48 + 16, ".");
+            length = lcd_decimalToBuffer((uint16_t)(temperature % 10), printBuffer, 16);
+            lcd_drawStringLength(7, 48 + 24, printBuffer, length);
+        }
+        else
+        {
+            length = lcd_decimalToBuffer((uint16_t)(temperature / 10), printBuffer, 16);
+            lcd_drawString(7, 40, "+");
+            lcd_drawStringLength(7, 48, printBuffer, length);
+            lcd_drawString(7, 48 + 16, ".");
+            length = lcd_decimalToBuffer((uint16_t)(temperature % 10), printBuffer, 16);
+            lcd_drawStringLength(7, 48 + 24, printBuffer, length);
+        }
+                
         GPIO_led_green_toggle();
         timer_delay_ms(500);
     }

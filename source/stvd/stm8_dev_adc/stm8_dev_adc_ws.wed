@@ -44,7 +44,7 @@ ptn_Child33=Bar-32
 
 [WorkState_v1_2.DockState.Bar-0]
 BarID=59419
-Bars=112
+Bars=119
 Bar#0=0
 Bar#1=59647
 Bar#2=0
@@ -157,6 +157,13 @@ Bar#108=0
 Bar#109=0
 Bar#110=0
 Bar#111=0
+Bar#112=0
+Bar#113=0
+Bar#114=0
+Bar#115=0
+Bar#116=0
+Bar#117=0
+Bar#118=0
 Style=0
 ExStyle=0
 PrevFloating=False
@@ -1336,7 +1343,7 @@ ptn_Child2=ChildFrames
 
 [WorkState_v1_2.Frames.MainFrame]
 WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPIDAAAAAAMAAAAAAACCFAAAAAOMCAAAAA
-Title=ST Visual Develop - stm8_dev_adc_ws.stw - [adc.c]
+Title=ST Visual Develop - stm8_dev_adc_ws.stw - [system.c]
 
 [WorkState_v1_2.Frames.ChildFrames]
 ptn_Child1=Document-0
@@ -1354,8 +1361,8 @@ ptn_Child1=ViewFrame-0
 DocPathName=hardware\adc.c
 DocumentString=
 DocTemplateIndex=0
-WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPIGAAAAAAIGAAAAAAGLDAAAAACIBAAAAA
-IsActiveChildFrame=True
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPIGAAAAAAIGAAAAAAGLDAAAAACIBAAAAA
+IsActiveChildFrame=False
 IsFrameVisible=True
 
 [WorkState_v1_2.Frames.ChildFrames.Document-1]
@@ -1365,8 +1372,8 @@ ptn_Child1=ViewFrame-0
 DocPathName=hardware\system.c
 DocumentString=
 DocTemplateIndex=0
-WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPCIAAAAAACIAAAAAAENDAAAAAAKBAAAAA
-IsActiveChildFrame=False
+WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPCIAAAAAACIAAAAAAENDAAAAAAKBAAAAA
+IsActiveChildFrame=True
 IsFrameVisible=True
 
 [WorkState_v1_2.Frames.ChildFrames.Document-2]

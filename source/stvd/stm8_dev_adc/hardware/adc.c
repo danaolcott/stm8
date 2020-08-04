@@ -2,31 +2,12 @@
 7/5/20
 ADC Controller File
 Configures the ADC peripheral to read single
-conversion mode, 16 adc cycles for 2 ADC channels
-used to read the temperature sensor on the dev board
+conversion mode, ch7, 16, vref, and factory vref.  Also
+reads the temperature sensor MCP9700 through ch16.  The 
+millivolt reading is scaled based on the ratio of the the
+factory calibrated vref to the measured vref.  Note that the
+factory calibrated vref used a supply voltage of 3.00v +/- 10mv.
 
-
-PB2 - AS5
-
-VREF out - It looks like there's a hardware error in 
-reading the VREF supplied voltage divider since it's
-in the same group of IOs as the VREF output.  ie, the output
-is in group PC2, PD7, PD6.  We are trying to read the divider
-on PD7, but the Vref output is in PD6.  So if both switches
-are closed, the voltage divider reading will short to the
-vreoutput pin.
-
-either way, switch AS2 looks like it needs to be closed 
-to get to ADC1
-
-also, AS5 looks like it needs to be closed to get PB2
-
-Fix: cut trace at PD7 and keep PD7 switch open.  Close switch
-at PD6 to supply VRefint to voltage divider, about 1.2v.  Run jumper
-from PB7 to voltage divider read point and close switch at 
-PB7 (CHXXXE) and AS3
-
-temp sensor ~ 0.762V
 
 
 */
@@ -37,14 +18,6 @@ temp sensor ~ 0.762V
 
 #include "register.h"
 #include "adc.h"
-
-
-void ADC_dummyDelay(uint16_t delay)
-{
-    volatile uint16_t temp = delay;    
-    while (temp > 0)
-        temp--;
-}
 
 
 
@@ -163,7 +136,19 @@ uint16_t ADC_read_mv(ADC_Channel_t channel)
 
 
 
-
+///////////////////////////////////////////////
+//Reads the temperature on the MCP9700 through
+//adc channel 16.  Returns value in 10ths of a 
+//degree F.  ie, 24.6 F returns 246
+int ADC_readTemperatureF(void)
+{
+    int32_t result = 0x00;
+    int32_t temperature = 0x00;
+    result = (int32_t)ADC_read_mv(ADC_CH16);
+    temperature = ((result - 500) * 9 / 5) + 320;
+    
+    return (int)temperature;
+}
 
 
 /////////////////////////////////////////////////////
