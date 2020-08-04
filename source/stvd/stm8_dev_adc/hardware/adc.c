@@ -97,154 +97,71 @@ uint16_t ADC_read (ADC_Channel_t channel)
     {
         case ADC_CH7:   ADC_SQR4 |= BIT_7;    break;
         case ADC_CH16:  ADC_SQR2 |= BIT_0;    break;
-        case ADC_VREF:  ADC_SQR1 |= BIT_4;    break;        
+        case ADC_VREF:  ADC_SQR1 |= BIT_4;    break;
+        case ADC_FACTORY:                     break;    //do nothing
     }
     
-    ADC_CR1 |= ADC_CR1_START_BIT;       //set the start bit
-
-    //returns the EOC value BIT 0 - set when complete.
-    while (!ADC_isConversionComplete());    //wait
-    
-    //wait a bit longer
-    ADC_dummyDelay(10000);
-        
-    ADC_SR &=~ BIT_0;               //clear the EOC bit
-    
-    
-    //read result - MSB then LSB
-    high = ((uint16_t)(ADC_DRH)) << 8;
-    low = (uint16_t)ADC_DRL;
-
-    result = high | low;
-
-  
-    return result;
-}
-
-
-
-
-
-
-
-
-
-
-/*
-
-////////////////////////////////////////////
-//ADC_init()
-//ADC1_IN16_Temp - PB2 - Temp sensor MCP9700AT
-//ADC1_IN7_Temp - PD7 - Voltage divider, R15 10k and 
-//Use default CH16 - temp sensor
-//
-//Configure for CH7, 16, and VRef INT
-void ADC_init(void)
-{
-    //no interrupt, 12bit resolution, disable peripheral
-    ADC_CR1 &=~ ADC_CR1_ADON_BIT;
-
-    //sample times - normal channels, fadc = ck, software
-    //trigger, 16 adc cycles
-//    ADC_CR2 = 0x02;     //16 cycles
-    ADC_CR2 = 0x07;     //384 cycles
-    
-    //sample times - vrefint and ts 16adc cycles, default CH7
-    ADC_CR3 = 0x40;
-//    ADC_CR3 |= 0x07;        //default CH7
-    ADC_CR3 |= 0x10;        //default CH16 - temp sensor
-    
-    //Disable DMA for single conversion
-    ADC_SQR1 |= BIT_7;
-
-    //SQR# - set either ch7 or 16 - default ch7
-    //ADC_SQR4 = 0x80;        //ch7
-    ADC_SQR2 = 0x01;       //ch16
-        
-//    ADC_TRIGR1 |= BIT_4;    //enable the internal vref
-//    ADC_TRIGR1 |= BIT_5;    //enable the internal ref for temp sensor
-    
-    //Disable the schmit triggers
-    ADC_TRIGR2 = 0x01;                //disable ch16 trigger
-    ADC_TRIGR4 = 0x80;                //disable ch7 trigger
-
-    //enable the ADC
-    ADC_CR1 |= ADC_CR1_ADON_BIT;
-}
-
-*/
-
-
-/*
-
-///////////////////////////////////////////////////
-uint16_t ADC_read (ADC_Channel_t channel)
-{
-
-    uint16_t result = 0x00;
-    uint16_t low = 0x00;
-    uint16_t high = 0x00;
-    uint8_t addValue = 0x00;
-    uint8_t regValue = 0x00;
-    
-    //set the sample time for vref and ts
-    ADC_CR3 = 0x40;
-
-    //set the channel and SQR# registers - only 1 at a time
-    switch(channel)
+    if (channel == ADC_FACTORY)
     {
-        case ADC_CH7:
-        {
-            addValue = 0x07;
-            ADC_SQR2 = 0x00;       //ch16
-            ADC_SQR4 = 0x80;       //ch7
-            break;
-        }
-        
-        case ADC_CH16:
-        {
-            addValue = 0x10;
-            ADC_SQR2 = 0x01;       //ch16
-            ADC_SQR4 = 0x00;       //ch7
-            break;
-        }
-        
-        //work in progress TODO: fix this.
-        case ADC_VREF:
-        {
-            addValue = 0x1C;
-            break;
-        }
-        
-        default: addValue = 0x07;           break;    
+        //get the reading from the registers
+        high = ((uint16_t)(ADC_VREFINT_MSB)) << 8;
+        low = (uint16_t)ADC_VREFINT_LSB;
+        result = high | low;        
     }
     
-    ADC_CR3 |= addValue;                //set the channel
+    else
+    {
+        ADC_CR1 |= ADC_CR1_START_BIT;       //set the start bit
+
+        //returns the EOC value BIT 0 - set when complete.
+        while (!ADC_isConversionComplete());    //wait
+                    
+        ADC_SR &=~ BIT_0;               //clear the EOC bit
+        
+        //read result - MSB then LSB
+        high = ((uint16_t)(ADC_DRH)) << 8;
+        low = (uint16_t)ADC_DRL;
     
-    //wake up
-    ADC_CR1 |= ADC_CR1_ADON_BIT;
-
-    //dummy delay
-    ADC_dummyDelay(10000);
-
-    ADC_SR &=~ ADC_SR_EOC_BIT;          //clear the EOC flag
-    ADC_CR1 |= ADC_CR1_START_BIT;       //set the start bit
-
-    while (!ADC_isConversionComplete());    //wait
+        result = high | low;
+    }
     
-    //read result - MSB then LSB
-    low = ADC_DRL;
-    high = (ADC_DRH & 0x0F);
-
-    result = (high << 8) | low;
-
-
-
     return result;
 }
 
 
-*/
+
+
+/////////////////////////////////////////////////
+//Reads the channel and returns value in mv.
+//ie, for 1.450v, the return value is 1450
+//For reference, it reads the vref, factory
+//scales the full scale reading based on the 
+//ratio of vref to factory.  This is based on the
+//factory ref = 3.0v according to the datasheet
+//The scaled full scale reading is then used on 
+//the target channel to compute the read value in mv.
+uint16_t ADC_read_mv(ADC_Channel_t channel)
+{
+    uint32_t factory = 0x00;
+    uint32_t vref = 0x00;
+    uint32_t adcReading = 0x00;
+    uint32_t fullScale = 0x00;
+    uint32_t mv = 0x00;
+    
+    factory = ADC_readFactoryVref();
+    vref = ADC_read(ADC_VREF);
+    adcReading = ADC_read(channel);
+    
+    fullScale = vref * 0xFFF / factory;     //ratio that applies to 3.0v
+
+    mv = adcReading * 3000 / fullScale;
+    
+    return (uint16_t)mv;
+    
+}
+
+
+
 
 
 
