@@ -60,6 +60,10 @@ stm8_dev_i2c
 ------------
 A simple i2c project that uses the BMP280 temperature/pressure sensor.  Reads the temperature and pressure and displays on the LCD.  Changes in pressure are used to track changes in elevation using a simple coorelation of about 3pa / ft.  Press the user button and center button to update a baseline pressure and reset the current base elevation.
 
+stm8_dev_adc
+------------
+A project that initializes the ADC to read channels 7, 16, and vref and output the values on the LCD.  The read values in millivolts are scaled based on the ratio of the vref and factory calibrated vref based on an input voltage of 3.00v.  The project also reads and displays the temperature from the MCP9700 temperature chip.
+
 library / adc
 -------------
 A project that uses the STM8 Standard Library to read a temperature sensor and output the results to an LCD.  This project also initializes the DAC output and routes the output to a GPIO pin to generate sound on a speaker.  The sound is a simple squarewave.
