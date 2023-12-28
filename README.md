@@ -1,9 +1,9 @@
 # stm8
 Projects Built on STM8 Processors
 ------------------------------------------
-This repository contains several projects using the STM8 processor.  Two varients of the STM8 include STM8S103F3P6 and STM8L151K6 are used for these projects.  A development board for the STM8S103F3P6 is commonly found on Ebay for about $1.  The development board for the STM8L151K6 is from DanasBoatshop.com.  The The development board was built in KiCad and made by OSHPark.  The schematics are provided in the repository.
+This repository contains several projects using the STM8 processor.  Two varients of the STM8 include STM8S103F3P6 and STM8L151K6 are used for these projects.  A development board for the STM8S103F3P6 is commonly found on Ebay for about $1.  The development board for the STM8L151K6 processor was layed out in KiCad, sent to OSHPark for constuction, parts from Digikey, and assembled in my laboratory.  The schematics for the board are provided in the respository.  The board is pretty useful for experimenting with the STM8L151K6 processor.  It contains a 128x64 display, user buttons, 4 position joystick, temperature sensor, eeprom memory, 2 leds, a really loud speaker, and powered from a 3.3v coil cell battery.
 
-Two development environments are used in these projects, STVD for building the projects in Windows, and SDCC (Small Device C Compilier) for building the projects in Linux.  Using STVD is pretty self-explainatory in terms of installation, building, debug, etc.  It seems to have some problems, but overall works ok.  Using SDCC and flashing the program onto the processor in Linux seems to require a bit more effort.  In general, the following additional steps are required:
+For development using Windows, I used STVD (ST visual Develop) with the Cosmic C compiler.  Overall, using STVD is not that difficult in terms of getting a project to compile, flashing the code on the processor, using the debugger, etc.  Development using Linux is quite a bit more difficult.  For these projects, the SDCC (Small Device C Compiler) was used.  In either Windows or Linux, the STM programmer / debugger is needed to flash the code onto the processor.  The following are a few notes regarding using Linux and the SDCC compiler:
 
 ## Install STLink
 * Install libusb-1.0-0-dev
@@ -42,15 +42,15 @@ A simple transmitter project using the STM8S103F3P6 and nrf24l01 transceiver.  R
 
 stm8dev_asteroids
 -----------------
-A simple implementation of the 80's game Asteroids.  The project is built using the STM8L151K6 and the game development board from DanasBoatshop.com.  The project implements the SPI, TIMER, EEPROM, DAC, and interrupts.
+A simple implementation of the 80's game Asteroids.  The project is built using the STM8L151K6 processor.  The project implements the SPI, TIMER, EEPROM, DAC, and interrupts.
 
 stm8devboard
 ------------
-A simple implementation of the 80's game Space Invaders.  The project is built using the STM8L151K6 and the game development board from DanasBoatshop.com.  The project implements the SPI, TIMER, EEPROM, DAC, and interrupts.  Note:  The project started out as trying to get the GPIO to blink the LED, but expanded into something much bigger.
+A simple implementation of the 80's game Space Invaders.  The project is built using the STM8L151K6 processor.  The project implements the SPI, TIMER, EEPROM, DAC, and interrupts.  Note:  The project started out as trying to get the GPIO to blink the LED, but expanded into something much bigger.
 
 stm8_breakout
 -------------
-A simple implementation of the 80's game Breakout.  Bounce ball off player to hit tiles.  Toggle between auto / manual mode using center button.  Toggle sound on/off using the user button.  The project is built using the STM8L151K6 processor and game development board from DanasBoatshop.com.  The project implements the SPI, TIMER, EEPROM, DAC, and interrupts.
+A simple implementation of the 80's game Breakout.  Bounce ball off player to hit tiles.  Toggle between auto / manual mode using center button.  Toggle sound on/off using the user button.  The project is built using the STM8L151K6 processor.  The project implements the SPI, TIMER, EEPROM, DAC, and interrupts.
 
 stm8_qpn
 --------
