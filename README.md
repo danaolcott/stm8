@@ -5,7 +5,8 @@ This repository contains several projects using the STM8 processor.  Two varient
 
 For development using Windows, I used STVD (ST visual Develop) with the Cosmic C compiler.  Overall, using STVD is not that difficult in terms of getting a project to compile, flashing the code on the processor, using the debugger, etc.  Development using Linux is quite a bit more difficult.  For these projects, the SDCC (Small Device C Compiler) was used.  In either Windows or Linux, the STM programmer / debugger is needed to flash the code onto the processor.  The following are a few notes regarding using Linux and the SDCC compiler:
 
-## Install STLink
+## Linux
+### Install STLink
 * Install libusb-1.0-0-dev
 * Get the stlink repository and build the ST Link Tools from source: https://github.com/texane/stlink
 
@@ -17,7 +18,7 @@ For development using Windows, I used STVD (ST visual Develop) with the Cosmic C
 
 When you plug in the STLink, should should see stlinkv2_1, _2, etc in /dev/directory when the device is plugged in.
 
-## Install stm8flash
+### Install stm8flash
 * Clone the repo for stm8flash and build from scratch.  I had to install a few things for the program to build.
 * Add libusb-1.0 to the include path in the Makefile
 * I got an error about pkg-config, had to install pkg-config.
