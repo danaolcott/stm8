@@ -34,6 +34,12 @@ Directories
 
 See next section for a list of projects (work in progress).
 
+
+A Note on STLink Programmer Debugger
+------------------------------------
+The programmer has 2 ports.  The smaller port used to program STM8 processors does not provide the 3.3V needed to power the board.  Therefore, use a jumper wire to connected to the 20pin port and connect to the 3.3v supply on the board (I think I used Pin 19?, check the datasheet for the programmer.  That's the red wire shown in the picture).
+
+
 The following is a list of projects:
 ------------------------------------
 
