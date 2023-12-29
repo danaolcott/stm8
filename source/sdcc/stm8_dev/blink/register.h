@@ -13,7 +13,6 @@ Register Definitions for the STM8L151K6
 #define uint8_t         unsigned char
 #define uint16_t        unsigned int
 
-
 #define BIT_0           (1u << 0)
 #define BIT_1           (1u << 1)
 #define BIT_2           (1u << 2)
@@ -24,6 +23,7 @@ Register Definitions for the STM8L151K6
 #define BIT_7           (1u << 7)
 
 /*
+Not sure why this section is commented out.
 //CPU registers
 #define CPU_A           *((volatile uint8_t*)0x7F00)
 #define CPU_PCE         *((volatile uint8_t*)0x7F01)
@@ -63,26 +63,23 @@ Register Definitions for the STM8L151K6
 #define FLASH_EOP_BIT       BIT_2
 
 
-
 //Clock control registers
 #define CLK_DIVR		    *((volatile uint8_t*)0x50C0)    //master divide register
 #define CLK_CRTCR		    *((volatile uint8_t*)0x50C1)    //RTC register
 #define CLK_ICKR		    *((volatile uint8_t*)0x50C2)    //internal clock control
-#define CLK_PCKENR1		    *((volatile uint8_t*)0x50C3)    //peripheral gating
-#define CLK_PCKENR2		    *((volatile uint8_t*)0x50C4)    //peripheral gating
+#define CLK_PCKENR1		  *((volatile uint8_t*)0x50C3)    //peripheral gating
+#define CLK_PCKENR2		  *((volatile uint8_t*)0x50C4)    //peripheral gating
 #define CLK_CCOR		    *((volatile uint8_t*)0x50C5)    //configurable clock control
 #define CLK_ECKR		    *((volatile uint8_t*)0x50C6)    //external clock control
 #define CLK_SCSR		    *((volatile uint8_t*)0x50C7)    //system clock status
-#define CLK_SWR		        *((volatile uint8_t*)0x50C8)    //system clock switch
+#define CLK_SWR		      *((volatile uint8_t*)0x50C8)    //system clock switch
 #define CLK_SWCR		    *((volatile uint8_t*)0x50C9)    //clock switch control
 #define CLK_CSSR		    *((volatile uint8_t*)0x50CA)    //clock security system
-#define CLK_CBEEPR		    *((volatile uint8_t*)0x50CB)    //clock beep reg
-#define CLK_HSICALR		    *((volatile uint8_t*)0x50CC)    //HSI cal
+#define CLK_CBEEPR		  *((volatile uint8_t*)0x50CB)    //clock beep reg
+#define CLK_HSICALR		  *((volatile uint8_t*)0x50CC)    //HSI cal
 #define CLK_HSITRIMR		*((volatile uint8_t*)0x50CD)    //HSI cal
 #define CLK_HSIUNLCKR		*((volatile uint8_t*)0x50CE)    //HSI unlock
-#define CLK_REGCSR		    *((volatile uint8_t*)0x50CF)    //main regulator control
-
-
+#define CLK_REGCSR		  *((volatile uint8_t*)0x50CF)    //main regulator control
 
 
 //GPIO Registers - PortA - PortF
@@ -128,12 +125,12 @@ Register Definitions for the STM8L151K6
 #define EXTI_CR3		*((volatile uint8_t*)0x50A2)
 #define EXTI_SR1		*((volatile uint8_t*)0x50A3)
 #define EXTI_SR2		*((volatile uint8_t*)0x50A4)
-#define EXTI_CONF1		*((volatile uint8_t*)0x50A5)
+#define EXTI_CONF1	*((volatile uint8_t*)0x50A5)
 
 //SPI
-#define SPI1_BSY_FLAG	(1u << 7)	//busy = high
-#define SPI1_TXE_FLAG	(1u << 1)	//tx empty = high
-#define SPI1_RXNE_FLAG	(1u << 0)	//rx not empty = high
+#define SPI1_BSY_FLAG	(1u << 7)    //busy = high
+#define SPI1_TXE_FLAG	(1u << 1)	   //tx empty = high
+#define SPI1_RXNE_FLAG	(1u << 0)	 //rx not empty = high
 
 #define SPI1_CR1         *((volatile uint8_t*)0x5200)
 #define SPI1_CR2         *((volatile uint8_t*)0x5201)
@@ -143,7 +140,6 @@ Register Definitions for the STM8L151K6
 #define SPI1_CRCPR       *((volatile uint8_t*)0x5205)
 #define SPI1_RXCRCR      *((volatile uint8_t*)0x5206)
 #define SPI1_TXCRCR      *((volatile uint8_t*)0x5207)
-
 
 
 //Comparator Control and Status - use for VREF
@@ -169,10 +165,6 @@ Register Definitions for the STM8L151K6
 #define RI_ASCR1       *((volatile uint8_t*)0x543D)    //analog switch register 1
 #define RI_ASCR2       *((volatile uint8_t*)0x543E)    //analog switch register 2
 #define RI_RCR         *((volatile uint8_t*)0x543F)    //resistor control register 1
-
-
-
-
 
 #define RI_IOSR1        *((volatile uint8_t*)0x5439)    //io switch control
 #define RI_IOSR2        *((volatile uint8_t*)0x543A)
@@ -207,11 +199,6 @@ Register Definitions for the STM8L151K6
 #define DAC_BIT_CR1_EN          BIT_0
 
 #define DAC_BIT_SWTRIGR_SWTRIG1     BIT_0
-
-
-
-
-
 
 
 //timers - TIM2 - not all registers included
