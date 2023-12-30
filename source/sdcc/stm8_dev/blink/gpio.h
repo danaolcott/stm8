@@ -9,6 +9,7 @@ GPIO Controller File
 
 
 void GPIO_init(void);
+void GPIO_EXTI5_ISR(void);
 
 void GPIO_led_red_on(void);
 void GPIO_led_green_on(void);

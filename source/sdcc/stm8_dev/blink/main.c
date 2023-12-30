@@ -5,13 +5,13 @@ STM8 Development Board - Blink Project
 The purpose of this project is to flash the 
 leds on the STM8 developent board by Danasboatshop.com
 
-Project that initializes leds red and green as outputs
-and timers TIM2 and TIM4 to flash the LEDs.
+Project that initializes leds red and green as outputs,
+user button and center joystick button as input falling
+edge interrupts, and timers TIM2 and TIM4 to flash the LEDs.
 
 
 */
 
- 
 //#include <stddef.h>
 #include <stdint.h>
 #include "register.h"
@@ -36,7 +36,16 @@ void Timer4_InterruptHandler(void) __interrupt(TIM4_IRQ)
     TIM4_ISR();			//Timer4 ISR
 }
 
+void EXTI1_InterruptHandler(void) __interrupt(EXTI1_IRQ)
+{
+    GPIO_EXTI1_ISR();        //Joystick Button ISR
+}
 
+
+void EXTI5_InterruptHandler(void) __interrupt(EXTI5_IRQ)
+{
+    GPIO_EXTI5_ISR();        //User Button ISR
+}
 
 
 /////////////////////////////////////////
