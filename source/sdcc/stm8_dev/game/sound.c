@@ -19,7 +19,7 @@ sound to DAC PB4.  Works with Timer 2
 //Sound variables, counter, etc
 static unsigned int mSoundCounter = 0x00;   //down counter for sound array
 static unsigned char mSoundLoopCounter = 0x00;
-unsigned char *pSoundValue = 0x00;          //pointer to sound value
+const unsigned char *pSoundValue = 0x00;          //pointer to sound value
 unsigned char mSoundEnable = 0x00;          //is it playing or not
 unsigned char mSoundOverwriteFlag = 0x00;
 SoundData *mSoundCurrent = 0x00;

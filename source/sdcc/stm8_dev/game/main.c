@@ -12,6 +12,7 @@ they show up on the right side of the screen.
 */
 
 #include <stdint.h>
+#include <stddef.h>
 #include "register.h"
 #include "system.h"
 #include "gpio.h"
@@ -22,6 +23,7 @@ they show up on the right side of the screen.
 #include "lcd.h"
 #include "bitmap.h"
 #include "game.h"
+#include "eeprom.h"
 
 //////////////////////////////////////////
 //Interrupt Service Routines
@@ -56,7 +58,6 @@ Direction_t direction;
 uint8_t collisionFlag = 0;
 uint8_t num;
 
-
 /////////////////////////////////////////
 //Main
 main()
@@ -74,84 +75,100 @@ main()
     Sound_init();
     Sound_on();
     lcd_init();
+    EEPROM_init();
 
     system_enableInterrupts();
 
     //initialize the game, player, ground
     game_init();
 
-
     //clear game flags, etc.
     gpio_userButtonFlag = 0;
-    gpio_centerButtonFlag = 0;
     collisionFlag = 0;
-       
-	while (1)
+
+    //display startup screen
+    game_displayStartup();
+
+    while (!gpio_userButtonFlag)
     {
+        GPIO_led_green_toggle();
+        GPIO_led_red_toggle();
+        timer_delay_ms(200);
+    }
 
+    //clear game flags, etc.
+    GPIO_led_green_off();
+    GPIO_led_red_off();
+    gpio_userButtonFlag = 0;
+    collisionFlag = 0;
+
+    while (1)
+    {
         //move things - ground, player, enemy...
-        game_updateGround();            //move the ground surface
+        game_updateGround();
 
+        //read the joystick and test for collisions
         direction = game_readJoystick();                //read the joystick
         collisionFlag = game_playerMove(direction);     //move the player
 
-        //collisionFlag - 0 no collision, 1 - hit the ground
-        //2 - hit an enemy
+        //collisionFlag - 0 no collision, 1 - hit ground/enemy
         if (collisionFlag > 0)
         {
             Sound_playEnemyExplode();
             collisionFlag = 0;
             game_playerReset();
 
-            //reduce the player count by 1, go into loop
-            num = game_killPlayer();
-
-            //test for remaining players
-            if (!num)
+            //kill off 1 player, return remaining
+            if (!game_killPlayer())
             {
-                gpio_centerButtonFlag = 0;
+                gpio_userButtonFlag = 0;
                 GPIO_led_red_off();
                 GPIO_led_green_off();
 
-                //read the center button for press to reset
-                while (!gpio_centerButtonFlag)
+                //update the high score based on current score
+                if (game_getScore() > game_getHighScore())
                 {
-                    //flash both leds
-                    GPIO_led_red_toggle();
-                    GPIO_led_green_toggle();
-                    timer_delay_ms(500);
+                    game_setHighScore(game_getScore());
                 }
 
-                //reset the game
-                game_init();
-                gpio_centerButtonFlag = 0;
+                //game over and wait for user button press
                 gpio_userButtonFlag = 0;
+                game_displayGameOver();
+
+                while (!gpio_userButtonFlag)
+                {
+                    GPIO_led_green_toggle();
+                    GPIO_led_red_toggle();
+                    timer_delay_ms(200);
+                }
+
+                gpio_userButtonFlag = 0;
+                game_init();
             }
 
-            //wait, reset player to default position.
-            while (!gpio_centerButtonFlag)
+            //reset the player position and wait for button press
+            else
             {
-                GPIO_led_red_toggle();
-                timer_delay_ms(200);
-            }            
+                gpio_userButtonFlag = 0;
+                while (!gpio_userButtonFlag)
+                {
+                    GPIO_led_red_toggle();
+                    timer_delay_ms(200);
+                }
+            }
         }
 
         game_generateEnemy();           //test to make a new enemy
         game_moveEnemy();
         game_moveMissile();             //move missiles
 
-
-
-        //test for buttons pressed - shoot missile
-        //might be better to put the missile flag here
-        //for missile hit enemy
+        //shoot missile using the user button
         if (gpio_userButtonFlag == 1)
         {
             game_fireMissile();
             Sound_playPlayerShoot();
             gpio_userButtonFlag = 0;
         }
-
 
         //draw updated positions
         lcd_clearFrameBuffer(0x00, 0);

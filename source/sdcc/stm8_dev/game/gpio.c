@@ -26,7 +26,7 @@ PB6 - green
 
 //globals
 volatile uint8_t gpio_userButtonFlag = 0;
-volatile uint8_t gpio_centerButtonFlag = 0;
+
 
 ///////////////////////////////////
 //Configure LED GPIOs as output - PB5 and PB6
@@ -136,7 +136,7 @@ void GPIO_led_green_toggle(void)
 void GPIO_EXTI1_ISR(void)
 {
     EXTI_SR1 |= BIT_1;          //clear the interrrupt
-    gpio_centerButtonFlag = 1;       //polled in main loop
+    //do something
 }
 
 

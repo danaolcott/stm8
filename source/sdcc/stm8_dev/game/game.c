@@ -1,5 +1,7 @@
 /*
-Game with scrolling screen
+ * 2023 - Game with scrolling screen
+ * Player ship flies over random generated ground
+ * surface, shooting at enemies.
 
 */
 
@@ -7,9 +9,12 @@ Game with scrolling screen
 #include <stdlib.h>
 
 #include "register.h"
+#include "timer.h"
+#include "gpio.h"
 #include "game.h"
 #include "lcd.h"
 #include "sound.h"
+#include "eeprom.h"
 
 //globals for game
 static uint8_t groundSurfaceHead = 0;
@@ -22,14 +27,13 @@ uint8_t groundSurface[GAME_GROUND_LENGTH];
 
 uint8_t scoreBuffer[SCORE_BUFFER_SIZE] = {0x00};
 
-unsigned int gameScore = 0;
-
+uint16_t gameScore = 0;
+uint16_t gameHighScore = 0;
 
 /////////////////////////////////////////
 //initialize the game
 void game_init(void)
 {
-
     game_playerInit();
     game_groundInit();
     game_missileInit();
@@ -38,16 +42,53 @@ void game_init(void)
     game_scoreInit();
 
     lcd_clearFrameBuffer(0x00, 0);
-
     game_drawGround(0);
     game_drawPlayer(0);
-
     lcd_updateDisplay();
-
     game_drawScore();
-    
-
 }
+
+//////////////////////////////////////////
+//Display the start screen, high score, etc
+void game_displayStartup(void)
+{
+    uint8_t i, length;
+
+    for (i = 0 ; i < SCORE_BUFFER_SIZE ; i++)
+        scoreBuffer[i] = 0x00;
+
+    length = lcd_decimalToBuffer(gameHighScore, scoreBuffer, SCORE_BUFFER_SIZE);
+
+    lcd_clear(0x00);
+    lcd_drawString(1, 30, "Press");
+    lcd_drawString(2, 25, "Button");
+    lcd_drawString(3, 20, "to Start");
+
+    lcd_drawString(5, 15, "High Score");
+    lcd_drawStringLength(6, 40, scoreBuffer, length);
+}
+
+
+//////////////////////////////////////
+//display game over
+void game_displayGameOver(void)
+{
+    uint8_t length, i;
+    for (i = 0 ; i < SCORE_BUFFER_SIZE ; i++)
+        scoreBuffer[i] = 0x00;
+
+    length = lcd_decimalToBuffer(gameHighScore, scoreBuffer, SCORE_BUFFER_SIZE);
+
+    lcd_clear(0x00);
+    lcd_drawString(0, 15, "Game Over");
+    lcd_drawString(1, 30, "Press");
+    lcd_drawString(2, 25, "Button");
+    lcd_drawString(3, 20, "To Start");
+
+    lcd_drawString(5, 15, "High Score");
+    lcd_drawStringLength(6, 40, scoreBuffer, length);
+}
+
 
 
 void game_playerInit(void)
@@ -59,7 +100,10 @@ void game_playerInit(void)
     playerShip.image = &imgPlayerShip;
 }
 
-
+/////////////////////////////////////////
+//setup the initial ground surface array
+//the tail of the array is updated with
+//each game loop
 void game_groundInit(void)
 {
     uint8_t i;
@@ -70,7 +114,6 @@ void game_groundInit(void)
     //init the ground surface at midpoint of max and min
     for (i = 0 ; i < GAME_GROUND_LENGTH ; i++)
         groundSurface[i] = groundSurfaceHead;
-
 }
 
 
@@ -108,6 +151,10 @@ void game_enemyInit(void)
 
 
 //////////////////////////////////////////////
+//resets the current game score, calls the
+//high score set in eeprom and stores to
+//gameHighScore.  scoreBuffer is used to draw score
+//across the top of the display during the game
 void game_scoreInit(void)
 {
     uint8_t i;
@@ -115,6 +162,33 @@ void game_scoreInit(void)
 
     for (i = 0 ; i < SCORE_BUFFER_SIZE ; i++)
         scoreBuffer[i] = 0x00;
+
+    gameHighScore = EEPROM_getHighScore();
+}
+
+/////////////////////////////////
+//returns the current game score
+uint16_t game_getScore(void)
+{
+    return gameScore;
+}
+
+/////////////////////////////////////////
+//read the high score from eeprom, set the
+//game high score variable, and return the value
+uint16_t game_getHighScore(void)
+{
+	uint16_t score = EEPROM_getHighScore();
+	gameHighScore = score;
+	return score;
+}
+
+///////////////////////////////////////////
+//set the game high score in eeprom memory
+void game_setHighScore(uint16_t score)
+{
+	gameHighScore = score;
+	EEPROM_updateHighScore(score);
 }
 
 
@@ -127,15 +201,14 @@ void game_drawScore(void)
     uint8_t length, i;
     const ImageDataVertical *image = &bmimgPlayerIcon_1;
 
-    lcd_drawString(0, 0, "SC:");
+    lcd_drawString(0, 0, "S:");
 
     //clear the buffer
     for (i = 0 ; i < SCORE_BUFFER_SIZE ; i++)
         scoreBuffer[i] = 0x00;
 
     length = lcd_decimalToBuffer(gameScore, (char*)scoreBuffer, SCORE_BUFFER_SIZE);
-    lcd_drawStringLength(0, 40, (char*)scoreBuffer, length);
-
+    lcd_drawStringLength(0, 20, (char*)scoreBuffer, length);
 
     switch(playerShip.numLives)
     {
@@ -146,19 +219,21 @@ void game_drawScore(void)
         default:    image = &bmimgPlayerIcon_3;     break;
     }
 
+    lcd_drawString(0, 60, "P:");
     lcd_drawIconPage(0, 80, image);
 }
 
 
 ////////////////////////////////////////////////
+// returns the number of players remaining
 uint8_t game_getNumPlayer(void)
 {
     return playerShip.numLives;
-
 }
 
 
-////////////////////////////////////////////////
+/////////////////////////////////////////////
+//sets the number of players
 void game_setNumPlayer(uint8_t num)
 {
     if (num <= GAME_MAX_LIVES)
@@ -167,18 +242,15 @@ void game_setNumPlayer(uint8_t num)
 
 
 /////////////////////////////////////////////////
-//removes 1 player.  returns remaining players
-//and 0 if there are no players remaining
+//removes 1 player and returns the number of
+//players remaining
 uint8_t game_killPlayer(void)
 {
     if (playerShip.numLives >= 1)
         playerShip.numLives--;
 
-
     return playerShip.numLives;
 }
-
-
 
 ///////////////////////////////////////////
 //reset the player position to default
@@ -188,9 +260,6 @@ void game_playerReset(void)
     playerShip.x = GAME_PLAYER_DEFAULT_X;
     playerShip.y = GAME_PLAYER_DEFAULT_Y;
 }
-
-
-
 
 ///////////////////////////////////////////////////
 //game_updateGround()
@@ -269,7 +338,6 @@ Direction_t game_readJoystick(void)
         direction = MOVE_RIGHT;
 
     return direction;
-
 }
 
 ////////////////////////////////////////////
@@ -323,7 +391,6 @@ uint8_t game_playerMove(Direction_t direction)
     }
 
 
-
     //test for collision - collide with ground surface
     if ((yleft < shipBot) || (yright < shipBot))
     {
@@ -332,7 +399,6 @@ uint8_t game_playerMove(Direction_t direction)
     }
 
     //test if it hit an enemy
-
     for (i = 0 ; i < GAME_NUM_ENEMY ; i++)
     {
         if (enemyArray[i].alive == 1)
@@ -362,7 +428,6 @@ uint8_t game_playerMove(Direction_t direction)
     }
 
     return 0;
-
 }
 
 
@@ -464,7 +529,7 @@ void game_moveMissile(void)
 
 
 //////////////////////////////////////////////
-//draw 2 pixels for each missle that is alive
+//draw 2 pixels for each missile that is alive
 void game_drawMissile(uint8_t update)
 {
     uint8_t i;
@@ -495,12 +560,10 @@ void game_generateEnemy(void)
     uint8_t enemy = 0;
     const ImageData* ptr = &imgEnemy1;
 
-
     //rand() % (max_number + 1 - minimum_number) + minimum_number
     //generate number from 0-2
     temp = rand() % (2 + 1 - 0) + 0;        //what enemy
     temp2 = rand() % (2 + 1 - 0) + 0;       
-
     temp4 = rand() %(3 + 1 - 0) + 0;        //1/4 pts for y position
     
     ypos = (groundSurface[GAME_GROUND_LENGTH - 2] / 4) * temp4 + 8;
@@ -575,15 +638,6 @@ void game_drawEnemy(uint8_t update)
             lcd_drawIcon(enemyArray[i].x, enemyArray[i].y, enemyArray[i].image, update);
     }
 }
-
-
-
-
-
-
-
-
-
 
 
 

@@ -71,12 +71,18 @@ typedef struct
 
 void game_init(void);
 
+void game_displayStartup(void);
+void game_displayGameOver(void);
+
 void game_playerInit(void);
 void game_groundInit(void);
 void game_missileInit(void);
 void game_enemyInit(void);
 
 void game_scoreInit(void);
+uint16_t game_getHighScore(void);
+uint16_t game_getScore(void);
+void game_setHighScore(uint16_t score);
 void game_drawScore(void);
 
 

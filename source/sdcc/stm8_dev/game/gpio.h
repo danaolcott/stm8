@@ -9,7 +9,6 @@ GPIO Controller File
 
 //game flags used by other files
 extern volatile uint8_t gpio_userButtonFlag;
-extern volatile uint8_t gpio_centerButtonFlag;
 
 
 void GPIO_init(void);

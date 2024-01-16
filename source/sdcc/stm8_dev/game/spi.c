@@ -67,6 +67,7 @@ void SPI_init(void)
     //0100 0100
     
     SPI1_CR1 |= BIT_2;      //master mode
+//    SPI1_CR1 |= BIT_3;      //sysclk / 4 - comment out for sysclk/2
     SPI1_CR1 |= BIT_6;      //spi en
 
 }
