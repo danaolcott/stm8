@@ -20,6 +20,7 @@ they show up on the right side of the screen.
 #include "spi.h"
 #include "dac.h"
 #include "sound.h"
+#include "font_table.h"
 #include "lcd.h"
 #include "bitmap.h"
 #include "game.h"

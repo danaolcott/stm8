@@ -552,13 +552,24 @@ void game_drawMissile(uint8_t update)
 //of the screen between top of LCD and ground
 //surface.  find the first available enemy in
 //the array with alive = 0.  choose enemy 1-3
-//at random.
+//at random.  The ground surface limit is the max
+//over the rhs of the screen to avoid enemies from
+//flying into the ground.
 void game_generateEnemy(void)
 {
     uint8_t i, temp, temp2, temp4, ypos;
     static uint16_t loopCounter = 0;
     uint8_t enemy = 0;
     const ImageData* ptr = &imgEnemy1;
+    uint8_t max = groundSurface[GAME_GROUND_LENGTH - 2];
+
+    //get the highest point on the ground as baseline for
+    //setting y positions for new enemy.
+    for (i = 0 ; i < (GAME_GROUND_LENGTH - 2) ; i++)
+    {
+        if (groundSurface[i] < max)
+            max = groundSurface[i];
+    }
 
     //rand() % (max_number + 1 - minimum_number) + minimum_number
     //generate number from 0-2
@@ -566,7 +577,7 @@ void game_generateEnemy(void)
     temp2 = rand() % (2 + 1 - 0) + 0;       
     temp4 = rand() %(3 + 1 - 0) + 0;        //1/4 pts for y position
     
-    ypos = (groundSurface[GAME_GROUND_LENGTH - 2] / 4) * temp4 + 8;
+    ypos = (max / 4) * temp4 + 8;
 
     //enemy overlaps the ground?
     if ((ypos + 8) >= groundSurface[GAME_GROUND_LENGTH - 2])
@@ -594,13 +605,11 @@ void game_generateEnemy(void)
                 enemyArray[i].image = ptr;
                 
                 i = GAME_NUM_ENEMY;
-
             }
         }
     }
 
     loopCounter++;
-
 }
 
 ////////////////////////////////////////////////
